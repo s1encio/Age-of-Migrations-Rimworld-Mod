@@ -101,7 +101,12 @@
       <li>
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
-        <options><LR_West_Tiro>30</LR_West_Tiro><LR_West_Legionarius>30</LR_West_Legionarius><LR_West_Lanciarius>15</LR_West_Lanciarius><LR_West_Funditor>12</LR_West_Funditor><LR_West_Ballistarius>6</LR_West_Ballistarius><LR_West_Centenarius>3</LR_West_Centenarius></options>
+        <options><LR_West_Tiro>30</LR_West_Tiro><LR_West_Legionarius>30</LR_West_Legionarius><LR_West_Lanciarius>15</LR_West_Lanciarius><LR_West_Funditor>12</LR_West_Funditor><LR_West_Ballistarius>6</LR_West_Ballistarius><LR_West_Centenarius>3</LR_West_Centenarius><LR_West_Eques>6</LR_West_Eques><LR_West_Sagittarius>4</LR_West_Sagittarius><LR_West_Cataphractarius>2</LR_West_Cataphractarius></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>15</commonality>
+        <options><LR_West_Eques>30</LR_West_Eques><LR_West_Sagittarius>25</LR_West_Sagittarius><LR_West_Cataphractarius>10</LR_West_Cataphractarius><LR_West_Centenarius>3</LR_West_Centenarius></options>
       </li>
       <li>
         <kindDef>Combat</kindDef>
@@ -230,7 +235,12 @@
       <li>
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
-        <options><LR_East_Tiro>20</LR_East_Tiro><LR_East_Legionarius>30</LR_East_Legionarius><LR_East_Lanciarius>12</LR_East_Lanciarius><LR_East_Funditor>8</LR_East_Funditor><LR_East_Ballistarius>15</LR_East_Ballistarius><LR_East_Centenarius>4</LR_East_Centenarius></options>
+        <options><LR_East_Tiro>20</LR_East_Tiro><LR_East_Legionarius>30</LR_East_Legionarius><LR_East_Lanciarius>12</LR_East_Lanciarius><LR_East_Funditor>8</LR_East_Funditor><LR_East_Ballistarius>15</LR_East_Ballistarius><LR_East_Centenarius>4</LR_East_Centenarius><LR_East_Eques>4</LR_East_Eques><LR_East_Sagittarius>6</LR_East_Sagittarius><LR_East_Cataphractarius>6</LR_East_Cataphractarius></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_East_Cataphractarius>25</LR_East_Cataphractarius><LR_East_Sagittarius>25</LR_East_Sagittarius><LR_East_Eques>15</LR_East_Eques><LR_East_Centenarius>4</LR_East_Centenarius></options>
       </li>
       <li>
         <kindDef>Combat</kindDef>

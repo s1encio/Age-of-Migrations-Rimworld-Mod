@@ -150,6 +150,77 @@
     </modExtensions>
   </PawnKindDef>
   <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Eques</defName>
+    <label>eques</label>
+    <combatPower>110</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmet</li><li>LR_LoricaHamata</li><li>LR_ParmaWest</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Sagittarius</defName>
+    <label>horse archer</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmet</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>NeolithicRangedDecent</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Cataphractarius</defName>
+    <label>cataphract</label>
+    <combatPower>165</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmet</li><li>LR_LoricaSquamataIron</li><li>LR_CloakWest</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
     <defName>LR_West_Mercator</defName>
     <label>merchant</label><trader>true</trader>
     <combatPower>60</combatPower>
@@ -333,6 +404,77 @@
     <modExtensions>
       <li Class="AgeOfMigrations.UniformExtension">
         <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Eques</defName>
+    <label>eques</label>
+    <combatPower>110</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_LoricaHamata</li><li>LR_ParmaEast</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Sagittarius</defName>
+    <label>horse archer</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>NeolithicRangedDecent</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Cataphractarius</defName>
+    <label>clibanarius</label>
+    <combatPower>165</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_LoricaSquamataIron</li><li>LR_CloakEast</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
       </li>
     </modExtensions>
   </PawnKindDef>

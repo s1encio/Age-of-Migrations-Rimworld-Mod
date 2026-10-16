@@ -25,11 +25,13 @@ Eastern Empire:
 
 Shared:
 - Lorica hamata (mail), lorica squamata (iron and gilded scale)
-- Spatha, gilded spatha, hasta spear
+- Spatha, gilded spatha, hasta spear, kontos cavalry lance (hits harder the faster you charge)
 - Plumbata darts, spiculum javelin, sling and arcuballista (hand crossbow)
 - Oval and round shields in western and eastern colors. Shields are worn in their own slot, so they work with any weapon, and they block arrows, bullets and some melee hits from the front.
 
 Armor and weapons are made at the smithy (needs Smithing), clothes at the tailoring bench.
 
-Work in progress: factions and more peoples of the migration era are coming.</description>
+Cavalry: with Giddy-Up 2 installed, Roman light cavalry, horse archers and cataphracts ride into battle, and your colonists can ride horses too. Without it, they fight on foot.
+
+Work in progress: more peoples of the migration era are coming.</description>
 </ModMetaData>

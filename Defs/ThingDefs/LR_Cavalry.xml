@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_Kontos</defName>
+    <label>kontos</label>
+    <description>A heavy cavalry lance, nearly four meters long, with a narrow armor-piercing head. The cataphracts of Rome and Persia held it in both hands and drove it home with the full weight of a galloping horse.
+
+The faster the wielder has been moving before the blow, the harder it hits: up to 2.2 times damage after a long gallop. A standing thrust gets no bonus. On foot a running start helps only a little, so it is best used mounted (requires Giddy-Up 2).</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_Kontos</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3.6</Mass>
+    </statBases>
+    <costList><Steel>40</Steel><WoodLog>40</WoodLog></costList>
+    <weaponTags><li>LR_RomanMelee</li><li>LR_Kontos</li></weaponTags>
+    <tools><li><label>butt</label><capacities><li>Blunt</li></capacities><power>8</power><cooldownTime>2.2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>17</power><cooldownTime>2.7</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ChargeWeaponExtension">
+        <minSpeed>4</minSpeed>
+        <fullSpeed>6</fullSpeed>
+        <maxBonus>1.2</maxBonus>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>
