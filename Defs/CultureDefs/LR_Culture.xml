@@ -3,7 +3,7 @@
   <CultureDef>
     <defName>LR_RomanCulture</defName>
     <label>roman</label>
-    <description>The culture of the late Roman Empire: Latin and Greek speaking, Christian, proud of a thousand years of history.</description>
+    <description>The culture of the late Roman Empire: Latin and Greek speaking, Nicene Christian, proud of a thousand years of history.</description>
     <pawnNameMaker>LR_NamerPersonRoman</pawnNameMaker>
     <pawnNameMakerFemale>LR_NamerPersonRomanFemale</pawnNameMakerFemale>
     <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>

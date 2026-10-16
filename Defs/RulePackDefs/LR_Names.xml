@@ -3,17 +3,23 @@
   <RulePackDef>
     <defName>LR_NamerPersonRoman</defName>
     <rulePack><rulesStrings>
-      <li>r_name->[first] [last]</li>
+      <li>r_name->[first] '[nick]' [last]</li>
       <li>first->Flavius</li><li>first->Aurelius</li><li>first->Valerius</li><li>first->Julius</li><li>first->Claudius</li><li>first->Marcus</li><li>first->Lucius</li><li>first->Gaius</li><li>first->Titus</li><li>first->Petronius</li><li>first->Anicius</li><li>first->Fabius</li><li>first->Decius</li><li>first->Septimius</li><li>first->Aemilius</li><li>first->Junius</li><li>first->Caecina</li><li>first->Sextus</li><li>first->Quintus</li><li>first->Gnaeus</li>
       <li>last->Aetius</li><li>last->Constantius</li><li>last->Valentinianus</li><li>last->Theodosius</li><li>last->Marcianus</li><li>last->Leo</li><li>last->Zeno</li><li>last->Anthemius</li><li>last->Olybrius</li><li>last->Severus</li><li>last->Maximus</li><li>last->Avitus</li><li>last->Maiorianus</li><li>last->Rufinus</li><li>last->Heraclius</li><li>last->Gallus</li><li>last->Probus</li><li>last->Symmachus</li><li>last->Boethius</li><li>last->Marcellinus</li><li>last->Litorius</li><li>last->Bonifatius</li><li>last->Felix</li><li>last->Sebastianus</li><li>last->Paulinus</li><li>last->Ausonius</li><li>last->Claudianus</li><li>last->Sidonius</li><li>last->Belisarius</li><li>last->Narses</li><li>last->Basiliscus</li><li>last->Anastasius</li><li>last->Justinus</li><li>last->Germanus</li><li>last->Areobindus</li><li>last->Hypatius</li><li>last->Pompeius</li><li>last->Celer</li><li>last->Patricius</li><li>last->Florentius</li>
+      <li>nick->[root][msuf]</li>
+      <li>root->Aurel</li><li>root->Valer</li><li>root->Maxim</li><li>root->Marc</li><li>root->Sever</li><li>root->Flor</li><li>root->Just</li><li>root->Constant</li><li>root->Prob</li><li>root->Vital</li><li>root->Luc</li><li>root->Fel</li><li>root->Celer</li><li>root->Patric</li><li>root->Silv</li><li>root->Clement</li><li>root->Fortun</li><li>root->Honor</li><li>root->Ruf</li><li>root->Sabin</li><li>root->Urs</li><li>root->Verin</li><li>root->Vincent</li><li>root->Gall</li><li>root->Paul</li><li>root->Quint</li><li>root->Sext</li><li>root->Octav</li><li>root->Domit</li><li>root->Fusc</li><li>root->Gemell</li><li>root->Marcell</li><li>root->Pomp</li><li>root->Prisc</li><li>root->Rustic</li><li>root->Secund</li><li>root->Severin</li><li>root->Tranquill</li><li>root->Venant</li><li>root->Vigil</li><li>root->Ambros</li><li>root->Avit</li><li>root->Bass</li><li>root->Crisp</li><li>root->Donat</li><li>root->Lupic</li><li>root->Mart</li><li>root->Faust</li><li>root->Lucill</li><li>root->Serv</li><li>root->Cass</li><li>root->Tull</li><li>root->Ann</li><li>root->Pall</li><li>root->Claud</li>
+      <li>msuf->us</li><li>msuf->ius</li><li>msuf->ianus</li><li>msuf->inus</li><li>msuf->illus</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>
     <defName>LR_NamerPersonRomanFemale</defName>
     <rulePack><rulesStrings>
-      <li>r_name->[first] [last]</li>
+      <li>r_name->[first] '[nick]' [last]</li>
       <li>first->Aelia</li><li>first->Galla</li><li>first->Licinia</li><li>first->Justa</li><li>first->Flavia</li><li>first->Anicia</li><li>first->Valeria</li><li>first->Julia</li><li>first->Fabia</li><li>first->Claudia</li><li>first->Aurelia</li><li>first->Petronia</li>
       <li>last->Placidia</li><li>last->Eudocia</li><li>last->Eudoxia</li><li>last->Honoria</li><li>last->Pulcheria</li><li>last->Verina</li><li>last->Marina</li><li>last->Severa</li><li>last->Maxima</li><li>last->Valentina</li><li>last->Constantia</li><li>last->Theodosia</li><li>last->Marcella</li><li>last->Probina</li><li>last->Juliana</li><li>last->Serena</li><li>last->Ariadne</li><li>last->Euphemia</li><li>last->Melania</li><li>last->Fabiola</li>
+      <li>nick->[root][fsuf]</li>
+      <li>root->Aurel</li><li>root->Valer</li><li>root->Maxim</li><li>root->Marc</li><li>root->Sever</li><li>root->Flor</li><li>root->Just</li><li>root->Constant</li><li>root->Prob</li><li>root->Vital</li><li>root->Luc</li><li>root->Fel</li><li>root->Celer</li><li>root->Patric</li><li>root->Silv</li><li>root->Clement</li><li>root->Fortun</li><li>root->Honor</li><li>root->Ruf</li><li>root->Sabin</li><li>root->Urs</li><li>root->Verin</li><li>root->Vincent</li><li>root->Gall</li><li>root->Paul</li><li>root->Quint</li><li>root->Sext</li><li>root->Octav</li><li>root->Domit</li><li>root->Fusc</li><li>root->Gemell</li><li>root->Marcell</li><li>root->Pomp</li><li>root->Prisc</li><li>root->Rustic</li><li>root->Secund</li><li>root->Severin</li><li>root->Tranquill</li><li>root->Venant</li><li>root->Vigil</li><li>root->Ambros</li><li>root->Avit</li><li>root->Bass</li><li>root->Crisp</li><li>root->Donat</li><li>root->Lupic</li><li>root->Mart</li><li>root->Faust</li><li>root->Lucill</li><li>root->Serv</li><li>root->Cass</li><li>root->Tull</li><li>root->Ann</li><li>root->Pall</li><li>root->Claud</li>
+      <li>fsuf->a</li><li>fsuf->ia</li><li>fsuf->iana</li><li>fsuf->ina</li><li>fsuf->illa</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>
