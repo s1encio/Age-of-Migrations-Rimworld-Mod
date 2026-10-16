@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>LR_Sling</defName>
+    <label>sling</label>
+    <description>A pair of braided cords with a leather pouch, used to hurl lead bullets or stones. Cheap, long-ranged and quick, but the bullets do little against armor.</description>
+    <techLevel>Medieval</techLevel>
+    <thingClass>AgeOfMigrations.ThingWithEquippedGraphic</thingClass>
+    <modExtensions>
+      <li Class="AgeOfMigrations.EquippedGraphicExtension">
+        <equippedGraphicData>
+          <texPath>Things/Item/Equipment/WeaponRanged/LR_Sling_Held</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </equippedGraphicData>
+      </li>
+    </modExtensions>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/LR_Sling</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>1800</WorkToMake>
+      <Mass>0.3</Mass>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.42</AccuracyMedium>
+      <AccuracyLong>0.3</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><Cloth>15</Cloth></costList>
+    <weaponTags><li>LR_RomanRanged</li><li>LR_Sling</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>LR_Sling_Proj</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>25.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+    <tools><li><label>cord</label><capacities><li>Blunt</li></capacities><power>4</power><cooldownTime>2</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>CraftingSpot</li><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>LR_Sling_Proj</defName>
+    <label>sling bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LR_Sling_Proj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>9</damageAmountBase>
+      <armorPenetrationBase>0.08</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>42</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>LR_Arcuballista</defName>
+    <label>arcuballista</label>
+    <description>A hand-held crossbow mentioned by late Roman writers for hunting and war. Slow to span, but it hits hard, goes through armor well and needs little training to aim.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/LR_Arcuballista</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>14000</WorkToMake>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><WoodLog>40</WoodLog><Steel>30</Steel></costList>
+    <weaponTags><li>LR_RomanRanged</li><li>LR_Arcuballista</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>LR_Arcuballista_Proj</defaultProjectile>
+        <warmupTime>1.8</warmupTime>
+        <range>29.9</range>
+        <soundCast>Bow_Large</soundCast>
+      </li>
+    </verbs>
+    <tools><li><label>stock</label><capacities><li>Blunt</li></capacities><power>8</power><cooldownTime>2</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>LR_Arcuballista_Proj</defName>
+    <label>arcuballista bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/LR_Arcuballista_Proj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>LR_Javelin</defName>
+    <label>spiculum</label>
+    <description>A heavy throwing javelin with a long iron shank and a small hardened point, thrown with a leather loop for extra range. The shank bends after a hit, so the enemy cannot throw it back.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/LR_Javelin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.6</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.4</AccuracyMedium>
+      <AccuracyLong>0.2</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><WoodLog>20</WoodLog><Steel>20</Steel></costList>
+    <weaponTags><li>LR_RomanRanged</li><li>LR_Javelin</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>LR_Javelin_Proj</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>15.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+    <tools><li><label>point</label><capacities><li>Stab</li></capacities><power>10</power><cooldownTime>2.2</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>LR_Javelin_Proj</defName>
+    <label>spiculum throw</label>
+    <graphicData>
+      <texPath>Things/Projectile/LR_Javelin_Proj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+      <armorPenetrationBase>0.28</armorPenetrationBase>
+      <stoppingPower>2</stoppingPower>
+      <speed>34</speed>
+    </projectile>
+  </ThingDef>
+</Defs>

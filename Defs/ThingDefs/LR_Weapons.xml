@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_Spatha</defName>
+    <label>spatha</label>
+    <description>A long, straight double-edged sword. By the fifth century it had replaced the short gladius as the sword of the Roman soldier, since its reach suited both cavalry and the looser infantry formations of the time.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_Spatha</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>14000</WorkToMake><Mass>1.6</Mass></statBases>
+    <costList><Steel>70</Steel></costList>
+    <weaponTags><li>MedievalMeleeAdvanced</li><li>LR_RomanMelee</li><li>LR_Spatha</li></weaponTags>
+    <tools><li><label>handle</label><capacities><li>Blunt</li></capacities><power>7</power><cooldownTime>2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>14</power><cooldownTime>2.4</cooldownTime></li><li><label>edge</label><capacities><li>Cut</li></capacities><power>16</power><cooldownTime>2.4</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_SpathaGilded</defName>
+    <label>gilded spatha</label>
+    <description>A spatha with a gilded hilt and pommel, fit for an officer.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_SpathaGilded</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>17000</WorkToMake><Mass>1.6</Mass></statBases>
+    <costList><Steel>70</Steel><Gold>10</Gold></costList>
+    <weaponTags><li>MedievalMeleeAdvanced</li><li>LR_RomanMelee</li><li>LR_SpathaGilded</li></weaponTags>
+    <tools><li><label>handle</label><capacities><li>Blunt</li></capacities><power>7</power><cooldownTime>2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>14</power><cooldownTime>2.4</cooldownTime></li><li><label>edge</label><capacities><li>Cut</li></capacities><power>16</power><cooldownTime>2.4</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_Hasta</defName>
+    <label>hasta</label>
+    <description>A long thrusting spear with a leaf-shaped iron head and a butt spike. The main weapon of the late Roman line infantry.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_Hasta</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>9000</WorkToMake><Mass>2.6</Mass></statBases>
+    <costList><Steel>35</Steel><WoodLog>30</WoodLog></costList>
+    <weaponTags><li>MedievalMeleeAdvanced</li><li>LR_RomanMelee</li><li>LR_Hasta</li></weaponTags>
+    <tools><li><label>shaft</label><capacities><li>Blunt</li></capacities><power>8</power><cooldownTime>2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>17</power><cooldownTime>2.5</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>LR_Plumbata</defName>
+    <label>plumbata</label>
+    <description>A short throwing dart with a barbed iron point and a lead weight behind it. Late Roman infantry carried several clipped inside their shields and threw them overhand before the lines met. The weight lets it punch through shields and armor.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/LR_Plumbata</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.4</AccuracyMedium>
+      <AccuracyLong>0.2</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><Steel>25</Steel><WoodLog>10</WoodLog></costList>
+    <weaponTags><li>LR_RomanRanged</li><li>LR_Plumbata</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>LR_Proj_Plumbata</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>19.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+    <tools><li><label>point</label><capacities><li>Stab</li></capacities><power>7</power><cooldownTime>2</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>LR_Proj_Plumbata</defName>
+    <label>plumbata</label>
+    <graphicData>
+      <texPath>Things/Projectile/LR_Plumbata</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>11</damageAmountBase>
+      <armorPenetrationBase>0.22</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>38</speed>
+    </projectile>
+  </ThingDef>
+</Defs>

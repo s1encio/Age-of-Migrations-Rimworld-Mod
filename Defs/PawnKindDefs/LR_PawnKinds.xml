@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="LR_WestBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>LR_WesternEmpire</defaultFactionType>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.03</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance>
+    <invNutrition>2.5</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Citizen</defName>
+    <label>citizen</label>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>0~0</weaponMoney>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Tiro</defName>
+    <label>recruit</label>
+    <combatPower>45</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_ParmaWest</li></apparelRequired>
+    <apparelMoney>0~250</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Funditor</defName>
+    <label>slinger</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li></apparelRequired>
+    <apparelMoney>0~250</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Sling</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Lanciarius</defName>
+    <label>skirmisher</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmet</li><li>LR_ParmaWest</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Plumbata</li><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Legionarius</defName>
+    <label>legionary</label>
+    <combatPower>85</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmet</li><li>LR_LoricaHamata</li><li>LR_ScutumWest</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Ballistarius</defName>
+    <label>crossbowman</label>
+    <combatPower>75</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmet</li><li>LR_LoricaHamata</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakWest</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Arcuballista</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakWest</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Centenarius</defName>
+    <label>centenarius</label>
+    <combatPower>130</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmetGilded</li><li>LR_LoricaSquamata</li><li>LR_CloakWest</li><li>LR_ScutumWest</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Mercator</defName>
+    <label>merchant</label><trader>true</trader>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_CloakWest</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_WestBase">
+    <defName>LR_West_Augustus</defName>
+    <label>augustus</label><factionLeader>true</factionLeader>
+    <combatPower>160</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_RidgeHelmetGilded</li><li>LR_LoricaSquamata</li><li>LR_CloakWest</li><li>LR_ScutumWest</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>5~7</initialWillRange>
+    <initialResistanceRange>25~35</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef Name="LR_EastBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>LR_EasternEmpire</defaultFactionType>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.03</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance>
+    <invNutrition>2.5</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Citizen</defName>
+    <label>citizen</label>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>0~0</weaponMoney>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Tiro</defName>
+    <label>recruit</label>
+    <combatPower>45</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_ParmaEast</li></apparelRequired>
+    <apparelMoney>0~250</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Funditor</defName>
+    <label>slinger</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li></apparelRequired>
+    <apparelMoney>0~250</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Sling</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Lanciarius</defName>
+    <label>skirmisher</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_ParmaEast</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Plumbata</li><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Legionarius</defName>
+    <label>legionary</label>
+    <combatPower>85</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_LoricaHamata</li><li>LR_ScutumEast</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Ballistarius</defName>
+    <label>crossbowman</label>
+    <combatPower>75</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_LoricaSquamataIron</li></apparelRequired>
+    <apparelMoney>0~400</apparelMoney>
+    <apparelTags><li>LR_CloakEast</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Arcuballista</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_CloakEast</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Centenarius</defName>
+    <label>centenarius</label>
+    <combatPower>130</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_LoricaSquamata</li><li>LR_CloakEast</li><li>LR_ScutumEast</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Mercator</defName>
+    <label>merchant</label><trader>true</trader>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_CloakEast</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_EastBase">
+    <defName>LR_East_Augustus</defName>
+    <label>basileus</label><factionLeader>true</factionLeader>
+    <combatPower>160</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicEast</li><li>LR_Spangenhelm</li><li>LR_LoricaSquamata</li><li>LR_CloakEast</li><li>LR_ScutumEast</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>5~7</initialWillRange>
+    <initialResistanceRange>25~35</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+</Defs>

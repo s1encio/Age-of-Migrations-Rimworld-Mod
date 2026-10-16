@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonRoman</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] [last]</li>
+      <li>first->Flavius</li><li>first->Aurelius</li><li>first->Valerius</li><li>first->Julius</li><li>first->Claudius</li><li>first->Marcus</li><li>first->Lucius</li><li>first->Gaius</li><li>first->Titus</li><li>first->Petronius</li><li>first->Anicius</li><li>first->Fabius</li><li>first->Decius</li><li>first->Septimius</li><li>first->Aemilius</li><li>first->Junius</li><li>first->Caecina</li><li>first->Sextus</li><li>first->Quintus</li><li>first->Gnaeus</li>
+      <li>last->Aetius</li><li>last->Constantius</li><li>last->Valentinianus</li><li>last->Theodosius</li><li>last->Marcianus</li><li>last->Leo</li><li>last->Zeno</li><li>last->Anthemius</li><li>last->Olybrius</li><li>last->Severus</li><li>last->Maximus</li><li>last->Avitus</li><li>last->Maiorianus</li><li>last->Rufinus</li><li>last->Heraclius</li><li>last->Gallus</li><li>last->Probus</li><li>last->Symmachus</li><li>last->Boethius</li><li>last->Marcellinus</li><li>last->Litorius</li><li>last->Bonifatius</li><li>last->Felix</li><li>last->Sebastianus</li><li>last->Paulinus</li><li>last->Ausonius</li><li>last->Claudianus</li><li>last->Sidonius</li><li>last->Belisarius</li><li>last->Narses</li><li>last->Basiliscus</li><li>last->Anastasius</li><li>last->Justinus</li><li>last->Germanus</li><li>last->Areobindus</li><li>last->Hypatius</li><li>last->Pompeius</li><li>last->Celer</li><li>last->Patricius</li><li>last->Florentius</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonRomanFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] [last]</li>
+      <li>first->Aelia</li><li>first->Galla</li><li>first->Licinia</li><li>first->Justa</li><li>first->Flavia</li><li>first->Anicia</li><li>first->Valeria</li><li>first->Julia</li><li>first->Fabia</li><li>first->Claudia</li><li>first->Aurelia</li><li>first->Petronia</li>
+      <li>last->Placidia</li><li>last->Eudocia</li><li>last->Eudoxia</li><li>last->Honoria</li><li>last->Pulcheria</li><li>last->Verina</li><li>last->Marina</li><li>last->Severa</li><li>last->Maxima</li><li>last->Valentina</li><li>last->Constantia</li><li>last->Theodosia</li><li>last->Marcella</li><li>last->Probina</li><li>last->Juliana</li><li>last->Serena</li><li>last->Ariadne</li><li>last->Euphemia</li><li>last->Melania</li><li>last->Fabiola</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_LeaderTitleMaker</defName>
+    <rulePack><rulesStrings>
+      <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+      <li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
+      <li>cultureLeaderNoun->emperor</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionWest</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Western Roman Empire</li>
+      <li>r_name->Pars Occidentis</li>
+      <li>r_name->Praetorian Prefecture of Gaul</li>
+      <li>r_name->Praetorian Prefecture of Italy</li>
+      <li>r_name->Diocese of Hispania</li>
+      <li>r_name->Diocese of Africa</li>
+      <li>r_name->Imperium Occidentale</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionEast</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Eastern Roman Empire</li>
+      <li>r_name->Pars Orientis</li>
+      <li>r_name->Praetorian Prefecture of the East</li>
+      <li>r_name->Praetorian Prefecture of Illyricum</li>
+      <li>r_name->Diocese of Thrace</li>
+      <li>r_name->Diocese of Egypt</li>
+      <li>r_name->Imperium Orientale</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementWest</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=6)->[town]</li>
+      <li>r_name->Castra [town]</li>
+      <li>r_name->[town] Nova</li>
+      <li>town->Ravenna</li><li>town->Mediolanum</li><li>town->Arelate</li><li>town->Treveri</li><li>town->Lugdunum</li><li>town->Burdigala</li><li>town->Tolosa</li><li>town->Narbo</li><li>town->Aquileia</li><li>town->Ticinum</li><li>town->Augusta Taurinorum</li><li>town->Corduba</li><li>town->Tarraco</li><li>town->Emerita</li><li>town->Carthago</li><li>town->Hippo Regius</li><li>town->Massilia</li><li>town->Ostia</li><li>town->Verona</li><li>town->Placentia</li><li>town->Bononia</li><li>town->Florentia</li><li>town->Neapolis</li><li>town->Capua</li><li>town->Genua</li><li>town->Augusta Vindelicum</li><li>town->Lutetia</li><li>town->Remi</li><li>town->Ambianum</li><li>town->Caesaraugusta</li><li>town->Hispalis</li><li>town->Leptis Magna</li><li>town->Salona</li><li>town->Tergeste</li><li>town->Comum</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementEast</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=6)->[town]</li>
+      <li>r_name->Castra [town]</li>
+      <li>r_name->[town] Nova</li>
+      <li>town->Constantinopolis</li><li>town->Thessalonica</li><li>town->Antiochia</li><li>town->Alexandria</li><li>town->Nicaea</li><li>town->Nicomedia</li><li>town->Ephesus</li><li>town->Smyrna</li><li>town->Caesarea</li><li>town->Tarsus</li><li>town->Edessa</li><li>town->Dara</li><li>town->Amida</li><li>town->Trapezus</li><li>town->Sinope</li><li>town->Ancyra</li><li>town->Hadrianopolis</li><li>town->Philippopolis</li><li>town->Serdica</li><li>town->Naissus</li><li>town->Sirmium</li><li>town->Dyrrachium</li><li>town->Corinthus</li><li>town->Athenae</li><li>town->Gaza</li><li>town->Tyrus</li><li>town->Berytus</li><li>town->Damascus</li><li>town->Palmyra</li><li>town->Pelusium</li><li>town->Chalcedon</li><li>town->Cyzicus</li><li>town->Seleucia</li><li>town->Iconium</li><li>town->Melitene</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

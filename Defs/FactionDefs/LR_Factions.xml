@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_WesternEmpire</defName>
+    <label>Western Roman Empire</label>
+    <description>The western half of the Roman Empire, ruled from Ravenna. Its legions are worn thin by civil wars and endless barbarian incursions, and its generals are often more powerful than the emperor. Still, its soldiers fight in disciplined lines behind oval shields, throwing plumbatae before closing with spear and spatha.</description>
+    <pawnSingular>Roman</pawnSingular>
+    <pawnsPlural>Romans</pawnsPlural>
+    <listOrderPriority>30</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>40</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>augustus</leaderTitle>
+    <factionIconPath>World/LR_FactionIcon</factionIconPath>
+    <settlementTexturePath>World/LR_Settlement</settlementTexturePath>
+    <colorSpectrum><li>(0.62, 0.16, 0.13)</li><li>(0.75, 0.22, 0.16)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionWest</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementWest</settlementNameMaker>
+    <allowedCultures><li>LR_RomanCulture</li></allowedCultures>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_West_Legionarius</basicMemberKind>
+    <fixedLeaderKinds><li>LR_West_Augustus</li></fixedLeaderKinds>
+    <structureMemeWeights>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">3</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+    </disallowedMemes>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-40</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 100)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_West_Tiro>30</LR_West_Tiro><LR_West_Legionarius>30</LR_West_Legionarius><LR_West_Lanciarius>15</LR_West_Lanciarius><LR_West_Funditor>12</LR_West_Funditor><LR_West_Ballistarius>6</LR_West_Ballistarius><LR_West_Centenarius>3</LR_West_Centenarius></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>40</commonality>
+        <options><LR_West_Legionarius>40</LR_West_Legionarius><LR_West_Lanciarius>15</LR_West_Lanciarius><LR_West_Ballistarius>10</LR_West_Ballistarius><LR_West_Centenarius>6</LR_West_Centenarius></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_West_Funditor>20</LR_West_Funditor><LR_West_Lanciarius>20</LR_West_Lanciarius><LR_West_Ballistarius>10</LR_West_Ballistarius><LR_West_Tiro>10</LR_West_Tiro></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_West_Citizen>30</LR_West_Citizen><LR_West_Tiro>5</LR_West_Tiro><LR_West_Legionarius>3</LR_West_Legionarius><LR_West_Funditor>2</LR_West_Funditor></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_West_Mercator>1</LR_West_Mercator></traders>
+        <carriers><Muffalo>6</Muffalo><Dromedary>5</Dromedary><Alpaca>2.5</Alpaca></carriers>
+        <guards><LR_West_Legionarius>15</LR_West_Legionarius><LR_West_Lanciarius>8</LR_West_Lanciarius><LR_West_Ballistarius>6</LR_West_Ballistarius><LR_West_Tiro>6</LR_West_Tiro></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_West_Citizen>25</LR_West_Citizen><LR_West_Tiro>20</LR_West_Tiro><LR_West_Legionarius>30</LR_West_Legionarius><LR_West_Lanciarius>10</LR_West_Lanciarius><LR_West_Funditor>8</LR_West_Funditor><LR_West_Ballistarius>8</LR_West_Ballistarius><LR_West_Centenarius>4</LR_West_Centenarius></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_EasternEmpire</defName>
+    <label>Eastern Roman Empire</label>
+    <description>The eastern half of the Roman Empire, ruled from Constantinople behind its great walls. Richer and more stable than the West, it can afford better-equipped armies, and it prefers to soften its enemies with crossbows and missiles before its heavily armored infantry advance.</description>
+    <pawnSingular>Roman</pawnSingular>
+    <pawnsPlural>Romans</pawnsPlural>
+    <listOrderPriority>30</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>41</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>basileus</leaderTitle>
+    <factionIconPath>World/LR_FactionIcon</factionIconPath>
+    <settlementTexturePath>World/LR_Settlement</settlementTexturePath>
+    <colorSpectrum><li>(0.36, 0.17, 0.42)</li><li>(0.45, 0.22, 0.52)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionEast</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementEast</settlementNameMaker>
+    <allowedCultures><li>LR_RomanCulture</li></allowedCultures>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_East_Legionarius</basicMemberKind>
+    <fixedLeaderKinds><li>LR_East_Augustus</li></fixedLeaderKinds>
+    <structureMemeWeights>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">3</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+    </disallowedMemes>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-40</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 100)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_East_Tiro>20</LR_East_Tiro><LR_East_Legionarius>30</LR_East_Legionarius><LR_East_Lanciarius>12</LR_East_Lanciarius><LR_East_Funditor>8</LR_East_Funditor><LR_East_Ballistarius>15</LR_East_Ballistarius><LR_East_Centenarius>4</LR_East_Centenarius></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>40</commonality>
+        <options><LR_East_Legionarius>35</LR_East_Legionarius><LR_East_Ballistarius>20</LR_East_Ballistarius><LR_East_Lanciarius>10</LR_East_Lanciarius><LR_East_Centenarius>6</LR_East_Centenarius></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_East_Ballistarius>30</LR_East_Ballistarius><LR_East_Funditor>15</LR_East_Funditor><LR_East_Lanciarius>15</LR_East_Lanciarius><LR_East_Tiro>10</LR_East_Tiro></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_East_Citizen>30</LR_East_Citizen><LR_East_Tiro>5</LR_East_Tiro><LR_East_Legionarius>3</LR_East_Legionarius><LR_East_Funditor>2</LR_East_Funditor></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_East_Mercator>1</LR_East_Mercator></traders>
+        <carriers><Muffalo>6</Muffalo><Dromedary>5</Dromedary><Alpaca>2.5</Alpaca></carriers>
+        <guards><LR_East_Legionarius>15</LR_East_Legionarius><LR_East_Lanciarius>8</LR_East_Lanciarius><LR_East_Ballistarius>6</LR_East_Ballistarius><LR_East_Tiro>6</LR_East_Tiro></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_East_Citizen>25</LR_East_Citizen><LR_East_Tiro>20</LR_East_Tiro><LR_East_Legionarius>30</LR_East_Legionarius><LR_East_Lanciarius>10</LR_East_Lanciarius><LR_East_Funditor>8</LR_East_Funditor><LR_East_Ballistarius>8</LR_East_Ballistarius><LR_East_Centenarius>4</LR_East_Centenarius></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

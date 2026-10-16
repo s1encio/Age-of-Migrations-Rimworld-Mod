@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_RidgeHelmet</defName>
+    <label>ridge helmet</label>
+    <description>A late Roman helmet made of two iron halves joined by a central ridge, with cheek pieces and a nose guard. Cheap to make in large numbers, it became the standard helmet of the late legions.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_RidgeHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>5000</WorkToMake><MaxHitPoints>120</MaxHitPoints><Mass>1.5</Mass><ArmorRating_Sharp>0.55</ArmorRating_Sharp><ArmorRating_Blunt>0.25</ArmorRating_Blunt><ArmorRating_Heat>0.12</ArmorRating_Heat><Insulation_Cold>2</Insulation_Cold><EquipDelay>1.5</EquipDelay></statBases>
+    <costList><Steel>50</Steel></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_RidgeHelmet/LR_RidgeHelmet</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_West</li><li>LR_Roman</li><li>LR_RidgeHelmet</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_RidgeHelmetGilded</defName>
+    <label>gilded ridge helmet</label>
+    <description>A ridge helmet covered in gilded silver sheet and topped with a red crest. Worn by officers and guardsmen who could afford to show their rank.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_RidgeHelmetGilded</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>8000</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>1.7</Mass><ArmorRating_Sharp>0.6</ArmorRating_Sharp><ArmorRating_Blunt>0.28</ArmorRating_Blunt><ArmorRating_Heat>0.14</ArmorRating_Heat><Insulation_Cold>2</Insulation_Cold><EquipDelay>1.5</EquipDelay></statBases>
+    <costList><Steel>50</Steel><Gold>15</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.05</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_RidgeHelmetGilded/LR_RidgeHelmetGilded</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_West</li><li>LR_Roman</li><li>LR_RidgeHelmetGilded</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_Spangenhelm</defName>
+    <label>spangenhelm</label>
+    <description>A conical helmet built from iron plates riveted between gilded bands, with a mail curtain protecting the neck. Popular in the eastern armies.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_Spangenhelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>6500</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>2.2</Mass><ArmorRating_Sharp>0.6</ArmorRating_Sharp><ArmorRating_Blunt>0.3</ArmorRating_Blunt><ArmorRating_Heat>0.14</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2</EquipDelay></statBases>
+    <costList><Steel>65</Steel></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_Spangenhelm/LR_Spangenhelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_East</li><li>LR_Roman</li><li>LR_Spangenhelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_TunicWest</defName>
+    <label>western tunic</label>
+    <description>A long-sleeved red wool tunic, decorated with dark stripes and woven roundels in the late Roman fashion.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_TunicWest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.5</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>2</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_TunicWest/LR_TunicWest</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_West</li><li>LR_Roman</li><li>LR_TunicWest</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_TunicEast</defName>
+    <label>eastern tunic</label>
+    <description>A white wool tunic with purple stripes and roundels, as worn by soldiers of the eastern empire.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_TunicEast</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.5</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>2</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_TunicEast/LR_TunicEast</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_East</li><li>LR_Roman</li><li>LR_TunicEast</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_LoricaHamata</defName>
+    <label>lorica hamata</label>
+    <description>A shirt of thousands of interlocking iron rings. Flexible and reliable, it stops cuts well but does little against heavy blows.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_LoricaHamata</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases><WorkToMake>16000</WorkToMake><MaxHitPoints>220</MaxHitPoints><Mass>10</Mass><ArmorRating_Sharp>0.75</ArmorRating_Sharp><ArmorRating_Blunt>0.2</ArmorRating_Blunt><ArmorRating_Heat>0.15</ArmorRating_Heat><Insulation_Cold>2</Insulation_Cold><EquipDelay>4</EquipDelay></statBases>
+    <costList><Steel>110</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.15</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_LoricaHamata/LR_LoricaHamata</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>LR_Roman</li><li>LR_Roman</li><li>LR_LoricaHamata</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_LoricaSquamata</defName>
+    <label>gilded lorica squamata</label>
+    <description>Scale armor of gilded bronze plates sewn in overlapping rows. Heavier than mail, but it spreads blows better, and it shines like a fortune in the sun. Officer's kit.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_LoricaSquamata</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases><WorkToMake>22000</WorkToMake><MaxHitPoints>240</MaxHitPoints><Mass>12</Mass><ArmorRating_Sharp>0.85</ArmorRating_Sharp><ArmorRating_Blunt>0.3</ArmorRating_Blunt><ArmorRating_Heat>0.18</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>4</EquipDelay></statBases>
+    <costList><Steel>100</Steel><Gold>30</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.2</MoveSpeed><SocialImpact>0.1</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_LoricaSquamata/LR_LoricaSquamata</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>LR_Roman</li><li>LR_Roman</li><li>LR_LoricaSquamata</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_LoricaSquamataIron</defName>
+    <label>lorica squamata</label>
+    <description>Scale armor of iron plates sewn in overlapping rows. Heavier than mail, but it spreads blows better.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_LoricaSquamataIron</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases><WorkToMake>20000</WorkToMake><MaxHitPoints>240</MaxHitPoints><Mass>13</Mass><ArmorRating_Sharp>0.85</ArmorRating_Sharp><ArmorRating_Blunt>0.3</ArmorRating_Blunt><ArmorRating_Heat>0.18</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>4</EquipDelay></statBases>
+    <costList><Steel>140</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.2</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_LoricaSquamataIron/LR_LoricaSquamataIron</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>LR_Roman</li><li>LR_Roman</li><li>LR_LoricaSquamataIron</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_CloakWest</defName>
+    <label>western military cloak</label>
+    <description>A heavy red wool cloak, pinned at the right shoulder with a crossbow brooch.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_CloakWest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>2600</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>1.4</Mass><ArmorRating_Sharp>0.06</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>16</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>70</Cloth><Gold>2</Gold></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_CloakWest/LR_CloakWest</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_West</li><li>LR_Roman</li><li>LR_CloakWest</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_CloakEast</defName>
+    <label>eastern military cloak</label>
+    <description>A heavy purple-dyed wool cloak, pinned at the right shoulder with a crossbow brooch.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_CloakEast</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>2600</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>1.4</Mass><ArmorRating_Sharp>0.06</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>16</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>70</Cloth><Gold>2</Gold></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_CloakEast/LR_CloakEast</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_East</li><li>LR_Roman</li><li>LR_CloakEast</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

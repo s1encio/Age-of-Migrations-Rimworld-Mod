@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Own layer for shields: drawn over cloaks, and never conflicts with armor or clothes. -->
+  <ApparelLayerDef>
+    <defName>LR_Shield</defName>
+    <label>shield</label>
+    <drawOrder>900</drawOrder>
+  </ApparelLayerDef>
+</Defs>

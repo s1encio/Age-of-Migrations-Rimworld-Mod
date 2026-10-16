@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ScutumWest</defName>
+    <label>western oval shield</label>
+    <description>A large oval shield of glued wooden planks with an iron boss, painted red with gold rings and the Chi-Rho. Its size makes it very good at stopping arrows and bullets from the front, at the cost of some speed. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ScutumWest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Mass>4.5</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>45</WoodLog><Steel>15</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.1</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ScutumWest/LR_ScutumWest</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_West</li><li>LR_Shield</li><li>LR_ScutumWest</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.75</rangedBlockChance>
+        <meleeBlockChance>0.25</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ScutumEast</defName>
+    <label>eastern oval shield</label>
+    <description>A large oval shield of glued wooden planks with an iron boss, painted blue with white rings and the Chi-Rho. Its size makes it very good at stopping arrows and bullets from the front, at the cost of some speed. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ScutumEast</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Mass>4.5</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>45</WoodLog><Steel>15</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.1</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ScutumEast/LR_ScutumEast</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_East</li><li>LR_Shield</li><li>LR_ScutumEast</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.75</rangedBlockChance>
+        <meleeBlockChance>0.25</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ParmaWest</defName>
+    <label>western round shield</label>
+    <description>A smaller round shield with an iron rim and boss, painted with red and white rings. Lighter and quicker in melee than the oval shield, but it covers less against missiles. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ParmaWest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>30</WoodLog><Steel>20</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ParmaWest/LR_ParmaWest</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_West</li><li>LR_Shield</li><li>LR_ParmaWest</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.6</rangedBlockChance>
+        <meleeBlockChance>0.32</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ParmaEast</defName>
+    <label>eastern round shield</label>
+    <description>A smaller round shield with an iron rim and boss, painted purple with a golden star. Lighter and quicker in melee than the oval shield, but it covers less against missiles. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ParmaEast</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>30</WoodLog><Steel>20</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ParmaEast/LR_ParmaEast</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_East</li><li>LR_Shield</li><li>LR_ParmaEast</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.6</rangedBlockChance>
+        <meleeBlockChance>0.32</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
