@@ -1,18 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Build for RimWorld 1.7 (default):  dotnet build -c Release
+    Build for RimWorld 1.6:            dotnet build -c Release -p:RimWorldVersion=1.6
+    The DLL goes to <mod>/<version>/Assemblies, and LoadFolders.xml picks the right one.
+  -->
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <RimWorldVersion Condition="'$(RimWorldVersion)' == ''">1.7</RimWorldVersion>
+    <!-- RimWorld 1.7 runs on .NET 10; 1.6 and older on .NET Framework 4.8 -->
+    <TargetFramework Condition="'$(RimWorldVersion)' == '1.7'">net10.0</TargetFramework>
+    <TargetFramework Condition="'$(RimWorldVersion)' != '1.7'">net48</TargetFramework>
     <LangVersion>latest</LangVersion>
     <RootNamespace>AgeOfMigrations</RootNamespace>
     <AssemblyName>AgeOfMigrations</AssemblyName>
-    <OutputPath>..\..\Assemblies\</OutputPath>
+    <OutputPath>..\..\$(RimWorldVersion)\Assemblies\</OutputPath>
+    <IntermediateOutputPath>obj\$(RimWorldVersion)\</IntermediateOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
     <Optimize>true</Optimize>
     <DebugType>none</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- RimWorld reference libraries, downloaded automatically on build -->
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" ExcludeAssets="runtime" />
-    <PackageReference Include="Lib.Harmony" Version="2.3.*" ExcludeAssets="runtime" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimWorldVersion).*-*" ExcludeAssets="runtime" />
+    <PackageReference Include="Lib.Harmony" Version="2.*" ExcludeAssets="runtime" />
   </ItemGroup>
 </Project>

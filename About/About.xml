@@ -3,7 +3,7 @@
   <name>Age of Migrations: Late Rome</name>
   <author>syneezvetik</author>
   <packageId>syneezvetik.ageofmigrations</packageId>
-  <supportedVersions><li>1.6</li></supportedVersions>
+  <supportedVersions><li>1.6</li><li>1.7</li></supportedVersions>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
@@ -11,8 +11,18 @@
       <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
     </li>
+    <li>
+      <packageId>MemeGoddess.GiddyUp</packageId>
+      <displayName>Giddy-Up 2 - Continued</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3674332861</steamWorkshopUrl>
+      <downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3674332861</downloadUrl>
+    </li>
   </modDependencies>
-  <loadAfter><li>brrainz.harmony</li></loadAfter>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>MemeGoddess.GiddyUp</li>
+    <li>Owlchemist.GiddyUp</li>
+  </loadAfter>
   <description>The armies of the late Roman Empire, around 400-450 AD, in RimWorld style.
 
 Western Empire:
@@ -31,7 +41,7 @@ Shared:
 
 Armor and weapons are made at the smithy (needs Smithing), clothes at the tailoring bench.
 
-Cavalry: with Giddy-Up 2 installed, Roman light cavalry, horse archers and cataphracts ride into battle, and your colonists can ride horses too. Without it, they fight on foot.
+Cavalry: with Giddy-Up 2 - Continued installed, Roman light cavalry, horse archers and cataphracts ride into battle, and your colonists can ride horses too. Without it, they fight on foot.
 
 Work in progress: more peoples of the migration era are coming.</description>
 </ModMetaData>
