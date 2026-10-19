@@ -24,5 +24,7 @@
     <!-- RimWorld reference libraries, downloaded automatically on build -->
     <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimWorldVersion).*-*" ExcludeAssets="runtime" />
     <PackageReference Include="Lib.Harmony" Version="2.*" ExcludeAssets="runtime" />
+    <!-- lets the 1.6 (.NET Framework) version build on any machine, including GitHub -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" Condition="'$(TargetFramework)' == 'net48'" PrivateAssets="all" />
   </ItemGroup>
 </Project>

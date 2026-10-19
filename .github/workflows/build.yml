@@ -1,0 +1,35 @@
+# Builds the mod's code for RimWorld 1.6 and 1.7 after every change to Source/,
+# and saves the DLLs into 1.6/Assemblies and 1.7/Assemblies.
+name: Build assemblies
+
+on:
+  push:
+    branches: [main]
+    paths: ['Source/**', '.github/workflows/build.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build for RimWorld 1.7
+        run: dotnet build Source/AgeOfMigrations/AgeOfMigrations.csproj -c Release -p:RimWorldVersion=1.7
+
+      - name: Build for RimWorld 1.6
+        run: dotnet build Source/AgeOfMigrations/AgeOfMigrations.csproj -c Release -p:RimWorldVersion=1.6
+
+      - name: Save the DLLs to the repo
+        run: |
+          git config user.name "s1encio"
+          git config user.email "urlocalkgbagent@gmail.com"
+          git add -f 1.6/Assemblies/AgeOfMigrations.dll 1.7/Assemblies/AgeOfMigrations.dll
+          git diff --cached --quiet || (git commit -m "Build assemblies for 1.6 and 1.7 [skip ci]" && git push)
