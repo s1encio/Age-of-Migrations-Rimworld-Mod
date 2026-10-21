@@ -89,6 +89,75 @@
     <maxStackSize>1</maxStackSize>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_Loot_Gold</defName>
+    <thing>Gold</thing>
+    <maxStackSize>60</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Citizen</defName>
+    <pawnKindDef>LR_West_Citizen</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Legionarius</defName>
+    <pawnKindDef>LR_West_Legionarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Ballistarius</defName>
+    <pawnKindDef>LR_West_Ballistarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Lanciarius</defName>
+    <pawnKindDef>LR_West_Lanciarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Funditor</defName>
+    <pawnKindDef>LR_West_Funditor</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Mercator</defName>
+    <pawnKindDef>LR_West_Mercator</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Centenarius</defName>
+    <pawnKindDef>LR_West_Centenarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_West_Eques</defName>
+    <pawnKindDef>LR_West_Eques</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Citizen</defName>
+    <pawnKindDef>LR_East_Citizen</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Legionarius</defName>
+    <pawnKindDef>LR_East_Legionarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Ballistarius</defName>
+    <pawnKindDef>LR_East_Ballistarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Lanciarius</defName>
+    <pawnKindDef>LR_East_Lanciarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Funditor</defName>
+    <pawnKindDef>LR_East_Funditor</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Mercator</defName>
+    <pawnKindDef>LR_East_Mercator</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Centenarius</defName>
+    <pawnKindDef>LR_East_Centenarius</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Eques</defName>
+    <pawnKindDef>LR_East_Eques</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_HorsePawn</defName>
     <pawnKindDef>Horse</pawnKindDef>
   </KCSG.SymbolDef>
