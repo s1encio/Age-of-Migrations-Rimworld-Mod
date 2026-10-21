@@ -126,6 +126,10 @@
     <pawnKindDef>LR_West_Eques</pawnKindDef>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_P_West_Augustus</defName>
+    <pawnKindDef>LR_West_Augustus</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_P_East_Citizen</defName>
     <pawnKindDef>LR_East_Citizen</pawnKindDef>
   </KCSG.SymbolDef>
@@ -156,6 +160,10 @@
   <KCSG.SymbolDef>
     <defName>LR_P_East_Eques</defName>
     <pawnKindDef>LR_East_Eques</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_East_Augustus</defName>
+    <pawnKindDef>LR_East_Augustus</pawnKindDef>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_HorsePawn</defName>
