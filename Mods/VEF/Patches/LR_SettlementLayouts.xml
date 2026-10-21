@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="LR_WesternEmpire"]</xpath>
+    <value>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromlayouts><li>LR_West_Castra_1</li><li>LR_West_Castra_2</li><li>LR_West_Castra_3</li><li>LR_West_Oppidum_1</li><li>LR_West_Oppidum_2</li><li>LR_West_Oppidum_3</li></chooseFromlayouts>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="LR_EasternEmpire"]</xpath>
+    <value>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromlayouts><li>LR_East_Castra_1</li><li>LR_East_Castra_2</li><li>LR_East_Castra_3</li><li>LR_East_Oppidum_1</li><li>LR_East_Oppidum_2</li><li>LR_East_Oppidum_3</li></chooseFromlayouts>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </value>
+  </Operation>
+</Patch>

@@ -275,7 +275,7 @@
     </graphicData>
     <size>(1,1)</size>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <fillPercent>0.5</fillPercent>
     <pathCost>42</pathCost>
     <rotatable>false</rotatable>

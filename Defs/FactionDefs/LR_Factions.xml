@@ -132,12 +132,6 @@
         <options><LR_West_Citizen>25</LR_West_Citizen><LR_West_Tiro>20</LR_West_Tiro><LR_West_Legionarius>30</LR_West_Legionarius><LR_West_Lanciarius>10</LR_West_Lanciarius><LR_West_Funditor>8</LR_West_Funditor><LR_West_Ballistarius>8</LR_West_Ballistarius><LR_West_Centenarius>4</LR_West_Centenarius></options>
       </li>
     </pawnGroupMakers>
-    <modExtensions>
-      <li Class="KCSG.CustomGenOption">
-        <chooseFromlayouts><li>LR_West_Castra_1</li><li>LR_West_Castra_2</li><li>LR_West_Castra_3</li><li>LR_West_Oppidum_1</li><li>LR_West_Oppidum_2</li><li>LR_West_Oppidum_3</li></chooseFromlayouts>
-        <preventBridgeable>true</preventBridgeable>
-      </li>
-    </modExtensions>
   </FactionDef>
   <FactionDef ParentName="FactionBase">
     <defName>LR_EasternEmpire</defName>
@@ -271,11 +265,5 @@
         <options><LR_East_Citizen>25</LR_East_Citizen><LR_East_Tiro>20</LR_East_Tiro><LR_East_Legionarius>30</LR_East_Legionarius><LR_East_Lanciarius>10</LR_East_Lanciarius><LR_East_Funditor>8</LR_East_Funditor><LR_East_Ballistarius>8</LR_East_Ballistarius><LR_East_Centenarius>4</LR_East_Centenarius></options>
       </li>
     </pawnGroupMakers>
-    <modExtensions>
-      <li Class="KCSG.CustomGenOption">
-        <chooseFromlayouts><li>LR_East_Castra_1</li><li>LR_East_Castra_2</li><li>LR_East_Castra_3</li><li>LR_East_Oppidum_1</li><li>LR_East_Oppidum_2</li><li>LR_East_Oppidum_3</li></chooseFromlayouts>
-        <preventBridgeable>true</preventBridgeable>
-      </li>
-    </modExtensions>
   </FactionDef>
 </Defs>
