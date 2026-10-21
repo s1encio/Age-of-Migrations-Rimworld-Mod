@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_RomanWall</defName>
+    <label>Roman stone wall</label>
+    <description>A thick wall of dressed stone blocks with bands of red brick between the courses, in the late Roman style (opus mixtum), topped with a walkway and battlements. Very sturdy. Capable of holding a roof.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_RomanWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_RomanWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>520</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>8</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2006</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands><li>Door</li></relatedBuildCommands>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_TentWall</defName>
+    <label>tent canvas</label>
+    <description>Heavy canvas or leather stretched between poles, as used for the leather tents (papiliones) of a Roman marching camp. Quick to build and to move, but flammable and weak.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_TentWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_TentWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <WorkToBuild>70</WorkToBuild>
+      <Flammability>1.4</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <stuffCategories><li>Fabric</li><li>Leathery</li></stuffCategories>
+    <costStuffCount>4</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2007</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands><li>Door</li></relatedBuildCommands>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_Palisade</defName>
+    <label>camp palisade</label>
+    <description>A row of sharpened wooden stakes (pila muralia), driven into the rampart of a Roman marching camp every evening. Cheap and fast to build. Capable of holding a roof.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_Palisade_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags><li>Fences</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_Palisade_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>170</MaxHitPoints>
+      <WorkToBuild>160</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <costList><WoodLog>4</WoodLog></costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2008</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands><li>Door</li></relatedBuildCommands>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_Column</defName>
+    <label>Roman column</label>
+    <description>A fluted stone column with an Ionic capital. Holds up a roof and makes any hall look like a basilica.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_Column</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.25</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>200</MaxHitPoints><WorkToBuild>1400</WorkToBuild><Beauty>8</Beauty><Mass>40</Mass></statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <designationCategory>Structure</designationCategory>
+    <holdsRoof>true</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_StandardWest</defName>
+    <label>western standard</label>
+    <description>A red vexillum with a golden eagle, the standard of a western Roman unit. Soldiers take great pride in it.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_StandardWest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>100</MaxHitPoints><WorkToBuild>2500</WorkToBuild><Beauty>12</Beauty><Mass>8</Mass></statBases>
+    <costList><WoodLog>15</WoodLog><Cloth>25</Cloth><Gold>5</Gold></costList>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_StandardEast</defName>
+    <label>eastern labarum</label>
+    <description>A purple labarum bearing the Chi-Rho, the Christian standard carried by eastern Roman armies since Constantine.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_StandardEast</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>100</MaxHitPoints><WorkToBuild>2500</WorkToBuild><Beauty>12</Beauty><Mass>8</Mass></statBases>
+    <costList><WoodLog>15</WoodLog><Cloth>25</Cloth><Gold>5</Gold></costList>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_EmperorStatue</defName>
+    <label>emperor statue</label>
+    <description>A life-size statue of an emperor in a toga, crowned with a laurel wreath, on a marble pedestal. Every Roman town square had one.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_EmperorStatue</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.5</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>9000</WorkToBuild><Beauty>30</Beauty><Mass>120</Mass></statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>80</costStuffCount>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_Amphorae</defName>
+    <label>amphorae</label>
+    <description>A stack of clay amphorae for wine, oil and garum. Decorative, and provides a little cover.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_Amphorae</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>60</MaxHitPoints><WorkToBuild>600</WorkToBuild><Beauty>2</Beauty><Mass>15</Mass></statBases>
+    <costList><BlocksSandstone>15</BlocksSandstone></costList>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_Brazier</defName>
+    <label>Roman brazier</label>
+    <description>A bronze bowl of burning wood on three legs. Lights and warms its surroundings. Needs wood to keep burning.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_Brazier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>100</MaxHitPoints><WorkToBuild>800</WorkToBuild><Beauty>3</Beauty><Mass>12</Mass></statBases>
+    <costList><Steel>20</Steel><WoodLog>10</WoodLog></costList>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>2.2</fuelConsumptionRate>
+        <fuelCapacity>20.0</fuelCapacity>
+        <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>11</glowRadius>
+        <glowColor>(252,187,113,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>4</heatPerSecond>
+        <heatPushMaxTemperature>23</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.45</fireSize>
+        <offset>(0,0,0.12)</offset>
+      </li></comps>
+  </ThingDef>
+</Defs>

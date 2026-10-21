@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TerrainDef ParentName="FloorBase">
+    <defName>LR_MosaicFloor</defName>
+    <label>Roman mosaic</label>
+    <description>A floor of thousands of small stone tesserae set in geometric patterns and rosettes. Slow to lay, but beautiful.</description>
+    <texturePath>Terrain/LR/LR_MosaicFloor</texturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>252</renderPrecedence>
+    <statBases>
+      <WorkToBuild>3200</WorkToBuild>
+      <Beauty>5</Beauty>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <costList><BlocksMarble>5</BlocksMarble><BlocksSlate>2</BlocksSlate></costList>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites><constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </TerrainDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>LR_TerracottaFloor</defName>
+    <label>terracotta tiles</label>
+    <description>Large square tiles of fired red clay, the everyday floor of Roman houses and barracks.</description>
+    <texturePath>Terrain/LR/LR_TerracottaFloor</texturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>251</renderPrecedence>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+      <Beauty>2</Beauty>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <costList><BlocksSandstone>4</BlocksSandstone></costList>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+  </TerrainDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>LR_RomanRoad</defName>
+    <label>Roman road</label>
+    <description>Large fitted paving stones of dark basalt, laid on a bed of gravel. Walking on it is fast and easy.</description>
+    <texturePath>Terrain/LR/LR_RomanRoad</texturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>249</renderPrecedence>
+    <statBases>
+      <WorkToBuild>700</WorkToBuild>
+      <Beauty>1</Beauty>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <costList><BlocksSlate>4</BlocksSlate></costList>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+  </TerrainDef>
+</Defs>
