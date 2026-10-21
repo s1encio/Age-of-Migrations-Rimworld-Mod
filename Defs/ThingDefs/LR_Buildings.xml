@@ -358,27 +358,28 @@
   <ThingDef ParentName="BuildingBase">
     <defName>LR_EmperorStatue</defName>
     <label>emperor statue</label>
-    <description>A life-size statue of an emperor in a toga, crowned with a laurel wreath, on a marble pedestal. Every Roman town square had one.</description>
+    <description>A colossal marble statue of an emperor in a muscled cuirass and general's cloak, his right arm raised to address his troops, a laurel wreath on his head. It stands on a tall pedestal with a gilded inscription. Every Roman forum had one.</description>
     <graphicData>
       <texPath>Things/Building/LR/LR_EmperorStatue</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5,1.5)</drawSize>
-      <drawOffset>(0,0,0.21)</drawOffset>
+      <drawSize>(3.6,3.6)</drawSize>
+      <drawOffset>(0,0,0.67)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
-    <size>(1,1)</size>
+    <size>(2,2)</size>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.5</fillPercent>
+    <passability>Impassable</passability>
+    <fillPercent>0.75</fillPercent>
     <pathCost>42</pathCost>
     <rotatable>false</rotatable>
-    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>9000</WorkToBuild><Beauty>30</Beauty><Mass>120</Mass></statBases>
+    <statBases><MaxHitPoints>600</MaxHitPoints><WorkToBuild>18000</WorkToBuild><Beauty>55</Beauty><Mass>400</Mass></statBases>
     <stuffCategories><li>Stony</li></stuffCategories>
-    <costStuffCount>80</costStuffCount>
+    <costStuffCount>180</costStuffCount>
     <designationCategory>Furniture</designationCategory>
     <holdsRoof>false</holdsRoof>
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
     <comps></comps>
   </ThingDef>
