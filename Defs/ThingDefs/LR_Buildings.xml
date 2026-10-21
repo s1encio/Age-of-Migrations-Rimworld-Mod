@@ -3,8 +3,8 @@
   <ThingDef ParentName="DoorBase">
     <defName>LR_RomanGate</defName>
     <label>Roman gate</label>
-    <description>A stone gateway under a wide arch with a battlemented top, closed by heavy iron-banded wooden doors. The kind of gate that guarded every Roman town. Three cells wide; needs walls on either side.</description>
-    <thingClass>Building_MultiTileDoor</thingClass>
+    <description>A stone gateway under a wide arch with a battlemented top, closed by heavy iron-banded wooden doors. The kind of gate that guarded every Roman town. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
     <statBases>
       <WorkToBuild>6500</WorkToBuild>
       <MaxHitPoints>1100</MaxHitPoints>
@@ -48,8 +48,8 @@
   <ThingDef ParentName="DoorBase">
     <defName>LR_CampGate</defName>
     <label>camp gate</label>
-    <description>A wide gate of lashed stakes between heavy log posts, with a walkway for sentries on top. Used in the palisades of Roman marching camps. Three cells wide; needs walls on either side.</description>
-    <thingClass>Building_MultiTileDoor</thingClass>
+    <description>A wide gate of lashed stakes between heavy log posts, with a walkway for sentries on top. Used in the palisades of Roman marching camps. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
     <statBases>
       <WorkToBuild>2600</WorkToBuild>
       <MaxHitPoints>420</MaxHitPoints>
