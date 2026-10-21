@@ -196,7 +196,8 @@
     <graphicData>
       <texPath>Things/Building/LR/LR_Column</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(1.75,1.75)</drawSize>
+      <drawOffset>(0,0,0.32)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
     <size>(1,1)</size>
@@ -222,7 +223,8 @@
     <graphicData>
       <texPath>Things/Building/LR/LR_StandardWest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(1.8,1.8)</drawSize>
+      <drawOffset>(0,0,0.34)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
     <size>(1,1)</size>
@@ -246,7 +248,8 @@
     <graphicData>
       <texPath>Things/Building/LR/LR_StandardEast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(1.8,1.8)</drawSize>
+      <drawOffset>(0,0,0.34)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
     <size>(1,1)</size>
@@ -270,7 +273,8 @@
     <graphicData>
       <texPath>Things/Building/LR/LR_EmperorStatue</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(1.5,1.5)</drawSize>
+      <drawOffset>(0,0,0.21)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
     <size>(1,1)</size>
@@ -296,7 +300,8 @@
     <graphicData>
       <texPath>Things/Building/LR/LR_Amphorae</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(1.5,1.5)</drawSize>
+      <drawOffset>(0,0,0.21)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
     <size>(1,1)</size>
@@ -320,7 +325,8 @@
     <graphicData>
       <texPath>Things/Building/LR/LR_Brazier</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(1.45,1.45)</drawSize>
+      <drawOffset>(0,0,0.19)</drawOffset>
       <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
     </graphicData>
     <size>(1,1)</size>
@@ -355,8 +361,8 @@
         <heatPushMaxTemperature>23</heatPushMaxTemperature>
       </li>
       <li Class="CompProperties_FireOverlay">
-        <fireSize>0.45</fireSize>
-        <offset>(0,0,0.12)</offset>
+        <fireSize>0.65</fireSize>
+        <offset>(0,0,0.32)</offset>
       </li></comps>
   </ThingDef>
 </Defs>
