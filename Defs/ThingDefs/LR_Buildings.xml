@@ -1,5 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <ThingDef ParentName="DoorBase">
+    <defName>LR_RomanGate</defName>
+    <label>Roman gate</label>
+    <description>A stone gateway under a wide arch with a battlemented top, closed by heavy iron-banded wooden doors. The kind of gate that guarded every Roman town. Three cells wide; needs walls on either side.</description>
+    <thingClass>Building_MultiTileDoor</thingClass>
+    <statBases>
+      <WorkToBuild>6500</WorkToBuild>
+      <MaxHitPoints>1100</MaxHitPoints>
+      <DoorOpenSpeed>0.6</DoorOpenSpeed>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_RomanGate_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_RomanGate_MenuIcon_south</uiIconPath>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <size>(3, 1)</size>
+    <rotatable>true</rotatable>
+    <costStuffCount>150</costStuffCount>
+    <stuffCategories Inherit="False"><li>Stony</li></stuffCategories>
+    <costList><Steel>50</Steel><WoodLog>60</WoodLog></costList>
+    <building>
+      <blueprintClass>Blueprint_Build</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/LR/LR_RomanGate_MenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(4.1, 4.1)</drawSize>
+      </blueprintGraphicData>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/LR/LR_RomanGate_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(4.1, 3.6)</drawSize>
+      </doorTopGraphic>
+      <doorSupportGraphic>
+        <texPath>Things/Building/LR/LR_RomanGate_Support</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(4.1, 3.6)</drawSize>
+      </doorSupportGraphic>
+    </building>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="DoorBase">
+    <defName>LR_CampGate</defName>
+    <label>camp gate</label>
+    <description>A wide gate of lashed stakes between heavy log posts, with a walkway for sentries on top. Used in the palisades of Roman marching camps. Three cells wide; needs walls on either side.</description>
+    <thingClass>Building_MultiTileDoor</thingClass>
+    <statBases>
+      <WorkToBuild>2600</WorkToBuild>
+      <MaxHitPoints>420</MaxHitPoints>
+      <DoorOpenSpeed>0.9</DoorOpenSpeed>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_CampGate_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_CampGate_MenuIcon_south</uiIconPath>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <size>(3, 1)</size>
+    <rotatable>true</rotatable>
+    <costStuffCount>90</costStuffCount>
+    <stuffCategories Inherit="False"><li>Woody</li></stuffCategories>
+    <costList><Steel>10</Steel></costList>
+    <building>
+      <blueprintClass>Blueprint_Build</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/LR/LR_CampGate_MenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(4.1, 4.1)</drawSize>
+      </blueprintGraphicData>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/LR/LR_CampGate_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(4.1, 2.3)</drawSize>
+      </doorTopGraphic>
+      <doorSupportGraphic>
+        <texPath>Things/Building/LR/LR_CampGate_Support</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(4.1, 2.3)</drawSize>
+      </doorSupportGraphic>
+    </building>
+    <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
+  </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_RomanWall</defName>
     <label>Roman stone wall</label>

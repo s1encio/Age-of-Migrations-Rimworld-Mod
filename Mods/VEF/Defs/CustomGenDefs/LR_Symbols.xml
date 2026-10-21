@@ -5,16 +5,36 @@
     <thing>LR_RomanWall</thing><stuff>BlocksSandstone</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_RomanGate_BlocksSandstone</defName>
+    <thing>LR_RomanGate</thing><stuff>BlocksSandstone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_RomanWall_BlocksLimestone</defName>
     <thing>LR_RomanWall</thing><stuff>BlocksLimestone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_RomanGate_BlocksLimestone</defName>
+    <thing>LR_RomanGate</thing><stuff>BlocksLimestone</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_RomanWall_BlocksMarble</defName>
     <thing>LR_RomanWall</thing><stuff>BlocksMarble</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_RomanGate_BlocksMarble</defName>
+    <thing>LR_RomanGate</thing><stuff>BlocksMarble</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_RomanWall_BlocksGranite</defName>
     <thing>LR_RomanWall</thing><stuff>BlocksGranite</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_RomanGate_BlocksGranite</defName>
+    <thing>LR_RomanGate</thing><stuff>BlocksGranite</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_CampGate_WoodLog</defName>
+    <thing>LR_CampGate</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_TentWall_Cloth</defName>
