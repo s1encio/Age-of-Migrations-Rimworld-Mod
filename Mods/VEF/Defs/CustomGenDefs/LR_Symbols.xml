@@ -114,6 +114,16 @@
     <maxStackSize>60</maxStackSize>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_Treasure_Silver</defName>
+    <thing>Silver</thing>
+    <maxStackSize>500</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Treasure_Gold</defName>
+    <thing>Gold</thing>
+    <maxStackSize>150</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_P_West_Citizen</defName>
     <pawnKindDef>LR_West_Citizen</pawnKindDef>
   </KCSG.SymbolDef>
