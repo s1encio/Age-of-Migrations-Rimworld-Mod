@@ -3,7 +3,7 @@
   <ThingDef ParentName="DoorBase">
     <defName>LR_RomanGate</defName>
     <label>Roman gate</label>
-    <description>A stone gateway under a wide arch with a battlemented top, closed by heavy iron-banded wooden doors. The kind of gate that guarded every Roman town. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <description>A stone gatehouse in the style of a Roman fort: twin arches closed by heavy iron-banded doors, a battlemented walkway with rows of arched windows, and two flanking towers under red tiled roofs. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
     <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
     <statBases>
       <WorkToBuild>6500</WorkToBuild>
@@ -28,18 +28,18 @@
         <texPath>Things/Building/LR/LR_RomanGate_MenuIcon</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
         <shaderType>EdgeDetect</shaderType>
-        <drawSize>(4.1, 4.1)</drawSize>
+        <drawSize>(6.8, 6.8)</drawSize>
       </blueprintGraphicData>
       <isSupportDoor>true</isSupportDoor>
       <doorTopGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Top</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.1, 3.6)</drawSize>
+        <drawSize>(5.8, 6.8)</drawSize>
       </doorTopGraphic>
       <doorSupportGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Support</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.1, 3.6)</drawSize>
+        <drawSize>(5.8, 6.8)</drawSize>
       </doorSupportGraphic>
     </building>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
@@ -79,12 +79,12 @@
       <doorTopGraphic>
         <texPath>Things/Building/LR/LR_CampGate_Top</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.1, 2.3)</drawSize>
+        <drawSize>(4.1, 2.6)</drawSize>
       </doorTopGraphic>
       <doorSupportGraphic>
         <texPath>Things/Building/LR/LR_CampGate_Support</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.1, 2.3)</drawSize>
+        <drawSize>(4.1, 2.6)</drawSize>
       </doorSupportGraphic>
     </building>
     <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
