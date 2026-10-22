@@ -13,7 +13,11 @@ namespace AgeOfMigrations
     {
         public GameComponent_RomanFaith(Game game) { }
 
-        public override void StartedNewGame() => Apply();
+        public override void StartedNewGame()
+        {
+            Apply();
+            MakeEnemies();
+        }
         public override void LoadedGame() => Apply();
 
         private static void Apply()
@@ -43,8 +47,44 @@ namespace AgeOfMigrations
                             "Its followers call their faith orthodox, meaning right belief. The emperor calls its great councils " +
                             "and sees himself as the protector of the true faith.");
                         break;
+                    case "LR_Vandals":
+                        Set(ideo, "Arian Church", "Arian", "Arian",
+                            "Christianity as taught to the Goths by the bishop Ulfilas, who translated the Bible into Gothic, and passed " +
+                            "on from them to the Vandals. It holds that the Son was made by the Father and is less than him, the creed " +
+                            "of the council of Ariminum that Nicaea and Rome condemned. Its priests preach in the Germanic tongue, " +
+                            "and its kings look on the Nicene churches of the Romans as heretics to be humbled, as the Romans do them.");
+                        break;
                 }
             }
+        }
+
+        /// <summary>At the start of a new game the Vandals are at war with both Roman empires.</summary>
+        private static void MakeEnemies()
+        {
+            if (Find.FactionManager == null)
+                return;
+            var all = Find.FactionManager.AllFactionsListForReading;
+            foreach (Faction vandals in all)
+            {
+                if (vandals.def.defName != "LR_Vandals")
+                    continue;
+                foreach (Faction rome in all)
+                {
+                    if (rome.def.defName != "LR_WesternEmpire" && rome.def.defName != "LR_EasternEmpire")
+                        continue;
+                    SetHostile(vandals, rome);
+                    SetHostile(rome, vandals);
+                }
+            }
+        }
+
+        private static void SetHostile(Faction a, Faction b)
+        {
+            FactionRelation rel = a.RelationWith(b, true);
+            if (rel == null)
+                return;
+            rel.baseGoodwill = -80;
+            rel.kind = FactionRelationKind.Hostile;
         }
 
         private static void Set(Ideo ideo, string name, string adjective, string member, string description)

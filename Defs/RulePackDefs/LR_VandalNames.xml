@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonVandal</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][msuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Gais</li><li>pre->Gund</li><li>pre->Hild</li><li>pre->Thras</li><li>pre->Godi</li><li>pre->Fred</li><li>pre->Gel</li><li>pre->Hun</li><li>pre->Theud</li><li>pre->Wal</li><li>pre->Sig</li><li>pre->Ermen</li><li>pre->Rad</li><li>pre->Agil</li><li>pre->Ald</li><li>pre->Ber</li><li>pre->Ebr</li><li>pre->Gib</li><li>pre->Gunth</li><li>pre->Hari</li><li>pre->Od</li><li>pre->Ragn</li><li>pre->Ans</li><li>pre->Wit</li><li>pre->Ulf</li><li>pre->Amal</li><li>pre->Gent</li><li>pre->Ost</li><li>pre->Arn</li><li>pre->Sind</li><li>pre->Wil</li><li>pre->Leud</li><li>pre->Ger</li><li>pre->Heim</li><li>pre->Ric</li><li>pre->Thrud</li><li>pre->Alb</li><li>pre->Bald</li><li>pre->Ead</li><li>pre->Hroth</li><li>pre->Sunn</li><li>pre->Wand</li><li>pre->Asd</li>
+      <li>msuf->eric</li><li>msuf->ric</li><li>msuf->amund</li><li>msuf->mund</li><li>msuf->imer</li><li>msuf->mer</li><li>msuf->igisel</li><li>msuf->gisel</li><li>msuf->bad</li><li>msuf->wulf</li><li>msuf->gar</li><li>msuf->bert</li><li>msuf->win</li><li>msuf->red</li><li>msuf->bald</li><li>msuf->hard</li><li>msuf->mir</li><li>msuf->wald</li><li>msuf->ulf</li><li>msuf->fred</li><li>msuf->o</li><li>msuf->ila</li><li>msuf->aric</li>
+      <li>hist->Gaiseric</li><li>hist->Huneric</li><li>hist->Gunthamund</li><li>hist->Thrasamund</li><li>hist->Hilderic</li><li>hist->Gelimer</li><li>hist->Godigisel</li><li>hist->Gunderic</li><li>hist->Hoamer</li><li>hist->Gento</li><li>hist->Tzazon</li><li>hist->Ammatas</li><li>hist->Gibamund</li><li>hist->Fredbal</li><li>hist->Godagis</li><li>hist->Hildimer</li><li>hist->Theodoric</li><li>hist->Respendial</li><li>hist->Goar</li><li>hist->Sersaon</li>
+      <li>nick->[pre]o</li>
+      <li>nick->[pre]i</li>
+      <li>last->[pre]ing</li>
+      <li>last->[pre]ung</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonVandalFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][fsuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Gais</li><li>pre->Gund</li><li>pre->Hild</li><li>pre->Thras</li><li>pre->Godi</li><li>pre->Fred</li><li>pre->Gel</li><li>pre->Hun</li><li>pre->Theud</li><li>pre->Wal</li><li>pre->Sig</li><li>pre->Ermen</li><li>pre->Rad</li><li>pre->Agil</li><li>pre->Ald</li><li>pre->Ber</li><li>pre->Ebr</li><li>pre->Gib</li><li>pre->Gunth</li><li>pre->Hari</li><li>pre->Od</li><li>pre->Ragn</li><li>pre->Ans</li><li>pre->Wit</li><li>pre->Ulf</li><li>pre->Amal</li><li>pre->Gent</li><li>pre->Ost</li><li>pre->Arn</li><li>pre->Sind</li><li>pre->Wil</li><li>pre->Leud</li><li>pre->Ger</li><li>pre->Heim</li><li>pre->Ric</li><li>pre->Thrud</li><li>pre->Alb</li><li>pre->Bald</li><li>pre->Ead</li><li>pre->Hroth</li><li>pre->Sunn</li><li>pre->Wand</li><li>pre->Asd</li>
+      <li>fsuf->hild</li><li>fsuf->gund</li><li>fsuf->berga</li><li>fsuf->trud</li><li>fsuf->linda</li><li>fsuf->frida</li><li>fsuf->suintha</li><li>fsuf->ilda</li><li>fsuf->rada</li><li>fsuf->sinda</li><li>fsuf->wara</li><li>fsuf->gard</li>
+      <li>hist->Hilda</li><li>hist->Amalafrida</li><li>hist->Eudocia</li><li>hist->Gundeberga</li><li>hist->Sunilda</li><li>hist->Audofleda</li><li>hist->Godeliva</li><li>hist->Radegund</li>
+      <li>nick->[pre]a</li>
+      <li>nick->[pre]ila</li>
+      <li>last->[pre]ing</li>
+      <li>last->[pre]ung</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_VandalLeaderTitleMaker</defName>
+    <rulePack><rulesStrings>
+      <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+      <li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
+      <li>cultureLeaderNoun->king</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionVandal</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Kingdom of the Vandals</li>
+      <li>r_name->Hasding Vandals</li>
+      <li>r_name->Siling Vandals</li>
+      <li>r_name->Vandals and Alans</li>
+      <li>r_name->Regnum Vandalorum et Alanorum</li>
+      <li>r_name->Host of [hist]</li>
+      <li>hist->Gaiseric</li><li>hist->Gunderic</li><li>hist->Godigisel</li><li>hist->Huneric</li><li>hist->Thrasamund</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementVandal</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=4)->[pre][place]</li>
+      <li>r_name->[pre]ing[place2]</li>
+      <li>pre->Gais</li><li>pre->Gund</li><li>pre->Hild</li><li>pre->Thras</li><li>pre->Godi</li><li>pre->Fred</li><li>pre->Gel</li><li>pre->Hun</li><li>pre->Theud</li><li>pre->Wal</li><li>pre->Sig</li><li>pre->Ermen</li><li>pre->Rad</li><li>pre->Agil</li><li>pre->Ald</li><li>pre->Ber</li><li>pre->Ebr</li><li>pre->Gib</li><li>pre->Gunth</li><li>pre->Hari</li><li>pre->Od</li><li>pre->Ragn</li><li>pre->Ans</li><li>pre->Wit</li><li>pre->Ulf</li><li>pre->Amal</li><li>pre->Gent</li><li>pre->Ost</li><li>pre->Arn</li><li>pre->Sind</li><li>pre->Wil</li><li>pre->Leud</li><li>pre->Ger</li><li>pre->Heim</li><li>pre->Ric</li><li>pre->Thrud</li><li>pre->Alb</li><li>pre->Bald</li><li>pre->Ead</li><li>pre->Hroth</li><li>pre->Sunn</li><li>pre->Wand</li><li>pre->Asd</li>
+      <li>place->heim</li><li>place->burg</li><li>place->wald</li><li>place->feld</li><li>place->hof</li><li>place->stad</li><li>place->ford</li><li>place->mark</li><li>place->hall</li>
+      <li>place2->en</li><li>place2->a</li><li>place2->heim</li><li>place2->hof</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

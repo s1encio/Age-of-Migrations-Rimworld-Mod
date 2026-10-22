@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_Vandals</defName>
+    <label>Vandals</label>
+    <description>A Germanic people who crossed the frozen Rhine in 406 with the Alans and Suebi, plundered Gaul and Spain, and are now looking for a kingdom of their own. They fight as a war band of free men behind round shields, led by mail-clad nobles, with mounted raiders who strike fast and far. They follow the Arian creed of Christianity and hate the Romans, who return the feeling.</description>
+    <pawnSingular>Vandal</pawnSingular>
+    <pawnsPlural>Vandals</pawnsPlural>
+    <listOrderPriority>29</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>42</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>king</leaderTitle>
+    <factionIconPath>World/LR_VandalIcon</factionIconPath>
+    <settlementTexturePath>World/LR_VandalSettlement</settlementTexturePath>
+    <colorSpectrum><li>(0.24, 0.38, 0.2)</li><li>(0.32, 0.46, 0.25)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionVandal</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementVandal</settlementNameMaker>
+    <allowedCultures><li>LR_GermanicCulture</li></allowedCultures>
+    <backstoryCategories><li>Tribal</li><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_Vandal_Warrior</basicMemberKind>
+    <fixedLeaderKinds><li>LR_Vandal_King</li></fixedLeaderKinds>
+    <!-- Religion: Arian Christianity, taught to the Goths by Ulfilas and spread from them to the Vandals -->
+    <structureMemeWeights>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Animist>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Tunneler</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HighLife</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NaturePrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Proselytizer</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">BodyMod_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">InsectMeatEating_Loved</li>
+    </disallowedPrecepts>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-45</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 110)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_Vandal_Levy>20</LR_Vandal_Levy><LR_Vandal_Tribesman>15</LR_Vandal_Tribesman><LR_Vandal_Warrior>20</LR_Vandal_Warrior><LR_Vandal_Spearman>15</LR_Vandal_Spearman><LR_Vandal_Skirmisher>8</LR_Vandal_Skirmisher><LR_Vandal_Archer>8</LR_Vandal_Archer><LR_Vandal_Hurler>5</LR_Vandal_Hurler><LR_Vandal_Noble>4</LR_Vandal_Noble><LR_Vandal_NobleSwordsman>3</LR_Vandal_NobleSwordsman><LR_Vandal_Berserker>4</LR_Vandal_Berserker><LR_Vandal_Raider>6</LR_Vandal_Raider><LR_Vandal_ChosenRaider>2</LR_Vandal_ChosenRaider><LR_Vandal_EliteArcher>2</LR_Vandal_EliteArcher></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options><LR_Vandal_Raider>35</LR_Vandal_Raider><LR_Vandal_ChosenRaider>12</LR_Vandal_ChosenRaider><LR_Vandal_Noble>3</LR_Vandal_Noble></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options><LR_Vandal_Warrior>25</LR_Vandal_Warrior><LR_Vandal_Berserker>15</LR_Vandal_Berserker><LR_Vandal_NobleSwordsman>8</LR_Vandal_NobleSwordsman><LR_Vandal_Tribesman>15</LR_Vandal_Tribesman></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_Vandal_Archer>25</LR_Vandal_Archer><LR_Vandal_EliteArcher>8</LR_Vandal_EliteArcher><LR_Vandal_Skirmisher>15</LR_Vandal_Skirmisher><LR_Vandal_Hurler>10</LR_Vandal_Hurler><LR_Vandal_Spearman>10</LR_Vandal_Spearman></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_Vandal_Freeman>30</LR_Vandal_Freeman><LR_Vandal_Levy>5</LR_Vandal_Levy><LR_Vandal_Warrior>4</LR_Vandal_Warrior><LR_Vandal_Hurler>2</LR_Vandal_Hurler></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_Vandal_Merchant>1</LR_Vandal_Merchant></traders>
+        <carriers><Muffalo>6</Muffalo><Alpaca>2.5</Alpaca></carriers>
+        <guards><LR_Vandal_Warrior>15</LR_Vandal_Warrior><LR_Vandal_Spearman>10</LR_Vandal_Spearman><LR_Vandal_Archer>6</LR_Vandal_Archer><LR_Vandal_Raider>4</LR_Vandal_Raider></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_Vandal_Freeman>25</LR_Vandal_Freeman><LR_Vandal_Levy>15</LR_Vandal_Levy><LR_Vandal_Warrior>25</LR_Vandal_Warrior><LR_Vandal_Spearman>15</LR_Vandal_Spearman><LR_Vandal_Archer>8</LR_Vandal_Archer><LR_Vandal_Hurler>5</LR_Vandal_Hurler><LR_Vandal_Noble>5</LR_Vandal_Noble><LR_Vandal_NobleSwordsman>3</LR_Vandal_NobleSwordsman><LR_Vandal_Berserker>3</LR_Vandal_Berserker></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>LR_GermanicCulture</defName>
+    <label>germanic</label>
+    <description>The culture of the Germanic peoples of the migration age: war bands sworn to their lords, long hair and beards, feasts in timber halls, and an Arian Christianity learned from the Goths.</description>
+    <pawnNameMaker>LR_NamerPersonVandal</pawnNameMaker>
+    <pawnNameMakerFemale>LR_NamerPersonVandalFemale</pawnNameMakerFemale>
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LR_VandalLeaderTitleMaker</leaderTitleMaker>
+    <allowedPlaceTags><li>OriginTribal</li></allowedPlaceTags>
+    <iconPath>World/LR_VandalIcon</iconPath>
+    <iconColor>(0.45, 0.6, 0.35)</iconColor>
+    <preferredWeaponClasses>
+      <noble>MeleeBlunt</noble>
+      <despised>Ultratech</despised>
+    </preferredWeaponClasses>
+    <styleItemTags>
+      <li><tag>Tribal</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>Rural</tag><baseWeight>0.6</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>BeardTribal</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoBeard</tag><baseWeight>0.15</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoTattoo</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+    </styleItemTags>
+  </CultureDef>
+</Defs>

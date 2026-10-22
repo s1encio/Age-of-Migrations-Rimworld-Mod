@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_GermanicHelm</defName>
+    <label>Germanic spangenhelm</label>
+    <description>A rounded conical helmet of iron plates riveted between iron bands, with a nose guard and a mail curtain over the neck. Copied from Roman workshops and worn by the better-armed warriors of the Germanic peoples.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_GermanicHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>6000</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>2.1</Mass><ArmorRating_Sharp>0.56</ArmorRating_Sharp><ArmorRating_Blunt>0.28</ArmorRating_Blunt><ArmorRating_Heat>0.12</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2</EquipDelay></statBases>
+    <costList><Steel>60</Steel></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_GermanicHelm/LR_GermanicHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_GermanicHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_VandalKingHelm</defName>
+    <label>gilded spangenhelm</label>
+    <description>A spangenhelm with gilded bands, cheek pieces and a dyed horsehair plume, of the kind found in the graves of Germanic kings. It marks its wearer as a man of royal blood.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_VandalKingHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>9000</WorkToMake><MaxHitPoints>150</MaxHitPoints><Mass>2.4</Mass><ArmorRating_Sharp>0.62</ArmorRating_Sharp><ArmorRating_Blunt>0.3</ArmorRating_Blunt><ArmorRating_Heat>0.14</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2</EquipDelay></statBases>
+    <costList><Steel>65</Steel><Gold>20</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.1</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_VandalKingHelm/LR_VandalKingHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_VandalKingHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_LeatherCap</defName>
+    <label>leather helmet</label>
+    <description>A cap of boiled leather stiffened with an iron brow band and two crossed iron straps. Much cheaper than a real helmet, and much better than nothing.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_LeatherCap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>2500</WorkToMake><MaxHitPoints>90</MaxHitPoints><Mass>0.8</Mass><ArmorRating_Sharp>0.32</ArmorRating_Sharp><ArmorRating_Blunt>0.18</ArmorRating_Blunt><ArmorRating_Heat>0.1</ArmorRating_Heat><Insulation_Cold>4</Insulation_Cold><EquipDelay>1</EquipDelay></statBases>
+    <costList><Leather_Plain>30</Leather_Plain><Steel>15</Steel></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_LeatherCap/LR_LeatherCap</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_LeatherCap</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_GermanicTunic</defName>
+    <label>Germanic tunic</label>
+    <description>A knee-length green wool tunic with tablet-woven borders at the neck, cuffs and hem, worn with a leather belt.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_GermanicTunic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.6</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>9</Insulation_Cold><Insulation_Heat>2</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>55</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_GermanicTunic/LR_GermanicTunic</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_GermanicTunic</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_GermanicTunicRed</defName>
+    <label>noble's tunic</label>
+    <description>A red-brown wool tunic with tablet-woven borders, the colours of a wealthy warrior's household.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_GermanicTunicRed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>2200</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.6</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>9</Insulation_Cold><Insulation_Heat>2</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>55</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_GermanicTunicRed/LR_GermanicTunicRed</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_GermanicTunicRed</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_Byrnie</defName>
+    <label>byrnie</label>
+    <description>A mail shirt with short sleeves, reaching down over the thighs. Precious enough to be handed down from father to son.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_Byrnie</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases><WorkToMake>15000</WorkToMake><MaxHitPoints>210</MaxHitPoints><Mass>9</Mass><ArmorRating_Sharp>0.72</ArmorRating_Sharp><ArmorRating_Blunt>0.2</ArmorRating_Blunt><ArmorRating_Heat>0.14</ArmorRating_Heat><Insulation_Cold>2</Insulation_Cold><EquipDelay>4</EquipDelay></statBases>
+    <costList><Steel>100</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.12</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_Byrnie/LR_Byrnie</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Byrnie</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_Lamellar</defName>
+    <label>lamellar coat</label>
+    <description>A coat of small dark iron plates laced together in rows, learned from the steppe peoples, with gilded edging and a broad belt set with garnets. Heavy, but very hard to cut through. Fit for a king.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_Lamellar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases><WorkToMake>22000</WorkToMake><MaxHitPoints>250</MaxHitPoints><Mass>12</Mass><ArmorRating_Sharp>0.86</ArmorRating_Sharp><ArmorRating_Blunt>0.33</ArmorRating_Blunt><ArmorRating_Heat>0.18</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>4</EquipDelay></statBases>
+    <costList><Steel>150</Steel><Gold>15</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.2</MoveSpeed><SocialImpact>0.1</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_Lamellar/LR_Lamellar</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Lamellar</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_GermanicCloak</defName>
+    <label>Germanic cloak</label>
+    <description>A rectangular brown wool cloak with a fur collar, pinned at the shoulder with a round brooch set with a garnet.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_GermanicCloak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>2600</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>1.6</Mass><ArmorRating_Sharp>0.07</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt><Insulation_Cold>19</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>60</Cloth><Leather_Plain>15</Leather_Plain></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_GermanicCloak/LR_GermanicCloak</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_GermanicCloak</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_KingCloak</defName>
+    <label>king's cloak</label>
+    <description>A deep red cloak with a collar of grey wolf fur and a gold brooch. Only a king or his closest kin wear red like this.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_KingCloak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>4000</WorkToMake><MaxHitPoints>150</MaxHitPoints><Mass>1.8</Mass><ArmorRating_Sharp>0.07</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt><Insulation_Cold>20</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>70</Cloth><Leather_Plain>20</Leather_Plain><Gold>5</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.1</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_KingCloak/LR_KingCloak</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_KingCloak</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_WolfPelt</defName>
+    <label>wolf pelt</label>
+    <description>The skin of a wolf, worn over bare shoulders with the head on the back and the forelegs knotted on the chest. Berserkers wear it to take on the spirit of the beast; it seems to help them ignore their wounds.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_WolfPelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1500</WorkToMake><MaxHitPoints>90</MaxHitPoints><Mass>1.2</Mass><ArmorRating_Sharp>0.1</ArmorRating_Sharp><ArmorRating_Blunt>0.08</ArmorRating_Blunt><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>0</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Leather_Plain>40</Leather_Plain></costList>
+    <equippedStatOffsets><PainShockThreshold>0.1</PainShockThreshold></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Shoulders</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_WolfPelt/LR_WolfPelt</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_WolfPelt</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_GermanicShield</defName>
+    <label>Germanic round shield</label>
+    <description>A broad round shield of lime-wood planks covered in painted leather, green with a pale ring and dots, around a tall iron boss. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_GermanicShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_GermanicShield/LR_GermanicShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Shield</li><li>LR_GermanicShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.6</rangedBlockChance>
+        <meleeBlockChance>0.32</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_VandalShield</defName>
+    <label>Vandal war shield</label>
+    <description>A round shield painted red with rings of white dots, carried by the boldest Vandal warriors. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_VandalShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_VandalShield/LR_VandalShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Shield</li><li>LR_VandalShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.6</rangedBlockChance>
+        <meleeBlockChance>0.32</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PlankShield</defName>
+    <label>plank shield</label>
+    <description>A plain round shield of unpainted planks edged with rawhide. Every free man owns one. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PlankShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>30</WoodLog><Steel>5</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PlankShield/LR_PlankShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Shield</li><li>LR_PlankShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.5</rangedBlockChance>
+        <meleeBlockChance>0.28</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_KingShield</defName>
+    <label>king's shield</label>
+    <description>A black round shield with a garnet-red ring, gilded rim and a gilded boss: the shield of a Vandal king. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_KingShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Mass>3.3</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>15</Steel><Gold>10</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_KingShield/LR_KingShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Shield</li><li>LR_KingShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.62</rangedBlockChance>
+        <meleeBlockChance>0.34</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
