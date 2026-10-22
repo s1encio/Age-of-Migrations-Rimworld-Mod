@@ -3,7 +3,7 @@
   <ThingDef ParentName="DoorBase">
     <defName>LR_RomanGate</defName>
     <label>Roman gate</label>
-    <description>A stone gatehouse in the style of a Roman fort: twin arches closed by heavy iron-banded doors, a battlemented walkway with rows of arched windows, and two flanking towers under red tiled roofs. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <description>A stone gatehouse in the style of a Roman fort: twin arches closed by heavy iron-banded doors under a battlemented walkway with a row of arched windows. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
     <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
     <statBases>
       <WorkToBuild>6500</WorkToBuild>
@@ -28,18 +28,18 @@
         <texPath>Things/Building/LR/LR_RomanGate_MenuIcon</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
         <shaderType>EdgeDetect</shaderType>
-        <drawSize>(6.8, 6.8)</drawSize>
+        <drawSize>(4.8, 4.8)</drawSize>
       </blueprintGraphicData>
       <isSupportDoor>true</isSupportDoor>
       <doorTopGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Top</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(5.8, 6.8)</drawSize>
+        <drawSize>(4.4, 4.8)</drawSize>
       </doorTopGraphic>
       <doorSupportGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Support</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(5.8, 6.8)</drawSize>
+        <drawSize>(4.4, 4.8)</drawSize>
       </doorSupportGraphic>
     </building>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
@@ -308,7 +308,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>LR_StandardWest</defName>
     <label>western standard</label>
-    <description>A red vexillum with a golden eagle, the standard of a western Roman unit. Soldiers take great pride in it.</description>
+    <description>A red vexillum fringed with gold, embroidered with SPQR and an eagle in a laurel wreath, hanging from a bronze crossbar under a golden aquila. The standard of a western Roman unit; soldiers take great pride in it.</description>
     <graphicData>
       <texPath>Things/Building/LR/LR_StandardWest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -333,7 +333,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>LR_StandardEast</defName>
     <label>eastern labarum</label>
-    <description>A purple labarum bearing the Chi-Rho, the Christian standard carried by eastern Roman armies since Constantine.</description>
+    <description>A purple labarum fringed with gold and bearing the Chi-Rho, crowned by the Chi-Rho in a golden wreath. The Christian standard carried by eastern Roman armies since Constantine.</description>
     <graphicData>
       <texPath>Things/Building/LR/LR_StandardEast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -432,6 +432,7 @@
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <comps>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>2.2</fuelConsumptionRate>
@@ -451,8 +452,8 @@
         <heatPushMaxTemperature>23</heatPushMaxTemperature>
       </li>
       <li Class="CompProperties_FireOverlay">
-        <fireSize>0.65</fireSize>
-        <offset>(0,0,0.32)</offset>
+        <fireSize>0.6</fireSize>
+        <offset>(0,0,0.36)</offset>
       </li></comps>
   </ThingDef>
 </Defs>
