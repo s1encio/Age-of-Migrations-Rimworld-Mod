@@ -44,6 +44,13 @@
     </building>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
     <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
+    <modExtensions>
+      <li Class="AgeOfMigrations.GateDoorsExtension">
+        <texPath>Things/Building/LR/LR_RomanGate_Door</texPath>
+        <frames>6</frames>
+        <tinted>false</tinted>
+      </li>
+    </modExtensions>
   </ThingDef>
   <ThingDef ParentName="DoorBase">
     <defName>LR_CampGate</defName>
@@ -88,6 +95,13 @@
       </doorSupportGraphic>
     </building>
     <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
+    <modExtensions>
+      <li Class="AgeOfMigrations.GateDoorsExtension">
+        <texPath>Things/Building/LR/LR_CampGate_Door</texPath>
+        <frames>6</frames>
+        <tinted>true</tinted>
+      </li>
+    </modExtensions>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_RomanWall</defName>

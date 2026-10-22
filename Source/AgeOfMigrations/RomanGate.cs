@@ -1,9 +1,20 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace AgeOfMigrations
 {
+    /// <summary>Swinging door frames for a gate: {texPath}_0 (closed) .. {texPath}_{frames-1} (open), each 3x1 cells.</summary>
+    public class GateDoorsExtension : DefModExtension
+    {
+        public string texPath;
+        public int frames = 6;
+        public bool tinted;          // colour the doors with the gate's material (wood); false keeps the texture colours
+        public int ticksToSwing = 45;
+        public Vector2 size = new Vector2(3f, 1f);
+    }
+
     /// <summary>
     /// A 3-wide gate that only its own faction can open from both sides. Anyone else can only open it from the
     /// inside (to get out); from the outside they have to break it down.
@@ -14,6 +25,53 @@ namespace AgeOfMigrations
         private const int RecheckTicks = 2500;
         private int cacheTick = -1;
         private bool insideNeg, insidePos;   // is the side towards -x/-z (Neg) or +x/+z (Pos) enclosed?
+
+        // ---- swinging doors (drawn on top of the support graphic, under pawns)
+        private float swing = -1f;           // 0 closed .. 1 open
+        private int swingTick = -1;
+        private Material[] doorMats;
+        private Color doorMatsColor;
+
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            base.DrawAt(drawLoc, flip);
+            GateDoorsExtension ext = def.GetModExtension<GateDoorsExtension>();
+            if (ext == null || ext.frames < 1 || Rotation.IsHorizontal)
+                return;   // in a north-south wall the doors are hidden under the walkway
+            int now = Find.TickManager.TicksGame;
+            float target = Open ? 1f : 0f;
+            if (swing < 0f || swingTick < 0)
+                swing = target;
+            else
+            {
+                float step = (now - swingTick) / (float)Mathf.Max(1, ext.ticksToSwing);
+                swing = Mathf.MoveTowards(swing, target, step);
+            }
+            swingTick = now;
+            int frame = Mathf.Clamp(Mathf.RoundToInt(swing * (ext.frames - 1)), 0, ext.frames - 1);
+            Color col = ext.tinted ? DrawColor : Color.white;
+            if (doorMats == null || doorMatsColor != col)
+            {
+                doorMats = new Material[ext.frames];
+                for (int i = 0; i < ext.frames; i++)
+                    doorMats[i] = MaterialPool.MatFrom(ext.texPath + "_" + i, ShaderDatabase.Cutout, col);
+                doorMatsColor = col;
+            }
+            Vector3 pos = drawLoc;
+            pos.y = AltitudeLayer.DoorMoveable.AltitudeFor();
+            Matrix4x4 matrix = Matrix4x4.TRS(pos, Quaternion.identity, new Vector3(ext.size.x, 1f, ext.size.y));
+            Graphics.DrawMesh(MeshPool.plane10, matrix, doorMats[frame], 0);
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                swing = -1f;
+                swingTick = -1;
+            }
+        }
 
         public override bool PawnCanOpen(Pawn p)
         {
