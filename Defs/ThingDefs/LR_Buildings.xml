@@ -38,7 +38,7 @@
       </doorTopGraphic>
       <doorSupportGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Support</texPath>
-        <graphicClass>Graphic_Multi</graphicClass>
+        <graphicClass>Graphic_Multi</graphicClass><shaderType>CutoutComplex</shaderType>
         <drawSize>(4.4, 4.8)</drawSize>
       </doorSupportGraphic>
     </building>
