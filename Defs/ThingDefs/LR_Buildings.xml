@@ -12,7 +12,7 @@
     </statBases>
     <graphicData>
       <texPath>Things/Building/LR/LR_RomanGate_Mover</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass><shaderType>CutoutComplex</shaderType>
       <damageData><enabled>false</enabled></damageData>
     </graphicData>
     <uiIconPath>Things/Building/LR/LR_RomanGate_MenuIcon_south</uiIconPath>
