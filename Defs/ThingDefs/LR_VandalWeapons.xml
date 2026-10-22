@@ -154,4 +154,62 @@
       <speed>33</speed>
     </projectile>
   </ThingDef>
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>LR_ThrowingAxe</defName>
+    <label>throwing axe</label>
+    <description>A short axe with a curved, upswept head, balanced for throwing. Hurled end over end just before the lines meet, it can split a shield or the man behind it.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/LR_ThrowingAxe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>1.1</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><WoodLog>15</WoodLog><Steel>25</Steel></costList>
+    <weaponTags><li>LR_VandalRanged</li><li>LR_ThrowingAxe</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>LR_ThrowingAxe_Proj</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>12.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+    <tools><li><label>handle</label><capacities><li>Blunt</li></capacities><power>6</power><cooldownTime>2</cooldownTime></li><li><label>blade</label><capacities><li>Cut</li></capacities><power>12</power><cooldownTime>2.2</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>LR_ThrowingAxe_Proj</defName>
+    <label>throwing axe</label>
+    <graphicData>
+      <texPath>Things/Projectile/LR_ThrowingAxe_Proj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <stoppingPower>2</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
 </Defs>

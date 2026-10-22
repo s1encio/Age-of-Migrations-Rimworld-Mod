@@ -87,7 +87,7 @@
       <li>
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
-        <options><LR_Vandal_Levy>20</LR_Vandal_Levy><LR_Vandal_Tribesman>15</LR_Vandal_Tribesman><LR_Vandal_Warrior>20</LR_Vandal_Warrior><LR_Vandal_Spearman>15</LR_Vandal_Spearman><LR_Vandal_Skirmisher>8</LR_Vandal_Skirmisher><LR_Vandal_Archer>8</LR_Vandal_Archer><LR_Vandal_Hurler>5</LR_Vandal_Hurler><LR_Vandal_Noble>4</LR_Vandal_Noble><LR_Vandal_NobleSwordsman>3</LR_Vandal_NobleSwordsman><LR_Vandal_Berserker>4</LR_Vandal_Berserker><LR_Vandal_Raider>6</LR_Vandal_Raider><LR_Vandal_ChosenRaider>2</LR_Vandal_ChosenRaider><LR_Vandal_EliteArcher>2</LR_Vandal_EliteArcher></options>
+        <options><LR_Vandal_Levy>18</LR_Vandal_Levy><LR_Vandal_Tribesman>14</LR_Vandal_Tribesman><LR_Vandal_Warrior>18</LR_Vandal_Warrior><LR_Vandal_Spearman>14</LR_Vandal_Spearman><LR_Vandal_Skirmisher>6</LR_Vandal_Skirmisher><LR_Vandal_Bowman>6</LR_Vandal_Bowman><LR_Vandal_Hunter>4</LR_Vandal_Hunter><LR_Vandal_Archer>6</LR_Vandal_Archer><LR_Vandal_Brigand>4</LR_Vandal_Brigand><LR_Vandal_Crossbowman>2</LR_Vandal_Crossbowman><LR_Vandal_Hurler>4</LR_Vandal_Hurler><LR_Vandal_Noble>4</LR_Vandal_Noble><LR_Vandal_NobleSwordsman>3</LR_Vandal_NobleSwordsman><LR_Vandal_Berserker>4</LR_Vandal_Berserker><LR_Vandal_Raider>6</LR_Vandal_Raider><LR_Vandal_ChosenRaider>2</LR_Vandal_ChosenRaider><LR_Vandal_EliteArcher>2</LR_Vandal_EliteArcher></options>
       </li>
       <li>
         <kindDef>Combat</kindDef>
@@ -101,8 +101,8 @@
       </li>
       <li>
         <kindDef>Combat</kindDef>
-        <commonality>20</commonality>
-        <options><LR_Vandal_Archer>25</LR_Vandal_Archer><LR_Vandal_EliteArcher>8</LR_Vandal_EliteArcher><LR_Vandal_Skirmisher>15</LR_Vandal_Skirmisher><LR_Vandal_Hurler>10</LR_Vandal_Hurler><LR_Vandal_Spearman>10</LR_Vandal_Spearman></options>
+        <commonality>25</commonality>
+        <options><LR_Vandal_Archer>18</LR_Vandal_Archer><LR_Vandal_Bowman>14</LR_Vandal_Bowman><LR_Vandal_Hunter>12</LR_Vandal_Hunter><LR_Vandal_EliteArcher>6</LR_Vandal_EliteArcher><LR_Vandal_Brigand>10</LR_Vandal_Brigand><LR_Vandal_Crossbowman>8</LR_Vandal_Crossbowman><LR_Vandal_Skirmisher>10</LR_Vandal_Skirmisher><LR_Vandal_Hurler>10</LR_Vandal_Hurler><LR_Vandal_Spearman>10</LR_Vandal_Spearman></options>
       </li>
       <li>
         <kindDef>Peaceful</kindDef>
@@ -112,11 +112,11 @@
         <kindDef>Trader</kindDef>
         <traders><LR_Vandal_Merchant>1</LR_Vandal_Merchant></traders>
         <carriers><Muffalo>6</Muffalo><Alpaca>2.5</Alpaca></carriers>
-        <guards><LR_Vandal_Warrior>15</LR_Vandal_Warrior><LR_Vandal_Spearman>10</LR_Vandal_Spearman><LR_Vandal_Archer>6</LR_Vandal_Archer><LR_Vandal_Raider>4</LR_Vandal_Raider></guards>
+        <guards><LR_Vandal_Warrior>15</LR_Vandal_Warrior><LR_Vandal_Spearman>10</LR_Vandal_Spearman><LR_Vandal_Archer>5</LR_Vandal_Archer><LR_Vandal_Hunter>4</LR_Vandal_Hunter><LR_Vandal_Raider>4</LR_Vandal_Raider></guards>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
-        <options><LR_Vandal_Freeman>25</LR_Vandal_Freeman><LR_Vandal_Levy>15</LR_Vandal_Levy><LR_Vandal_Warrior>25</LR_Vandal_Warrior><LR_Vandal_Spearman>15</LR_Vandal_Spearman><LR_Vandal_Archer>8</LR_Vandal_Archer><LR_Vandal_Hurler>5</LR_Vandal_Hurler><LR_Vandal_Noble>5</LR_Vandal_Noble><LR_Vandal_NobleSwordsman>3</LR_Vandal_NobleSwordsman><LR_Vandal_Berserker>3</LR_Vandal_Berserker></options>
+        <options><LR_Vandal_Freeman>25</LR_Vandal_Freeman><LR_Vandal_Levy>15</LR_Vandal_Levy><LR_Vandal_Warrior>25</LR_Vandal_Warrior><LR_Vandal_Spearman>15</LR_Vandal_Spearman><LR_Vandal_Archer>6</LR_Vandal_Archer><LR_Vandal_Bowman>5</LR_Vandal_Bowman><LR_Vandal_Hunter>4</LR_Vandal_Hunter><LR_Vandal_Crossbowman>3</LR_Vandal_Crossbowman><LR_Vandal_Hurler>4</LR_Vandal_Hurler><LR_Vandal_Noble>5</LR_Vandal_Noble><LR_Vandal_NobleSwordsman>3</LR_Vandal_NobleSwordsman><LR_Vandal_Berserker>3</LR_Vandal_Berserker></options>
       </li>
     </pawnGroupMakers>
   </FactionDef>

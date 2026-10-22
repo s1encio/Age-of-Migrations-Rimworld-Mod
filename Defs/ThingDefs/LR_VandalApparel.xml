@@ -311,6 +311,127 @@
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HoodGreen</defName>
+    <label>green hood</label>
+    <description>A wool hood with a short shoulder cape and a long tail, dyed green. Warm, cheap, and favoured by hunters and men who prefer not to be seen.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HoodGreen</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>1200</WorkToMake><MaxHitPoints>80</MaxHitPoints><Mass>0.4</Mass><ArmorRating_Sharp>0.04</ArmorRating_Sharp><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>1</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>30</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HoodGreen/LR_HoodGreen</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_HoodGreen</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HoodBrown</defName>
+    <label>brown hood</label>
+    <description>A wool hood with a short shoulder cape and a long tail, in undyed brown wool.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HoodBrown</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>1200</WorkToMake><MaxHitPoints>80</MaxHitPoints><Mass>0.4</Mass><ArmorRating_Sharp>0.04</ArmorRating_Sharp><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>1</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>30</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HoodBrown/LR_HoodBrown</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_HoodBrown</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_Jerkin</defName>
+    <label>quilted leather jerkin</label>
+    <description>A sleeveless jerkin of leather quilted over wool padding and laced at the front. Light enough for archers and skirmishers.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_Jerkin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases><WorkToMake>4000</WorkToMake><MaxHitPoints>120</MaxHitPoints><Mass>2.5</Mass><ArmorRating_Sharp>0.3</ArmorRating_Sharp><ArmorRating_Blunt>0.16</ArmorRating_Blunt><ArmorRating_Heat>0.1</ArmorRating_Heat><Insulation_Cold>5</Insulation_Cold><EquipDelay>2</EquipDelay><Flammability>0.8</Flammability></statBases>
+    <costList><Leather_Plain>50</Leather_Plain></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_Jerkin/LR_Jerkin</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Jerkin</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_Quiver</defName>
+    <label>quiver</label>
+    <description>A leather quiver of arrows slung on the back. A full quiver lets an archer keep up a steady rate of shooting.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_Quiver</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1500</WorkToMake><MaxHitPoints>60</MaxHitPoints><Mass>0.8</Mass><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Leather_Plain>20</Leather_Plain><WoodLog>5</WoodLog></costList>
+    <equippedStatOffsets><AimingDelayFactor>-0.05</AimingDelayFactor></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Waist</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_Quiver/LR_Quiver</wornGraphicPath>
+      <layers><li>Belt</li></layers>
+      <tags><li>LR_Vandal</li><li>LR_Quiver</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>LR_GermanicShield</defName>
     <label>Germanic round shield</label>
     <description>A broad round shield of lime-wood planks covered in painted leather, green with a pale ring and dots, around a tall iron boss. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>

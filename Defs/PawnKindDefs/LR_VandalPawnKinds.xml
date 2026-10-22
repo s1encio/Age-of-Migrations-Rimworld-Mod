@@ -136,7 +136,7 @@
     <isFighter>true</isFighter>
     <itemQuality>Poor</itemQuality>
     <gearHealthRange>0.5~1.0</gearHealthRange>
-    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li></apparelRequired>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_HoodGreen</li></apparelRequired>
     <apparelMoney>0~0</apparelMoney>
     <weaponMoney>9999~9999</weaponMoney>
     <weaponTags><li>LR_Sling</li></weaponTags>
@@ -149,16 +149,54 @@
     </modExtensions>
   </PawnKindDef>
   <PawnKindDef ParentName="LR_VandalBase">
-    <defName>LR_Vandal_Archer</defName>
-    <label>archer</label>
-    <combatPower>55</combatPower>
+    <defName>LR_Vandal_Bowman</defName>
+    <label>bowman</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_HoodGreen</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowShort</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_VandalBase">
+    <defName>LR_Vandal_Hunter</defName>
+    <label>hunter</label>
+    <combatPower>50</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.5~1.0</gearHealthRange>
-    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_LeatherCap</li></apparelRequired>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_HoodBrown</li><li>LR_Quiver</li></apparelRequired>
     <apparelMoney>0~0</apparelMoney>
     <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags><li>NeolithicRangedDecent</li></weaponTags>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>0~2</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_VandalBase">
+    <defName>LR_Vandal_Archer</defName>
+    <label>archer</label>
+    <combatPower>65</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_LeatherCap</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
     <initialWillRange>1~2</initialWillRange>
     <initialResistanceRange>12~18</initialResistanceRange>
     <modExtensions>
@@ -170,16 +208,54 @@
   <PawnKindDef ParentName="LR_VandalBase">
     <defName>LR_Vandal_EliteArcher</defName>
     <label>elite archer</label>
-    <combatPower>85</combatPower>
+    <combatPower>95</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
     <gearHealthRange>0.6~1.0</gearHealthRange>
-    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunicRed</li><li>LR_LeatherCap</li><li>LR_Byrnie</li></apparelRequired>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunicRed</li><li>LR_HoodBrown</li><li>LR_Jerkin</li><li>LR_Quiver</li></apparelRequired>
     <apparelMoney>0~0</apparelMoney>
     <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags><li>NeolithicRangedChief</li></weaponTags>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
     <initialWillRange>1~3</initialWillRange>
     <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_VandalBase">
+    <defName>LR_Vandal_Brigand</defName>
+    <label>brigand</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_HoodGreen</li><li>LR_Jerkin</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_ThrowingAxe</li></weaponTags>
+    <initialWillRange>0~2</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_VandalBase">
+    <defName>LR_Vandal_Crossbowman</defName>
+    <label>crossbowman</label>
+    <combatPower>80</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_LeatherCap</li><li>LR_Jerkin</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Arcuballista</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
     <modExtensions>
       <li Class="AgeOfMigrations.UniformExtension">
         <allowedExtra></allowedExtra>

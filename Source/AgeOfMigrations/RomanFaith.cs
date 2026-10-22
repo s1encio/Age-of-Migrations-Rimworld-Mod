@@ -1,3 +1,4 @@
+using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -22,12 +23,22 @@ namespace AgeOfMigrations
 
         private static void Apply()
         {
-            if (!ModsConfig.IdeologyActive || Find.FactionManager == null)
+            if (!ModsConfig.IdeologyActive || Find.FactionManager == null || Find.IdeoManager == null)
+                return;
+            // Classic mode: everyone shares one generic belief system, so there is nothing to name.
+            if (Find.IdeoManager.classicMode)
                 return;
 
-            foreach (Faction faction in Find.FactionManager.AllFactionsListForReading)
+            foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals")
+                    continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
+                if (ideo == null)
+                    continue;
+                // Never rename a religion another faction (or the player) also follows: give this faction its own instead.
+                if (SharedWithOthers(faction, ideo))
+                    ideo = GiveOwnIdeo(faction, ideo);
                 if (ideo == null)
                     continue;
 
@@ -56,6 +67,31 @@ namespace AgeOfMigrations
                         break;
                 }
             }
+        }
+
+        private static bool SharedWithOthers(Faction faction, Ideo ideo)
+        {
+            foreach (Faction other in Find.FactionManager.AllFactionsListForReading)
+            {
+                if (other != faction && other.ideos != null && other.ideos.PrimaryIdeo == ideo)
+                    return true;
+            }
+            return false;
+        }
+
+        private static Ideo GiveOwnIdeo(Faction faction, Ideo old)
+        {
+            Ideo fresh = IdeoGenerator.GenerateIdeo(new IdeoGenerationParms(faction.def));
+            if (fresh == null)
+                return null;
+            Find.IdeoManager.Add(fresh);
+            faction.ideos.SetPrimary(fresh);
+            foreach (Pawn pawn in PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead)
+            {
+                if (pawn.Faction == faction && pawn.ideo != null && pawn.Ideo == old)
+                    pawn.ideo.SetIdeo(fresh);
+            }
+            return fresh;
         }
 
         /// <summary>At the start of a new game the Vandals are at war with both Roman empires.</summary>
