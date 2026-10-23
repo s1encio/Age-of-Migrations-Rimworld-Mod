@@ -199,4 +199,35 @@
     <defName>LR_HorsePawn</defName>
     <pawnKindDef>Horse</pawnKindDef>
   </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_StandardVandal</defName>
+    <thing>LR_StandardVandal</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Wagon</defName>
+    <thing>LR_Wagon</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Loot_VandalSword</defName>
+    <thing>LR_VandalSword</thing>
+    <maxStackSize>1</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Loot_BeardedAxe</defName>
+    <thing>LR_BeardedAxe</thing>
+    <maxStackSize>1</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Loot_Framea</defName>
+    <thing>LR_Framea</thing>
+    <maxStackSize>1</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_CowPawn</defName>
+    <pawnKindDef>Cow</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_SheepPawn</defName>
+    <pawnKindDef>Sheep</pawnKindDef>
+  </KCSG.SymbolDef>
 </Defs>

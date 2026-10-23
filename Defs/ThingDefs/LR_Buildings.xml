@@ -470,4 +470,61 @@
         <offset>(0,0,0.36)</offset>
       </li></comps>
   </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_StandardVandal</defName>
+    <label>Vandal banner</label>
+    <description>A green war banner fringed with gold, bearing the cross of the Arian Vandal kings, under a winged spearhead hung with horse tails. Vandal warriors gather under it before a fight.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_StandardVandal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.8,1.8)</drawSize>
+      <drawOffset>(0,0,0.34)</drawOffset>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>100</MaxHitPoints><WorkToBuild>2500</WorkToBuild><Beauty>12</Beauty><Mass>8</Mass></statBases>
+    <costList><WoodLog>15</WoodLog><Cloth>25</Cloth><Gold>5</Gold></costList>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_Wagon</defName>
+    <label>covered wagon</label>
+    <description>A heavy four-wheeled ox wagon with a canvas cover stretched over wooden hoops. Migrating peoples carried their whole lives in wagons like this, and drew them up in a ring around their camp at night as a wall. Gives good cover.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_Wagon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.4,3.4)</drawSize>
+      <shadowData><volume>(1.6, 0.6, 2.6)</volume></shadowData>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_Wagon_MenuIcon</uiIconPath>
+    <size>(2,3)</size>
+    <rotatable>true</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.75</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Flammability>1</Flammability>
+      <Beauty>2</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <costList><WoodLog>110</WoodLog><Cloth>40</Cloth><Steel>15</Steel></costList>
+    <designationCategory>Furniture</designationCategory>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <building><isInert>true</isInert><ai_chillDestination>false</ai_chillDestination></building>
+  </ThingDef>
 </Defs>
