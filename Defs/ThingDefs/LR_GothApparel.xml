@@ -313,6 +313,54 @@
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_GothicBlackShield</defName>
+    <label>Gothic black shield</label>
+    <description>A round shield painted black with a broad red rim and a thin gilded ring, the mark of a Gothic swordsman. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_GothicBlackShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_GothicBlackShield/LR_GothicBlackShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Goth</li><li>LR_Shield</li><li>LR_GothicBlackShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.6</rangedBlockChance>
+        <meleeBlockChance>0.33</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>LR_GothicTowerShield</defName>
     <label>plank tower shield</label>
     <description>A tall shield of thick planks bound with iron, almost a little wall. Heavy, but behind it a skirmisher can stand under a rain of arrows. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>

@@ -310,7 +310,7 @@
     <apparelRequired><li>Apparel_Pants</li><li>LR_WolfPelt</li><li>LR_VandalShield</li></apparelRequired>
     <apparelMoney>0~0</apparelMoney>
     <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags><li>LR_BeardedAxe</li><li>LR_Seax</li></weaponTags>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Seax</li><li>LR_GreatAxe</li></weaponTags>
     <initialWillRange>1~3</initialWillRange>
     <initialResistanceRange>18~25</initialResistanceRange>
     <modExtensions>
