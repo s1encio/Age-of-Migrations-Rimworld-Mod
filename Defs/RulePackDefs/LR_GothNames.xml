@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonGoth</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][msuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Ala</li><li>pre->Atha</li><li>pre->Sige</li><li>pre->Theude</li><li>pre->Thoris</li><li>pre->Eu</li><li>pre->Friti</li><li>pre->Amala</li><li>pre->Gesa</li><li>pre->Agi</li><li>pre->Liu</li><li>pre->Leovi</li><li>pre->Recca</li><li>pre->Gunde</li><li>pre->Sise</li><li>pre->Swinth</li><li>pre->Wam</li><li>pre->Rode</li><li>pre->Ervi</li><li>pre->Egi</li><li>pre->Witti</li><li>pre->Hermene</li><li>pre->Sun</li><li>pre->Wulf</li><li>pre->Gaina</li><li>pre->Sar</li><li>pre->Vidi</li><li>pre->Ricci</li><li>pre->Ansi</li><li>pre->Bera</li><li>pre->Gudi</li><li>pre->Hildi</li><li>pre->Odo</li><li>pre->Radi</li><li>pre->Tota</li><li>pre->Ulfi</li><li>pre->Wada</li><li>pre->Athana</li><li>pre->Fravi</li><li>pre->Munde</li>
+      <li>msuf->ric</li><li>msuf->ulf</li><li>msuf->mund</li><li>msuf->gild</li><li>msuf->red</li><li>msuf->but</li><li>msuf->gern</li><li>msuf->wulf</li><li>msuf->mer</li><li>msuf->ric</li><li>msuf->ila</li><li>msuf->baud</li><li>msuf->gisel</li><li>msuf->rith</li><li>msuf->ard</li><li>msuf->hari</li>
+      <li>hist->Alaric</li><li>hist->Athaulf</li><li>hist->Sigeric</li><li>hist->Wallia</li><li>hist->Theodoric</li><li>hist->Thorismund</li><li>hist->Euric</li><li>hist->Fritigern</li><li>hist->Athanaric</li><li>hist->Amalaric</li><li>hist->Gesalec</li><li>hist->Theudis</li><li>hist->Agila</li><li>hist->Athanagild</li><li>hist->Liuva</li><li>hist->Leovigild</li><li>hist->Reccared</li><li>hist->Ulfilas</li><li>hist->Alatheus</li><li>hist->Saphrax</li>
+      <li>nick->[pre]ila</li>
+      <li>nick->[pre]o</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Balthing</li>
+      <li>last->Amaling</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonGothFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][fsuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Ala</li><li>pre->Atha</li><li>pre->Sige</li><li>pre->Theude</li><li>pre->Thoris</li><li>pre->Eu</li><li>pre->Friti</li><li>pre->Amala</li><li>pre->Gesa</li><li>pre->Agi</li><li>pre->Liu</li><li>pre->Leovi</li><li>pre->Recca</li><li>pre->Gunde</li><li>pre->Sise</li><li>pre->Swinth</li><li>pre->Wam</li><li>pre->Rode</li><li>pre->Ervi</li><li>pre->Egi</li><li>pre->Witti</li><li>pre->Hermene</li><li>pre->Sun</li><li>pre->Wulf</li><li>pre->Gaina</li><li>pre->Sar</li><li>pre->Vidi</li><li>pre->Ricci</li><li>pre->Ansi</li><li>pre->Bera</li><li>pre->Gudi</li><li>pre->Hildi</li><li>pre->Odo</li><li>pre->Radi</li><li>pre->Tota</li><li>pre->Ulfi</li><li>pre->Wada</li><li>pre->Athana</li><li>pre->Fravi</li><li>pre->Munde</li>
+      <li>fsuf->swintha</li><li>fsuf->hild</li><li>fsuf->gotha</li><li>fsuf->berga</li><li>fsuf->linda</li><li>fsuf->sinda</li><li>fsuf->frida</li><li>fsuf->gunda</li><li>fsuf->rada</li><li>fsuf->wara</li>
+      <li>hist->Galswintha</li><li>hist->Goiswintha</li><li>hist->Brunhild</li><li>hist->Theodegotha</li><li>hist->Baddo</li><li>hist->Ragnahild</li><li>hist->Amalaberga</li><li>hist->Sunigilda</li>
+      <li>nick->[pre]la</li>
+      <li>nick->[pre]a</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Balthing</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionGoth</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Kingdom of the Visigoths</li>
+      <li>r_name->Tervingi</li>
+      <li>r_name->Kingdom of Tolosa</li>
+      <li>r_name->Regnum Visigothorum</li>
+      <li>r_name->Gothic Foederati</li>
+      <li>r_name->Host of [hist]</li>
+      <li>hist->Alaric</li><li>hist->Athaulf</li><li>hist->Wallia</li><li>hist->Theodoric</li><li>hist->Euric</li><li>hist->Fritigern</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementGoth</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->[pre][place]</li>
+      <li>r_name(p=2)->[roman]</li>
+      <li>r_name->Gothia [roman]</li>
+      <li>pre->Ala</li><li>pre->Atha</li><li>pre->Sige</li><li>pre->Theude</li><li>pre->Thoris</li><li>pre->Eu</li><li>pre->Friti</li><li>pre->Amala</li><li>pre->Gesa</li><li>pre->Agi</li><li>pre->Liu</li><li>pre->Leovi</li><li>pre->Recca</li><li>pre->Gunde</li><li>pre->Sise</li><li>pre->Swinth</li><li>pre->Wam</li><li>pre->Rode</li><li>pre->Ervi</li><li>pre->Egi</li><li>pre->Witti</li><li>pre->Hermene</li><li>pre->Sun</li><li>pre->Wulf</li><li>pre->Gaina</li><li>pre->Sar</li><li>pre->Vidi</li><li>pre->Ricci</li><li>pre->Ansi</li><li>pre->Bera</li><li>pre->Gudi</li><li>pre->Hildi</li><li>pre->Odo</li><li>pre->Radi</li><li>pre->Tota</li><li>pre->Ulfi</li><li>pre->Wada</li><li>pre->Athana</li><li>pre->Fravi</li><li>pre->Munde</li>
+      <li>place->reiks</li><li>place->gards</li><li>place->baurgs</li><li>place->haims</li><li>place->wiks</li><li>place->hus</li><li>place->burg</li><li>place->stad</li>
+      <li>roman->Tolosa</li><li>roman->Narbo</li><li>roman->Burdigala</li><li>roman->Barcino</li><li>roman->Toletum</li><li>roman->Emerita</li><li>roman->Hispalis</li><li>roman->Carcaso</li><li>roman->Nemausus</li><li>roman->Agatha</li><li>roman->Biterrae</li><li>roman->Pompaelo</li><li>roman->Caesaraugusta</li><li>roman->Recopolis</li><li>roman->Reccopolis</li><li>roman->Asturica</li><li>roman->Tarraco</li><li>roman->Corduba</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

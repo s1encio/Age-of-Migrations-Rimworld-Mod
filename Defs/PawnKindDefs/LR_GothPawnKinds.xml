@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="LR_GothBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>LR_Visigoths</defaultFactionType>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance>
+    <invNutrition>2.5</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Freeman</defName>
+    <label>freeman</label>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_GothicCloak</li></apparelTags>
+    <weaponMoney>0~0</weaponMoney>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_GothicCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Levy</defName>
+    <label>Gothic levy</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_PlankShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_GothicCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Framea</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_GothicCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Warband</defName>
+    <label>warband warrior</label>
+    <combatPower>45</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_PlankShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_GothicCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Seax</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_GothicCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Warrior</defName>
+    <label>Gothic warrior</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_LeatherCap</li><li>LR_GothicOvalShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_GothicCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Seax</li><li>LR_Framea</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_GothicCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Spearman</defName>
+    <label>Gothic spearman</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_MailCoif</li><li>LR_GothicOvalShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_GothicCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Framea</li><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_GothicCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_MailedSpearman</defName>
+    <label>mailed spearman</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_GothicHelm</li><li>LR_Byrnie</li><li>LR_GothicOvalShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_PickedMan</defName>
+    <label>picked man</label>
+    <combatPower>110</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_GothicHelm</li><li>LR_Byrnie</li><li>LR_GothicTowerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li><li>LR_BeardedAxe</li></weaponTags>
+    <initialWillRange>2~3</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Noble</defName>
+    <label>Gothic noble</label>
+    <combatPower>120</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicHelm</li><li>LR_Byrnie</li><li>LR_GothicCloak</li><li>LR_GothicCrossShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Comitatus</defName>
+    <label>comitatus</label>
+    <combatPower>150</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicHelm</li><li>LR_Lamellar</li><li>LR_GothicCrossShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Slinger</defName>
+    <label>slinger</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_HoodBrown</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Sling</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Bowman</defName>
+    <label>bowman</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_HoodBrown</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowShort</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Archer</defName>
+    <label>Gothic archer</label>
+    <combatPower>65</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_LeatherCap</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_EliteArcher</defName>
+    <label>elite archer</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_MailCoif</li><li>LR_Jerkin</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Crossbowman</defName>
+    <label>crossbowman</label>
+    <combatPower>80</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_LeatherCap</li><li>LR_Jerkin</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Arcuballista</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Skirmisher</defName>
+    <label>javelin thrower</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_LeatherCap</li><li>LR_GothicTowerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Rider</defName>
+    <label>Gothic rider</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_LeatherCap</li><li>LR_GothicCloak</li><li>LR_GothicCrossShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Framea</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_NobleRider</defName>
+    <label>noble horseman</label>
+    <combatPower>145</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicHelm</li><li>LR_Byrnie</li><li>LR_GothicCrossShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Lancer</defName>
+    <label>Gothic lancer</label>
+    <combatPower>130</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_MailCoif</li><li>LR_Byrnie</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_NobleLancer</defName>
+    <label>noble lancer</label>
+    <combatPower>175</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicHelm</li><li>LR_Lamellar</li><li>LR_GothicCloak</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_JavelinRider</defName>
+    <label>mounted skirmisher</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_MailCoif</li><li>LR_GothicCrossShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_HorseArcher</defName>
+    <label>horse archer</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_HoodBrown</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_Merchant</defName>
+    <label>merchant</label><trader>true</trader>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicCloak</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Seax</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_King</defName>
+    <label>king</label><factionLeader>true</factionLeader>
+    <combatPower>180</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicCrownHelm</li><li>LR_Lamellar</li><li>LR_GothicRoyalCloak</li><li>LR_GothicCrossShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>5~7</initialWillRange>
+    <initialResistanceRange>25~35</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+</Defs>

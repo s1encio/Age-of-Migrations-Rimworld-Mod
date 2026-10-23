@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_Visigoths</defName>
+    <label>Visigoths</label>
+    <description>The western Goths, who crossed the Danube in 376 fleeing the Huns, destroyed a Roman army and its emperor at Adrianople, and sacked Rome itself under Alaric in 410. Sometimes Rome's enemies and sometimes its allies, they are now carving out a kingdom of their own. Their strength is their cavalry: mailed nobles and lancers who ride down infantry, backed by spearmen behind tall shields. They follow the Arian faith that Ulfilas taught them, and they have no love for the Vandals.</description>
+    <pawnSingular>Goth</pawnSingular>
+    <pawnsPlural>Goths</pawnsPlural>
+    <listOrderPriority>28</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>43</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>king</leaderTitle>
+    <factionIconPath>World/LR_GothIcon</factionIconPath>
+    <settlementTexturePath>World/LR_GothSettlement</settlementTexturePath>
+    <colorSpectrum><li>(0.18, 0.31, 0.53)</li><li>(0.24, 0.4, 0.64)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionGoth</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementGoth</settlementNameMaker>
+    <allowedCultures><li>LR_GothicCulture</li></allowedCultures>
+    <backstoryCategories><li>Tribal</li><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_Goth_Warrior</basicMemberKind>
+    <fixedLeaderKinds><li>LR_Goth_King</li></fixedLeaderKinds>
+    <!-- Religion: Arian Christianity, taught to the Goths by Ulfilas -->
+    <structureMemeWeights>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Animist>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Tunneler</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HighLife</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NaturePrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Proselytizer</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">BodyMod_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">InsectMeatEating_Loved</li>
+    </disallowedPrecepts>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-45</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 110)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_Goth_Levy>14</LR_Goth_Levy><LR_Goth_Warband>10</LR_Goth_Warband><LR_Goth_Warrior>16</LR_Goth_Warrior><LR_Goth_Spearman>14</LR_Goth_Spearman><LR_Goth_MailedSpearman>6</LR_Goth_MailedSpearman><LR_Goth_PickedMan>4</LR_Goth_PickedMan><LR_Goth_Noble>4</LR_Goth_Noble><LR_Goth_Comitatus>2</LR_Goth_Comitatus><LR_Goth_Archer>6</LR_Goth_Archer><LR_Goth_Bowman>5</LR_Goth_Bowman><LR_Goth_Slinger>3</LR_Goth_Slinger><LR_Goth_Crossbowman>2</LR_Goth_Crossbowman><LR_Goth_Skirmisher>4</LR_Goth_Skirmisher><LR_Goth_EliteArcher>2</LR_Goth_EliteArcher><LR_Goth_Rider>8</LR_Goth_Rider><LR_Goth_NobleRider>3</LR_Goth_NobleRider><LR_Goth_Lancer>4</LR_Goth_Lancer><LR_Goth_NobleLancer>2</LR_Goth_NobleLancer><LR_Goth_JavelinRider>3</LR_Goth_JavelinRider><LR_Goth_HorseArcher>3</LR_Goth_HorseArcher></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>35</commonality>
+        <options><LR_Goth_Rider>25</LR_Goth_Rider><LR_Goth_NobleRider>12</LR_Goth_NobleRider><LR_Goth_Lancer>15</LR_Goth_Lancer><LR_Goth_NobleLancer>8</LR_Goth_NobleLancer><LR_Goth_JavelinRider>12</LR_Goth_JavelinRider><LR_Goth_HorseArcher>12</LR_Goth_HorseArcher></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options><LR_Goth_Spearman>25</LR_Goth_Spearman><LR_Goth_MailedSpearman>12</LR_Goth_MailedSpearman><LR_Goth_PickedMan>10</LR_Goth_PickedMan><LR_Goth_Noble>6</LR_Goth_Noble><LR_Goth_Comitatus>3</LR_Goth_Comitatus><LR_Goth_Archer>8</LR_Goth_Archer></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_Goth_Archer>18</LR_Goth_Archer><LR_Goth_Bowman>14</LR_Goth_Bowman><LR_Goth_EliteArcher>6</LR_Goth_EliteArcher><LR_Goth_Crossbowman>8</LR_Goth_Crossbowman><LR_Goth_Skirmisher>12</LR_Goth_Skirmisher><LR_Goth_Slinger>10</LR_Goth_Slinger><LR_Goth_HorseArcher>8</LR_Goth_HorseArcher><LR_Goth_Spearman>8</LR_Goth_Spearman></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_Goth_Freeman>30</LR_Goth_Freeman><LR_Goth_Levy>5</LR_Goth_Levy><LR_Goth_Warrior>4</LR_Goth_Warrior><LR_Goth_Slinger>2</LR_Goth_Slinger></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_Goth_Merchant>1</LR_Goth_Merchant></traders>
+        <carriers><Muffalo>6</Muffalo><Alpaca>2.5</Alpaca></carriers>
+        <guards><LR_Goth_Warrior>12</LR_Goth_Warrior><LR_Goth_Spearman>10</LR_Goth_Spearman><LR_Goth_Archer>5</LR_Goth_Archer><LR_Goth_Rider>6</LR_Goth_Rider><LR_Goth_NobleRider>2</LR_Goth_NobleRider></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_Goth_Freeman>25</LR_Goth_Freeman><LR_Goth_Levy>12</LR_Goth_Levy><LR_Goth_Warband>10</LR_Goth_Warband><LR_Goth_Warrior>18</LR_Goth_Warrior><LR_Goth_Spearman>15</LR_Goth_Spearman><LR_Goth_MailedSpearman>6</LR_Goth_MailedSpearman><LR_Goth_Archer>6</LR_Goth_Archer><LR_Goth_Bowman>5</LR_Goth_Bowman><LR_Goth_Crossbowman>3</LR_Goth_Crossbowman><LR_Goth_Slinger>4</LR_Goth_Slinger><LR_Goth_Noble>5</LR_Goth_Noble><LR_Goth_PickedMan>4</LR_Goth_PickedMan><LR_Goth_Comitatus>2</LR_Goth_Comitatus></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

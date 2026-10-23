@@ -204,6 +204,10 @@
     <thing>LR_StandardVandal</thing>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_StandardGoth</defName>
+    <thing>LR_StandardGoth</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_Wagon</defName>
     <thing>LR_Wagon</thing>
   </KCSG.SymbolDef>

@@ -31,7 +31,7 @@ namespace AgeOfMigrations
 
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
-                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals")
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths")
                     continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
                 if (ideo == null)
@@ -57,6 +57,13 @@ namespace AgeOfMigrations
                             "Nicaea and Constantinople. It worships one God in the Holy Trinity and holds its services in Greek. " +
                             "Its followers call their faith orthodox, meaning right belief. The emperor calls its great councils " +
                             "and sees himself as the protector of the true faith.");
+                        break;
+                    case "LR_Visigoths":
+                        Set(ideo, "Gothic Church", "Gothic", "Gothic Arian",
+                            "The Arian Christianity of the Goths, taught by their bishop Ulfilas, who invented an alphabet for their " +
+                            "language to write the Bible in it. It holds that the Son was begotten by the Father and is like him, but " +
+                            "not of the same substance. Its priests read and preach in Gothic, and its churches are the pride of " +
+                            "the Gothic kings, who hang crowns of gold and jewels above their altars.");
                         break;
                     case "LR_Vandals":
                         Set(ideo, "Arian Church", "Arian", "Arian",
@@ -94,7 +101,7 @@ namespace AgeOfMigrations
             return fresh;
         }
 
-        /// <summary>At the start of a new game the Vandals are at war with both Roman empires.</summary>
+        /// <summary>At the start of a new game the Vandals are at war with both Roman empires, and the Visigoths with the Vandals.</summary>
         private static void MakeEnemies()
         {
             if (Find.FactionManager == null)
@@ -104,12 +111,13 @@ namespace AgeOfMigrations
             {
                 if (vandals.def.defName != "LR_Vandals")
                     continue;
-                foreach (Faction rome in all)
+                foreach (Faction other in all)
                 {
-                    if (rome.def.defName != "LR_WesternEmpire" && rome.def.defName != "LR_EasternEmpire")
+                    string d = other.def.defName;
+                    if (d != "LR_WesternEmpire" && d != "LR_EasternEmpire" && d != "LR_Visigoths")
                         continue;
-                    SetHostile(vandals, rome);
-                    SetHostile(rome, vandals);
+                    SetHostile(vandals, other);
+                    SetHostile(other, vandals);
                 }
             }
         }
