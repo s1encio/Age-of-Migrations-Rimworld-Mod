@@ -208,6 +208,15 @@
     <thing>LR_StandardGoth</thing>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_StandardHun</defName>
+    <thing>LR_StandardHun</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Loot_HunSword</defName>
+    <thing>LR_HunSword</thing>
+    <maxStackSize>1</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_Wagon</defName>
     <thing>LR_Wagon</thing>
   </KCSG.SymbolDef>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>LR_HunnicCulture</defName>
+    <label>hunnic</label>
+    <description>The culture of the Huns: horsemen from birth, living in felt tents among their herds, ruling many peoples, worshipping the eternal sky.</description>
+    <pawnNameMaker>LR_NamerPersonHun</pawnNameMaker>
+    <pawnNameMakerFemale>LR_NamerPersonHunFemale</pawnNameMakerFemale>
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LR_HunLeaderTitleMaker</leaderTitleMaker>
+    <allowedPlaceTags><li>OriginTribal</li></allowedPlaceTags>
+    <iconPath>World/LR_HunIcon</iconPath>
+    <iconColor>(0.8, 0.6, 0.2)</iconColor>
+    <preferredWeaponClasses>
+      <noble>Neolithic</noble>
+      <despised>Ultratech</despised>
+    </preferredWeaponClasses>
+    <styleItemTags>
+      <li><tag>Tribal</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>BeardTribal</tag><baseWeight>0.4</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoBeard</tag><baseWeight>0.6</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoTattoo</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+    </styleItemTags>
+  </CultureDef>
+</Defs>

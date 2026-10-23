@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_HunSword</defName>
+    <label>Hunnic sword</label>
+    <description>A long straight sword with a broad cross-guard of gilded iron set with garnets. The Huns' swords were long enough to cut from the saddle.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_HunSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>16000</WorkToMake><Mass>1.6</Mass></statBases>
+    <costList><Steel>75</Steel><Gold>4</Gold></costList>
+    <weaponTags><li>LR_HunMelee</li><li>LR_HunSword</li></weaponTags>
+    <tools><li><label>handle</label><capacities><li>Blunt</li></capacities><power>7</power><cooldownTime>2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>14</power><cooldownTime>2.4</cooldownTime></li><li><label>edge</label><capacities><li>Cut</li></capacities><power>17</power><cooldownTime>2.4</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_HunSwordGilded</defName>
+    <label>khan's sword</label>
+    <description>A Hunnic long sword with a hilt sheathed in gold. They say the first such blade was the sword of the war god, found by a herdsman when a heifer cut her foot on it, and given to Attila.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_HunSwordGilded</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>16000</WorkToMake><Mass>1.6</Mass></statBases>
+    <costList><Steel>75</Steel><Gold>20</Gold></costList>
+    <weaponTags><li>LR_HunMelee</li><li>LR_HunSwordGilded</li></weaponTags>
+    <tools><li><label>handle</label><capacities><li>Blunt</li></capacities><power>7</power><cooldownTime>2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>14</power><cooldownTime>2.4</cooldownTime></li><li><label>edge</label><capacities><li>Cut</li></capacities><power>17</power><cooldownTime>2.4</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

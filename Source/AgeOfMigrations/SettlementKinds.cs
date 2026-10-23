@@ -24,11 +24,12 @@ namespace AgeOfMigrations
                 return false;
             string f = s.Faction.def.defName;
             bool roman = f == "LR_WesternEmpire" || f == "LR_EasternEmpire";
-            if (!roman && f != "LR_Vandals" && f != "LR_Visigoths")
+            bool huns = f == "LR_Huns";
+            if (!roman && !huns && f != "LR_Vandals" && f != "LR_Visigoths")
                 return false;
             uint h = unchecked((uint)s.ID * 2654435761u);
             camp = ((h >> 13) & 1u) == 0u;
-            kind = roman ? (camp ? "marching camp" : "town") : (camp ? "migrant camp" : "village");
+            kind = roman ? (camp ? "marching camp" : "town") : huns ? (camp ? "nomad camp" : "royal camp") : (camp ? "migrant camp" : "village");
             return true;
         }
 
@@ -38,6 +39,9 @@ namespace AgeOfMigrations
             if (f == "LR_WesternEmpire" || f == "LR_EasternEmpire")
                 return camp ? "Marching camp: a palisaded army camp of leather tents, laid out around the commander's tent."
                             : "Town: a walled Roman town with towers, a forum, houses, workshops and a basilica.";
+            if (f == "LR_Huns")
+                return camp ? "Nomad camp: round felt tents among great herds of horses. No walls, and most of the warriors are mounted."
+                            : "Royal camp: a lord's wooden hall behind a palisade, surrounded by the felt tents of his people.";
             return camp ? "Migrant camp: families on the move, camped around their fires beside their wagons. No walls."
                         : "Village: a settled village behind a palisade, with a king's hall, longhouses, a church, pens and fields.";
         }

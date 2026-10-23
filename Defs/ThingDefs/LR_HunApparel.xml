@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FurHat</defName>
+    <label>steppe fur hat</label>
+    <description>A tall pointed felt hat with a thick fur brim and ear flaps, warm enough for a winter on the open steppe.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FurHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>1500</WorkToMake><MaxHitPoints>80</MaxHitPoints><Mass>0.5</Mass><ArmorRating_Sharp>0.1</ArmorRating_Sharp><ArmorRating_Blunt>0.08</ArmorRating_Blunt><Insulation_Cold>14</Insulation_Cold><Insulation_Heat>0</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>25</Cloth><Leather_Plain>20</Leather_Plain></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FurHat/LR_FurHat</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Hun</li><li>LR_FurHat</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HunHelm</defName>
+    <label>Hunnic helmet</label>
+    <description>A tall pointed helmet of riveted iron segments with a plume tube and a mail curtain, made in the workshops of the steppe peoples.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HunHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>7000</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>2.2</Mass><ArmorRating_Sharp>0.6</ArmorRating_Sharp><ArmorRating_Blunt>0.28</ArmorRating_Blunt><ArmorRating_Heat>0.13</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2</EquipDelay></statBases>
+    <costList><Steel>70</Steel></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HunHelm/LR_HunHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Hun</li><li>LR_HunHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HunHelmGilded</defName>
+    <label>gilded Hunnic helmet</label>
+    <description>A tall Hunnic helmet with gilded bands, a red plume and gold diadem plates set with garnets on the brow: the helmet of a khan.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HunHelmGilded</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>10000</WorkToMake><MaxHitPoints>150</MaxHitPoints><Mass>2.3</Mass><ArmorRating_Sharp>0.63</ArmorRating_Sharp><ArmorRating_Blunt>0.3</ArmorRating_Blunt><ArmorRating_Heat>0.14</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2</EquipDelay></statBases>
+    <costList><Steel>70</Steel><Gold>25</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.15</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HunHelmGilded/LR_HunHelmGilded</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Hun</li><li>LR_HunHelmGilded</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HunKaftan</defName>
+    <label>steppe kaftan</label>
+    <description>A long riding coat closed diagonally across the chest, slit at the back for the saddle, and belted with metal plaques.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HunKaftan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>2400</WorkToMake><MaxHitPoints>120</MaxHitPoints><Mass>0.9</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>14</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth><Leather_Plain>15</Leather_Plain></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HunKaftan/LR_HunKaftan</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Hun</li><li>LR_HunKaftan</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HunNobleKaftan</defName>
+    <label>noble kaftan</label>
+    <description>A kaftan of red silk from Persian traders, trimmed with gold and fur. The Hunnic nobles wore their plunder.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HunNobleKaftan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>3600</WorkToMake><MaxHitPoints>120</MaxHitPoints><Mass>0.9</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>16</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth><Leather_Plain>15</Leather_Plain><Gold>4</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.05</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HunNobleKaftan/LR_HunNobleKaftan</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Hun</li><li>LR_HunNobleKaftan</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HunRoyalKaftan</defName>
+    <label>royal kaftan</label>
+    <description>A black kaftan with heavy gold trim and a collar of grey wolf fur, worn by the khan. Priscus noted that Attila himself dressed plainly; his kin did not.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HunRoyalKaftan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>4500</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>1.0</Mass><ArmorRating_Sharp>0.09</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt><Insulation_Cold>18</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>55</Cloth><Leather_Plain>20</Leather_Plain><Gold>8</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.1</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HunRoyalKaftan/LR_HunRoyalKaftan</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Hun</li><li>LR_HunRoyalKaftan</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_HunShield</defName>
+    <label>Hunnic cavalry shield</label>
+    <description>A small round shield of wicker covered in leather, light enough to hang on the arm while shooting from the saddle. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_HunShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>1.8</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>15</WoodLog><Leather_Plain>15</Leather_Plain></costList>
+    <equippedStatOffsets><MoveSpeed>-0.02</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_HunShield/LR_HunShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Hun</li><li>LR_Shield</li><li>LR_HunShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.45</rangedBlockChance>
+        <meleeBlockChance>0.3</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_SteppeTallShield</defName>
+    <label>tall subject shield</label>
+    <description>A tall rectangular shield painted red and black, carried by the infantry of the peoples the Huns ruled. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_SteppeTallShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>170</MaxHitPoints>
+      <Mass>4.8</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>50</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.12</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_SteppeTallShield/LR_SteppeTallShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Hun</li><li>LR_Shield</li><li>LR_SteppeTallShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.78</rangedBlockChance>
+        <meleeBlockChance>0.24</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

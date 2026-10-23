@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="LR_HunBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>LR_Huns</defaultFactionType>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance>
+    <invNutrition>2.5</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Herdsman</defName>
+    <label>herdsman</label>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_FurHat</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>0~0</weaponMoney>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_FootArcher</defName>
+    <label>foot archer</label>
+    <combatPower>55</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_FurHat</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>0~2</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Footman</defName>
+    <label>Hunnic footman</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_FurHat</li><li>LR_HunShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_HunSword</li><li>LR_BeardedAxe</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_SubjectSpearman</defName>
+    <label>subject spearman</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_MailCoif</li><li>LR_SteppeTallShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Framea</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_SubjectWarrior</defName>
+    <label>subject warrior</label>
+    <combatPower>65</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_LeatherCap</li><li>LR_GermanicShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Seax</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_HorseArcher</defName>
+    <label>horse archer</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_FurHat</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_NobleHorseArcher</defName>
+    <label>noble horse archer</label>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunNobleKaftan</li><li>LR_HunHelm</li><li>LR_Lamellar</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_LightHorseArcher</defName>
+    <label>steppe skirmisher</label>
+    <combatPower>75</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_FurHat</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowShort</li></weaponTags>
+    <initialWillRange>0~2</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Rider</defName>
+    <label>Hunnic rider</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_FurHat</li><li>LR_HunShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_HunSword</li><li>LR_BeardedAxe</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Noble</defName>
+    <label>Hunnic noble</label>
+    <combatPower>150</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunNobleKaftan</li><li>LR_HunHelm</li><li>LR_Lamellar</li><li>LR_HunShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_HunSword</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Lancer</defName>
+    <label>Hunnic lancer</label>
+    <combatPower>130</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunKaftan</li><li>LR_HunHelm</li><li>LR_Byrnie</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_NobleLancer</defName>
+    <label>noble lancer</label>
+    <combatPower>175</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunNobleKaftan</li><li>LR_HunHelm</li><li>LR_Lamellar</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Merchant</defName>
+    <label>merchant</label><trader>true</trader>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunNobleKaftan</li><li>LR_FurHat</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_HunSword</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_HunBase">
+    <defName>LR_Hun_Khan</defName>
+    <label>khan</label><factionLeader>true</factionLeader>
+    <combatPower>190</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_HunRoyalKaftan</li><li>LR_HunHelmGilded</li><li>LR_Lamellar</li><li>LR_HunShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_HunSwordGilded</li></weaponTags>
+    <initialWillRange>5~7</initialWillRange>
+    <initialResistanceRange>25~35</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+</Defs>

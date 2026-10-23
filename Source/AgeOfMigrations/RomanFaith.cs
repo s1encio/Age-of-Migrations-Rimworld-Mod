@@ -31,7 +31,7 @@ namespace AgeOfMigrations
 
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
-                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths")
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns")
                     continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
                 if (ideo == null)
@@ -57,6 +57,13 @@ namespace AgeOfMigrations
                             "Nicaea and Constantinople. It worships one God in the Holy Trinity and holds its services in Greek. " +
                             "Its followers call their faith orthodox, meaning right belief. The emperor calls its great councils " +
                             "and sees himself as the protector of the true faith.");
+                        break;
+                    case "LR_Huns":
+                        Set(ideo, "Tengri", "Tengrist", "Tengrist",
+                            "The old faith of the steppe: worship of Tengri, the eternal blue sky that sees everything, and reverence for " +
+                            "the earth, the ancestors and the spirits of places. Shamans read the will of heaven in the cracks of burned " +
+                            "shoulder-blades before a battle. The Huns tell how a herdsman found the sword of the war god sticking out of " +
+                            "the ground and brought it to Attila, a sign that heaven had given him lordship over the world.");
                         break;
                     case "LR_Visigoths":
                         Set(ideo, "Gothic Church", "Gothic", "Gothic Arian",
@@ -107,6 +114,20 @@ namespace AgeOfMigrations
             if (Find.FactionManager == null)
                 return;
             var all = Find.FactionManager.AllFactionsListForReading;
+            // the Huns are at war with both empires and with the Goths who fled from them
+            foreach (Faction huns in all)
+            {
+                if (huns.def.defName != "LR_Huns")
+                    continue;
+                foreach (Faction other in all)
+                {
+                    string d = other.def.defName;
+                    if (d != "LR_WesternEmpire" && d != "LR_EasternEmpire" && d != "LR_Visigoths")
+                        continue;
+                    SetHostile(huns, other);
+                    SetHostile(other, huns);
+                }
+            }
             foreach (Faction vandals in all)
             {
                 if (vandals.def.defName != "LR_Vandals")

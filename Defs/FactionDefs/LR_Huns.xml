@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_Huns</defName>
+    <label>Huns</label>
+    <description>Horsemen from the steppes beyond the Don, whose sudden arrival in 375 set the whole Gothic world in motion. Now the Huns rule a vast empire of subject peoples from the plains of Pannonia, and both Roman emperors pay them gold to stay away. They fight almost entirely on horseback: clouds of horse archers wear an enemy down, and armoured nobles and lancers finish him. They worship Tengri, the eternal blue sky, and they are at war with Rome and with the Goths who fled from them.</description>
+    <pawnSingular>Hun</pawnSingular>
+    <pawnsPlural>Huns</pawnsPlural>
+    <listOrderPriority>27</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>44</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>khan</leaderTitle>
+    <factionIconPath>World/LR_HunIcon</factionIconPath>
+    <settlementTexturePath>World/LR_HunSettlement</settlementTexturePath>
+    <colorSpectrum><li>(0.62, 0.45, 0.12)</li><li>(0.72, 0.55, 0.18)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionHun</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementHun</settlementNameMaker>
+    <allowedCultures><li>LR_HunnicCulture</li></allowedCultures>
+    <backstoryCategories><li>Tribal</li><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_Hun_HorseArcher</basicMemberKind>
+    <fixedLeaderKinds><li>LR_Hun_Khan</li></fixedLeaderKinds>
+    <!-- Religion: Tengri, the eternal blue sky -->
+    <structureMemeWeights>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Animist>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Tunneler</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HighLife</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NaturePrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Proselytizer</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">BodyMod_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">InsectMeatEating_Loved</li>
+    </disallowedPrecepts>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-45</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 110)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_Hun_HorseArcher>30</LR_Hun_HorseArcher><LR_Hun_LightHorseArcher>14</LR_Hun_LightHorseArcher><LR_Hun_NobleHorseArcher>8</LR_Hun_NobleHorseArcher><LR_Hun_Rider>16</LR_Hun_Rider><LR_Hun_Noble>6</LR_Hun_Noble><LR_Hun_Lancer>8</LR_Hun_Lancer><LR_Hun_NobleLancer>3</LR_Hun_NobleLancer><LR_Hun_FootArcher>3</LR_Hun_FootArcher><LR_Hun_Footman>2</LR_Hun_Footman><LR_Hun_SubjectSpearman>1</LR_Hun_SubjectSpearman><LR_Hun_SubjectWarrior>1</LR_Hun_SubjectWarrior></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>40</commonality>
+        <options><LR_Hun_HorseArcher>40</LR_Hun_HorseArcher><LR_Hun_LightHorseArcher>20</LR_Hun_LightHorseArcher><LR_Hun_NobleHorseArcher>14</LR_Hun_NobleHorseArcher><LR_Hun_FootArcher>4</LR_Hun_FootArcher></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options><LR_Hun_Lancer>20</LR_Hun_Lancer><LR_Hun_NobleLancer>10</LR_Hun_NobleLancer><LR_Hun_Noble>10</LR_Hun_Noble><LR_Hun_Rider>12</LR_Hun_Rider><LR_Hun_HorseArcher>10</LR_Hun_HorseArcher><LR_Hun_Footman>3</LR_Hun_Footman><LR_Hun_SubjectSpearman>2</LR_Hun_SubjectSpearman></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>15</commonality>
+        <options><LR_Hun_Rider>18</LR_Hun_Rider><LR_Hun_HorseArcher>18</LR_Hun_HorseArcher><LR_Hun_Noble>6</LR_Hun_Noble><LR_Hun_SubjectSpearman>6</LR_Hun_SubjectSpearman><LR_Hun_SubjectWarrior>6</LR_Hun_SubjectWarrior><LR_Hun_FootArcher>4</LR_Hun_FootArcher></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_Hun_Herdsman>30</LR_Hun_Herdsman><LR_Hun_HorseArcher>6</LR_Hun_HorseArcher><LR_Hun_Rider>4</LR_Hun_Rider></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_Hun_Merchant>1</LR_Hun_Merchant></traders>
+        <carriers><Muffalo>4</Muffalo><Dromedary>4</Dromedary></carriers>
+        <guards><LR_Hun_HorseArcher>12</LR_Hun_HorseArcher><LR_Hun_Rider>8</LR_Hun_Rider><LR_Hun_Noble>3</LR_Hun_Noble><LR_Hun_Lancer>3</LR_Hun_Lancer></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_Hun_Herdsman>25</LR_Hun_Herdsman><LR_Hun_FootArcher>12</LR_Hun_FootArcher><LR_Hun_Footman>12</LR_Hun_Footman><LR_Hun_SubjectSpearman>12</LR_Hun_SubjectSpearman><LR_Hun_SubjectWarrior>10</LR_Hun_SubjectWarrior><LR_Hun_HorseArcher>10</LR_Hun_HorseArcher><LR_Hun_Rider>6</LR_Hun_Rider><LR_Hun_Noble>4</LR_Hun_Noble><LR_Hun_NobleHorseArcher>3</LR_Hun_NobleHorseArcher><LR_Hun_Lancer>3</LR_Hun_Lancer></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

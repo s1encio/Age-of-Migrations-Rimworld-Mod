@@ -496,6 +496,31 @@
     <comps></comps>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
+    <defName>LR_StandardHun</defName>
+    <label>horse-tail standard</label>
+    <description>A tug: a pole crowned with a golden sun and crescent, hung with horse tails and red ribbons. Steppe warriors ride behind it.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_StandardHun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.8,1.8)</drawSize>
+      <drawOffset>(0,0,0.34)</drawOffset>
+      <shadowData><volume>(0.4, 0.4, 0.3)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <statBases><MaxHitPoints>100</MaxHitPoints><WorkToBuild>2000</WorkToBuild><Beauty>10</Beauty><Mass>6</Mass></statBases>
+    <costList><WoodLog>15</WoodLog><Leather_Plain>20</Leather_Plain><Gold>5</Gold></costList>
+    <designationCategory>Furniture</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <comps></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
     <defName>LR_StandardGoth</defName>
     <label>Gothic banner</label>
     <description>A blue banner fringed with gold, embroidered with a jewelled votive crown and the cross hanging beneath it, under a gilded cross. The Goths carry it before their king.</description>

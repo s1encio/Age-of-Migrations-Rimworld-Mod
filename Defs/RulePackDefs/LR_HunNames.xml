@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonHun</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][msuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Ul</li><li>pre->Ed</li><li>pre->Bal</li><li>pre->Ok</li><li>pre->Mun</li><li>pre->Kar</li><li>pre->Den</li><li>pre->Ern</li><li>pre->El</li><li>pre->Bas</li><li>pre->Kur</li><li>pre->Ber</li><li>pre->Esk</li><li>pre->Tar</li><li>pre->Tur</li><li>pre->Bor</li><li>pre->Kut</li><li>pre->Sar</li><li>pre->Tog</li><li>pre->Il</li><li>pre->Ak</li><li>pre->Bil</li><li>pre->Ur</li><li>pre->Em</li><li>pre->Ad</li><li>pre->Scot</li><li>pre->Or</li><li>pre->Uld</li><li>pre->Hor</li><li>pre->Char</li><li>pre->Rug</li><li>pre->Oeb</li><li>pre->Atak</li><li>pre->Sab</li><li>pre->Tun</li>
+      <li>msuf->din</li><li>msuf->tar</li><li>msuf->ac</li><li>msuf->dzuk</li><li>msuf->gizich</li><li>msuf->ek</li><li>msuf->ich</li><li>msuf->amber</li><li>msuf->eko</li><li>msuf->ila</li><li>msuf->ak</li><li>msuf->at</li><li>msuf->tug</li><li>msuf->an</li><li>msuf->ar</li><li>msuf->ik</li><li>msuf->ur</li><li>msuf->ag</li><li>msuf->ton</li><li>msuf->imir</li>
+      <li>hist->Attila</li><li>hist->Bleda</li><li>hist->Rugila</li><li>hist->Octar</li><li>hist->Mundzuk</li><li>hist->Uldin</li><li>hist->Charaton</li><li>hist->Ellac</li><li>hist->Dengizich</li><li>hist->Ernak</li><li>hist->Balamber</li><li>hist->Edeko</li><li>hist->Onegesius</li><li>hist->Scottas</li><li>hist->Kursich</li><li>hist->Basich</li><li>hist->Berik</li><li>hist->Eskam</li><li>hist->Emnetzur</li><li>hist->Ultzindur</li><li>hist->Hormidac</li><li>hist->Oebarsius</li>
+      <li>nick->[pre]a</li>
+      <li>nick->[pre]i</li>
+      <li>last->Akatzir</li><li>last->Kutrigur</li><li>last->Utigur</li><li>last->Onogur</li><li>last->Saragur</li><li>last->Sabir</li><li>last->Amilzur</li><li>last->Itimar</li><li>last->Tonosur</li><li>last->Bassik</li><li>last->Kidar</li><li>last->Sadag</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonHunFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][fsuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Ul</li><li>pre->Ed</li><li>pre->Bal</li><li>pre->Ok</li><li>pre->Mun</li><li>pre->Kar</li><li>pre->Den</li><li>pre->Ern</li><li>pre->El</li><li>pre->Bas</li><li>pre->Kur</li><li>pre->Ber</li><li>pre->Esk</li><li>pre->Tar</li><li>pre->Tur</li><li>pre->Bor</li><li>pre->Kut</li><li>pre->Sar</li><li>pre->Tog</li><li>pre->Il</li><li>pre->Ak</li><li>pre->Bil</li><li>pre->Ur</li><li>pre->Em</li><li>pre->Ad</li><li>pre->Scot</li><li>pre->Or</li><li>pre->Uld</li><li>pre->Hor</li><li>pre->Char</li><li>pre->Rug</li><li>pre->Oeb</li><li>pre->Atak</li><li>pre->Sab</li><li>pre->Tun</li>
+      <li>fsuf->eka</li><li>fsuf->ana</li><li>fsuf->ai</li><li>fsuf->ika</li><li>fsuf->an</li><li>fsuf->ina</li><li>fsuf->egul</li><li>fsuf->ay</li>
+      <li>hist->Kreka</li><li>hist->Erekan</li><li>hist->Ildico</li><li>hist->Ukaga</li><li>hist->Arikan</li><li>hist->Tumen</li>
+      <li>nick->[pre]i</li>
+      <li>last->Akatzir</li><li>last->Kutrigur</li><li>last->Utigur</li><li>last->Onogur</li><li>last->Saragur</li><li>last->Sabir</li><li>last->Amilzur</li><li>last->Itimar</li><li>last->Tonosur</li><li>last->Bassik</li><li>last->Kidar</li><li>last->Sadag</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_HunLeaderTitleMaker</defName>
+    <rulePack><rulesStrings>
+      <li>cultureLeaderTitle->[cultureLeaderNoun]</li>
+      <li>r_leaderTitle(p=1)->[cultureLeaderNoun]</li>
+      <li>cultureLeaderNoun->khan</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionHun</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Hunnic Empire</li>
+      <li>r_name->Horde of [hist]</li>
+      <li>r_name->Royal Scythians</li>
+      <li>r_name->Huns of Pannonia</li>
+      <li>r_name->[tribe] Huns</li>
+      <li>hist->Attila</li><li>hist->Bleda</li><li>hist->Rugila</li><li>hist->Uldin</li><li>hist->Balamber</li><li>hist->Mundzuk</li>
+      <li>tribe->Akatzir</li><li>tribe->Kutrigur</li><li>tribe->Utigur</li><li>tribe->Onogur</li><li>tribe->Saragur</li><li>tribe->Sabir</li><li>tribe->Amilzur</li><li>tribe->Itimar</li><li>tribe->Tonosur</li><li>tribe->Bassik</li><li>tribe->Kidar</li><li>tribe->Sadag</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementHun</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Camp of [hist]</li>
+      <li>r_name(p=2)->[pre][place]</li>
+      <li>r_name->[tribe] ordu</li>
+      <li>hist->Attila</li><li>hist->Bleda</li><li>hist->Rugila</li><li>hist->Octar</li><li>hist->Mundzuk</li><li>hist->Uldin</li><li>hist->Charaton</li><li>hist->Ellac</li><li>hist->Dengizich</li><li>hist->Ernak</li><li>hist->Balamber</li><li>hist->Edeko</li><li>hist->Onegesius</li><li>hist->Scottas</li><li>hist->Kursich</li><li>hist->Basich</li><li>hist->Berik</li><li>hist->Eskam</li><li>hist->Emnetzur</li><li>hist->Ultzindur</li><li>hist->Hormidac</li><li>hist->Oebarsius</li>
+      <li>pre->Ul</li><li>pre->Ed</li><li>pre->Bal</li><li>pre->Ok</li><li>pre->Mun</li><li>pre->Kar</li><li>pre->Den</li><li>pre->Ern</li><li>pre->El</li><li>pre->Bas</li><li>pre->Kur</li><li>pre->Ber</li><li>pre->Esk</li><li>pre->Tar</li><li>pre->Tur</li><li>pre->Bor</li><li>pre->Kut</li><li>pre->Sar</li><li>pre->Tog</li><li>pre->Il</li><li>pre->Ak</li><li>pre->Bil</li><li>pre->Ur</li><li>pre->Em</li><li>pre->Ad</li><li>pre->Scot</li><li>pre->Or</li><li>pre->Uld</li><li>pre->Hor</li><li>pre->Char</li><li>pre->Rug</li><li>pre->Oeb</li><li>pre->Atak</li><li>pre->Sab</li><li>pre->Tun</li>
+      <li>tribe->Akatzir</li><li>tribe->Kutrigur</li><li>tribe->Utigur</li><li>tribe->Onogur</li><li>tribe->Saragur</li><li>tribe->Sabir</li><li>tribe->Amilzur</li><li>tribe->Itimar</li><li>tribe->Tonosur</li><li>tribe->Bassik</li><li>tribe->Kidar</li><li>tribe->Sadag</li>
+      <li>place->ordu</li><li>place->balik</li><li>place->kent</li><li>place->tag</li><li>place->kul</li><li>place->su</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>
