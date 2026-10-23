@@ -245,18 +245,37 @@
     </modExtensions>
   </PawnKindDef>
   <PawnKindDef ParentName="LR_GothBase">
-    <defName>LR_Goth_Swordsman</defName>
-    <label>Gothic swordsman</label>
-    <combatPower>90</combatPower>
+    <defName>LR_Goth_ThracianWarrior</defName>
+    <label>Thracian warrior</label>
+    <combatPower>85</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.6~1.0</gearHealthRange>
-    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_MailCoif</li><li>LR_Byrnie</li><li>LR_GothicBlackShield</li></apparelRequired>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunic</li><li>LR_ThracianCap</li></apparelRequired>
     <apparelMoney>0~0</apparelMoney>
     <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags><li>LR_Spatha</li></weaponTags>
-    <initialWillRange>1~3</initialWillRange>
+    <weaponTags><li>LR_Rhomphaia</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
     <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_GothBase">
+    <defName>LR_Goth_ThracianNoble</defName>
+    <label>Thracian noble</label>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GothicTunicBlue</li><li>LR_GothicHelm</li><li>LR_Lamellar</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Rhomphaia</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
     <modExtensions>
       <li Class="AgeOfMigrations.UniformExtension">
         <allowedExtra></allowedExtra>

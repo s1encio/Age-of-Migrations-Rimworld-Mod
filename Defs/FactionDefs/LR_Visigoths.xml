@@ -87,7 +87,7 @@
       <li>
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
-        <options><LR_Goth_Levy>12</LR_Goth_Levy><LR_Goth_Warband>8</LR_Goth_Warband><LR_Goth_Warrior>12</LR_Goth_Warrior><LR_Goth_Axeman>8</LR_Goth_Axeman><LR_Goth_Spearman>12</LR_Goth_Spearman><LR_Goth_MailedSpearman>6</LR_Goth_MailedSpearman><LR_Goth_Swordsman>5</LR_Goth_Swordsman><LR_Goth_PickedMan>4</LR_Goth_PickedMan><LR_Goth_Noble>4</LR_Goth_Noble><LR_Goth_NobleAxeman>3</LR_Goth_NobleAxeman><LR_Goth_WolfWarrior>3</LR_Goth_WolfWarrior><LR_Goth_Champion>2</LR_Goth_Champion><LR_Goth_Comitatus>2</LR_Goth_Comitatus><LR_Goth_Archer>6</LR_Goth_Archer><LR_Goth_Bowman>5</LR_Goth_Bowman><LR_Goth_Slinger>3</LR_Goth_Slinger><LR_Goth_Crossbowman>2</LR_Goth_Crossbowman><LR_Goth_Skirmisher>4</LR_Goth_Skirmisher><LR_Goth_EliteArcher>2</LR_Goth_EliteArcher><LR_Goth_Rider>8</LR_Goth_Rider><LR_Goth_NobleRider>3</LR_Goth_NobleRider><LR_Goth_Lancer>4</LR_Goth_Lancer><LR_Goth_NobleLancer>2</LR_Goth_NobleLancer><LR_Goth_JavelinRider>3</LR_Goth_JavelinRider><LR_Goth_HorseArcher>3</LR_Goth_HorseArcher></options>
+        <options><LR_Goth_Levy>12</LR_Goth_Levy><LR_Goth_Warband>8</LR_Goth_Warband><LR_Goth_Warrior>12</LR_Goth_Warrior><LR_Goth_Axeman>8</LR_Goth_Axeman><LR_Goth_Spearman>12</LR_Goth_Spearman><LR_Goth_MailedSpearman>6</LR_Goth_MailedSpearman><LR_Goth_ThracianWarrior>5</LR_Goth_ThracianWarrior><LR_Goth_ThracianNoble>2</LR_Goth_ThracianNoble><LR_Goth_PickedMan>4</LR_Goth_PickedMan><LR_Goth_Noble>4</LR_Goth_Noble><LR_Goth_NobleAxeman>3</LR_Goth_NobleAxeman><LR_Goth_WolfWarrior>3</LR_Goth_WolfWarrior><LR_Goth_Champion>2</LR_Goth_Champion><LR_Goth_Comitatus>2</LR_Goth_Comitatus><LR_Goth_Archer>6</LR_Goth_Archer><LR_Goth_Bowman>5</LR_Goth_Bowman><LR_Goth_Slinger>3</LR_Goth_Slinger><LR_Goth_Crossbowman>2</LR_Goth_Crossbowman><LR_Goth_Skirmisher>4</LR_Goth_Skirmisher><LR_Goth_EliteArcher>2</LR_Goth_EliteArcher><LR_Goth_Rider>8</LR_Goth_Rider><LR_Goth_NobleRider>3</LR_Goth_NobleRider><LR_Goth_Lancer>4</LR_Goth_Lancer><LR_Goth_NobleLancer>2</LR_Goth_NobleLancer><LR_Goth_JavelinRider>3</LR_Goth_JavelinRider><LR_Goth_HorseArcher>3</LR_Goth_HorseArcher></options>
       </li>
       <li>
         <kindDef>Combat</kindDef>
@@ -97,12 +97,12 @@
       <li>
         <kindDef>Combat</kindDef>
         <commonality>25</commonality>
-        <options><LR_Goth_Spearman>25</LR_Goth_Spearman><LR_Goth_MailedSpearman>12</LR_Goth_MailedSpearman><LR_Goth_PickedMan>10</LR_Goth_PickedMan><LR_Goth_Swordsman>8</LR_Goth_Swordsman><LR_Goth_Noble>6</LR_Goth_Noble><LR_Goth_Comitatus>3</LR_Goth_Comitatus><LR_Goth_Archer>8</LR_Goth_Archer></options>
+        <options><LR_Goth_Spearman>25</LR_Goth_Spearman><LR_Goth_MailedSpearman>12</LR_Goth_MailedSpearman><LR_Goth_PickedMan>10</LR_Goth_PickedMan><LR_Goth_Noble>6</LR_Goth_Noble><LR_Goth_Comitatus>3</LR_Goth_Comitatus><LR_Goth_Archer>8</LR_Goth_Archer></options>
       </li>
       <li>
         <kindDef>Combat</kindDef>
         <commonality>20</commonality>
-        <options><LR_Goth_Axeman>20</LR_Goth_Axeman><LR_Goth_NobleAxeman>10</LR_Goth_NobleAxeman><LR_Goth_WolfWarrior>12</LR_Goth_WolfWarrior><LR_Goth_Champion>6</LR_Goth_Champion><LR_Goth_Warband>12</LR_Goth_Warband><LR_Goth_Swordsman>6</LR_Goth_Swordsman></options>
+        <options><LR_Goth_Axeman>20</LR_Goth_Axeman><LR_Goth_NobleAxeman>10</LR_Goth_NobleAxeman><LR_Goth_WolfWarrior>12</LR_Goth_WolfWarrior><LR_Goth_Champion>6</LR_Goth_Champion><LR_Goth_Warband>12</LR_Goth_Warband><LR_Goth_ThracianWarrior>10</LR_Goth_ThracianWarrior><LR_Goth_ThracianNoble>4</LR_Goth_ThracianNoble></options>
       </li>
       <li>
         <kindDef>Combat</kindDef>
@@ -121,7 +121,7 @@
       </li>
       <li>
         <kindDef>Settlement</kindDef>
-        <options><LR_Goth_Freeman>25</LR_Goth_Freeman><LR_Goth_Levy>12</LR_Goth_Levy><LR_Goth_Warband>8</LR_Goth_Warband><LR_Goth_Warrior>14</LR_Goth_Warrior><LR_Goth_Axeman>8</LR_Goth_Axeman><LR_Goth_Swordsman>5</LR_Goth_Swordsman><LR_Goth_Spearman>15</LR_Goth_Spearman><LR_Goth_MailedSpearman>6</LR_Goth_MailedSpearman><LR_Goth_NobleAxeman>2</LR_Goth_NobleAxeman><LR_Goth_Champion>2</LR_Goth_Champion><LR_Goth_Archer>6</LR_Goth_Archer><LR_Goth_Bowman>5</LR_Goth_Bowman><LR_Goth_Crossbowman>3</LR_Goth_Crossbowman><LR_Goth_Slinger>4</LR_Goth_Slinger><LR_Goth_Noble>5</LR_Goth_Noble><LR_Goth_PickedMan>4</LR_Goth_PickedMan><LR_Goth_Comitatus>2</LR_Goth_Comitatus></options>
+        <options><LR_Goth_Freeman>25</LR_Goth_Freeman><LR_Goth_Levy>12</LR_Goth_Levy><LR_Goth_Warband>8</LR_Goth_Warband><LR_Goth_Warrior>14</LR_Goth_Warrior><LR_Goth_Axeman>8</LR_Goth_Axeman><LR_Goth_ThracianWarrior>4</LR_Goth_ThracianWarrior><LR_Goth_Spearman>15</LR_Goth_Spearman><LR_Goth_MailedSpearman>6</LR_Goth_MailedSpearman><LR_Goth_NobleAxeman>2</LR_Goth_NobleAxeman><LR_Goth_Champion>2</LR_Goth_Champion><LR_Goth_Archer>6</LR_Goth_Archer><LR_Goth_Bowman>5</LR_Goth_Bowman><LR_Goth_Crossbowman>3</LR_Goth_Crossbowman><LR_Goth_Slinger>4</LR_Goth_Slinger><LR_Goth_Noble>5</LR_Goth_Noble><LR_Goth_PickedMan>4</LR_Goth_PickedMan><LR_Goth_Comitatus>2</LR_Goth_Comitatus></options>
       </li>
     </pawnGroupMakers>
   </FactionDef>

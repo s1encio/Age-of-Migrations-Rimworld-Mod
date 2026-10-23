@@ -96,6 +96,36 @@
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ThracianCap</defName>
+    <label>Thracian cap</label>
+    <description>A cap of thick red felt with a tall peak curling forward and flaps over the ears, worn by the warriors of Thrace and the Balkan hills who joined the Goths.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ThracianCap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>1500</WorkToMake><MaxHitPoints>80</MaxHitPoints><Mass>0.4</Mass><ArmorRating_Sharp>0.12</ArmorRating_Sharp><ArmorRating_Blunt>0.1</ArmorRating_Blunt><Insulation_Cold>7</Insulation_Cold><Insulation_Heat>1</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>35</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ThracianCap/LR_ThracianCap</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Goth</li><li>LR_ThracianCap</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>LR_GothicTunic</defName>
     <label>Gothic tunic</label>
     <description>A dark brown wool tunic with tablet-woven borders, worn over the pale trousers the Romans thought so barbaric.</description>
