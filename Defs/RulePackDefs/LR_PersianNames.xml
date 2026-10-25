@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonPersian</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first->Ardashir</li><li>first->Shapur</li><li>first->Bahram</li><li>first->Yazdegerd</li><li>first->Hormizd</li><li>first->Narseh</li><li>first->Peroz</li><li>first->Khosrow</li><li>first->Kavad</li><li>first->Valash</li><li>first->Jamasp</li><li>first->Zarmihr</li><li>first->Sukhra</li><li>first->Mihr-Narseh</li><li>first->Surena</li><li>first->Rostam</li><li>first->Vahram</li><li>first->Farrukhzad</li><li>first->Bahman</li><li>first->Ardavan</li><li>first->Papak</li><li>first->Tansar</li><li>first->Kartir</li><li>first->Adurbad</li><li>first->Mazdak</li><li>first->Bozorgmehr</li><li>first->Shahrvaraz</li><li>first->Vistahm</li><li>first->Vinduyih</li><li>first->Mihran</li><li>first->Gushnasp</li><li>first->Vardan</li><li>first->Hamazasp</li><li>first->Piran</li><li>first->Siyavash</li><li>first->Godarz</li>
+      <li>nick->Gur</li><li>nick->Shir</li><li>nick->Kamsar</li><li>nick->Atash</li><li>nick->Bahadur</li><li>nick->Pahlavan</li><li>nick->Mard</li><li>nick->Dalir</li><li>nick->Zarin</li><li>nick->Azad</li>
+      <li>last(p=3)->[house]</li>
+      <li>last->son of [first]</li>
+      <li>house->Suren</li><li>house->Karen</li><li>house->Mihran</li><li>house->Ispahbudhan</li><li>house->Spandiyadh</li><li>house->Zik</li><li>house->Varaz</li><li>house->Kanarangiyan</li><li>house->Andigan</li><li>house->Sasan</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonPersianFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first->Shirin</li><li>first->Azarmidokht</li><li>first->Boran</li><li>first->Denag</li><li>first->Shapurdukht</li><li>first->Ardashirdukht</li><li>first->Anahid</li><li>first->Mahdukht</li><li>first->Roshanak</li><li>first->Parinaz</li><li>first->Gordiya</li><li>first->Pantea</li><li>first->Sudabeh</li><li>first->Tahmina</li><li>first->Farangis</li><li>first->Manizheh</li><li>first->Gurdafarid</li><li>first->Kharbandag</li><li>first->Mahbanu</li><li>first->Arnavaz</li>
+      <li>nick->Mah</li><li>nick->Gol</li><li>nick->Setareh</li><li>nick->Nazanin</li><li>nick->Banu</li><li>nick->Azar</li><li>nick->Simin</li><li>nick->Zarin</li>
+      <li>last(p=3)->[house]</li>
+      <li>house->Suren</li><li>house->Karen</li><li>house->Mihran</li><li>house->Ispahbudhan</li><li>house->Spandiyadh</li><li>house->Zik</li><li>house->Varaz</li><li>house->Kanarangiyan</li><li>house->Andigan</li><li>house->Sasan</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionPersian</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Sassanid Empire</li>
+      <li>r_name->Eranshahr</li>
+      <li>r_name->Empire of the Iranians</li>
+      <li>r_name->House of Sasan</li>
+      <li>r_name->Kingdom of [king]</li>
+      <li>king->Yazdegerd</li><li>king->Bahram</li><li>king->Shapur</li><li>king->Ardashir</li><li>king->Peroz</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementPersian</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->[old]</li>
+      <li>r_name(p=2)->[good]-[king]</li>
+      <li>r_name(p=2)->[king][place]</li>
+      <li>old->Ctesiphon</li><li>old->Veh-Ardashir</li><li>old->Gundeshapur</li><li>old->Istakhr</li><li>old->Bishapur</li><li>old->Nishapur</li><li>old->Merv</li><li>old->Rey</li><li>old->Hamadan</li><li>old->Ganzak</li><li>old->Ardashir-Khwarrah</li><li>old->Susa</li><li>old->Shushtar</li><li>old->Nisibis</li><li>old->Hira</li><li>old->Herat</li><li>old->Balkh</li><li>old->Kerman</li><li>old->Zarang</li><li>old->Arbela</li><li>old->Karka</li><li>old->Hulwan</li><li>old->Shiz</li><li>old->Dvin</li><li>old->Partaw</li><li>old->Darband</li><li>old->Gorgan</li><li>old->Amol</li><li>old->Spahan</li><li>old->Shahrazur</li>
+      <li>good->Veh</li><li>good->Ram</li><li>good->Shad</li><li>good->Peroz</li><li>good->Khwarrah</li><li>good->Hu</li>
+      <li>king->Ardashir</li><li>king->Shapur</li><li>king->Hormizd</li><li>king->Kavad</li><li>king->Peroz</li><li>king->Bahram</li><li>king->Narseh</li><li>king->Khosrow</li>
+      <li>place->abad</li><li>place->gird</li><li>place->kert</li><li>place->shahr</li><li>place->-Khwarrah</li><li>place->-Ram</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

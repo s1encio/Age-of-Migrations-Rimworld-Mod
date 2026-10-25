@@ -31,7 +31,7 @@ namespace AgeOfMigrations
 
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
-                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons" && faction.def.defName != "LR_Ostrogoths" && faction.def.defName != "LR_Franks")
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons" && faction.def.defName != "LR_Ostrogoths" && faction.def.defName != "LR_Franks" && faction.def.defName != "LR_Sassanids")
                     continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
                 if (ideo == null)
@@ -85,6 +85,13 @@ namespace AgeOfMigrations
                             "springs where the folk bring their offerings. Their royal house claims descent from a sea-beast, the " +
                             "Quinotaur, that came to the wife of King Chlodio as she bathed in the sea, and bees of gold are buried " +
                             "with their kings. Some of the nobles who served Rome have taken baptism, but the folk keep the old ways.");
+                        break;
+                    case "LR_Sassanids":
+                        Set(ideo, "Zoroastrian Faith", "Zoroastrian", "Zoroastrian",
+                            "The Good Religion of Zarathustra: the worship of Ahura Mazda, the Wise Lord, creator of all that is good, " +
+                            "against Ahriman, the Lie, who brings death and darkness into the world. Every man must choose between " +
+                            "them by good thoughts, good words and good deeds. Its priests, the magi, tend sacred fires that have " +
+                            "burned for centuries in the fire temples, and its high priest stands beside the King of Kings.");
                         break;
                     case "LR_Visigoths":
                         Set(ideo, "Gothic Church", "Gothic", "Gothic Arian",
@@ -160,6 +167,20 @@ namespace AgeOfMigrations
                         continue;
                     SetHostile(ostro, other);
                     SetHostile(other, ostro);
+                }
+            }
+            // the Sassanids against Rome and against the Huns raiding over the Caucasus
+            foreach (Faction persia in all)
+            {
+                if (persia.def.defName != "LR_Sassanids")
+                    continue;
+                foreach (Faction other in all)
+                {
+                    string d = other.def.defName;
+                    if (d != "LR_WesternEmpire" && d != "LR_EasternEmpire" && d != "LR_Huns")
+                        continue;
+                    SetHostile(persia, other);
+                    SetHostile(other, persia);
                 }
             }
             // the Franks will stand with Rome against the Huns

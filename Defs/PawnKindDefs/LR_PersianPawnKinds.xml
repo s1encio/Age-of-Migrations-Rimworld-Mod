@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="LR_PersianBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>LR_Sassanids</defaultFactionType>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance>
+    <invNutrition>2.5</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Peasant</defName>
+    <label>peasant</label>
+    <combatPower>25</combatPower>
+    <isFighter>false</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>0~0</weaponMoney>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_PaighanLevy</defName>
+    <label>paighan levy</label>
+    <combatPower>35</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_PersianWickerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Seax</li><li>LR_Tabarzin</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Dailamite</defName>
+    <label>Dailamite warrior</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunicYellow</li><li>LR_PersianHelm</li><li>LR_PersianGoldChevronShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Tabarzin</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_NaphthaThrower</defName>
+    <label>naphtha thrower</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_PersianWickerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>GrenadeFlame</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Swordsman</defName>
+    <label>armoured swordsman</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianHelm</li><li>LR_Byrnie</li><li>LR_PersianStarShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianSword</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Immortal</defName>
+    <label>Zhayedan Immortal</label>
+    <combatPower>150</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoat</li><li>LR_ImmortalHelm</li><li>LR_Lamellar</li><li>LR_PersianFireShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianMace</li><li>LR_PersianSword</li></weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Slinger</defName>
+    <label>Kurdish slinger</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Sling</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Archer</defName>
+    <label>paighan archer</label>
+    <combatPower>45</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowShort</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_SparaArcher</defName>
+    <label>spara archer</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunicYellow</li><li>LR_PersianCap</li><li>LR_Quiver</li><li>LR_Spara</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_DailamiteArcher</defName>
+    <label>Dailamite archer</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunicYellow</li><li>LR_PersianHelm</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Javelinman</defName>
+    <label>Arab javelinman</label>
+    <combatPower>50</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_PersianWickerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_ImmortalArcher</defName>
+    <label>Immortal archer</label>
+    <combatPower>110</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoat</li><li>LR_PersianHelm</li><li>LR_Lamellar</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
+    <initialWillRange>2~3</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_PaighanSpearman</defName>
+    <label>paighan spearman</label>
+    <combatPower>45</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_Spara</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_DailamiteSpearman</defName>
+    <label>Dailamite spearman</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunicYellow</li><li>LR_PersianHelm</li><li>LR_PersianGoldChevronShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li><li>LR_Framea</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_ArmouredSpearman</defName>
+    <label>armoured spearman</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianHelm</li><li>LR_Byrnie</li><li>LR_PersianChevronShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Sparabara</defName>
+    <label>sparabara</label>
+    <combatPower>75</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianHelm</li><li>LR_Spara</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_LightRider</defName>
+    <label>azatan rider</label>
+    <combatPower>85</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_PersianWickerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_HorseArcher</defName>
+    <label>horse archer</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianHelm</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Savaran</defName>
+    <label>savaran</label>
+    <combatPower>145</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoatRed</li><li>LR_PersianHelm</li><li>LR_Lamellar</li><li>LR_PersianStarShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianMace</li><li>LR_PersianSword</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_SavaranArcher</defName>
+    <label>savaran archer</label>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoatRed</li><li>LR_PersianHelm</li><li>LR_Byrnie</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Clibanarius</defName>
+    <label>clibanarius</label>
+    <combatPower>185</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoat</li><li>LR_ClibanariusHelm</li><li>LR_Lamellar</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Grivpanvar</defName>
+    <label>grivpanvar</label>
+    <combatPower>190</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoat</li><li>LR_ClibanariusHelm</li><li>LR_Lamellar</li><li>LR_PersianStarShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianMace</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Pushtighban</defName>
+    <label>pushtighban guard</label>
+    <combatPower>220</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>0.9~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoatRed</li><li>LR_ImmortalHelm</li><li>LR_Lamellar</li><li>LR_PersianFireShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_CamelRider</defName>
+    <label>camel rider</label>
+    <combatPower>85</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCap</li><li>LR_PersianWickerShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianSword</li><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Dromedary</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_CamelArcher</defName>
+    <label>camel archer</label>
+    <combatPower>90</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunicYellow</li><li>LR_PersianCap</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowRecurve</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Dromedary</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_ElephantRider</defName>
+    <label>war elephant</label>
+    <combatPower>260</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianHelm</li><li>LR_Byrnie</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Elephant</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Merchant</defName>
+    <label>merchant</label><trader>true</trader>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoatRed</li><li>LR_PersianCap</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianSword</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Dromedary</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_PersianBase">
+    <defName>LR_Persian_Shah</defName>
+    <label>shahanshah</label><factionLeader>true</factionLeader>
+    <combatPower>220</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_ShahRobe</li><li>LR_ShahCrown</li><li>LR_Lamellar</li><li>LR_PersianFireShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_PersianSword</li></weaponTags>
+    <initialWillRange>6~8</initialWillRange>
+    <initialResistanceRange>30~40</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+</Defs>

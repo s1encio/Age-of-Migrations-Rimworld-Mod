@@ -72,4 +72,13 @@
       </li>
     </value>
   </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="LR_Sassanids"]</xpath>
+    <value>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromlayouts><li>LR_Persian_Castra_1</li><li>LR_Persian_Castra_2</li><li>LR_Persian_Castra_3</li><li>LR_Persian_Oppidum_1</li><li>LR_Persian_Oppidum_2</li><li>LR_Persian_Oppidum_3</li></chooseFromlayouts>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </value>
+  </Operation>
 </Patch>

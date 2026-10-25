@@ -224,6 +224,24 @@
     <thing>LR_StandardFrank</thing>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_StandardPersian</defName>
+    <thing>LR_StandardPersian</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Loot_PersianSword</defName>
+    <thing>LR_PersianSword</thing>
+    <maxStackSize>1</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Loot_PersianMace</defName>
+    <thing>LR_PersianMace</thing>
+    <maxStackSize>1</maxStackSize>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_Column_BlocksSandstone</defName>
+    <thing>LR_Column</thing><stuff>BlocksSandstone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_Loot_Langseax</defName>
     <thing>LR_Langseax</thing>
     <maxStackSize>1</maxStackSize>
@@ -259,5 +277,13 @@
   <KCSG.SymbolDef>
     <defName>LR_SheepPawn</defName>
     <pawnKindDef>Sheep</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_CamelPawn</defName>
+    <pawnKindDef>Dromedary</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_ElephantPawn</defName>
+    <pawnKindDef>Elephant</pawnKindDef>
   </KCSG.SymbolDef>
 </Defs>

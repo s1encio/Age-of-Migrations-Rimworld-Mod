@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>LR_PersianCulture</defName>
+    <label>persian</label>
+    <description>The culture of Sassanid Iran: an empire of great noble houses and fire temples, of royal hunts carved on silver plates and in the rock, of polo, chess and backgammon, of the epic deeds of Rostam told at the courts of kings who call themselves descended from the gods.</description>
+    <pawnNameMaker>LR_NamerPersonPersian</pawnNameMaker>
+    <pawnNameMakerFemale>LR_NamerPersonPersianFemale</pawnNameMakerFemale>
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LR_PersianLeaderTitleMaker</leaderTitleMaker>
+    <allowedPlaceTags><li>OriginTribal</li></allowedPlaceTags>
+    <iconPath>World/LR_PersianIcon</iconPath>
+    <iconColor>(0.62, 0.35, 0.72)</iconColor>
+    <preferredWeaponClasses>
+      <noble>MeleeBlunt</noble>
+      <despised>Ultratech</despised>
+    </preferredWeaponClasses>
+    <styleItemTags>
+      <li><tag>Urban</tag><baseWeight>0.8</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>Rural</tag><baseWeight>0.6</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>BeardTribal</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoBeard</tag><baseWeight>0.1</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoTattoo</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+    </styleItemTags>
+  </CultureDef>
+  <RulePackDef>
+    <defName>LR_PersianLeaderTitleMaker</defName>
+    <rulePack><rulesStrings>
+      <li>r_leaderTitle->shahanshah</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

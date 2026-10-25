@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+    <defName>LR_PersianMace</defName>
+    <label>gorz</label>
+    <description>The Persian mace: a heavy flanged iron head on a long haft. Against riders in mail and lamellar, a sword glances off, but a mace breaks the bones beneath.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_PersianMace</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>12000</WorkToMake><Mass>2.2</Mass></statBases>
+    <costList><Steel>70</Steel><WoodLog>10</WoodLog></costList>
+    <weaponTags><li>LR_PersianMelee</li><li>LR_PersianMace</li></weaponTags>
+    <tools><li><label>haft</label><capacities><li>Blunt</li></capacities><power>8</power><cooldownTime>2</cooldownTime></li><li><label>head</label><capacities><li>Blunt</li></capacities><power>20</power><cooldownTime>2.6</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_PersianSword</defName>
+    <label>Sassanid long sword</label>
+    <description>A long straight sword with a narrow gold guard, worn hanging from a P-shaped scabbard mount so a rider can draw it easily.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_PersianSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>14000</WorkToMake><Mass>1.5</Mass></statBases>
+    <costList><Steel>75</Steel><Gold>2</Gold></costList>
+    <weaponTags><li>LR_PersianMelee</li><li>LR_PersianSword</li></weaponTags>
+    <tools><li><label>pommel</label><capacities><li>Blunt</li></capacities><power>7</power><cooldownTime>2</cooldownTime></li><li><label>point</label><capacities><li>Stab</li></capacities><power>15</power><cooldownTime>2.3</cooldownTime></li><li><label>edge</label><capacities><li>Cut</li></capacities><power>18</power><cooldownTime>2.3</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>LR_Tabarzin</defName>
+    <label>tabarzin</label>
+    <description>The 'saddle axe': a small crescent head on a long haft, the weapon of the Dailamite hillmen from the mountains south of the Caspian.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LR_Tabarzin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><WorkToMake>10000</WorkToMake><Mass>1.8</Mass></statBases>
+    <costList><Steel>50</Steel><WoodLog>15</WoodLog></costList>
+    <weaponTags><li>LR_PersianMelee</li><li>LR_Tabarzin</li></weaponTags>
+    <tools><li><label>haft</label><capacities><li>Blunt</li></capacities><power>8</power><cooldownTime>2</cooldownTime></li><li><label>blade</label><capacities><li>Cut</li></capacities><power>19</power><cooldownTime>2.6</cooldownTime></li></tools>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

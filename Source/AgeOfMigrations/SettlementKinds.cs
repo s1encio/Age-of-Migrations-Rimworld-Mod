@@ -25,11 +25,12 @@ namespace AgeOfMigrations
             string f = s.Faction.def.defName;
             bool roman = f == "LR_WesternEmpire" || f == "LR_EasternEmpire";
             bool huns = f == "LR_Huns";
-            if (!roman && !huns && f != "LR_Vandals" && f != "LR_Visigoths" && f != "LR_Saxons" && f != "LR_Ostrogoths" && f != "LR_Franks")
+            bool persia = f == "LR_Sassanids";
+            if (!roman && !huns && !persia && f != "LR_Vandals" && f != "LR_Visigoths" && f != "LR_Saxons" && f != "LR_Ostrogoths" && f != "LR_Franks")
                 return false;
             uint h = unchecked((uint)s.ID * 2654435761u);
             camp = ((h >> 13) & 1u) == 0u;
-            kind = roman ? (camp ? "marching camp" : "town") : huns ? (camp ? "nomad camp" : "royal camp") : (camp ? "migrant camp" : "village");
+            kind = roman ? (camp ? "marching camp" : "town") : persia ? (camp ? "army camp" : "city") : huns ? (camp ? "nomad camp" : "royal camp") : (camp ? "migrant camp" : "village");
             return true;
         }
 
@@ -42,6 +43,9 @@ namespace AgeOfMigrations
             if (f == "LR_Huns")
                 return camp ? "Nomad camp: round felt tents among great herds of horses. No walls, and most of the warriors are mounted."
                             : "Royal camp: a lord's wooden hall behind a palisade, surrounded by the felt tents of his people.";
+            if (f == "LR_Sassanids")
+                return camp ? "Army camp: a Persian army on campaign, rows of tents round the commander's pavilion, with horse lines, camels and war elephants."
+                            : "City: a walled Persian city with a palace hall, a fire temple, a paradise garden, a bazaar, houses and stables.";
             if (f == "LR_Franks")
                 return camp ? "Migrant camp: Frankish families on the move, camped around their fires beside their wagons. No walls."
                             : "Village: a Frankish village behind a palisade, with the king's hall, longhouses, a holy grove of the old gods, pens and fields.";

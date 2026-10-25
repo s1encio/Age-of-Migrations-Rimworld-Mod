@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_Sassanids</defName>
+    <label>Sassanid Empire</label>
+    <description>The Empire of the Iranians, Eranshahr, ruled from Ctesiphon by the Sassanid King of Kings, heir of Cyrus and Darius and Rome's equal and rival for two hundred years. Its heart is the savaran, the armoured noble cavalry: clibanarii hidden in iron and mail, lancers and mace-bearers who can break any line, and horse archers who can destroy it from afar. Behind them stand spara archers and paighan levies, Dailamite hillmen with axes, Arab camel riders and the dreaded war elephants. They worship Ahura Mazda in the sacred fire, and they are at war with both Roman empires and with the Huns who raid their northern frontier.</description>
+    <pawnSingular>Persian</pawnSingular>
+    <pawnsPlural>Persians</pawnsPlural>
+    <listOrderPriority>29</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>42</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>shahanshah</leaderTitle>
+    <factionIconPath>World/LR_PersianIcon</factionIconPath>
+    <settlementTexturePath>World/LR_PersianSettlement</settlementTexturePath>
+    <colorSpectrum><li>(0.42, 0.18, 0.5)</li><li>(0.55, 0.24, 0.6)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionPersian</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementPersian</settlementNameMaker>
+    <allowedCultures><li>LR_PersianCulture</li></allowedCultures>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_Persian_Swordsman</basicMemberKind>
+    <fixedLeaderKinds><li>LR_Persian_Shah</li></fixedLeaderKinds>
+    <!-- Religion: Zoroastrianism, the worship of Ahura Mazda -->
+    <structureMemeWeights>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Animist>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Tunneler</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HighLife</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NaturePrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Proselytizer</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">BodyMod_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">InsectMeatEating_Loved</li>
+    </disallowedPrecepts>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-45</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 110)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_Persian_PaighanLevy>8</LR_Persian_PaighanLevy><LR_Persian_Dailamite>7</LR_Persian_Dailamite><LR_Persian_NaphthaThrower>2</LR_Persian_NaphthaThrower><LR_Persian_Swordsman>4</LR_Persian_Swordsman><LR_Persian_Immortal>2</LR_Persian_Immortal><LR_Persian_Slinger>3</LR_Persian_Slinger><LR_Persian_Archer>6</LR_Persian_Archer><LR_Persian_SparaArcher>7</LR_Persian_SparaArcher><LR_Persian_DailamiteArcher>4</LR_Persian_DailamiteArcher><LR_Persian_Javelinman>3</LR_Persian_Javelinman><LR_Persian_ImmortalArcher>2</LR_Persian_ImmortalArcher><LR_Persian_PaighanSpearman>8</LR_Persian_PaighanSpearman><LR_Persian_DailamiteSpearman>4</LR_Persian_DailamiteSpearman><LR_Persian_ArmouredSpearman>4</LR_Persian_ArmouredSpearman><LR_Persian_Sparabara>3</LR_Persian_Sparabara><LR_Persian_LightRider>4</LR_Persian_LightRider><LR_Persian_HorseArcher>6</LR_Persian_HorseArcher><LR_Persian_Savaran>5</LR_Persian_Savaran><LR_Persian_SavaranArcher>4</LR_Persian_SavaranArcher><LR_Persian_Clibanarius>4</LR_Persian_Clibanarius><LR_Persian_Grivpanvar>2</LR_Persian_Grivpanvar><LR_Persian_Pushtighban>1</LR_Persian_Pushtighban><LR_Persian_CamelRider>2</LR_Persian_CamelRider><LR_Persian_CamelArcher>2</LR_Persian_CamelArcher><LR_Persian_ElephantRider>1</LR_Persian_ElephantRider></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>35</commonality>
+        <options><LR_Persian_Savaran>14</LR_Persian_Savaran><LR_Persian_SavaranArcher>12</LR_Persian_SavaranArcher><LR_Persian_Clibanarius>12</LR_Persian_Clibanarius><LR_Persian_Grivpanvar>8</LR_Persian_Grivpanvar><LR_Persian_Pushtighban>4</LR_Persian_Pushtighban><LR_Persian_HorseArcher>16</LR_Persian_HorseArcher><LR_Persian_LightRider>10</LR_Persian_LightRider><LR_Persian_ElephantRider>3</LR_Persian_ElephantRider></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options><LR_Persian_SparaArcher>18</LR_Persian_SparaArcher><LR_Persian_Archer>12</LR_Persian_Archer><LR_Persian_DailamiteArcher>8</LR_Persian_DailamiteArcher><LR_Persian_ImmortalArcher>4</LR_Persian_ImmortalArcher><LR_Persian_Slinger>6</LR_Persian_Slinger><LR_Persian_PaighanSpearman>14</LR_Persian_PaighanSpearman><LR_Persian_Sparabara>8</LR_Persian_Sparabara><LR_Persian_ArmouredSpearman>6</LR_Persian_ArmouredSpearman><LR_Persian_NaphthaThrower>3</LR_Persian_NaphthaThrower></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_Persian_Dailamite>18</LR_Persian_Dailamite><LR_Persian_DailamiteSpearman>12</LR_Persian_DailamiteSpearman><LR_Persian_DailamiteArcher>10</LR_Persian_DailamiteArcher><LR_Persian_Immortal>4</LR_Persian_Immortal><LR_Persian_Swordsman>6</LR_Persian_Swordsman><LR_Persian_NaphthaThrower>4</LR_Persian_NaphthaThrower></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>12</commonality>
+        <options><LR_Persian_CamelRider>16</LR_Persian_CamelRider><LR_Persian_CamelArcher>14</LR_Persian_CamelArcher><LR_Persian_LightRider>8</LR_Persian_LightRider><LR_Persian_Javelinman>10</LR_Persian_Javelinman><LR_Persian_ElephantRider>4</LR_Persian_ElephantRider><LR_Persian_Savaran>4</LR_Persian_Savaran></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_Persian_Peasant>30</LR_Persian_Peasant><LR_Persian_PaighanLevy>5</LR_Persian_PaighanLevy><LR_Persian_Archer>4</LR_Persian_Archer><LR_Persian_Swordsman>2</LR_Persian_Swordsman></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_Persian_Merchant>1</LR_Persian_Merchant></traders>
+        <carriers><Dromedary>6</Dromedary><Muffalo>2</Muffalo></carriers>
+        <guards><LR_Persian_Swordsman>8</LR_Persian_Swordsman><LR_Persian_SparaArcher>8</LR_Persian_SparaArcher><LR_Persian_DailamiteSpearman>6</LR_Persian_DailamiteSpearman><LR_Persian_Savaran>4</LR_Persian_Savaran><LR_Persian_CamelRider>6</LR_Persian_CamelRider><LR_Persian_CamelArcher>4</LR_Persian_CamelArcher></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_Persian_Peasant>25</LR_Persian_Peasant><LR_Persian_PaighanLevy>12</LR_Persian_PaighanLevy><LR_Persian_PaighanSpearman>12</LR_Persian_PaighanSpearman><LR_Persian_Dailamite>10</LR_Persian_Dailamite><LR_Persian_DailamiteSpearman>8</LR_Persian_DailamiteSpearman><LR_Persian_Swordsman>8</LR_Persian_Swordsman><LR_Persian_ArmouredSpearman>6</LR_Persian_ArmouredSpearman><LR_Persian_Sparabara>4</LR_Persian_Sparabara><LR_Persian_Archer>8</LR_Persian_Archer><LR_Persian_SparaArcher>10</LR_Persian_SparaArcher><LR_Persian_DailamiteArcher>5</LR_Persian_DailamiteArcher><LR_Persian_Slinger>5</LR_Persian_Slinger><LR_Persian_ImmortalArcher>3</LR_Persian_ImmortalArcher><LR_Persian_Immortal>3</LR_Persian_Immortal><LR_Persian_NaphthaThrower>3</LR_Persian_NaphthaThrower></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

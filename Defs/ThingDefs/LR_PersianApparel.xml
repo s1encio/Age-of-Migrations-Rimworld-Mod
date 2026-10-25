@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianCap</defName>
+    <label>Persian felt cap</label>
+    <description>A soft white felt cap with a rounded crown and a yellow band, worn by Persian foot soldiers and peasants.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianCap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>1400</WorkToMake><MaxHitPoints>80</MaxHitPoints><Mass>0.3</Mass><ArmorRating_Sharp>0.06</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt><Insulation_Cold>4</Insulation_Cold><Insulation_Heat>6</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>25</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianCap/LR_PersianCap</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Persian</li><li>LR_PersianCap</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianHelm</defName>
+    <label>Sassanid helmet</label>
+    <description>A two-piece iron helmet joined along a gilded ridge, with a gilded brow band and a mail aventail hanging round the neck.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>9000</WorkToMake><MaxHitPoints>160</MaxHitPoints><Mass>2.8</Mass><ArmorRating_Sharp>0.66</ArmorRating_Sharp><ArmorRating_Blunt>0.3</ArmorRating_Blunt><ArmorRating_Heat>0.15</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2.5</EquipDelay></statBases>
+    <costList><Steel>75</Steel><Gold>3</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.03</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianHelm/LR_PersianHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Persian</li><li>LR_PersianHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ClibanariusHelm</defName>
+    <label>clibanarius helmet</label>
+    <description>A Sassanid ridge helmet with a curtain of mail over the whole face but for a slit at the eyes. The Romans called the riders who wore them clibanarii, 'oven-men', for the heat inside their iron.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ClibanariusHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>12000</WorkToMake><MaxHitPoints>190</MaxHitPoints><Mass>3.6</Mass><ArmorRating_Sharp>0.76</ArmorRating_Sharp><ArmorRating_Blunt>0.36</ArmorRating_Blunt><ArmorRating_Heat>0.15</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2.5</EquipDelay></statBases>
+    <costList><Steel>95</Steel><Gold>3</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed><ShootingAccuracyPawn>-0.08</ShootingAccuracyPawn></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li><li>Eyes</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ClibanariusHelm/LR_ClibanariusHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Persian</li><li>LR_ClibanariusHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ImmortalHelm</defName>
+    <label>Immortal's helmet</label>
+    <description>A face-veiled ridge helmet with a crest of purple horsehair, worn by the Zhayedan, the Immortals of the King of Kings' guard.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ImmortalHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>13000</WorkToMake><MaxHitPoints>200</MaxHitPoints><Mass>3.6</Mass><ArmorRating_Sharp>0.78</ArmorRating_Sharp><ArmorRating_Blunt>0.36</ArmorRating_Blunt><ArmorRating_Heat>0.15</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2.5</EquipDelay></statBases>
+    <costList><Steel>95</Steel><Gold>8</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed><ShootingAccuracyPawn>-0.08</ShootingAccuracyPawn><SocialImpact>0.08</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li><li>Eyes</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ImmortalHelm/LR_ImmortalHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Persian</li><li>LR_ImmortalHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ShahCrown</defName>
+    <label>crown of the King of Kings</label>
+    <description>A crenellated crown of gold set with pearls and rubies, with golden wings and a great globe of silk above it, and ribbons streaming behind. Each Sassanid king had his own crown made, and wore no other.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ShahCrown</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>20000</WorkToMake><MaxHitPoints>120</MaxHitPoints><Mass>1.8</Mass><ArmorRating_Sharp>0.3</ArmorRating_Sharp><ArmorRating_Blunt>0.12</ArmorRating_Blunt><Insulation_Cold>2</Insulation_Cold><EquipDelay>2</EquipDelay></statBases>
+    <costList><Gold>60</Gold><Cloth>10</Cloth></costList>
+    <equippedStatOffsets><SocialImpact>0.35</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ShahCrown/LR_ShahCrown</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Persian</li><li>LR_ShahCrown</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianTunic</defName>
+    <label>Persian tunic</label>
+    <description>A white tunic of cotton and linen, light in the heat of Mesopotamia, worn over the baggy yellow trousers of the Persians.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianTunic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.6</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>7</Insulation_Cold><Insulation_Heat>6</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianTunic/LR_PersianTunic</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Persian</li><li>LR_PersianTunic</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianTunicYellow</defName>
+    <label>yellow tunic</label>
+    <description>A tunic dyed yellow with saffron and pomegranate, worn by the Dailamite hillmen and the Persian archers.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianTunicYellow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.6</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>7</Insulation_Cold><Insulation_Heat>6</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianTunicYellow/LR_PersianTunicYellow</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Persian</li><li>LR_PersianTunicYellow</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianCoat</defName>
+    <label>savaran coat</label>
+    <description>A long riding coat of purple silk-faced wool, closed across the chest and trimmed with gold, worn by the Persian noble cavalry under their armour.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianCoat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>3000</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>1.0</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>12</Insulation_Cold><Insulation_Heat>5</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>60</Cloth><Gold>2</Gold></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianCoat/LR_PersianCoat</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Persian</li><li>LR_PersianCoat</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianCoatRed</defName>
+    <label>red riding coat</label>
+    <description>A long red riding coat trimmed with gold braid, worn by the azatan, the free nobles who ride for the King of Kings.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianCoatRed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>3000</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>1.0</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>12</Insulation_Cold><Insulation_Heat>5</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>60</Cloth><Gold>2</Gold></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianCoatRed/LR_PersianCoatRed</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Persian</li><li>LR_PersianCoatRed</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_ShahRobe</defName>
+    <label>royal robe</label>
+    <description>A robe of purple silk woven with gold, its borders stiff with embroidery and pearls: the dress of the King of Kings.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_ShahRobe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>6000</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>1.0</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>12</Insulation_Cold><Insulation_Heat>5</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>80</Cloth><Gold>15</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.2</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ShahRobe/LR_ShahRobe</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Persian</li><li>LR_ShahRobe</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianStarShield</defName>
+    <label>star shield</label>
+    <description>A round shield painted red with a golden eight-pointed star, carried by the savaran. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianStarShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Mass>3.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>12</Steel><Gold>2</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianStarShield/LR_PersianStarShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Persian</li><li>LR_Shield</li><li>LR_PersianStarShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.6</rangedBlockChance>
+        <meleeBlockChance>0.34</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianWickerShield</defName>
+    <label>wicker shield</label>
+    <description>A light round shield of wickerwork painted yellow, cheap and quick to make, carried by levies and skirmishers. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianWickerShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>2.0</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>20</WoodLog><Cloth>10</Cloth></costList>
+    <equippedStatOffsets><MoveSpeed>-0.02</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianWickerShield/LR_PersianWickerShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Persian</li><li>LR_Shield</li><li>LR_PersianWickerShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.5</rangedBlockChance>
+        <meleeBlockChance>0.25</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianFireShield</defName>
+    <label>fire shield</label>
+    <description>A black round shield with a gilded rim, painted with the sacred fire on its altar: the shield of the Immortals. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianFireShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>155</MaxHitPoints>
+      <Mass>3.3</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>15</Steel><Gold>5</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianFireShield/LR_PersianFireShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Persian</li><li>LR_Shield</li><li>LR_PersianFireShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.62</rangedBlockChance>
+        <meleeBlockChance>0.36</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_Spara</defName>
+    <label>spara</label>
+    <description>A tall rectangular shield of wickerwork faced with rawhide. Persian archers plant a wall of them in the ground and shoot from behind it. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_Spara</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Mass>4.0</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>40</WoodLog><Leather_Plain>15</Leather_Plain></costList>
+    <equippedStatOffsets><MoveSpeed>-0.12</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_Spara/LR_Spara</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Persian</li><li>LR_Shield</li><li>LR_Spara</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.82</rangedBlockChance>
+        <meleeBlockChance>0.2</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianChevronShield</defName>
+    <label>chevron shield</label>
+    <description>A tall shield with a pointed foot, painted white with black chevrons, carried by Persian spearmen. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianChevronShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>4.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>45</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.1</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianChevronShield/LR_PersianChevronShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Persian</li><li>LR_Shield</li><li>LR_PersianChevronShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.72</rangedBlockChance>
+        <meleeBlockChance>0.27</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_PersianGoldChevronShield</defName>
+    <label>Dailamite shield</label>
+    <description>A tall shield with a pointed foot, painted yellow with black chevrons, carried by the Dailamite hillmen. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_PersianGoldChevronShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>4.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>45</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.1</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianGoldChevronShield/LR_PersianGoldChevronShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Persian</li><li>LR_Shield</li><li>LR_PersianGoldChevronShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.72</rangedBlockChance>
+        <meleeBlockChance>0.28</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
