@@ -9,7 +9,7 @@ using Verse;
 namespace AgeOfMigrations
 {
     /// <summary>
-    /// Every Roman, Vandal and Visigoth settlement is either a camp or a proper settlement. The kind is worked out from
+    /// Every Roman, Vandal, Visigoth, Hun and Saxon settlement is either a camp or a proper settlement. The kind is worked out from
     /// the settlement's ID, so it is fixed for the whole game without saving anything. It is shown on the world map
     /// after the name, explained in the inspect pane, and the map is generated with a layout of that kind (with VEF).
     /// Capitals are left alone: they have their own layout and label.
@@ -25,7 +25,7 @@ namespace AgeOfMigrations
             string f = s.Faction.def.defName;
             bool roman = f == "LR_WesternEmpire" || f == "LR_EasternEmpire";
             bool huns = f == "LR_Huns";
-            if (!roman && !huns && f != "LR_Vandals" && f != "LR_Visigoths")
+            if (!roman && !huns && f != "LR_Vandals" && f != "LR_Visigoths" && f != "LR_Saxons")
                 return false;
             uint h = unchecked((uint)s.ID * 2654435761u);
             camp = ((h >> 13) & 1u) == 0u;
@@ -42,6 +42,9 @@ namespace AgeOfMigrations
             if (f == "LR_Huns")
                 return camp ? "Nomad camp: round felt tents among great herds of horses. No walls, and most of the warriors are mounted."
                             : "Royal camp: a lord's wooden hall behind a palisade, surrounded by the felt tents of his people.";
+            if (f == "LR_Saxons")
+                return camp ? "Migrant camp: Saxon families come over the sea, camped around their fires beside their wagons. No walls."
+                            : "Village: a Saxon village behind a palisade, with a lord's mead hall, longhouses, a holy grove of the old gods, pens and fields.";
             return camp ? "Migrant camp: families on the move, camped around their fires beside their wagons. No walls."
                         : "Village: a settled village behind a palisade, with a king's hall, longhouses, a church, pens and fields.";
         }

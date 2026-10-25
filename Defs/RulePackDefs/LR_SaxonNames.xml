@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonSaxon</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][msuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Aethel</li><li>pre->Ead</li><li>pre->Aelf</li><li>pre->Os</li><li>pre->Wulf</li><li>pre->Cuth</li><li>pre->Beorht</li><li>pre->Cen</li><li>pre->Cyne</li><li>pre->Sige</li><li>pre->Wig</li><li>pre->Here</li><li>pre->Leof</li><li>pre->God</li><li>pre->Ceol</li><li>pre->Hroth</li><li>pre->Eorman</li><li>pre->Ecg</li><li>pre->Wil</li><li>pre->Ald</li><li>pre->Ean</li><li>pre->Hun</li><li>pre->Tond</li><li>pre->Fri</li><li>pre->Sae</li><li>pre->Burg</li><li>pre->Ord</li><li>pre->Wine</li><li>pre->Heah</li><li>pre->Brord</li>
+      <li>msuf->wulf</li><li>msuf->ric</li><li>msuf->wine</li><li>msuf->mund</li><li>msuf->beorht</li><li>msuf->weard</li><li>msuf->red</li><li>msuf->stan</li><li>msuf->here</li><li>msuf->helm</li><li>msuf->gar</li><li>msuf->frith</li><li>msuf->laf</li><li>msuf->bald</li><li>msuf->wald</li><li>msuf->noth</li>
+      <li>hist->Hengest</li><li>hist->Horsa</li><li>hist->Aelle</li><li>hist->Cerdic</li><li>hist->Cynric</li><li>hist->Octa</li><li>hist->Oisc</li><li>hist->Icel</li><li>hist->Cissa</li><li>hist->Wehha</li><li>hist->Wuffa</li><li>hist->Port</li><li>hist->Ebissa</li><li>hist->Stuf</li><li>hist->Wihtgar</li><li>hist->Creoda</li><li>hist->Eormenric</li><li>hist->Aesc</li><li>hist->Wodelgeat</li><li>hist->Finn</li>
+      <li>nick->[pre]a</li>
+      <li>nick->[pre]i</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Oisceling</li>
+      <li>last->Wuffing</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonSaxonFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][fsuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Aethel</li><li>pre->Ead</li><li>pre->Aelf</li><li>pre->Os</li><li>pre->Wulf</li><li>pre->Cuth</li><li>pre->Beorht</li><li>pre->Cen</li><li>pre->Cyne</li><li>pre->Sige</li><li>pre->Wig</li><li>pre->Here</li><li>pre->Leof</li><li>pre->God</li><li>pre->Ceol</li><li>pre->Hroth</li><li>pre->Eorman</li><li>pre->Ecg</li><li>pre->Wil</li><li>pre->Ald</li><li>pre->Ean</li><li>pre->Hun</li><li>pre->Tond</li><li>pre->Fri</li><li>pre->Sae</li><li>pre->Burg</li><li>pre->Ord</li><li>pre->Wine</li><li>pre->Heah</li><li>pre->Brord</li>
+      <li>fsuf->gifu</li><li>fsuf->burh</li><li>fsuf->thryth</li><li>fsuf->swith</li><li>fsuf->hild</li><li>fsuf->wynn</li><li>fsuf->flaed</li><li>fsuf->gyth</li><li>fsuf->frith</li><li>fsuf->ware</li>
+      <li>hist->Rowena</li><li>hist->Hild</li><li>hist->Wealhtheow</li><li>hist->Freawaru</li><li>hist->Hildeburh</li><li>hist->Modthryth</li><li>hist->Eadburh</li><li>hist->Aethelburh</li>
+      <li>nick->[pre]e</li>
+      <li>nick->[pre]a</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Wuffing</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionSaxon</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Saxon Host</li>
+      <li>r_name->Kingdom of the Cantware</li>
+      <li>r_name->Gewisse</li>
+      <li>r_name->Saxons of the Shore</li>
+      <li>r_name->Old Saxons</li>
+      <li>r_name->Host of [hist]</li>
+      <li>hist->Hengest</li><li>hist->Aelle</li><li>hist->Cerdic</li><li>hist->Icel</li><li>hist->Oisc</li><li>hist->Wuffa</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementSaxon</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=4)->[pre][place]</li>
+      <li>r_name(p=2)->[pre]inga[place]</li>
+      <li>r_name->[old]</li>
+      <li>pre->Aethel</li><li>pre->Ead</li><li>pre->Aelf</li><li>pre->Os</li><li>pre->Wulf</li><li>pre->Cuth</li><li>pre->Beorht</li><li>pre->Cen</li><li>pre->Cyne</li><li>pre->Sige</li><li>pre->Wig</li><li>pre->Here</li><li>pre->Leof</li><li>pre->God</li><li>pre->Ceol</li><li>pre->Hroth</li><li>pre->Eorman</li><li>pre->Ecg</li><li>pre->Wil</li><li>pre->Ald</li><li>pre->Ean</li><li>pre->Hun</li><li>pre->Tond</li><li>pre->Fri</li><li>pre->Sae</li><li>pre->Burg</li><li>pre->Ord</li><li>pre->Wine</li><li>pre->Heah</li><li>pre->Brord</li>
+      <li>place->ham</li><li>place->tun</li><li>place->wic</li><li>place->burh</li><li>place->ford</li><li>place->leah</li><li>place->stede</li><li>place->feld</li><li>place->dun</li><li>place->worth</li><li>place->ceaster</li>
+      <li>old->Cantwaraburh</li><li>old->Lundenwic</li><li>old->Eoforwic</li><li>old->Hamwic</li><li>old->Wintanceaster</li><li>old->Searoburh</li><li>old->Rochester</li><li>old->Sandwic</li><li>old->Feddersen</li><li>old->Flogeln</li><li>old->Mucking</li><li>old->Westerwanna</li><li>old->Hadeln</li><li>old->Ebbsfleet</li><li>old->Thanet</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

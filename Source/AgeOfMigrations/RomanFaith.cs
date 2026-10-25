@@ -31,7 +31,7 @@ namespace AgeOfMigrations
 
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
-                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns")
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons")
                     continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
                 if (ideo == null)
@@ -64,6 +64,13 @@ namespace AgeOfMigrations
                             "the earth, the ancestors and the spirits of places. Shamans read the will of heaven in the cracks of burned " +
                             "shoulder-blades before a battle. The Huns tell how a herdsman found the sword of the war god sticking out of " +
                             "the ground and brought it to Attila, a sign that heaven had given him lordship over the world.");
+                        break;
+                    case "LR_Saxons":
+                        Set(ideo, "Old Gods", "Heathen", "Heathen",
+                            "The faith of the Saxons' fathers: Woden the wise, from whom their kings claim descent, Thunor of the " +
+                            "thunder, Tiw of the battle-oath and Frige of the hearth. The folk gather at holy groves and hilltop " +
+                            "shrines to feast and sacrifice, and before a battle a war band may give the enemy to Woden by " +
+                            "throwing a spear over his host.");
                         break;
                     case "LR_Visigoths":
                         Set(ideo, "Gothic Church", "Gothic", "Gothic Arian",
@@ -126,6 +133,19 @@ namespace AgeOfMigrations
                         continue;
                     SetHostile(huns, other);
                     SetHostile(other, huns);
+                }
+            }
+            // the Saxons raid the coasts of Roman Britain and Gaul
+            foreach (Faction saxons in all)
+            {
+                if (saxons.def.defName != "LR_Saxons")
+                    continue;
+                foreach (Faction other in all)
+                {
+                    if (other.def.defName != "LR_WesternEmpire")
+                        continue;
+                    SetHostile(saxons, other);
+                    SetHostile(other, saxons);
                 }
             }
             foreach (Faction vandals in all)

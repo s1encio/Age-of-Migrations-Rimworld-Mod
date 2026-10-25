@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>LR_SaxonCulture</defName>
+    <label>saxon</label>
+    <description>The culture of the Saxons, Angles and Jutes of the North Sea coast: seafarers and farmers living in longhouses and sunken huts, ruled by the lords of mead halls who reward their sworn men with rings and gold. They keep the old gods and tell of their ancestors in long alliterative poems.</description>
+    <pawnNameMaker>LR_NamerPersonSaxon</pawnNameMaker>
+    <pawnNameMakerFemale>LR_NamerPersonSaxonFemale</pawnNameMakerFemale>
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LR_VandalLeaderTitleMaker</leaderTitleMaker>
+    <allowedPlaceTags><li>OriginTribal</li></allowedPlaceTags>
+    <iconPath>World/LR_SaxonIcon</iconPath>
+    <iconColor>(0.45, 0.66, 0.3)</iconColor>
+    <preferredWeaponClasses>
+      <noble>MeleeBlunt</noble>
+      <despised>Ultratech</despised>
+    </preferredWeaponClasses>
+    <styleItemTags>
+      <li><tag>Tribal</tag><baseWeight>0.8</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>Rural</tag><baseWeight>0.8</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>BeardTribal</tag><baseWeight>0.9</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoBeard</tag><baseWeight>0.2</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoTattoo</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+    </styleItemTags>
+  </CultureDef>
+</Defs>
