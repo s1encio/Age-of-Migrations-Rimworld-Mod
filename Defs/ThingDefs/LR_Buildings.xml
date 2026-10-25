@@ -3,7 +3,7 @@
   <ThingDef ParentName="DoorBase">
     <defName>LR_RomanGate</defName>
     <label>Roman gate</label>
-    <description>A stone gatehouse in the style of a Roman fort: twin arches closed by heavy iron-banded doors under a battlemented walkway with a row of arched windows. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <description>A stone gatehouse in the style of a Roman fort: twin arches closed by heavy iron-banded doors under a battlemented walkway with a row of arched windows. Three cells wide; build it in the outer line of a wall, pointing into the settlement: the gatehouse covers the two rows of wall behind it and a tower's width on each side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
     <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
     <statBases>
       <WorkToBuild>6500</WorkToBuild>
@@ -12,7 +12,7 @@
     </statBases>
     <graphicData>
       <texPath>Things/Building/LR/LR_RomanGate_Mover</texPath>
-      <graphicClass>Graphic_Single</graphicClass><shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
       <damageData><enabled>false</enabled></damageData>
     </graphicData>
     <uiIconPath>Things/Building/LR/LR_RomanGate_MenuIcon_south</uiIconPath>
@@ -28,18 +28,18 @@
         <texPath>Things/Building/LR/LR_RomanGate_MenuIcon</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
         <shaderType>EdgeDetect</shaderType>
-        <drawSize>(4.8, 4.8)</drawSize>
+        <drawSize>(9.2, 9.2)</drawSize>
       </blueprintGraphicData>
       <isSupportDoor>true</isSupportDoor>
       <doorTopGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Top</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.4, 4.8)</drawSize>
+        <drawSize>(9.2, 9.2)</drawSize>
       </doorTopGraphic>
       <doorSupportGraphic>
         <texPath>Things/Building/LR/LR_RomanGate_Support</texPath>
-        <graphicClass>Graphic_Multi</graphicClass><shaderType>CutoutComplex</shaderType>
-        <drawSize>(4.4, 4.8)</drawSize>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(9.2, 9.2)</drawSize>
       </doorSupportGraphic>
     </building>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
@@ -53,9 +53,61 @@
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="DoorBase">
+    <defName>LR_PersianGate</defName>
+    <label>Persian gatehouse</label>
+    <description>A gatehouse of baked brick in the Persian manner: a tall arched iwan framed in blue glazed tile between two towers with stepped battlements, closed by doors of iron-bound wood. Three cells wide; build it in the outer line of a wall, pointing into the settlement: the gatehouse covers the two rows of wall behind it and a tower's width on each side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
+    <statBases>
+      <WorkToBuild>6500</WorkToBuild>
+      <MaxHitPoints>1100</MaxHitPoints>
+      <DoorOpenSpeed>0.6</DoorOpenSpeed>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_PersianGate_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_PersianGate_MenuIcon_south</uiIconPath>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <size>(3, 1)</size>
+    <rotatable>true</rotatable>
+    <costStuffCount>150</costStuffCount>
+    <stuffCategories Inherit="False"><li>Stony</li></stuffCategories>
+    <costList><Steel>50</Steel><WoodLog>60</WoodLog></costList>
+    <building>
+      <blueprintClass>Blueprint_Build</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/LR/LR_PersianGate_MenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(9.2, 9.2)</drawSize>
+      </blueprintGraphicData>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/LR/LR_PersianGate_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(9.2, 9.2)</drawSize>
+      </doorTopGraphic>
+      <doorSupportGraphic>
+        <texPath>Things/Building/LR/LR_PersianGate_Support</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(9.2, 9.2)</drawSize>
+      </doorSupportGraphic>
+    </building>
+    <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
+    <modExtensions>
+      <li Class="AgeOfMigrations.GateDoorsExtension">
+        <texPath>Things/Building/LR/LR_PersianGate_Door</texPath>
+        <frames>6</frames>
+        <tinted>false</tinted>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="DoorBase">
     <defName>LR_CampGate</defName>
     <label>camp gate</label>
-    <description>A wide gate of lashed stakes between heavy log posts, with a walkway for sentries on top. Used in the palisades of Roman marching camps. Three cells wide; needs walls on either side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
+    <description>A wide gate of lashed stakes between heavy log posts, with a walkway for sentries on top. Used in the palisades of Roman marching camps. Three cells wide; build it in the outer line of a wall, pointing into the settlement: the gatehouse covers the two rows of wall behind it and a tower's width on each side. Only its owners can open it from outside: anyone else can only open it from the inside, so attackers have to break it down.</description>
     <thingClass>AgeOfMigrations.Building_RomanGate</thingClass>
     <statBases>
       <WorkToBuild>2600</WorkToBuild>
@@ -80,18 +132,18 @@
         <texPath>Things/Building/LR/LR_CampGate_MenuIcon</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
         <shaderType>EdgeDetect</shaderType>
-        <drawSize>(4.1, 4.1)</drawSize>
+        <drawSize>(9.2, 9.2)</drawSize>
       </blueprintGraphicData>
       <isSupportDoor>true</isSupportDoor>
       <doorTopGraphic>
         <texPath>Things/Building/LR/LR_CampGate_Top</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.1, 2.6)</drawSize>
+        <drawSize>(9.2, 9.2)</drawSize>
       </doorTopGraphic>
       <doorSupportGraphic>
         <texPath>Things/Building/LR/LR_CampGate_Support</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>(4.1, 2.6)</drawSize>
+        <drawSize>(9.2, 9.2)</drawSize>
       </doorSupportGraphic>
     </building>
     <placeWorkers><li>PlaceWorker_MultiCellDoor</li></placeWorkers>
@@ -152,6 +204,194 @@
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands><li>Door</li></relatedBuildCommands>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_PersianWall</defName>
+    <label>mudbrick wall</label>
+    <description>A wall of sun-dried mudbrick faced with baked brick, with a band of blue glazed tiles: the building of Persia and Mesopotamia, cool in summer and warm in winter. Capable of holding a roof.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_PersianWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_PersianWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>420</MaxHitPoints>
+      <WorkToBuild>260</WorkToBuild>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>7</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2006</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands><li>Door</li></relatedBuildCommands>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_TimberWall</defName>
+    <label>timber wall</label>
+    <description>A wall of split planks set upright between heavy posts, the way the Germanic peoples build their halls and longhouses. Capable of holding a roof.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_TimberWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_TimberWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <WorkToBuild>180</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <stuffCategories><li>Woody</li></stuffCategories>
+    <costStuffCount>5</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2006</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands><li>Door</li></relatedBuildCommands>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_FieldstoneWall</defName>
+    <label>fieldstone wall</label>
+    <description>A wall of rough fieldstones laid in mortar, as the Goths build their halls and churches. Sturdy, if not beautiful. Capable of holding a roof.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_FieldstoneWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_FieldstoneWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>480</MaxHitPoints>
+      <WorkToBuild>240</WorkToBuild>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>7</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2006</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <building>
       <isInert>true</isInert>
       <isPlaceOverableWall>true</isPlaceOverableWall>
@@ -469,6 +709,28 @@
         <fireSize>0.6</fireSize>
         <offset>(0,0,0.36)</offset>
       </li></comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_GateTower</defName>
+    <label>gate tower</label>
+    <description>The masonry of a gatehouse tower. Its look is drawn by the gate next to it.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_GateTower</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases><MaxHitPoints>1200</MaxHitPoints><WorkToBuild>1500</WorkToBuild><Flammability>0</Flammability></statBases>
+    <costList><BlocksGranite>10</BlocksGranite></costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <blockWind>true</blockWind>
+    <holdsRoof>true</holdsRoof>
+    <coversFloor>true</coversFloor>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <building><isInert>true</isInert><ai_chillDestination>false</ai_chillDestination></building>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_StandardVandal</defName>

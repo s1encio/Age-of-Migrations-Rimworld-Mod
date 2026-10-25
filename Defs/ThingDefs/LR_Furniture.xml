@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="LR_VanillaBed">
+    <defName>LR_Bed</defName>
+    <label>wooden bed</label>
+    <description>A wooden bed frame with turned posts, a straw-stuffed mattress, linen and a red wool blanket.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Bed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.05, 2.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Bed_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaDoubleBed">
+    <defName>LR_DoubleBed</defName>
+    <label>wide bed</label>
+    <description>A wide wooden bed for two, with turned posts, linen and a blue wool coverlet.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_DoubleBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.1, 2.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_DoubleBed_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaBedroll">
+    <defName>LR_StrawBed</defName>
+    <label>straw pallet</label>
+    <description>A sack of straw on the ground with a rough wool blanket: how most people slept in camp, on the march, or in a crowded house.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_StrawBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.05, 2.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_StrawBed_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaTable1x2c">
+    <defName>LR_Table1x2</defName>
+    <label>trestle table</label>
+    <description>Heavy planks laid on two trestles: the everyday table, quick to set up and take down.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Table1x2</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.1, 2.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Table1x2_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaTable2x2c">
+    <defName>LR_Table2x2</defName>
+    <label>square table</label>
+    <description>A square table of thick planks on trestles.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Table2x2</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.1, 2.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Table2x2_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaTable2x4c">
+    <defName>LR_Table2x4</defName>
+    <label>feasting table</label>
+    <description>A long table of heavy planks on trestles, for a lord's feast or a family's meals.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Table2x4</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.1, 4.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Table2x4_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaStool">
+    <defName>LR_Stool</defName>
+    <label>three-legged stool</label>
+    <description>A round seat on three splayed legs.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Stool</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.1, 1.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Stool_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaDiningChair">
+    <defName>LR_Chair</defName>
+    <label>folding chair</label>
+    <description>A chair on crossed legs with a cushion and a low back, after the Roman sella.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Chair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.15, 1.15)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Chair_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaShelfSmall">
+    <defName>LR_Chest</defName>
+    <label>chest</label>
+    <description>An iron-bound wooden chest with a lock, for clothes, coin and anything worth keeping.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Chest</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.1, 1.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Chest_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaEndTable">
+    <defName>LR_SideTable</defName>
+    <label>side table</label>
+    <description>A small round table on one leg, with a painted jug on it.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_SideTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.1, 1.1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_SideTable_south</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaDoor">
+    <defName>LR_Door</defName>
+    <label>plank door</label>
+    <description>A door of heavy planks bound with iron straps.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_Door_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_Door_MenuIcon</uiIconPath>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaArmchair">
+    <defName>LR_ShahThrone</defName>
+    <label>throne of the King of Kings</label>
+    <description>A broad throne of gold on lion legs, heaped with cushions of purple silk, its back worked with the four-pointed star of the royal banner. The King of Kings sits cross-legged on it to receive ambassadors behind a curtain that is drawn back only when all have bowed to the ground.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_ShahThrone</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_ShahThrone_south</uiIconPath>
+    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
+    <costStuffCount>150</costStuffCount>
+    <costList><Cloth>40</Cloth></costList>
+    <statBases><Beauty>30</Beauty><Comfort>0.92</Comfort><WorkToBuild>18000</WorkToBuild><MaxHitPoints>220</MaxHitPoints></statBases>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaArmchair">
+    <defName>LR_RomanThrone</defName>
+    <label>imperial throne</label>
+    <description>A high-backed chair of marble, gilded griffins for legs and a cushion of imperial purple: the seat from which an emperor gives audience.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_RomanThrone</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_RomanThrone_south</uiIconPath>
+    <stuffCategories Inherit="False"><li>Stony</li></stuffCategories>
+    <costStuffCount>120</costStuffCount>
+    <costList><Gold>20</Gold><Cloth>20</Cloth></costList>
+    <statBases><Beauty>24</Beauty><Comfort>0.88</Comfort><WorkToBuild>15000</WorkToBuild><MaxHitPoints>260</MaxHitPoints></statBases>
+  </ThingDef>
+  <ThingDef ParentName="LR_VanillaArmchair">
+    <defName>LR_HighSeat</defName>
+    <label>high seat</label>
+    <description>The lord's chair at the end of the hall: heavy carved timber, its back posts ending in beasts' heads, a fur thrown over the seat. From it he rewards his men with rings and arms.</description>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_HighSeat</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_HighSeat_south</uiIconPath>
+    <stuffCategories Inherit="False"><li>Woody</li></stuffCategories>
+    <costStuffCount>90</costStuffCount>
+    <costList><Leather_Plain>25</Leather_Plain></costList>
+    <statBases><Beauty>14</Beauty><Comfort>0.85</Comfort><WorkToBuild>9000</WorkToBuild></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_FireAltar</defName>
+    <label>fire altar</label>
+    <description>An atashdan: a stepped stone altar holding a bowl of embers in which the sacred fire burns. To the followers of Zarathustra fire is the visible sign of Ahura Mazda's truth and purity; the priests feed it fragrant wood and keep it burning day and night, and in the great fire temples some flames have not gone out for centuries.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_FireAltar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1.6, 1.6)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_FireAltar</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>30</pathCost>
+    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>4000</WorkToBuild><Beauty>18</Beauty><Mass>60</Mass></statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>60</costStuffCount>
+    <costList><Gold>5</Gold><WoodLog>20</WoodLog></costList>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <rotatable>false</rotatable>
+    <designationCategory>Furniture</designationCategory>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>1.6</fuelConsumptionRate>
+        <fuelCapacity>20.0</fuelCapacity>
+        <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(252,187,113,0)</glowColor>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.75</fireSize>
+        <offset>(0,0,0.62)</offset>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_OilLamp</defName>
+    <label>lampstand</label>
+    <description>A bronze lampstand on three lion feet, a clay oil lamp burning on its top. It lights a room without the smoke of a torch.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/LR/Furniture/LR_OilLamp</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      
+      <drawSize>(1.25, 1.25)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/Furniture/LR_OilLamp</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <pathCost>30</pathCost>
+    <statBases><MaxHitPoints>80</MaxHitPoints><WorkToBuild>700</WorkToBuild><Beauty>3</Beauty><Mass>6</Mass></statBases>
+    
+    <costList><Steel>15</Steel><WoodLog>4</WoodLog></costList>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <rotatable>false</rotatable>
+    <designationCategory>Furniture</designationCategory>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>1.6</fuelConsumptionRate>
+        <fuelCapacity>20.0</fuelCapacity>
+        <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>7</glowRadius>
+        <glowColor>(252,187,113,0)</glowColor>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.28</fireSize>
+        <offset>(0,0,0.42)</offset>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

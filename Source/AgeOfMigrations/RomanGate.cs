@@ -36,8 +36,8 @@ namespace AgeOfMigrations
         {
             base.DrawAt(drawLoc, flip);
             GateDoorsExtension ext = def.GetModExtension<GateDoorsExtension>();
-            if (ext == null || ext.frames < 1 || Rotation.IsHorizontal)
-                return;   // in a north-south wall the doors are hidden under the walkway
+            if (ext == null || ext.frames < 1 || Rotation != Rot4.North)
+                return;   // facing into the town from a north, east or west wall, the doors are hidden under the gatehouse roof
             int now = Find.TickManager.TicksGame;
             float target = Open ? 1f : 0f;
             if (swing < 0f || swingTick < 0)
@@ -58,6 +58,7 @@ namespace AgeOfMigrations
                 doorMatsColor = col;
             }
             Vector3 pos = drawLoc;
+            pos.z -= 1f;      // in the archway of the outer face, one cell south of the door line
             pos.y = AltitudeLayer.DoorMoveable.AltitudeFor();
             Matrix4x4 matrix = Matrix4x4.TRS(pos, Quaternion.identity, new Vector3(ext.size.x, 1f, ext.size.y));
             Graphics.DrawMesh(MeshPool.plane10, matrix, doorMats[frame], 0);
