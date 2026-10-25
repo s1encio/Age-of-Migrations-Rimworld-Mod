@@ -13,6 +13,8 @@
       <li>nick->[pre]i</li>
       <li>last->[pre]ing</li>
       <li>last->[pre]ung</li>
+    
+      <li>nick(p=3)->[pre][msuf]</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>
@@ -28,6 +30,8 @@
       <li>nick->[pre]ila</li>
       <li>last->[pre]ing</li>
       <li>last->[pre]ung</li>
+    
+      <li>nick(p=3)->[pre][fsuf]</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>

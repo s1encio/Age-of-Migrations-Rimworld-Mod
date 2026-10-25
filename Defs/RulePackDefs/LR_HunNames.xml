@@ -12,6 +12,8 @@
       <li>nick->[pre]a</li>
       <li>nick->[pre]i</li>
       <li>last->Akatzir</li><li>last->Kutrigur</li><li>last->Utigur</li><li>last->Onogur</li><li>last->Saragur</li><li>last->Sabir</li><li>last->Amilzur</li><li>last->Itimar</li><li>last->Tonosur</li><li>last->Bassik</li><li>last->Kidar</li><li>last->Sadag</li>
+    
+      <li>nick(p=3)->[pre][msuf]</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>
@@ -25,6 +27,8 @@
       <li>hist->Kreka</li><li>hist->Erekan</li><li>hist->Ildico</li><li>hist->Ukaga</li><li>hist->Arikan</li><li>hist->Tumen</li>
       <li>nick->[pre]i</li>
       <li>last->Akatzir</li><li>last->Kutrigur</li><li>last->Utigur</li><li>last->Onogur</li><li>last->Saragur</li><li>last->Sabir</li><li>last->Amilzur</li><li>last->Itimar</li><li>last->Tonosur</li><li>last->Bassik</li><li>last->Kidar</li><li>last->Sadag</li>
+    
+      <li>nick(p=3)->[pre][fsuf]</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>

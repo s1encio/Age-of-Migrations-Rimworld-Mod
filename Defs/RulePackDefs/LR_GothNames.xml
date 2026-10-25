@@ -14,6 +14,8 @@
       <li>last(p=4)->[pre]ing</li>
       <li>last->Balthing</li>
       <li>last->Amaling</li>
+    
+      <li>nick(p=3)->[pre][msuf]</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>
@@ -29,6 +31,8 @@
       <li>nick->[pre]a</li>
       <li>last(p=4)->[pre]ing</li>
       <li>last->Balthing</li>
+    
+      <li>nick(p=3)->[pre][fsuf]</li>
     </rulesStrings></rulePack>
   </RulePackDef>
   <RulePackDef>

@@ -6,8 +6,11 @@
       <li>r_name->[first] '[nick]' [last]</li>
       <li>first->Ardashir</li><li>first->Shapur</li><li>first->Bahram</li><li>first->Yazdegerd</li><li>first->Hormizd</li><li>first->Narseh</li><li>first->Peroz</li><li>first->Khosrow</li><li>first->Kavad</li><li>first->Valash</li><li>first->Jamasp</li><li>first->Zarmihr</li><li>first->Sukhra</li><li>first->Mihr-Narseh</li><li>first->Surena</li><li>first->Rostam</li><li>first->Vahram</li><li>first->Farrukhzad</li><li>first->Bahman</li><li>first->Ardavan</li><li>first->Papak</li><li>first->Tansar</li><li>first->Kartir</li><li>first->Adurbad</li><li>first->Mazdak</li><li>first->Bozorgmehr</li><li>first->Shahrvaraz</li><li>first->Vistahm</li><li>first->Vinduyih</li><li>first->Mihran</li><li>first->Gushnasp</li><li>first->Vardan</li><li>first->Hamazasp</li><li>first->Piran</li><li>first->Siyavash</li><li>first->Godarz</li>
       <li>nick->Gur</li><li>nick->Shir</li><li>nick->Kamsar</li><li>nick->Atash</li><li>nick->Bahadur</li><li>nick->Pahlavan</li><li>nick->Mard</li><li>nick->Dalir</li><li>nick->Zarin</li><li>nick->Azad</li>
+      <li>nick(p=6)->[nroot][nend]</li>
+      <li>nroot->Shah</li><li>nroot->Mihr</li><li>nroot->Azar</li><li>nroot->Bahr</li><li>nroot->Gush</li><li>nroot->Farr</li><li>nroot->Zar</li><li>nroot->Kav</li><li>nroot->Rost</li><li>nroot->Nars</li><li>nroot->Hormoz</li><li>nroot->Ard</li><li>nroot->Pir</li><li>nroot->Vahr</li><li>nroot->Gud</li><li>nroot->Arsh</li><li>nroot->Dar</li><li>nroot->Jam</li><li>nroot->Kar</li><li>nroot->Sur</li><li>nroot->Pap</li><li>nroot->Yazd</li><li>nroot->Vist</li><li>nroot->Gew</li><li>nroot->Burz</li><li>nroot->Asp</li><li>nroot->Tir</li><li>nroot->Bahm</li><li>nroot->Khus</li><li>nroot->Ver</li>
+      <li>nend->ak</li><li>nend->an</li><li>nend->oy</li><li>nend->uk</li><li>nend->ad</li><li>nend->ush</li><li>nend->ik</li><li>nend->dad</li><li>nend->zad</li><li>nend->in</li>
       <li>last(p=3)->[house]</li>
-      <li>last->son of [first]</li>
+      <li>last->[first]an</li>
       <li>house->Suren</li><li>house->Karen</li><li>house->Mihran</li><li>house->Ispahbudhan</li><li>house->Spandiyadh</li><li>house->Zik</li><li>house->Varaz</li><li>house->Kanarangiyan</li><li>house->Andigan</li><li>house->Sasan</li>
     </rulesStrings></rulePack>
   </RulePackDef>
@@ -17,6 +20,9 @@
       <li>r_name->[first] '[nick]' [last]</li>
       <li>first->Shirin</li><li>first->Azarmidokht</li><li>first->Boran</li><li>first->Denag</li><li>first->Shapurdukht</li><li>first->Ardashirdukht</li><li>first->Anahid</li><li>first->Mahdukht</li><li>first->Roshanak</li><li>first->Parinaz</li><li>first->Gordiya</li><li>first->Pantea</li><li>first->Sudabeh</li><li>first->Tahmina</li><li>first->Farangis</li><li>first->Manizheh</li><li>first->Gurdafarid</li><li>first->Kharbandag</li><li>first->Mahbanu</li><li>first->Arnavaz</li>
       <li>nick->Mah</li><li>nick->Gol</li><li>nick->Setareh</li><li>nick->Nazanin</li><li>nick->Banu</li><li>nick->Azar</li><li>nick->Simin</li><li>nick->Zarin</li>
+      <li>nick(p=6)->[nroot][nend]</li>
+      <li>nroot->Mah</li><li>nroot->Gol</li><li>nroot->Setar</li><li>nroot->Nazan</li><li>nroot->Ban</li><li>nroot->Azar</li><li>nroot->Sim</li><li>nroot->Zar</li><li>nroot->Shir</li><li>nroot->Par</li><li>nroot->Ros</li><li>nroot->Anah</li><li>nroot->Dur</li><li>nroot->Nos</li><li>nroot->Mitr</li><li>nroot->Far</li><li>nroot->Pur</li><li>nroot->Gord</li><li>nroot->Tahm</li><li>nroot->Man</li><li>nroot->Arn</li><li>nroot->Shap</li><li>nroot->Hom</li><li>nroot->Dil</li><li>nroot->Yas</li>
+      <li>nend->ak</li><li>nend->in</li><li>nend->eh</li><li>nend->oy</li><li>nend->uk</li><li>nend->ush</li><li>nend->a</li><li>nend->dukht</li><li>nend->banu</li><li>nend->naz</li>
       <li>last(p=3)->[house]</li>
       <li>house->Suren</li><li>house->Karen</li><li>house->Mihran</li><li>house->Ispahbudhan</li><li>house->Spandiyadh</li><li>house->Zik</li><li>house->Varaz</li><li>house->Kanarangiyan</li><li>house->Andigan</li><li>house->Sasan</li>
     </rulesStrings></rulePack>
