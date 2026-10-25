@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]/parts</xpath>
+      <value><li Class="AgeOfMigrations.StatPart_OnWalls" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]</xpath>
+      <value><parts><li Class="AgeOfMigrations.StatPart_OnWalls" /></parts></value>
+    </nomatch>
+  </Operation>
+</Patch>
