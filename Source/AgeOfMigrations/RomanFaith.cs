@@ -31,7 +31,7 @@ namespace AgeOfMigrations
 
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
-                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons")
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons" && faction.def.defName != "LR_Ostrogoths")
                     continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
                 if (ideo == null)
@@ -71,6 +71,13 @@ namespace AgeOfMigrations
                             "thunder, Tiw of the battle-oath and Frige of the hearth. The folk gather at holy groves and hilltop " +
                             "shrines to feast and sacrifice, and before a battle a war band may give the enemy to Woden by " +
                             "throwing a spear over his host.");
+                        break;
+                    case "LR_Ostrogoths":
+                        Set(ideo, "Ostrogothic Church", "Ostrogothic", "Ostrogothic Arian",
+                            "The Arian Christianity of the eastern Goths, received from the Visigoths and the disciples of Ulfilas. " +
+                            "Like all the Goths they hold that the Son is like the Father but not of the same substance, and they " +
+                            "hear the Gospels read in Gothic from a Bible written in silver letters. Their priests follow the " +
+                            "Amal kings' war bands, and they keep their own churches apart from the Nicene Romans.");
                         break;
                     case "LR_Visigoths":
                         Set(ideo, "Gothic Church", "Gothic", "Gothic Arian",
@@ -133,6 +140,19 @@ namespace AgeOfMigrations
                         continue;
                     SetHostile(huns, other);
                     SetHostile(other, huns);
+                }
+            }
+            // the Ostrogoths, under the Huns, raid the Balkan provinces of the Eastern Empire
+            foreach (Faction ostro in all)
+            {
+                if (ostro.def.defName != "LR_Ostrogoths")
+                    continue;
+                foreach (Faction other in all)
+                {
+                    if (other.def.defName != "LR_EasternEmpire")
+                        continue;
+                    SetHostile(ostro, other);
+                    SetHostile(other, ostro);
                 }
             }
             // the Saxons raid the coasts of Roman Britain and Gaul

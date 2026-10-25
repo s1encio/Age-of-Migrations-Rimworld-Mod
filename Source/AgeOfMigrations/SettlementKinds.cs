@@ -9,7 +9,7 @@ using Verse;
 namespace AgeOfMigrations
 {
     /// <summary>
-    /// Every Roman, Vandal, Visigoth, Hun and Saxon settlement is either a camp or a proper settlement. The kind is worked out from
+    /// Every Roman, Vandal, Visigoth, Hun, Saxon and Ostrogoth settlement is either a camp or a proper settlement. The kind is worked out from
     /// the settlement's ID, so it is fixed for the whole game without saving anything. It is shown on the world map
     /// after the name, explained in the inspect pane, and the map is generated with a layout of that kind (with VEF).
     /// Capitals are left alone: they have their own layout and label.
@@ -25,7 +25,7 @@ namespace AgeOfMigrations
             string f = s.Faction.def.defName;
             bool roman = f == "LR_WesternEmpire" || f == "LR_EasternEmpire";
             bool huns = f == "LR_Huns";
-            if (!roman && !huns && f != "LR_Vandals" && f != "LR_Visigoths" && f != "LR_Saxons")
+            if (!roman && !huns && f != "LR_Vandals" && f != "LR_Visigoths" && f != "LR_Saxons" && f != "LR_Ostrogoths")
                 return false;
             uint h = unchecked((uint)s.ID * 2654435761u);
             camp = ((h >> 13) & 1u) == 0u;

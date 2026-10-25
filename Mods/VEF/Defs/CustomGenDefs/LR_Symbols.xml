@@ -216,6 +216,10 @@
     <thing>LR_StandardSaxon</thing>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_StandardOstro</defName>
+    <thing>LR_StandardOstro</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_Loot_Langseax</defName>
     <thing>LR_Langseax</thing>
     <maxStackSize>1</maxStackSize>

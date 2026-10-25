@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonOstro</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][msuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Theode</li><li>pre->Vala</li><li>pre->Vidi</li><li>pre->Ermana</li><li>pre->Hune</li><li>pre->Vandala</li><li>pre->Wini</li><li>pre->Ostro</li><li>pre->Amala</li><li>pre->Vulti</li><li>pre->Hilde</li><li>pre->Witi</li><li>pre->Teja</li><li>pre->Totila</li><li>pre->Ildi</li><li>pre->Erar</li><li>pre->Gaina</li><li>pre->Tribi</li><li>pre->Thiudi</li><li>pre->Gudi</li><li>pre->Aligern</li><li>pre->Indul</li><li>pre->Ulia</li><li>pre->Wisi</li><li>pre->Bessa</li><li>pre->Uraia</li><li>pre->Asina</li><li>pre->Sunia</li>
+      <li>msuf->mir</li><li>msuf->ric</li><li>msuf->mund</li><li>msuf->gis</li><li>msuf->bad</li><li>msuf->wulf</li><li>msuf->had</li><li>msuf->gern</li><li>msuf->ulf</li><li>msuf->ila</li><li>msuf->red</li><li>msuf->hari</li><li>msuf->baud</li><li>msuf->nand</li>
+      <li>hist->Ermanaric</li><li>hist->Vithimiris</li><li>hist->Valamir</li><li>hist->Theodemir</li><li>hist->Vidimir</li><li>hist->Theodoric</li><li>hist->Hunimund</li><li>hist->Thorismund</li><li>hist->Vinitharius</li><li>hist->Alatheus</li><li>hist->Saphrax</li><li>hist->Gesimund</li><li>hist->Andag</li><li>hist->Witigis</li><li>hist->Totila</li><li>hist->Teia</li><li>hist->Ildibad</li><li>hist->Theodahad</li><li>hist->Athalaric</li><li>hist->Tuluin</li>
+      <li>nick->[pre]ila</li>
+      <li>nick->[pre]o</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Amaling</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonOstroFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][fsuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Theode</li><li>pre->Vala</li><li>pre->Vidi</li><li>pre->Ermana</li><li>pre->Hune</li><li>pre->Vandala</li><li>pre->Wini</li><li>pre->Ostro</li><li>pre->Amala</li><li>pre->Vulti</li><li>pre->Hilde</li><li>pre->Witi</li><li>pre->Teja</li><li>pre->Totila</li><li>pre->Ildi</li><li>pre->Erar</li><li>pre->Gaina</li><li>pre->Tribi</li><li>pre->Thiudi</li><li>pre->Gudi</li><li>pre->Aligern</li><li>pre->Indul</li><li>pre->Ulia</li><li>pre->Wisi</li><li>pre->Bessa</li><li>pre->Uraia</li><li>pre->Asina</li><li>pre->Sunia</li>
+      <li>fsuf->swintha</li><li>fsuf->berga</li><li>fsuf->frida</li><li>fsuf->gotho</li><li>fsuf->suntha</li><li>fsuf->hild</li><li>fsuf->linda</li><li>fsuf->gunda</li>
+      <li>hist->Amalasuntha</li><li>hist->Amalafrida</li><li>hist->Theodegotho</li><li>hist->Ostrogotho</li><li>hist->Matasuntha</li><li>hist->Erelieva</li><li>hist->Gudeliva</li>
+      <li>nick->[pre]la</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Amaling</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionOstro</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Ostrogoths</li>
+      <li>r_name->Greutungi</li>
+      <li>r_name->House of the Amals</li>
+      <li>r_name->Goths of Pannonia</li>
+      <li>r_name->Host of [hist]</li>
+      <li>hist->Ermanaric</li><li>hist->Valamir</li><li>hist->Theodemir</li><li>hist->Vidimir</li><li>hist->Hunimund</li><li>hist->Vithimiris</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementOstro</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->[pre][place]</li>
+      <li>r_name(p=2)->[old]</li>
+      <li>pre->Theode</li><li>pre->Vala</li><li>pre->Vidi</li><li>pre->Ermana</li><li>pre->Hune</li><li>pre->Vandala</li><li>pre->Wini</li><li>pre->Ostro</li><li>pre->Amala</li><li>pre->Vulti</li><li>pre->Hilde</li><li>pre->Witi</li><li>pre->Teja</li><li>pre->Totila</li><li>pre->Ildi</li><li>pre->Erar</li><li>pre->Gaina</li><li>pre->Tribi</li><li>pre->Thiudi</li><li>pre->Gudi</li><li>pre->Aligern</li><li>pre->Indul</li><li>pre->Ulia</li><li>pre->Wisi</li><li>pre->Bessa</li><li>pre->Uraia</li><li>pre->Asina</li><li>pre->Sunia</li>
+      <li>place->reiks</li><li>place->gards</li><li>place->baurgs</li><li>place->haims</li><li>place->wiks</li><li>place->burg</li><li>place->stad</li>
+      <li>old->Sirmium</li><li>old->Sopianae</li><li>old->Savaria</li><li>old->Scarbantia</li><li>old->Mursa</li><li>old->Siscia</li><li>old->Aquincum</li><li>old->Brigetio</li><li>old->Carnuntum</li><li>old->Danaprstadir</li><li>old->Arheimar</li><li>old->Oium</li><li>old->Olbia</li><li>old->Tanais</li><li>old->Novae</li><li>old->Singidunum</li><li>old->Emona</li><li>old->Poetovio</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

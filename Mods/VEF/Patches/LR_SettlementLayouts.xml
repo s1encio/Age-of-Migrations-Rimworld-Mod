@@ -54,4 +54,13 @@
       </li>
     </value>
   </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="LR_Ostrogoths"]</xpath>
+    <value>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromlayouts><li>LR_Ostro_Camp_1</li><li>LR_Ostro_Camp_2</li><li>LR_Ostro_Camp_3</li><li>LR_Ostro_Village_1</li><li>LR_Ostro_Village_2</li><li>LR_Ostro_Village_3</li></chooseFromlayouts>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </value>
+  </Operation>
 </Patch>

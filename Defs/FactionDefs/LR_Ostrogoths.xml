@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>LR_Ostrogoths</defName>
+    <label>Ostrogoths</label>
+    <description>The eastern Goths of the Greutungi and the Amal royal house, whose great kingdom beyond the Black Sea broke under the Huns in 375. Most of them now live under Hunnic rule in Pannonia and ride to war beside their masters, but their kings dream of a realm of their own, and the Eastern Empire watches them warily. They fight with masses of archers and spearmen in dark blue, and above all with heavy cavalry: mailed nobles and lancers who charge with the long spear. They are Arian Christians like the other Goths.</description>
+    <pawnSingular>Goth</pawnSingular>
+    <pawnsPlural>Goths</pawnsPlural>
+    <listOrderPriority>27</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>44</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <techLevel>Medieval</techLevel>
+    <leaderTitle>king</leaderTitle>
+    <factionIconPath>World/LR_OstroIcon</factionIconPath>
+    <settlementTexturePath>World/LR_OstroSettlement</settlementTexturePath>
+    <colorSpectrum><li>(0.16, 0.2, 0.36)</li><li>(0.22, 0.27, 0.46)</li></colorSpectrum>
+    <factionNameMaker>LR_NamerFactionOstro</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementOstro</settlementNameMaker>
+    <allowedCultures><li>LR_OstroCulture</li></allowedCultures>
+    <backstoryCategories><li>Tribal</li><li>Outlander</li></backstoryCategories>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <basicMemberKind>LR_Ostro_Warrior</basicMemberKind>
+    <fixedLeaderKinds><li>LR_Ostro_King</li></fixedLeaderKinds>
+    <!-- Religion: Arian Christianity, taught to the Goths by Ulfilas -->
+    <structureMemeWeights>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Animist>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistEmbodied>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">0</Structure_TheistAbstract>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Ideological>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_Archist>
+      <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+      <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginIslamic>
+      <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginHindu>
+      <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">0</Structure_OriginBuddhist>
+    </structureMemeWeights>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Tunneler</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HighLife</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NaturePrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Proselytizer</li>
+    </disallowedMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">BodyMod_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">InsectMeatEating_Loved</li>
+    </disallowedPrecepts>
+    <raidCommonalityFromPointsCurve>
+      <points><li>(0, 1)</li></points>
+    </raidCommonalityFromPointsCurve>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds><li>Visitor_Outlander_Standard</li></visitorTraderKinds>
+    <baseTraderKinds><li>Base_Outlander_Standard</li></baseTraderKinds>
+    <allowedArrivalTemperatureRange><min>-45</min><max>45</max></allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(120, 60)</li>
+        <li>(600, 110)</li>
+        <li>(1300, 160)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options><LR_Ostro_Levy>10</LR_Ostro_Levy><LR_Ostro_Warband>8</LR_Ostro_Warband><LR_Ostro_Warrior>10</LR_Ostro_Warrior><LR_Ostro_Axeman>6</LR_Ostro_Axeman><LR_Ostro_Berserker>3</LR_Ostro_Berserker><LR_Ostro_TowerShield>4</LR_Ostro_TowerShield><LR_Ostro_Swordsman>4</LR_Ostro_Swordsman><LR_Ostro_Noble>3</LR_Ostro_Noble><LR_Ostro_Champion>2</LR_Ostro_Champion><LR_Ostro_Comitatus>2</LR_Ostro_Comitatus><LR_Ostro_Spearman>10</LR_Ostro_Spearman><LR_Ostro_MailedSpearman>5</LR_Ostro_MailedSpearman><LR_Ostro_LongSpearman>4</LR_Ostro_LongSpearman><LR_Ostro_Bowman>5</LR_Ostro_Bowman><LR_Ostro_HoodedArcher>6</LR_Ostro_HoodedArcher><LR_Ostro_Archer>6</LR_Ostro_Archer><LR_Ostro_EliteArcher>2</LR_Ostro_EliteArcher><LR_Ostro_Crossbowman>2</LR_Ostro_Crossbowman><LR_Ostro_Skirmisher>3</LR_Ostro_Skirmisher><LR_Ostro_Slinger>2</LR_Ostro_Slinger><LR_Ostro_Rider>7</LR_Ostro_Rider><LR_Ostro_NobleRider>3</LR_Ostro_NobleRider><LR_Ostro_Lancer>5</LR_Ostro_Lancer><LR_Ostro_NobleLancer>3</LR_Ostro_NobleLancer><LR_Ostro_RoyalLancer>1</LR_Ostro_RoyalLancer><LR_Ostro_JavelinRider>2</LR_Ostro_JavelinRider><LR_Ostro_HorseArcher>3</LR_Ostro_HorseArcher></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>35</commonality>
+        <options><LR_Ostro_Rider>18</LR_Ostro_Rider><LR_Ostro_NobleRider>10</LR_Ostro_NobleRider><LR_Ostro_Lancer>18</LR_Ostro_Lancer><LR_Ostro_NobleLancer>10</LR_Ostro_NobleLancer><LR_Ostro_RoyalLancer>4</LR_Ostro_RoyalLancer><LR_Ostro_JavelinRider>8</LR_Ostro_JavelinRider><LR_Ostro_HorseArcher>10</LR_Ostro_HorseArcher></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options><LR_Ostro_Bowman>14</LR_Ostro_Bowman><LR_Ostro_HoodedArcher>16</LR_Ostro_HoodedArcher><LR_Ostro_Archer>14</LR_Ostro_Archer><LR_Ostro_EliteArcher>6</LR_Ostro_EliteArcher><LR_Ostro_Crossbowman>6</LR_Ostro_Crossbowman><LR_Ostro_Slinger>6</LR_Ostro_Slinger><LR_Ostro_Spearman>10</LR_Ostro_Spearman><LR_Ostro_LongSpearman>8</LR_Ostro_LongSpearman></options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options><LR_Ostro_Warrior>16</LR_Ostro_Warrior><LR_Ostro_Swordsman>10</LR_Ostro_Swordsman><LR_Ostro_TowerShield>8</LR_Ostro_TowerShield><LR_Ostro_Axeman>10</LR_Ostro_Axeman><LR_Ostro_Berserker>8</LR_Ostro_Berserker><LR_Ostro_Champion>4</LR_Ostro_Champion><LR_Ostro_Comitatus>3</LR_Ostro_Comitatus><LR_Ostro_Noble>4</LR_Ostro_Noble></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options><LR_Ostro_Freeman>30</LR_Ostro_Freeman><LR_Ostro_Levy>5</LR_Ostro_Levy><LR_Ostro_Warrior>4</LR_Ostro_Warrior><LR_Ostro_Bowman>3</LR_Ostro_Bowman></options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders><LR_Ostro_Merchant>1</LR_Ostro_Merchant></traders>
+        <carriers><Muffalo>6</Muffalo><Horse>3</Horse></carriers>
+        <guards><LR_Ostro_Warrior>12</LR_Ostro_Warrior><LR_Ostro_Spearman>10</LR_Ostro_Spearman><LR_Ostro_HoodedArcher>6</LR_Ostro_HoodedArcher><LR_Ostro_Rider>6</LR_Ostro_Rider><LR_Ostro_NobleRider>2</LR_Ostro_NobleRider></guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><LR_Ostro_Freeman>25</LR_Ostro_Freeman><LR_Ostro_Levy>12</LR_Ostro_Levy><LR_Ostro_Warband>8</LR_Ostro_Warband><LR_Ostro_Warrior>14</LR_Ostro_Warrior><LR_Ostro_Axeman>6</LR_Ostro_Axeman><LR_Ostro_Spearman>14</LR_Ostro_Spearman><LR_Ostro_MailedSpearman>6</LR_Ostro_MailedSpearman><LR_Ostro_LongSpearman>4</LR_Ostro_LongSpearman><LR_Ostro_TowerShield>4</LR_Ostro_TowerShield><LR_Ostro_Swordsman>4</LR_Ostro_Swordsman><LR_Ostro_Bowman>6</LR_Ostro_Bowman><LR_Ostro_HoodedArcher>6</LR_Ostro_HoodedArcher><LR_Ostro_Archer>6</LR_Ostro_Archer><LR_Ostro_Crossbowman>3</LR_Ostro_Crossbowman><LR_Ostro_Slinger>3</LR_Ostro_Slinger><LR_Ostro_Noble>5</LR_Ostro_Noble><LR_Ostro_Comitatus>2</LR_Ostro_Comitatus><LR_Ostro_Champion>2</LR_Ostro_Champion></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>
