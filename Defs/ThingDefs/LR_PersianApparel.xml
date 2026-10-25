@@ -231,7 +231,7 @@
     <statBases><WorkToMake>3000</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>1.0</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>12</Insulation_Cold><Insulation_Heat>5</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
     <costList><Cloth>60</Cloth><Gold>2</Gold></costList>
     <apparel>
-      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianCoat/LR_PersianCoat</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>LR_Persian</li><li>LR_PersianCoat</li></tags>
@@ -261,7 +261,7 @@
     <statBases><WorkToMake>3000</WorkToMake><MaxHitPoints>130</MaxHitPoints><Mass>1.0</Mass><ArmorRating_Sharp>0.08</ArmorRating_Sharp><ArmorRating_Blunt>0.04</ArmorRating_Blunt><Insulation_Cold>12</Insulation_Cold><Insulation_Heat>5</Insulation_Heat><EquipDelay>2</EquipDelay><Flammability>1</Flammability></statBases>
     <costList><Cloth>60</Cloth><Gold>2</Gold></costList>
     <apparel>
-      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_PersianCoatRed/LR_PersianCoatRed</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>LR_Persian</li><li>LR_PersianCoatRed</li></tags>
@@ -292,7 +292,7 @@
     <costList><Cloth>80</Cloth><Gold>15</Gold></costList>
     <equippedStatOffsets><SocialImpact>0.2</SocialImpact></equippedStatOffsets>
     <apparel>
-      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_ShahRobe/LR_ShahRobe</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>LR_Persian</li><li>LR_ShahRobe</li></tags>
