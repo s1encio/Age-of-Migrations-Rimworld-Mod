@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="LR_FrankBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>LR_Franks</defaultFactionType>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance>
+    <invNutrition>2.5</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0~0</techHediffsMoney>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Freeman</defName>
+    <label>freeman</label>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>0~0</weaponMoney>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Levy</defName>
+    <label>Frankish levy</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunicWhite</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Seax</li><li>LR_BeardedAxe</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Axeman</defName>
+    <label>Frankish axeman</label>
+    <combatPower>55</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li></weaponTags>
+    <initialWillRange>0~2</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Clubman</defName>
+    <label>club warrior</label>
+    <combatPower>45</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.4~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_LeatherCap</li><li>LR_FrankSwirlShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>NeolithicMeleeBasic</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Warrior</defName>
+    <label>Frankish warrior</label>
+    <combatPower>65</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_Jerkin</li><li>LR_FrankHelm</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Swordsman</defName>
+    <label>Frankish swordsman</label>
+    <combatPower>80</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHelm</li><li>LR_FrankSwirlShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_MailedWarrior</defName>
+    <label>mailed warrior</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHelm</li><li>LR_Byrnie</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>2~3</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Antrustion</defName>
+    <label>antrustion</label>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankNobleHelm</li><li>LR_Byrnie</li><li>LR_FrankCloak</li><li>LR_FrankNobleShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>3~5</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Champion</defName>
+    <label>Frankish champion</label>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankNobleHelm</li><li>LR_Lamellar</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_GreatAxe</li></weaponTags>
+    <initialWillRange>3~4</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_WolfWarrior</defName>
+    <label>wolf warrior</label>
+    <combatPower>90</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_WolfPelt</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BeardedAxe</li><li>LR_Seax</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>18~25</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Bowman</defName>
+    <label>bowman</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunicWhite</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowShort</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Archer</defName>
+    <label>Frankish archer</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHood</li><li>LR_Quiver</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_BowGreat</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_FranciscaThrower</defName>
+    <label>francisca thrower</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHood</li><li>LR_FrankSwirlShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_ThrowingAxe</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_AngonThrower</defName>
+    <label>angon thrower</label>
+    <combatPower>75</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHelm</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Angon</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Skirmisher</defName>
+    <label>javelin thrower</label>
+    <combatPower>50</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunicWhite</li><li>LR_FrankHood</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Slinger</defName>
+    <label>slinger</label>
+    <combatPower>40</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Poor</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHood</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Sling</li></weaponTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~16</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_LongSpearman</defName>
+    <label>long spearman</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunicWhite</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Spearman</defName>
+    <label>Frankish spearman</label>
+    <combatPower>55</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.5~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankOvalShield</li></apparelRequired>
+    <apparelMoney>0~300</apparelMoney>
+    <apparelTags><li>LR_FrankCloak</li></apparelTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Framea</li></weaponTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>12~18</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra><li>LR_FrankCloak</li></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_MailedSpearman</defName>
+    <label>mailed spearman</label>
+    <combatPower>90</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHelm</li><li>LR_Byrnie</li><li>LR_FrankOvalShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Hasta</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Rider</defName>
+    <label>Frankish rider</label>
+    <combatPower>95</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHelm</li><li>LR_FrankShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Framea</li><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_NobleRider</defName>
+    <label>noble horseman</label>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankNobleHelm</li><li>LR_Byrnie</li><li>LR_FrankCloak</li><li>LR_FrankNobleShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Spatha</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_JavelinRider</defName>
+    <label>mounted skirmisher</label>
+    <combatPower>90</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHood</li><li>LR_FrankSwirlShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Javelin</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Lancer</defName>
+    <label>Frankish lancer</label>
+    <combatPower>125</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.6~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankHelm</li><li>LR_Byrnie</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_NobleLancer</defName>
+    <label>noble lancer</label>
+    <combatPower>170</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankNobleHelm</li><li>LR_Lamellar</li><li>LR_FrankCloak</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Kontos</li></weaponTags>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>16~22</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+      <li Class="AgeOfMigrations.CavalryExtension">
+        <mounts><li>Horse</li></mounts>
+        <mountChance>100</mountChance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_Merchant</defName>
+    <label>merchant</label><trader>true</trader>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.7~1.0</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankCloak</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_Seax</li></weaponTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>14~20</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="LR_FrankBase">
+    <defName>LR_Frank_King</defName>
+    <label>king</label><factionLeader>true</factionLeader>
+    <combatPower>180</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_FrankTunic</li><li>LR_FrankNobleHelm</li><li>LR_Lamellar</li><li>LR_FrankRoyalCloak</li><li>LR_FrankNobleShield</li></apparelRequired>
+    <apparelMoney>0~0</apparelMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>LR_SpathaGilded</li></weaponTags>
+    <initialWillRange>5~7</initialWillRange>
+    <initialResistanceRange>25~35</initialResistanceRange>
+    <modExtensions>
+      <li Class="AgeOfMigrations.UniformExtension">
+        <allowedExtra></allowedExtra>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+</Defs>

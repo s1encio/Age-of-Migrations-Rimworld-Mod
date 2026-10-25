@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>LR_NamerPersonFrank</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][msuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Chlodo</li><li>pre->Childe</li><li>pre->Chilpe</li><li>pre->Sigi</li><li>pre->Theude</li><li>pre->Gunt</li><li>pre->Mero</li><li>pre->Charia</li><li>pre->Ragna</li><li>pre->Arbo</li><li>pre->Ricci</li><li>pre->Bertha</li><li>pre->Dago</li><li>pre->Ingo</li><li>pre->Faro</li><li>pre->Gen</li><li>pre->Mallo</li><li>pre->Ansi</li><li>pre->Chari</li><li>pre->Audo</li><li>pre->Leude</li><li>pre->Baudo</li><li>pre->Gundo</li><li>pre->Haro</li><li>pre->Waldo</li><li>pre->Ebro</li><li>pre->Lando</li><li>pre->Hroth</li>
+      <li>msuf->wech</li><li>msuf->ric</li><li>msuf->bert</li><li>msuf->mer</li><li>msuf->bald</li><li>msuf->gast</li><li>msuf->mund</li><li>msuf->ram</li><li>msuf->wald</li><li>msuf->hari</li><li>msuf->gisel</li><li>msuf->aud</li><li>msuf->ulf</li><li>msuf->bod</li><li>msuf->wulf</li><li>msuf->chari</li>
+      <li>hist->Merovech</li><li>hist->Childeric</li><li>hist->Chlodio</li><li>hist->Pharamond</li><li>hist->Marcomer</li><li>hist->Sunno</li><li>hist->Genobaud</li><li>hist->Mallobaudes</li><li>hist->Arbogast</li><li>hist->Richomer</li><li>hist->Bauto</li><li>hist->Ragnachar</li><li>hist->Chararic</li><li>hist->Sigobert</li><li>hist->Theudemer</li><li>hist->Charietto</li><li>hist->Silvanus</li><li>hist->Teutomer</li><li>hist->Mellobaudes</li><li>hist->Ascaric</li>
+      <li>nick->[pre]o</li>
+      <li>nick->[pre]in</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Merowing</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerPersonFrankFemale</defName>
+    <rulePack><rulesStrings>
+      <li>r_name->[first] '[nick]' [last]</li>
+      <li>first(p=6)->[pre][fsuf]</li>
+      <li>first->[hist]</li>
+      <li>pre->Chlodo</li><li>pre->Childe</li><li>pre->Chilpe</li><li>pre->Sigi</li><li>pre->Theude</li><li>pre->Gunt</li><li>pre->Mero</li><li>pre->Charia</li><li>pre->Ragna</li><li>pre->Arbo</li><li>pre->Ricci</li><li>pre->Bertha</li><li>pre->Dago</li><li>pre->Ingo</li><li>pre->Faro</li><li>pre->Gen</li><li>pre->Mallo</li><li>pre->Ansi</li><li>pre->Chari</li><li>pre->Audo</li><li>pre->Leude</li><li>pre->Baudo</li><li>pre->Gundo</li><li>pre->Haro</li><li>pre->Waldo</li><li>pre->Ebro</li><li>pre->Lando</li><li>pre->Hroth</li>
+      <li>fsuf->hild</li><li>fsuf->berga</li><li>fsuf->gund</li><li>fsuf->frida</li><li>fsuf->swintha</li><li>fsuf->trud</li><li>fsuf->lindis</li><li>fsuf->burga</li><li>fsuf->theud</li><li>fsuf->gard</li>
+      <li>hist->Basina</li><li>hist->Audofleda</li><li>hist->Albofleda</li><li>hist->Lanthechilde</li><li>hist->Ingund</li><li>hist->Aregund</li><li>hist->Chrodechild</li><li>hist->Ultrogotha</li>
+      <li>nick->[pre]a</li>
+      <li>last(p=4)->[pre]ing</li>
+      <li>last->Merowing</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerFactionFrank</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->Salian Franks</li>
+      <li>r_name->Ripuarian Franks</li>
+      <li>r_name->Kingdom of the Franks</li>
+      <li>r_name->Sicambri</li>
+      <li>r_name->Host of [hist]</li>
+      <li>hist->Merovech</li><li>hist->Childeric</li><li>hist->Chlodio</li><li>hist->Pharamond</li><li>hist->Marcomer</li><li>hist->Ragnachar</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>LR_NamerSettlementFrank</defName>
+    <rulePack><rulesStrings>
+      <li>r_name(p=3)->[pre][place]</li>
+      <li>r_name(p=2)->[old]</li>
+      <li>pre->Chlodo</li><li>pre->Childe</li><li>pre->Chilpe</li><li>pre->Sigi</li><li>pre->Theude</li><li>pre->Gunt</li><li>pre->Mero</li><li>pre->Charia</li><li>pre->Ragna</li><li>pre->Arbo</li><li>pre->Ricci</li><li>pre->Bertha</li><li>pre->Dago</li><li>pre->Ingo</li><li>pre->Faro</li><li>pre->Gen</li><li>pre->Mallo</li><li>pre->Ansi</li><li>pre->Chari</li><li>pre->Audo</li><li>pre->Leude</li><li>pre->Baudo</li><li>pre->Gundo</li><li>pre->Haro</li><li>pre->Waldo</li><li>pre->Ebro</li><li>pre->Lando</li><li>pre->Hroth</li>
+      <li>place->heim</li><li>place->hem</li><li>place->ingen</li><li>place->court</li><li>place->villa</li><li>place->dorf</li><li>place->burg</li><li>place->berg</li><li>place->acum</li>
+      <li>old->Tornacum</li><li>old->Cameracum</li><li>old->Dispargum</li><li>old->Colonia</li><li>old->Treveri</li><li>old->Tungri</li><li>old->Noviomagus</li><li>old->Atrebates</li><li>old->Bagacum</li><li>old->Turnacum</li><li>old->Suessiones</li><li>old->Ambianum</li><li>old->Mogontiacum</li><li>old->Andernacum</li><li>old->Bonna</li><li>old->Traiectum</li><li>old->Gesoriacum</li>
+    </rulesStrings></rulePack>
+  </RulePackDef>
+</Defs>

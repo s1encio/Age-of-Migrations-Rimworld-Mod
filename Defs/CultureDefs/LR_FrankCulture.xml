@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <CultureDef>
+    <defName>LR_FrankCulture</defName>
+    <label>frankish</label>
+    <description>The culture of the Franks of the Rhine: farmers and warriors who have lived beside and inside the Empire for two hundred years, serving in its armies and raiding its towns by turns. Their kings wear their hair long as a sign of royal blood, and their law is the custom of the Salian folk.</description>
+    <pawnNameMaker>LR_NamerPersonFrank</pawnNameMaker>
+    <pawnNameMakerFemale>LR_NamerPersonFrankFemale</pawnNameMakerFemale>
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LR_VandalLeaderTitleMaker</leaderTitleMaker>
+    <allowedPlaceTags><li>OriginTribal</li></allowedPlaceTags>
+    <iconPath>World/LR_FrankIcon</iconPath>
+    <iconColor>(0.4, 0.62, 0.28)</iconColor>
+    <preferredWeaponClasses>
+      <noble>MeleeBlunt</noble>
+      <despised>Ultratech</despised>
+    </preferredWeaponClasses>
+    <styleItemTags>
+      <li><tag>Tribal</tag><baseWeight>0.8</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>Rural</tag><baseWeight>0.8</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>BeardTribal</tag><baseWeight>0.6</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoBeard</tag><baseWeight>0.4</baseWeight><weightFactor>1</weightFactor></li>
+      <li><tag>NoTattoo</tag><baseWeight>1</baseWeight><weightFactor>1</weightFactor></li>
+    </styleItemTags>
+  </CultureDef>
+</Defs>

@@ -31,7 +31,7 @@ namespace AgeOfMigrations
 
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading.ToList())
             {
-                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons" && faction.def.defName != "LR_Ostrogoths")
+                if (faction.def.defName != "LR_WesternEmpire" && faction.def.defName != "LR_EasternEmpire" && faction.def.defName != "LR_Vandals" && faction.def.defName != "LR_Visigoths" && faction.def.defName != "LR_Huns" && faction.def.defName != "LR_Saxons" && faction.def.defName != "LR_Ostrogoths" && faction.def.defName != "LR_Franks")
                     continue;
                 Ideo ideo = faction.ideos?.PrimaryIdeo;
                 if (ideo == null)
@@ -78,6 +78,13 @@ namespace AgeOfMigrations
                             "Like all the Goths they hold that the Son is like the Father but not of the same substance, and they " +
                             "hear the Gospels read in Gothic from a Bible written in silver letters. Their priests follow the " +
                             "Amal kings' war bands, and they keep their own churches apart from the Nicene Romans.");
+                        break;
+                    case "LR_Franks":
+                        Set(ideo, "Frankish Gods", "Frankish heathen", "Heathen",
+                            "The old faith of the Franks: Wodan and Donar, the gods of field and hearth, and the sacred groves and " +
+                            "springs where the folk bring their offerings. Their royal house claims descent from a sea-beast, the " +
+                            "Quinotaur, that came to the wife of King Chlodio as she bathed in the sea, and bees of gold are buried " +
+                            "with their kings. Some of the nobles who served Rome have taken baptism, but the folk keep the old ways.");
                         break;
                     case "LR_Visigoths":
                         Set(ideo, "Gothic Church", "Gothic", "Gothic Arian",
@@ -153,6 +160,19 @@ namespace AgeOfMigrations
                         continue;
                     SetHostile(ostro, other);
                     SetHostile(other, ostro);
+                }
+            }
+            // the Franks will stand with Rome against the Huns
+            foreach (Faction franks in all)
+            {
+                if (franks.def.defName != "LR_Franks")
+                    continue;
+                foreach (Faction other in all)
+                {
+                    if (other.def.defName != "LR_Huns")
+                        continue;
+                    SetHostile(franks, other);
+                    SetHostile(other, franks);
                 }
             }
             // the Saxons raid the coasts of Roman Britain and Gaul

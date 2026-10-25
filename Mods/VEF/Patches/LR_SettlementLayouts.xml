@@ -63,4 +63,13 @@
       </li>
     </value>
   </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="LR_Franks"]</xpath>
+    <value>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromlayouts><li>LR_Frank_Camp_1</li><li>LR_Frank_Camp_2</li><li>LR_Frank_Camp_3</li><li>LR_Frank_Village_1</li><li>LR_Frank_Village_2</li><li>LR_Frank_Village_3</li></chooseFromlayouts>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </value>
+  </Operation>
 </Patch>

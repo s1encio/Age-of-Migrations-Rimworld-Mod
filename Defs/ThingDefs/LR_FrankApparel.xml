@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankHood</defName>
+    <label>Frankish hood</label>
+    <description>A green wool hood with a short shoulder cape and a long tail, worn by Frankish skirmishers and archers.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankHood</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>1400</WorkToMake><MaxHitPoints>80</MaxHitPoints><Mass>0.3</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>1</Insulation_Heat><EquipDelay>1</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>30</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankHood/LR_FrankHood</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankHood</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankHelm</defName>
+    <label>Frankish helmet</label>
+    <description>A spangenhelm of dark iron plates and bright riveted bands, with a nasal and a mail curtain.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>8000</WorkToMake><MaxHitPoints>150</MaxHitPoints><Mass>2.6</Mass><ArmorRating_Sharp>0.62</ArmorRating_Sharp><ArmorRating_Blunt>0.28</ArmorRating_Blunt><ArmorRating_Heat>0.14</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2.5</EquipDelay></statBases>
+    <costList><Steel>75</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.03</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankHelm/LR_FrankHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankNobleHelm</defName>
+    <label>antrustion's helmet</label>
+    <description>A spangenhelm with gilded bands, cheek guards and a green crest, worn by the antrustions, the sworn guard of a Frankish king.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankNobleHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <statBases><WorkToMake>12000</WorkToMake><MaxHitPoints>165</MaxHitPoints><Mass>2.9</Mass><ArmorRating_Sharp>0.68</ArmorRating_Sharp><ArmorRating_Blunt>0.31</ArmorRating_Blunt><ArmorRating_Heat>0.15</ArmorRating_Heat><Insulation_Cold>3</Insulation_Cold><EquipDelay>2.5</EquipDelay></statBases>
+    <costList><Steel>75</Steel><Gold>15</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.03</MoveSpeed><SocialImpact>0.1</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankNobleHelm/LR_FrankNobleHelm</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankNobleHelm</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankTunic</defName>
+    <label>Frankish tunic</label>
+    <description>A short tunic of green wool with woven borders, belted tight; the Franks wore their clothes close-fitting and short.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankTunic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.6</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>9</Insulation_Cold><Insulation_Heat>2</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>55</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankTunic/LR_FrankTunic</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankTunic</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankTunicWhite</defName>
+    <label>linen tunic</label>
+    <description>A tunic of pale linen with woven borders.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankTunicWhite</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>1800</WorkToMake><MaxHitPoints>100</MaxHitPoints><Mass>0.6</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><Insulation_Cold>9</Insulation_Cold><Insulation_Heat>2</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>50</Cloth></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankTunicWhite/LR_FrankTunicWhite</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankTunicWhite</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankCloak</defName>
+    <label>Frankish cloak</label>
+    <description>A dark green wool cloak with a fur collar, pinned at the shoulder.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankCloak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>2600</WorkToMake><MaxHitPoints>140</MaxHitPoints><Mass>1.6</Mass><ArmorRating_Sharp>0.07</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt><Insulation_Cold>19</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>60</Cloth><Leather_Plain>15</Leather_Plain></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankCloak/LR_FrankCloak</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankCloak</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankRoyalCloak</defName>
+    <label>Merovingian cloak</label>
+    <description>A cloak of bright green wool with a grey fur collar and a gold brooch, worn by the long-haired kings of the Franks.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankRoyalCloak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <statBases><WorkToMake>4000</WorkToMake><MaxHitPoints>150</MaxHitPoints><Mass>1.8</Mass><ArmorRating_Sharp>0.07</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt><Insulation_Cold>20</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>1.5</EquipDelay><Flammability>1</Flammability></statBases>
+    <costList><Cloth>70</Cloth><Leather_Plain>20</Leather_Plain><Gold>5</Gold></costList>
+    <equippedStatOffsets><SocialImpact>0.12</SocialImpact></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankRoyalCloak/LR_FrankRoyalCloak</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>LR_Frank</li><li>LR_FrankRoyalCloak</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>HandTailoringBench</li><li>ElectricTailoringBench</li></recipeUsers>
+      <skillRequirements><Crafting>3</Crafting></skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankShield</defName>
+    <label>Frankish shield</label>
+    <description>A round shield of planks painted green, with a leather rim and an iron boss. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3.0</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>10</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankShield/LR_FrankShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Frank</li><li>LR_Shield</li><li>LR_FrankShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.58</rangedBlockChance>
+        <meleeBlockChance>0.32</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankSwirlShield</defName>
+    <label>whirl shield</label>
+    <description>A round green shield painted with a white whirl of curved blades. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankSwirlShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>3.0</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>10</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankSwirlShield/LR_FrankSwirlShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Frank</li><li>LR_Shield</li><li>LR_FrankSwirlShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.58</rangedBlockChance>
+        <meleeBlockChance>0.32</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankNobleShield</defName>
+    <label>rosette shield</label>
+    <description>A round shield painted deep red, with a gilded rosette set with garnets around a gilded boss. Carried by the antrustions and the king. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankNobleShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>3.3</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>35</WoodLog><Steel>15</Steel><Gold>4</Gold></costList>
+    <equippedStatOffsets><MoveSpeed>-0.05</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankNobleShield/LR_FrankNobleShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Frank</li><li>LR_Shield</li><li>LR_FrankNobleShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.62</rangedBlockChance>
+        <meleeBlockChance>0.35</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>LR_FrankOvalShield</defName>
+    <label>Frankish oval shield</label>
+    <description>A tall oval shield painted green, for spearmen standing in the line. Blocks only hits coming from the front or the sides, and only while the bearer is conscious. Worn in its own slot, so it can be combined with any weapon.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Apparel/LR_FrankOvalShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>4.2</Mass>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <costList><WoodLog>45</WoodLog><Steel>12</Steel></costList>
+    <equippedStatOffsets><MoveSpeed>-0.1</MoveSpeed></equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups><li>Hands</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LR_FrankOvalShield/LR_FrankOvalShield</wornGraphicPath>
+      <layers><li>LR_Shield</li></layers>
+      <tags><li>LR_Frank</li><li>LR_Shield</li><li>LR_FrankOvalShield</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <comps>
+      <li Class="AgeOfMigrations.CompProperties_ShieldBlock">
+        <rangedBlockChance>0.72</rangedBlockChance>
+        <meleeBlockChance>0.26</meleeBlockChance>
+        <blockArc>100</blockArc>
+        <shieldDamageFactor>0.4</shieldDamageFactor>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
+      <skillRequirements><Crafting>4</Crafting></skillRequirements>
+      <researchPrerequisite>Smithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
