@@ -196,6 +196,38 @@
     <pawnKindDef>LR_East_Augustus</pawnKindDef>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_P_Persian_Peasant</defName>
+    <pawnKindDef>LR_Persian_Peasant</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_Immortal</defName>
+    <pawnKindDef>LR_Persian_Immortal</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_ImmortalArcher</defName>
+    <pawnKindDef>LR_Persian_ImmortalArcher</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_Swordsman</defName>
+    <pawnKindDef>LR_Persian_Swordsman</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_ArmouredSpearman</defName>
+    <pawnKindDef>LR_Persian_ArmouredSpearman</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_SparaArcher</defName>
+    <pawnKindDef>LR_Persian_SparaArcher</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_Merchant</defName>
+    <pawnKindDef>LR_Persian_Merchant</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_P_Persian_Shah</defName>
+    <pawnKindDef>LR_Persian_Shah</pawnKindDef>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_HorsePawn</defName>
     <pawnKindDef>Horse</pawnKindDef>
   </KCSG.SymbolDef>

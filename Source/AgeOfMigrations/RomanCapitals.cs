@@ -25,6 +25,7 @@ namespace AgeOfMigrations
         {
             { "LR_WesternEmpire", "Ravenna" },
             { "LR_EasternEmpire", "Constantinopolis" },
+            { "LR_Sassanids", "Ctesiphon" },
         };
 
         private Dictionary<int, int> capitals = new Dictionary<int, int>();   // faction loadID -> settlement ID
@@ -62,7 +63,7 @@ namespace AgeOfMigrations
             }
         }
 
-        /// <summary>True if this world object is a Roman capital; side is "West" or "East".</summary>
+        /// <summary>True if this world object is a capital; side is "West", "East" or "Persian" (the layout is LR_{side}_Capital).</summary>
         public static bool IsCapital(WorldObject wo, out string side)
         {
             side = null;
@@ -70,7 +71,8 @@ namespace AgeOfMigrations
                 return false;
             if (!Instance.capitals.TryGetValue(s.Faction.loadID, out int id) || id != s.ID)
                 return false;
-            side = s.Faction.def.defName == "LR_WesternEmpire" ? "West" : "East";
+            string f = s.Faction.def.defName;
+            side = f == "LR_WesternEmpire" ? "West" : f == "LR_Sassanids" ? "Persian" : "East";
             return true;
         }
     }
@@ -81,14 +83,20 @@ namespace AgeOfMigrations
     public static class CapitalGraphics
     {
         public static readonly Texture2D Icon = ContentFinder<Texture2D>.Get("World/LR_Capital", false);
+        public static readonly Texture2D IconPersian = ContentFinder<Texture2D>.Get("World/LR_CapitalPersian", false);
         private static readonly Dictionary<Faction, Material> mats = new Dictionary<Faction, Material>();
+
+        public static bool Persian(Faction f) => f?.def?.defName == "LR_Sassanids";
+
+        public static Texture2D IconFor(Faction f) => Persian(f) && IconPersian != null ? IconPersian : Icon;
 
         public static Material MaterialFor(Faction f)
         {
-            if (Icon == null) return null;
+            if (IconFor(f) == null) return null;
             if (!mats.TryGetValue(f, out Material m))
             {
-                m = MaterialPool.MatFrom("World/LR_Capital", ShaderDatabase.WorldOverlayTransparentLit, f.Color,
+                string path = Persian(f) && IconPersian != null ? "World/LR_CapitalPersian" : "World/LR_Capital";
+                m = MaterialPool.MatFrom(path, ShaderDatabase.WorldOverlayTransparentLit, f.Color,
                     WorldMaterials.WorldObjectRenderQueue);
                 mats[f] = m;
             }
@@ -117,8 +125,8 @@ namespace AgeOfMigrations
 
         public static void Postfix(Settlement __instance, ref Texture2D __result)
         {
-            if (CapitalGraphics.Icon != null && GameComponent_RomanCapitals.IsCapital(__instance, out _))
-                __result = CapitalGraphics.Icon;
+            if (GameComponent_RomanCapitals.IsCapital(__instance, out _) && CapitalGraphics.IconFor(__instance.Faction) != null)
+                __result = CapitalGraphics.IconFor(__instance.Faction);
         }
     }
 
@@ -132,7 +140,9 @@ namespace AgeOfMigrations
         {
             if (GameComponent_RomanCapitals.IsCapital(__instance, out _))
             {
-                string line = $"Imperial capital of the {__instance.Faction.Name}. Heavily garrisoned and densely populated.";
+                string line = CapitalGraphics.Persian(__instance.Faction)
+                    ? $"Royal capital of the {__instance.Faction.Name}, seat of the King of Kings. Heavily garrisoned and densely populated."
+                    : $"Imperial capital of the {__instance.Faction.Name}. Heavily garrisoned and densely populated.";
                 __result = string.IsNullOrEmpty(__result) ? line : line + "\n" + __result;
             }
         }
@@ -223,7 +233,7 @@ namespace AgeOfMigrations
         private static void SeatLeader(Map map, Faction faction)
         {
             Pawn placeholder = map.mapPawns.AllPawnsSpawned
-                .FirstOrDefault(p => p.Faction == faction && p.kindDef.defName.EndsWith("_Augustus"));
+                .FirstOrDefault(p => p.Faction == faction && (p.kindDef.defName.EndsWith("_Augustus") || p.kindDef.defName.EndsWith("_Shah")));
             Pawn leader = faction.leader;
             if (placeholder == null || leader == null || leader == placeholder)
                 return;
@@ -267,12 +277,17 @@ namespace AgeOfMigrations
     public static class CapitalCrown
     {
         public static readonly Texture2D Tex = ContentFinder<Texture2D>.Get("World/LR_CapitalCrown", false);
-        private static Material mat;
+        public static readonly Texture2D TexPersian = ContentFinder<Texture2D>.Get("World/LR_CapitalCrownPersian", false);
+        private static Material mat, matPersian;
         private static readonly MethodInfo iconRect = AccessTools.Method(typeof(ExpandableWorldObjectsUtility), "ExpandedIconScreenRect");
         private static readonly MethodInfo transition = AccessTools.PropertyGetter(typeof(ExpandableWorldObjectsUtility), "TransitionPct");
 
         private static Material Mat => mat ?? (mat = MaterialPool.MatFrom("World/LR_CapitalCrown",
             ShaderDatabase.WorldOverlayTransparentLit, Color.white, WorldMaterials.WorldObjectRenderQueue + 1));
+        private static Material MatPersian => matPersian ?? (matPersian = MaterialPool.MatFrom("World/LR_CapitalCrownPersian",
+            ShaderDatabase.WorldOverlayTransparentLit, Color.white, WorldMaterials.WorldObjectRenderQueue + 1));
+
+        private static bool UsePersian(WorldObject wo) => TexPersian != null && CapitalGraphics.Persian(wo.Faction);
 
         private static IEnumerable<Settlement> Capitals()
         {
@@ -289,7 +304,7 @@ namespace AgeOfMigrations
             Vector3 pos = wo.DrawPos;
             Vector3 n = pos.normalized;
             Vector3 north = (Vector3.up - n * Vector3.Dot(Vector3.up, n)).normalized;
-            WorldRendererUtility.DrawQuadTangentialToPlanet(pos + north * size * 0.8f, size * 0.75f, 0.03f, Mat);
+            WorldRendererUtility.DrawQuadTangentialToPlanet(pos + north * size * 0.8f, size * 0.75f, 0.03f, UsePersian(wo) ? MatPersian : Mat);
         }
 
         // zoomed out: draw above the expanded settlement icon
@@ -304,7 +319,7 @@ namespace AgeOfMigrations
                 if (r.width <= 0f) continue;
                 Rect crown = new Rect(r.center.x - r.width * 0.45f, r.y - r.height * 0.85f, r.width * 0.9f, r.width * 0.9f);
                 GUI.color = new Color(1f, 1f, 1f, pct);
-                GUI.DrawTexture(crown, Tex);
+                GUI.DrawTexture(crown, UsePersian(s) ? TexPersian : Tex);
                 GUI.color = Color.white;
             }
         }
