@@ -8,7 +8,7 @@
       <texPath>Things/Building/LR/Furniture/LR_Bed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.05, 2.1)</drawSize>
+      <drawSize>(1.40625, 2.40625)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Bed_south</uiIconPath>
   </ThingDef>
@@ -20,7 +20,7 @@
       <texPath>Things/Building/LR/Furniture/LR_DoubleBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2.1, 2.1)</drawSize>
+      <drawSize>(2.40625, 2.40625)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_DoubleBed_south</uiIconPath>
   </ThingDef>
@@ -32,7 +32,7 @@
       <texPath>Things/Building/LR/Furniture/LR_StrawBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.05, 2.1)</drawSize>
+      <drawSize>(1.21875, 2.03125)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_StrawBed_south</uiIconPath>
   </ThingDef>
@@ -44,7 +44,7 @@
       <texPath>Things/Building/LR/Furniture/LR_Table1x2</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.1, 2.1)</drawSize>
+      <drawSize>(1.5, 2.5)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Table1x2_south</uiIconPath>
   </ThingDef>
@@ -56,7 +56,7 @@
       <texPath>Things/Building/LR/Furniture/LR_Table2x2</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2.1, 2.1)</drawSize>
+      <drawSize>(2.5, 2.5)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Table2x2_south</uiIconPath>
   </ThingDef>
@@ -68,7 +68,7 @@
       <texPath>Things/Building/LR/Furniture/LR_Table2x4</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2.1, 4.1)</drawSize>
+      <drawSize>(2.5, 4.5)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Table2x4_south</uiIconPath>
   </ThingDef>
@@ -80,19 +80,19 @@
       <texPath>Things/Building/LR/Furniture/LR_Stool</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.1, 1.1)</drawSize>
+      <drawSize>(1.21875, 1.21875)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Stool_south</uiIconPath>
   </ThingDef>
   <ThingDef ParentName="LR_VanillaDiningChair">
     <defName>LR_Chair</defName>
-    <label>folding chair</label>
-    <description>A chair on crossed legs with a cushion and a low back, after the Roman sella.</description>
+    <label>chair</label>
+    <description>A chair of turned wood after late Roman models, with a leather seat, a purple cushion and a carved back.</description>
     <graphicData>
       <texPath>Things/Building/LR/Furniture/LR_Chair</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.15, 1.15)</drawSize>
+      <drawSize>(2.03125, 2.0)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Chair_south</uiIconPath>
   </ThingDef>
@@ -104,7 +104,7 @@
       <texPath>Things/Building/LR/Furniture/LR_Chest</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.1, 1.1)</drawSize>
+      <drawSize>(1.75, 1.34375)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_Chest_south</uiIconPath>
   </ThingDef>
@@ -116,7 +116,7 @@
       <texPath>Things/Building/LR/Furniture/LR_SideTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.1, 1.1)</drawSize>
+      <drawSize>(1.625, 1.625)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_SideTable_south</uiIconPath>
   </ThingDef>
@@ -140,7 +140,7 @@
       <texPath>Things/Building/LR/Furniture/LR_ShahThrone</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.5, 1.5)</drawSize>
+      <drawSize>(2.78125, 2.5625)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_ShahThrone_south</uiIconPath>
     <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
@@ -156,7 +156,7 @@
       <texPath>Things/Building/LR/Furniture/LR_RomanThrone</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.5, 1.5)</drawSize>
+      <drawSize>(2.5625, 2.625)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_RomanThrone_south</uiIconPath>
     <stuffCategories Inherit="False"><li>Stony</li></stuffCategories>
@@ -172,7 +172,7 @@
       <texPath>Things/Building/LR/Furniture/LR_HighSeat</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.5, 1.5)</drawSize>
+      <drawSize>(2.96875, 2.6875)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_HighSeat_south</uiIconPath>
     <stuffCategories Inherit="False"><li>Woody</li></stuffCategories>
@@ -189,7 +189,7 @@
       <texPath>Things/Building/LR/Furniture/LR_FireAltar</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(1.6, 1.6)</drawSize>
+      <drawSize>(1.0, 2.4375)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_FireAltar</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
@@ -220,7 +220,7 @@
       </li>
       <li Class="CompProperties_FireOverlay">
         <fireSize>0.75</fireSize>
-        <offset>(0,0,0.62)</offset>
+        <offset>(0,0,0.904)</offset>
       </li>
     </comps>
   </ThingDef>
@@ -233,7 +233,7 @@
       <texPath>Things/Building/LR/Furniture/LR_OilLamp</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       
-      <drawSize>(1.25, 1.25)</drawSize>
+      <drawSize>(1.0, 1.84375)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_OilLamp</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
@@ -263,7 +263,7 @@
       </li>
       <li Class="CompProperties_FireOverlay">
         <fireSize>0.28</fireSize>
-        <offset>(0,0,0.42)</offset>
+        <offset>(0,0,0.789)</offset>
       </li>
     </comps>
   </ThingDef>
