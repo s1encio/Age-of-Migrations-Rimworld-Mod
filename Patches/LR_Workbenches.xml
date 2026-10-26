@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TableButcher"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_TableButcher</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_TableButcher</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData/drawSize</xpath><value><drawSize>(4.40625, 2.53125)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableButcher"]/graphicData</xpath><value><drawSize>(4.40625, 2.53125)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TableButcher"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableButcher"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_TableButcher_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_TableSculpting</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_TableSculpting</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData/drawSize</xpath><value><drawSize>(4.09375, 2.4375)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableSculpting"]/graphicData</xpath><value><drawSize>(4.09375, 2.4375)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TableSculpting"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableSculpting"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_TableSculpting_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_TableStonecutter</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_TableStonecutter</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/drawSize</xpath><value><drawSize>(3.59375, 2.46875)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath><value><drawSize>(3.59375, 2.46875)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TableStonecutter"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_TableStonecutter_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_FueledSmithy</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_FueledSmithy</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath><value><drawSize>(4.3125, 2.84375)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><drawSize>(4.3125, 2.84375)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FueledSmithy"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_FueledSmithy_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_HandTailoringBench</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_HandTailoringBench</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData/drawSize</xpath><value><drawSize>(4.5625, 2.53125)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/graphicData</xpath><value><drawSize>(4.5625, 2.53125)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="HandTailoringBench"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="HandTailoringBench"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_HandTailoringBench_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_FueledStove</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_FueledStove</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath><value><drawSize>(3.5625, 2.0)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><drawSize>(3.5625, 2.0)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FueledStove"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_FueledStove_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_SimpleResearchBench</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_SimpleResearchBench</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData/drawSize</xpath><value><drawSize>(4.5625, 3.5625)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/graphicData</xpath><value><drawSize>(4.5625, 3.5625)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="SimpleResearchBench"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="SimpleResearchBench"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_SimpleResearchBench_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Brewery"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Brewery"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_Brewery</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData</xpath><value><texPath>Things/Building/LR/Production/LR_Prod_Brewery</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Brewery"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Brewery"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Brewery"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData/drawSize</xpath><value><drawSize>(3.46875, 2.0)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Brewery"]/graphicData</xpath><value><drawSize>(3.46875, 2.0)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Brewery"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Brewery"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Production/LR_Prod_Brewery_north</uiIconPath></value></match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FueledStove"]/comps/li[@Class="CompProperties_FireOverlay"]/offset</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/comps/li[@Class="CompProperties_FireOverlay"]/offset</xpath><value><offset>(0,0,0.33)</offset></value></match>
+  </Operation>
+</Patch>
