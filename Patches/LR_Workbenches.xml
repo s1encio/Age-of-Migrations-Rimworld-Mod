@@ -176,8 +176,8 @@
       </li>
       <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath>
-        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath><value><drawSize>(3.5625, 2.0)</drawSize></value></match>
-        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><drawSize>(3.5625, 2.0)</drawSize></value></nomatch>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath><value><drawSize>(3.5625, 1.90625)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><drawSize>(3.5625, 1.90625)</drawSize></value></nomatch>
       </li>
       </operations>
     </match>
