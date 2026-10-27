@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerRomans</defName>
+    <label>Roman settlers</label>
+    <description>A small band of romans setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>Roman</pawnSingular>
+    <pawnsPlural>Romans</pawnsPlural>
+    <basicMemberKind>LR_RomansSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <factionIconPath>World/LR_FactionIcon</factionIconPath>
+    <colorSpectrum><li>(0.62, 0.16, 0.13)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementWest</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionWest</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementWest</settlementNameMaker>
+    <allowedCultures><li>LR_RomanCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_CivilStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerBarbarians</defName>
+    <label>barbarian war band</label>
+    <description>A small band of barbarians setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>warrior</pawnSingular>
+    <pawnsPlural>warriors</pawnsPlural>
+    <basicMemberKind>LR_BarbariansSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <factionIconPath>World/WorldObjects/Expanding/TribalSettlement</factionIconPath>
+    <colorSpectrum><li>(0.25, 0.45, 0.2)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementVandal</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionVandal</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementVandal</settlementNameMaker>
+    <allowedCultures><li>LR_GermanicCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerPersians</defName>
+    <label>Persian settlers</label>
+    <description>A small band of persians setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>Persian</pawnSingular>
+    <pawnsPlural>Persians</pawnsPlural>
+    <basicMemberKind>LR_PersiansSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <factionIconPath>World/LR_CapitalPersian</factionIconPath>
+    <colorSpectrum><li>(0.75, 0.6, 0.15)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementPersian</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionPersian</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementPersian</settlementNameMaker>
+    <allowedCultures><li>LR_PersianCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_CivilStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </FactionDef>
+</Defs>

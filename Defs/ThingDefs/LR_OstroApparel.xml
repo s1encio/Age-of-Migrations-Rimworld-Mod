@@ -21,6 +21,7 @@
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
     </apparel>
     <recipeMaker>
+      <researchPrerequisite>LR_B_Weaving</researchPrerequisite>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Tailor</effectWorking>
@@ -59,7 +60,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Helmets</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -91,7 +92,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Kingship</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -115,6 +116,7 @@
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
     </apparel>
     <recipeMaker>
+      <researchPrerequisite>LR_B_Weaving</researchPrerequisite>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Tailor</effectWorking>
@@ -145,6 +147,7 @@
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
     </apparel>
     <recipeMaker>
+      <researchPrerequisite>LR_B_Weaving</researchPrerequisite>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Tailor</effectWorking>
@@ -175,6 +178,7 @@
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
     </apparel>
     <recipeMaker>
+      <researchPrerequisite>LR_B_Weaving</researchPrerequisite>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Tailor</effectWorking>
@@ -206,6 +210,7 @@
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
     </apparel>
     <recipeMaker>
+      <researchPrerequisite>LR_B_Kingship</researchPrerequisite>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Tailor</effectWorking>
@@ -260,7 +265,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Shields</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -308,7 +313,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Shields</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -356,7 +361,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Shields</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -404,7 +409,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Shields</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -452,7 +457,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Shields</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 </Defs>

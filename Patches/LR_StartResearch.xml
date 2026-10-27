@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="Smithing"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Smithing"]/tags</xpath><value><li>LR_CivilStart</li><li>LR_BarbarianStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Smithing"]</xpath><value><tags><li>LR_CivilStart</li><li>LR_BarbarianStart</li></tags></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="ComplexClothing"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="ComplexClothing"]/tags</xpath><value><li>LR_CivilStart</li><li>LR_BarbarianStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="ComplexClothing"]</xpath><value><tags><li>LR_CivilStart</li><li>LR_BarbarianStart</li></tags></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="Stonecutting"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Stonecutting"]/tags</xpath><value><li>LR_CivilStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Stonecutting"]</xpath><value><tags><li>LR_CivilStart</li></tags></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="ComplexFurniture"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="ComplexFurniture"]/tags</xpath><value><li>LR_CivilStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="ComplexFurniture"]</xpath><value><tags><li>LR_CivilStart</li></tags></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="Brewing"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Brewing"]/tags</xpath><value><li>LR_CivilStart</li><li>LR_BarbarianStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Brewing"]</xpath><value><tags><li>LR_CivilStart</li><li>LR_BarbarianStart</li></tags></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="PassiveCooler"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="PassiveCooler"]/tags</xpath><value><li>LR_CivilStart</li><li>LR_BarbarianStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="PassiveCooler"]</xpath><value><tags><li>LR_CivilStart</li><li>LR_BarbarianStart</li></tags></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="Pemmican"]/tags</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Pemmican"]/tags</xpath><value><li>LR_BarbarianStart</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ResearchProjectDef[defName="Pemmican"]</xpath><value><tags><li>LR_BarbarianStart</li></tags></value></nomatch>
+  </Operation>
+</Patch>

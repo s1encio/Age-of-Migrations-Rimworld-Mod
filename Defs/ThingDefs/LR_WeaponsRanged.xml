@@ -105,7 +105,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Ballistarii</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 
@@ -163,7 +163,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Fabricae</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 

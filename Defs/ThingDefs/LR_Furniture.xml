@@ -147,6 +147,7 @@
     <costStuffCount>150</costStuffCount>
     <costList><Cloth>40</Cloth></costList>
     <statBases><Beauty>30</Beauty><Comfort>0.92</Comfort><WorkToBuild>18000</WorkToBuild><MaxHitPoints>220</MaxHitPoints></statBases>
+    <researchPrerequisites Inherit="False"><li>LR_P_Court</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="LR_VanillaArmchair">
     <defName>LR_RomanThrone</defName>
@@ -163,6 +164,7 @@
     <costStuffCount>120</costStuffCount>
     <costList><Gold>20</Gold><Cloth>20</Cloth></costList>
     <statBases><Beauty>24</Beauty><Comfort>0.88</Comfort><WorkToBuild>15000</WorkToBuild><MaxHitPoints>260</MaxHitPoints></statBases>
+    <researchPrerequisites Inherit="False"><li>LR_R_Court</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="LR_VanillaArmchair">
     <defName>LR_HighSeat</defName>
@@ -179,6 +181,7 @@
     <costStuffCount>90</costStuffCount>
     <costList><Leather_Plain>25</Leather_Plain></costList>
     <statBases><Beauty>14</Beauty><Comfort>0.85</Comfort><WorkToBuild>9000</WorkToBuild></statBases>
+    <researchPrerequisites Inherit="False"><li>LR_B_Kingship</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_FireAltar</defName>
@@ -223,6 +226,7 @@
         <offset>(0,0,0.904)</offset>
       </li>
     </comps>
+    <researchPrerequisites Inherit="False"><li>LR_P_FireTemples</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_OilLamp</defName>

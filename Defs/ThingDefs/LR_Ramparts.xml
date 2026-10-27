@@ -45,7 +45,7 @@
     <blockLight>false</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites Inherit="False"><li>LR_R_Limes</li></researchPrerequisites>
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <building>
@@ -113,7 +113,7 @@
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites Inherit="False"><li>LR_R_Limes</li></researchPrerequisites>
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <building>
       <isInert>true</isInert>
@@ -202,6 +202,7 @@
         <single>false</single>
       </li>
     </modExtensions>
+    <researchPrerequisites Inherit="False"><li>LR_P_Masonry</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_PersianCurtain</defName>
@@ -269,6 +270,7 @@
         <single>false</single>
       </li>
     </modExtensions>
+    <researchPrerequisites Inherit="False"><li>LR_P_Masonry</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_EarthRampart</defName>
@@ -334,6 +336,7 @@
         <single>false</single>
       </li>
     </modExtensions>
+    <researchPrerequisites Inherit="False"><li>LR_B_Palisades</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_PalisadeParapet</defName>
@@ -384,6 +387,7 @@
         <single>false</single>
       </li>
     </modExtensions>
+    <researchPrerequisites Inherit="False"><li>LR_B_Palisades</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_RampartStairs</defName>

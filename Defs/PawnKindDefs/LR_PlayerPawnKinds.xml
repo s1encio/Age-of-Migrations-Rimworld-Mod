@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>LR_RomansSettler</defName>
+    <label>roman</label>
+    <race>Human</race>
+    <defaultFactionType>LR_PlayerRomans</defaultFactionType>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_TunicWest</li><li>LR_CloakWest</li></apparelRequired>
+    <apparelMoney><min>0</min><max>0</max></apparelMoney>
+    <weaponMoney><min>0</min><max>0</max></weaponMoney>
+    <techHediffsChance>0</techHediffsChance>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+  </PawnKindDef>
+  <PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>LR_BarbariansSettler</defName>
+    <label>warrior</label>
+    <race>Human</race>
+    <defaultFactionType>LR_PlayerBarbarians</defaultFactionType>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_GermanicTunic</li><li>LR_GermanicCloak</li></apparelRequired>
+    <apparelMoney><min>0</min><max>0</max></apparelMoney>
+    <weaponMoney><min>0</min><max>0</max></weaponMoney>
+    <techHediffsChance>0</techHediffsChance>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+  </PawnKindDef>
+  <PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>LR_PersiansSettler</defName>
+    <label>persian</label>
+    <race>Human</race>
+    <defaultFactionType>LR_PlayerPersians</defaultFactionType>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCoat</li></apparelRequired>
+    <apparelMoney><min>0</min><max>0</max></apparelMoney>
+    <weaponMoney><min>0</min><max>0</max></weaponMoney>
+    <techHediffsChance>0</techHediffsChance>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+  </PawnKindDef>
+</Defs>

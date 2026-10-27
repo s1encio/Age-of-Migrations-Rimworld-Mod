@@ -26,7 +26,7 @@ The faster the wielder has been moving before the blow, the harder it hits: up t
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Clibanarii</researchPrerequisite>
     </recipeMaker>
     <modExtensions>
       <li Class="AgeOfMigrations.ChargeWeaponExtension">

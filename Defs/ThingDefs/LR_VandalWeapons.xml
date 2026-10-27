@@ -21,7 +21,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Smithing</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -45,7 +45,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Smithing</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -69,7 +69,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_PatternWelding</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -93,7 +93,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Smithing</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -117,7 +117,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_PatternWelding</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="BaseWeaponNeolithic">
@@ -159,7 +159,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Angon</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 
@@ -217,7 +217,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_B_Smithing</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 

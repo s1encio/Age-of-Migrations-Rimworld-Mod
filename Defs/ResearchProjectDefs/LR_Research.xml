@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchTabDef>
+    <defName>LR_ResearchRoman</defName>
+    <label>Roman</label>
+    <generalTitle>The arts of the Roman state</generalTitle>
+    <generalDescription>The state arms factories, the drill and kit of the legions, Roman masonry and the ceremony of the imperial court.</generalDescription>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchTabDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Dress</defName>
+    <label>military dress</label>
+    <description>The long-sleeved tunic and the fibula-pinned cloak that mark a man as a soldier of the late Roman army.</description>
+    <baseCost>250</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Fabricae</defName>
+    <label>fabricae</label>
+    <description>The state arms factories of the empire, each making one kind of weapon to a standard pattern: the long spatha, the hasta, the lead-weighted plumbata and the javelin.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>Smithing</li></prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Signa</defName>
+    <label>signa militaria</label>
+    <description>The standards of the units: the draco wind-sock, the labarum with the Chi-Rho, around which a unit rallies and for which it dies.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Dress</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Scuta</defName>
+    <label>painted scuta</label>
+    <description>Large oval shields of glued planks, rimmed with rawhide and painted with each unit's own blazon.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Fabricae</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_RidgeHelmets</defName>
+    <label>ridge helmets</label>
+    <description>Helmets of two iron halves joined by a ridge, quick to make in the fabricae, and the segmented spangenhelm learned from the steppe.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Fabricae</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Hamata</defName>
+    <label>lorica hamata</label>
+    <description>The ringmail shirt of the legions: thousands of riveted and punched rings, long and heavy, but proof against cuts.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_RidgeHelmets</li></prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Ballistarii</defName>
+    <label>ballistarii</label>
+    <description>Handheld torsion crossbows, the arcuballista, in the hands of the ballistarii.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Scuta</li></prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Squamata</defName>
+    <label>lorica squamata</label>
+    <description>Armour of overlapping bronze or iron scales sewn to a backing: stiffer and showier than mail.</description>
+    <baseCost>1300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Hamata</li></prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Clibanarii</defName>
+    <label>clibanarii</label>
+    <description>Heavy cavalry clad head to foot in iron, after the Persian fashion, charging with the long kontos.</description>
+    <baseCost>1600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Squamata</li></prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Parade</defName>
+    <label>parade arms</label>
+    <description>Gilded helmets set with glass stones and gilded spathae for the emperor's guard and the generals.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Squamata</li><li>LR_R_Signa</li></prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Masonry</defName>
+    <label>Roman masonry</label>
+    <description>Walls of dressed stone with courses of brick, laid in lime mortar; columns turned from a single block.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>Stonecutting</li></prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.40</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Limes</defName>
+    <label>limes fortifications</label>
+    <description>The fortifications of the frontier: high curtain walls with a wall-walk and battlements behind which archers can stand.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Masonry</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.40</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_R_Court</defName>
+    <label>imperial court</label>
+    <description>The ceremony of the sacred palace: the throne raised on marble, the purple, and the statues of the emperors.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchRoman</tab>
+    <prerequisites><li>LR_R_Parade</li><li>LR_R_Limes</li><li>ComplexFurniture</li></prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>1.70</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchTabDef>
+    <defName>LR_ResearchBarbarian</defName>
+    <label>Barbarian</label>
+    <generalTitle>The crafts of the free peoples</generalTitle>
+    <generalDescription>The skills of the Germanic and steppe peoples: weaving and smithing, shields of lime wood, timber halls, and the trappings of kingship.</generalDescription>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchTabDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Weaving</defName>
+    <label>tablet weaving</label>
+    <description>Wool and linen woven on the warp-weighted loom, edged with tablet-woven bands: tunics, cloaks, hoods and caftans of the peoples of the north and the steppe.</description>
+    <baseCost>250</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Palisades</defName>
+    <label>palisades</label>
+    <description>Ditch and bank crowned with a palisade of sharpened logs; timber walls; tents for the war band on the move.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.40</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Smithing</defName>
+    <label>village smithing</label>
+    <description>The village smith's work: seaxes long and short, the bearded axe and the throwing axe, the framea spear, and leather caps.</description>
+    <baseCost>450</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>Smithing</li></prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Banners</defName>
+    <label>war banners</label>
+    <description>The banners and totems of the peoples, carried before the war band.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Weaving</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Shields</defName>
+    <label>lime-wood shields</label>
+    <description>Round and oval shields of lime-wood boards covered in hide, with an iron boss, painted in each people's colours.</description>
+    <baseCost>550</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Smithing</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Helmets</defName>
+    <label>spangenhelms</label>
+    <description>Helmets riveted from iron segments in a frame, with cheek guards and sometimes a mail curtain.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Smithing</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Angon</defName>
+    <label>the angon</label>
+    <description>A heavy throwing spear with a long iron shank and a barbed head: it pins an enemy's shield and drags it down.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Shields</li></prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Halls</defName>
+    <label>great halls</label>
+    <description>Halls on stone footings, dry-stone walls, and the four-wheeled wagons of a people on the move.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Palisades</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.40</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Mail</defName>
+    <label>mail byrnies</label>
+    <description>A shirt of mail, the byrnie, worth a farm; and lamellar armour of laced iron plates, learned from the steppe.</description>
+    <baseCost>1100</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Helmets</li></prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_PatternWelding</defName>
+    <label>pattern welding</label>
+    <description>Rods of iron and steel twisted and forged together into blades that shimmer like snakeskin: the swords of chieftains, the long rhomphaia, the great axe.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_Angon</li></prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_B_Kingship</defName>
+    <label>kingship</label>
+    <description>The ring-giver's trappings: gilded helmets and swords, purple cloaks, noble shields, and the high seat at the head of the hall.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchBarbarian</tab>
+    <prerequisites><li>LR_B_PatternWelding</li><li>LR_B_Mail</li><li>LR_B_Halls</li><li>ComplexFurniture</li></prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.70</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchTabDef>
+    <defName>LR_ResearchPersian</defName>
+    <label>Persian</label>
+    <generalTitle>The arts of Eranshahr</generalTitle>
+    <generalDescription>The dress and arms of the Sassanid empire, its armoured cavalry, its brick-and-stone fortresses, its fire temples and the court of the King of Kings.</generalDescription>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchTabDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Dress</defName>
+    <label>Persian dress</label>
+    <description>Belted tunics and long riding coats of patterned silk and wool, and the Phrygian cap.</description>
+    <baseCost>250</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Smithing</defName>
+    <label>Persian smithing</label>
+    <description>Long straight swords with scabbard slides, the gorz mace and the tabarzin axe of the horseman.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>Smithing</li></prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Derafsh</defName>
+    <label>derafsh</label>
+    <description>The standards of the army, and above all the Derafsh Kaviani, the jewelled banner of the kings.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Dress</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Shields</defName>
+    <label>Persian shields</label>
+    <description>Round shields of wood and hide, the tall wicker spara of the infantry, painted with stars and sacred fire.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Smithing</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Helmets</defName>
+    <label>Persian helmets</label>
+    <description>Tall segmented helmets with a mail aventail.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Smithing</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Clibanarii</defName>
+    <label>clibanarii</label>
+    <description>The heavy cavalry of the Sassanids: helmets with a face of mail, men like statues of iron on armoured horses.</description>
+    <baseCost>1300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Helmets</li></prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Immortals</defName>
+    <label>the Immortals</label>
+    <description>The guard of the King of Kings, whose number is always kept full: gilded helmets and shields.</description>
+    <baseCost>1600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Clibanarii</li><li>LR_P_Shields</li></prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>1.70</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Masonry</defName>
+    <label>Sassanid masonry</label>
+    <description>Walls of fired brick on stone footings, stepped battlements and ribbed curtain walls.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>Stonecutting</li></prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.40</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_FireTemples</defName>
+    <label>fire temples</label>
+    <description>The fire altar, the atashdan, in which the sacred fire of Ahura Mazda is kept burning day and night.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Masonry</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.40</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>LR_P_Court</defName>
+    <label>court of the King of Kings</label>
+    <description>The crown with the winged globe, the royal robe and the golden throne behind the curtain.</description>
+    <baseCost>2200</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>LR_ResearchPersian</tab>
+    <prerequisites><li>LR_P_Immortals</li><li>LR_P_Derafsh</li><li>LR_P_FireTemples</li><li>ComplexFurniture</li></prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.70</researchViewY>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </ResearchProjectDef>
+</Defs>

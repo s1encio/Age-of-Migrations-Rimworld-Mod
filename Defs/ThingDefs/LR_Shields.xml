@@ -45,7 +45,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Scuta</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -93,7 +93,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Scuta</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -141,7 +141,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Scuta</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
@@ -189,7 +189,7 @@
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
       <recipeUsers Inherit="False"><li>FueledSmithy</li><li>ElectricSmithy</li></recipeUsers>
       <skillRequirements><Crafting>4</Crafting></skillRequirements>
-      <researchPrerequisite>Smithing</researchPrerequisite>
+      <researchPrerequisite>LR_R_Scuta</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 </Defs>
