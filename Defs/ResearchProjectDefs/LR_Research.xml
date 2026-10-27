@@ -499,4 +499,6 @@
       <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
     </modExtensions>
   </ResearchProjectDef>
+  <ResearchProjectTagDef><defName>LR_CivilStart</defName></ResearchProjectTagDef>
+  <ResearchProjectTagDef><defName>LR_BarbarianStart</defName></ResearchProjectTagDef>
 </Defs>

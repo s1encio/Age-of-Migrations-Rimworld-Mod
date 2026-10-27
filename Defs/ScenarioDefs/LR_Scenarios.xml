@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ScenarioDef>
+  <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioRomans</defName>
     <label>Roman settlers</label>
     <description>Veterans of a disbanded frontier unit, given land to farm instead of their back pay, set out to build a villa of their own.</description>
@@ -88,7 +88,7 @@
       </parts>
     </scenario>
   </ScenarioDef>
-  <ScenarioDef>
+  <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioBarbarians</defName>
     <label>barbarian war band</label>
     <description>A war band has broken away from its people to seek land and loot of its own, far from the king's hall.</description>
@@ -181,7 +181,7 @@
       </parts>
     </scenario>
   </ScenarioDef>
-  <ScenarioDef>
+  <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioPersians</defName>
     <label>Persian settlers</label>
     <description>A minor noble house of Eranshahr, granted a distant frontier estate by the King of Kings, sets out to settle it.</description>

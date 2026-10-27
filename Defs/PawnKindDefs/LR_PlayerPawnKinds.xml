@@ -12,6 +12,7 @@
     <weaponMoney><min>0</min><max>0</max></weaponMoney>
     <techHediffsChance>0</techHediffsChance>
     <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <initialResistanceRange>10~17</initialResistanceRange>
   </PawnKindDef>
   <PawnKindDef ParentName="BasePlayerPawnKind">
     <defName>LR_BarbariansSettler</defName>
@@ -25,6 +26,7 @@
     <weaponMoney><min>0</min><max>0</max></weaponMoney>
     <techHediffsChance>0</techHediffsChance>
     <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <initialResistanceRange>10~17</initialResistanceRange>
   </PawnKindDef>
   <PawnKindDef ParentName="BasePlayerPawnKind">
     <defName>LR_PersiansSettler</defName>
@@ -33,10 +35,11 @@
     <defaultFactionType>LR_PlayerPersians</defaultFactionType>
     <backstoryCategories><li>Outlander</li></backstoryCategories>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
-    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianTunic</li><li>LR_PersianCoat</li></apparelRequired>
+    <apparelRequired><li>Apparel_Pants</li><li>LR_PersianCoat</li></apparelRequired>
     <apparelMoney><min>0</min><max>0</max></apparelMoney>
     <weaponMoney><min>0</min><max>0</max></weaponMoney>
     <techHediffsChance>0</techHediffsChance>
     <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <initialResistanceRange>10~17</initialResistanceRange>
   </PawnKindDef>
 </Defs>

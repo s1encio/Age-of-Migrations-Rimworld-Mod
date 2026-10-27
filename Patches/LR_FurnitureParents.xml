@@ -1,99 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Bed"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Bed"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaBed</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Bed</vanilla>
+    <fallbackName>LR_VanillaBed</fallbackName>
+    <children><li>LR_Bed</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="DoubleBed"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="DoubleBed"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaDoubleBed</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>DoubleBed</vanilla>
+    <fallbackName>LR_VanillaDoubleBed</fallbackName>
+    <children><li>LR_DoubleBed</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Bedroll"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Bedroll"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaBedroll</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Bedroll</vanilla>
+    <fallbackName>LR_VanillaBedroll</fallbackName>
+    <children><li>LR_StrawBed</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Table1x2c"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Table1x2c"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaTable1x2c</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Table1x2c</vanilla>
+    <fallbackName>LR_VanillaTable1x2c</fallbackName>
+    <children><li>LR_TrestleTable</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Table2x2c"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Table2x2c"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaTable2x2c</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Table2x2c</vanilla>
+    <fallbackName>LR_VanillaTable2x2c</fallbackName>
+    <children><li>LR_SquareTable</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Table2x4c"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Table2x4c"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaTable2x4c</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Table2x4c</vanilla>
+    <fallbackName>LR_VanillaTable2x4c</fallbackName>
+    <children><li>LR_FeastingTable</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Stool"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Stool"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaStool</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Stool</vanilla>
+    <fallbackName>LR_VanillaStool</fallbackName>
+    <children><li>LR_Stool</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="DiningChair"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="DiningChair"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaDiningChair</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>DiningChair</vanilla>
+    <fallbackName>LR_VanillaDiningChair</fallbackName>
+    <children><li>LR_Chair</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="ShelfSmall"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="ShelfSmall"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaShelfSmall</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>ShelfSmall</vanilla>
+    <fallbackName>LR_VanillaShelfSmall</fallbackName>
+    <children><li>LR_Chest</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="EndTable"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="EndTable"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaEndTable</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>EndTable</vanilla>
+    <fallbackName>LR_VanillaEndTable</fallbackName>
+    <children><li>LR_SideTable</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Door"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Door"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaDoor</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Door</vanilla>
+    <fallbackName>LR_VanillaDoor</fallbackName>
+    <children><li>LR_Door</li></children>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Armchair"][not(@Name)]</xpath>
-    <match Class="PatchOperationAttributeAdd">
-      <xpath>Defs/ThingDef[defName="Armchair"]</xpath>
-      <attribute>Name</attribute>
-      <value>LR_VanillaArmchair</value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
+    <vanilla>Armchair</vanilla>
+    <fallbackName>LR_VanillaArmchair</fallbackName>
+    <children><li>LR_ShahThrone</li><li>LR_RomanThrone</li><li>LR_HighSeat</li></children>
   </Operation>
 </Patch>

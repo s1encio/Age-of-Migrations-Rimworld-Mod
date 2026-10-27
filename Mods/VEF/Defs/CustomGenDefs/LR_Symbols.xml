@@ -369,15 +369,15 @@
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table1x2_WoodLog</defName>
-    <thing>LR_Table1x2</thing><stuff>WoodLog</stuff>
+    <thing>LR_TrestleTable</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table2x2_WoodLog</defName>
-    <thing>LR_Table2x2</thing><stuff>WoodLog</stuff>
+    <thing>LR_SquareTable</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table2x4_WoodLog</defName>
-    <thing>LR_Table2x4</thing><stuff>WoodLog</stuff>
+    <thing>LR_FeastingTable</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Stool_WoodLog</defName>
@@ -409,7 +409,7 @@
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table2x4_BlocksMarble</defName>
-    <thing>LR_Table2x4</thing><stuff>BlocksMarble</stuff>
+    <thing>LR_FeastingTable</thing><stuff>BlocksMarble</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_RomanThrone_BlocksMarble</defName>

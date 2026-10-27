@@ -284,3 +284,33 @@ namespace AgeOfMigrations
         }
     }
 }
+
+namespace AgeOfMigrations
+{
+    /// <summary>
+    /// Makes our furniture inherit from a vanilla def. If the vanilla def already carries a Name (RimWorld 1.6 gives some of
+    /// them one), the children use that Name; otherwise the vanilla def gets the fallback Name.
+    /// </summary>
+    public class PatchOperationLinkParent : PatchOperation
+    {
+        public string vanilla;
+        public string fallbackName;
+        public List<string> children = new List<string>();
+
+        protected override bool ApplyWorker(System.Xml.XmlDocument xml)
+        {
+            var v = xml.SelectSingleNode($"Defs/ThingDef[defName=\"{vanilla}\"]") as System.Xml.XmlElement;
+            if (v == null) return false;
+            string name = v.GetAttribute("Name");
+            if (string.IsNullOrEmpty(name))
+            {
+                name = fallbackName;
+                v.SetAttribute("Name", name);
+            }
+            foreach (string c in children)
+                foreach (System.Xml.XmlNode n in xml.SelectNodes($"Defs/ThingDef[defName=\"{c}\"]"))
+                    (n as System.Xml.XmlElement)?.SetAttribute("ParentName", name);
+            return true;
+        }
+    }
+}

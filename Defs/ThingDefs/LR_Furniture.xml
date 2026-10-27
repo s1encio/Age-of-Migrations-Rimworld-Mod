@@ -37,7 +37,7 @@
     <uiIconPath>Things/Building/LR/Furniture/LR_StrawBed_south</uiIconPath>
   </ThingDef>
   <ThingDef ParentName="LR_VanillaTable1x2c">
-    <defName>LR_Table1x2</defName>
+    <defName>LR_TrestleTable</defName>
     <label>trestle table</label>
     <description>Heavy planks laid on two trestles: the everyday table, quick to set up and take down.</description>
     <graphicData>
@@ -49,7 +49,7 @@
     <uiIconPath>Things/Building/LR/Furniture/LR_Table1x2_south</uiIconPath>
   </ThingDef>
   <ThingDef ParentName="LR_VanillaTable2x2c">
-    <defName>LR_Table2x2</defName>
+    <defName>LR_SquareTable</defName>
     <label>square table</label>
     <description>A square table of thick planks on trestles.</description>
     <graphicData>
@@ -61,7 +61,7 @@
     <uiIconPath>Things/Building/LR/Furniture/LR_Table2x2_south</uiIconPath>
   </ThingDef>
   <ThingDef ParentName="LR_VanillaTable2x4c">
-    <defName>LR_Table2x4</defName>
+    <defName>LR_FeastingTable</defName>
     <label>feasting table</label>
     <description>A long table of heavy planks on trestles, for a lord's feast or a family's meals.</description>
     <graphicData>
@@ -196,7 +196,7 @@
     </graphicData>
     <uiIconPath>Things/Building/LR/Furniture/LR_FireAltar</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <fillPercent>0.45</fillPercent>
     <pathCost>30</pathCost>
     <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>4000</WorkToBuild><Beauty>18</Beauty><Mass>60</Mass></statBases>
