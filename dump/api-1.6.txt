@@ -1,0 +1,1873 @@
+=================== RimWorld.Planet.WorldGrid
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Text;
+using Unity.Collections;
+using UnityEngine;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGrid : IExposable, IDisposable
+{
+	[CompilerGenerated]
+	private sealed class <GetGizmos>d__103 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Gizmo <>2__current;
+		private int <>l__initialThreadId;
+		public WorldGrid <>4__this;
+		private Dictionary<int, PlanetLayer>.Enumerator <>7__wrap1;
+		extern Gizmo IEnumerator<Gizmo>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetGizmos>d__103(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	private Dictionary<int, PlanetLayer> planetLayers;
+	private Vector3 surfaceViewCenter;
+	private float surfaceViewAngle;
+	private int nextLayerId;
+	private SurfaceLayer surface;
+	private PlanetLayer orbit;
+	private readonly List<WorldDrawLayerBase> globalLayers;
+	private readonly List<PlanetTile> tmpNeighbors;
+	public const int SubdivisionsCount = 10;
+	public const float PlanetRadius = 100f;
+	private int cachedTraversalDistance;
+	private PlanetTile cachedTraversalDistanceForStart;
+	private PlanetTile cachedTraversalDistanceForEnd;
+	private PlanetLayer cachedLayer;
+	private static readonly List<int> tmpLayerIds;
+	public extern SurfaceLayer Surface { get; }
+	public extern PlanetLayer Orbit { get; }
+	public extern IReadOnlyList<WorldDrawLayerBase> GlobalLayers { get; }
+	public extern float SurfaceViewAngle { get; }
+	public extern Vector3 SurfaceViewCenter { get; }
+	public extern int TilesCount { get; }
+	public extern IEnumerable<SurfaceTile> Tiles { get; }
+	public extern IReadOnlyDictionary<int, PlanetLayer> PlanetLayers { get; }
+	public extern NativeArray<Vector3> UnsafeVerts { get; }
+	public extern NativeArray<int> UnsafeTileIDToVerts_offsets { get; }
+	public extern NativeArray<int> UnsafeTileIDToNeighbors_offsets { get; }
+	public extern NativeArray<PlanetTile> UnsafeTileIDToNeighbors_values { get; }
+	public extern Vector3 NorthPolePos { get; }
+	public extern SurfaceTile this[int tileID] { get; }
+	public extern Tile this[PlanetTile tile] { get; }
+	public extern bool HasWorldData { get; }
+	public extern float AverageTileSize { get; }
+	public extern event Action<PlanetLayer> OnPlanetLayerAdded;
+	public extern event Action<PlanetLayer> OnPlanetLayerRemoved;
+	public extern void GenerateFreshWorld();
+	private extern void InitializeGlobalLayers();
+	private extern void CreateRequiredLayers();
+	public extern bool TryGetLayerByTag(string tag, out PlanetLayer layer);
+	public extern Vector2 LongLatOf(PlanetTile tile);
+	public extern PlanetLayer RegisterPlanetLayer(PlanetLayerDef layer, PlanetLayerSettings settings, float? overrideRadius = null, Vector3? overrideOrigin = null, Vector3? overrideViewCenter = null, float? overrideViewAngle = null);
+	public extern PlanetLayer RegisterPlanetLayer(PlanetLayerDef def, Vector3? origin = null, float radius = 100f, float viewAngle = 180f, float extraCameraAltitude = 0f, int subdivisions = 10, float backgroundWorldCameraOffset = 0f, float backgroundWorldCameraParallaxDistancePer100Cells = 0f, Vector3? overrideViewCenter = null);
+	public extern void RemovePlanetLayer(PlanetLayer layer);
+	public extern bool TryGetFirstLayerOfDef(PlanetLayerDef def, out PlanetLayer layer);
+	public extern bool TryGetFirstAdjacentLayerOfDef(PlanetTile origin, PlanetLayerDef def, out PlanetLayer layer);
+	public extern PlanetLayer FirstLayerOfDef(PlanetLayerDef def);
+	public extern Vector3 GetTileCenter(PlanetTile tile);
+	public extern bool InBounds(PlanetTile tile);
+	public extern float GetHeadingFromTo(Vector3 from, Vector3 to);
+	public extern float GetHeadingFromTo(PlanetLayer layer, Vector3 from, Vector3 to);
+	public extern float GetHeadingFromTo(PlanetTile fromTile, PlanetTile toTile);
+	public extern Direction8Way GetDirection8WayFromTo(PlanetTile fromTile, PlanetTile toTile);
+	public extern Rot4 GetRotFromTo(PlanetTile fromTile, PlanetTile toTile);
+	public extern void GetTileVertices(PlanetTile tile, List<Vector3> outVerts);
+	public extern void GetTileVerticesIndices(PlanetTile tile, List<int> outVertsIndices);
+	public extern void GetTileNeighbors(PlanetTile tile, List<PlanetTile> outNeighbors);
+	public extern int GetTileNeighborCount(PlanetTile tile);
+	public extern int GetMaxTileNeighborCountEver(PlanetTile tile);
+	public extern bool IsNeighbor(PlanetTile tileA, PlanetTile tileB);
+	public extern bool IsNeighborOrSame(PlanetTile tileA, PlanetTile tileB);
+	public extern int GetNeighborId(PlanetTile tileA, PlanetTile tileB);
+	public extern PlanetTile GetTileNeighbor(PlanetTile tile, int adjacentId);
+	public extern float TileRadiusToAngle(float radius);
+	public extern float TileRadiusToAngle(PlanetLayer layer, float radius);
+	public extern float DistOnSurfaceToAngle(float dist);
+	public extern float DistOnSurfaceToAngle(PlanetLayer layer, float dist);
+	public extern float DistanceFromEquatorNormalized(PlanetTile tile);
+	public extern float ApproxDistanceInTiles(float sphericalDistance);
+	public extern float ApproxDistanceInTiles(PlanetLayer layer, float sphericalDistance);
+	public extern float ApproxDistanceInTiles(PlanetTile tileA, PlanetTile tileB);
+	public extern void OverlayRoad(PlanetTile fromTile, PlanetTile toTile, RoadDef roadDef);
+	public extern RoadDef GetRoadDef(PlanetTile fromTile, PlanetTile toTile, bool visibleOnly = true);
+	public extern void OverlayRiver(PlanetTile fromTile, PlanetTile toTile, RiverDef riverDef);
+	public extern RiverDef GetRiverDef(PlanetTile fromTile, PlanetTile toTile, bool visibleOnly = true);
+	public extern float GetRoadMovementDifficultyMultiplier(PlanetTile fromTile, PlanetTile toTile, StringBuilder explanation = null);
+	public extern PlanetTile FindMostReasonableAdjacentTileForDisplayedPathCost(PlanetTile fromTile);
+	public extern int TraversalDistanceBetween(PlanetTile start, PlanetTile end, bool passImpassable = true, int maxDist = int.MaxValue, bool canTraverseLayers = false);
+	public extern int TilesNumWithinTraversalDistance(int traversalDist);
+	public extern bool IsOnEdge(PlanetTile tileID);
+	private extern void CalculateViewCenterAndAngle();
+	public extern void ExposeData();
+	private extern void EnsureNextLayerIDValid();
+	public extern void StandardizeTileData();
+	[IteratorStateMachine(typeof(<GetGizmos>d__103))]
+	public extern IEnumerable<Gizmo> GetGizmos();
+	public extern void Dispose();
+	public extern WorldGrid();
+	static extern WorldGrid();
+}
+=================== RimWorld.Planet.Tile
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Verse;
+namespace RimWorld.Planet;
+public class Tile : IExposable
+{
+	[CompilerGenerated]
+	private sealed class <GetGizmos>d__57 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Gizmo <>2__current;
+		private int <>l__initialThreadId;
+		public Tile <>4__this;
+		extern Gizmo IEnumerator<Gizmo>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetGizmos>d__57(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <get_Biomes>d__18 : IEnumerable<BiomeDef>, IEnumerable, IEnumerator<BiomeDef>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private BiomeDef <>2__current;
+		private int <>l__initialThreadId;
+		public Tile <>4__this;
+		extern BiomeDef IEnumerator<BiomeDef>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <get_Biomes>d__18(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<BiomeDef> IEnumerable<BiomeDef>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	private BiomeDef biome;
+	public float elevation;
+	public Hilliness hilliness;
+	public float temperature;
+	public float rainfall;
+	public float swampiness;
+	public WorldFeature feature;
+	public float pollution;
+	public PlanetTile tile;
+	public List<TileMutatorDef> mutatorsNullable;
+	[Unsaved(false)]
+	private bool? tmpHasSecondaryBiome;
+	[Unsaved(false)]
+	private BiomeDef tmpSecondaryBiome;
+	private Hilliness? hillinessLabelCached;
+	private float? cachedMaxTemp;
+	private float? cachedMinTemp;
+	public extern PlanetLayer Layer { get; }
+	public extern BiomeDef PrimaryBiome { get; set; }
+	public extern IEnumerable<BiomeDef> Biomes
+	{
+		[IteratorStateMachine(typeof(<get_Biomes>d__18))]
+		get;
+	}
+	public extern Landmark Landmark { get; }
+	public extern bool OnSurface { get; }
+	public virtual extern bool WaterCovered { get; }
+	public extern bool IsCoastal { get; }
+	public extern IList<TileMutatorDef> Mutators { get; }
+	public extern Hilliness HillinessLabel { get; }
+	public extern Hilliness HillinessForElevationGen { get; }
+	public extern Hilliness HillinessForOreGeneration { get; }
+	public extern float AnimalDensity { get; }
+	public extern float PlantDensityFactor { get; }
+	public extern float FishPopulationFactor { get; }
+	public extern bool AllowRoofedEdgeWalkIn { get; }
+	public extern float MaxTemperature { get; }
+	public extern float MinTemperature { get; }
+	public extern float MaxFishPopulation { get; }
+	public extern Tile();
+	public extern Tile(PlanetTile tile);
+	public extern void AddMutator(TileMutatorDef mutator);
+	public extern void RemoveMutator(TileMutatorDef mutator);
+	public override extern string ToString();
+	[IteratorStateMachine(typeof(<GetGizmos>d__57))]
+	public virtual extern IEnumerable<Gizmo> GetGizmos();
+	public virtual extern void ExposeData();
+}
+=================== RimWorld.Planet.SurfaceTile
+using System.Collections.Generic;
+namespace RimWorld.Planet;
+public class SurfaceTile : Tile
+{
+	public struct RoadLink
+	{
+		public PlanetTile neighbor;
+		public RoadDef road;
+	}
+	public struct RiverLink
+	{
+		public PlanetTile neighbor;
+		public RiverDef river;
+	}
+	public List<RoadLink> potentialRoads;
+	public List<RiverLink> potentialRivers;
+	public int riverDist;
+	public override extern bool WaterCovered { get; }
+	public extern List<RoadLink> Roads { get; }
+	public extern List<RiverLink> Rivers { get; }
+	public extern SurfaceTile();
+	public extern SurfaceTile(PlanetTile tile);
+	public override extern string ToString();
+	public override extern void ExposeData();
+}
+=================== RimWorld.Planet.PlanetLayer
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.Burst;
+using Unity.Collections;
+using UnityEngine;
+using Verse;
+namespace RimWorld.Planet;
+[BurstCompile]
+public class PlanetLayer : IExposable, ILoadReferenceable, IDisposable
+{
+	public delegate float CalculateAverageTileSize_00015441$PostfixBurstDelegate(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts);
+	internal static class CalculateAverageTileSize_00015441$BurstDirectCall
+	{
+		private static IntPtr Pointer;
+		private static IntPtr DeferredCompilation;
+		[BurstDiscard]
+		private static extern void GetFunctionPointerDiscard(ref IntPtr P_0);
+		private static extern IntPtr GetFunctionPointer();
+		public static extern void Constructor();
+		public static extern void Initialize();
+		static extern CalculateAverageTileSize_00015441$BurstDirectCall();
+		public static extern float Invoke(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts);
+	}
+	public delegate float IntGetTileSize_00015443$PostfixBurstDelegate(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, in PlanetTile tile);
+	internal static class IntGetTileSize_00015443$BurstDirectCall
+	{
+		private static IntPtr Pointer;
+		private static IntPtr DeferredCompilation;
+		[BurstDiscard]
+		private static extern void GetFunctionPointerDiscard(ref IntPtr P_0);
+		private static extern IntPtr GetFunctionPointer();
+		public static extern void Constructor();
+		public static extern void Initialize();
+		static extern IntGetTileSize_00015443$BurstDirectCall();
+		public static extern float Invoke(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, in PlanetTile tile);
+	}
+	public delegate void IntGetTileCenter_00015446$PostfixBurstDelegate(in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, int tileID, out Vector3 center);
+	internal static class IntGetTileCenter_00015446$BurstDirectCall
+	{
+		private static IntPtr Pointer;
+		private static IntPtr DeferredCompilation;
+		[BurstDiscard]
+		private static extern void GetFunctionPointerDiscard(ref IntPtr P_0);
+		private static extern IntPtr GetFunctionPointer();
+		public static extern void Constructor();
+		public static extern void Initialize();
+		static extern IntGetTileCenter_00015446$BurstDirectCall();
+		public static extern void Invoke(in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, int tileID, out Vector3 center);
+	}
+	private PlanetLayerDef def;
+	private string scenarioTag;
+	private bool isRootSurface;
+	private int layerId;
+	private int subdivisions;
+	private float backgroundWorldCameraOffset;
+	private float backgroundWorldCameraParallaxDistancePer100Cells;
+	private float radius;
+	private float viewAngle;
+	private float extraCameraAltitude;
+	private Vector3 viewCenter;
+	private Vector3 origin;
+	public PlanetLayer zoomOutToLayer;
+	public PlanetLayer zoomInToLayer;
+	private Dictionary<PlanetLayer, PlanetLayerConnection> connections;
+	protected readonly List<Tile> tiles;
+	private FastTileFinder finder;
+	private WorldPathing pather;
+	private WorldFloodFiller filler;
+	private Func<PlanetTile, Tile> tileCreatorFunc;
+	private byte[] tileBiome;
+	private NativeArray<Vector3> verts;
+	private NativeArray<int> tileIDToVerts_offsets;
+	private NativeArray<int> tileIDToNeighbors_offsets;
+	private NativeArray<PlanetTile> tileIDToNeighbors_values;
+	private float averageTileSize;
+	private static List<TriangleIndices> tmp_tris;
+	private static List<Vector3> tmp_verts;
+	private static List<Vector3> tmp_generatedVerts;
+	private static List<int> tmp_generatedVertOffsets;
+	private static List<TriangleIndices> tmp_generatedTris;
+	private static List<int> tmp_generatedTileVerts;
+	private static List<int> tmp_adjacentTris;
+	private static List<int> tmp_tileIDs;
+	private static List<int> tmp_neighbourVerts;
+	private static List<PlanetTile> tmp_neighborsToAdd;
+	private static List<int> tmp_vertToTris_offsets;
+	private static List<int> tmp_vertToTris_values;
+	private static List<int> tmp_vertToTileIDs_offsets;
+	private static List<int> tmp_vertToTileIDs_values;
+	private static List<int> tmp_tileIDToVerts_offsets;
+	private static List<int> tmp_tileIDToVerts_values;
+	private const int MaxTileVertices = 6;
+	private List<PlanetLayer> tmpLayers;
+	private List<PlanetLayerConnection> tmpConnections;
+	private static readonly HashSet<PlanetLayer> TmpVisited;
+	private static readonly PriorityQueue<PlanetLayer, int> openSet;
+	private static readonly Dictionary<PlanetLayer, PlanetLayer> cameFrom;
+	private static readonly Dictionary<PlanetLayer, int> gScore;
+	private static readonly List<PlanetLayer> toEnqueue;
+	public extern IReadOnlyDictionary<PlanetLayer, PlanetLayerConnection> Connections { get; }
+	public extern List<WorldDrawLayer> WorldDrawLayers
+	{
+		[CompilerGenerated]
+		get;
+	}
+	public extern FastTileFinder FastTileFinder { get; }
+	public extern WorldPathing Pather { get; }
+	public extern WorldFloodFiller Filler { get; }
+	public virtual extern bool Visible { get; }
+	public extern bool IsSelected { get; }
+	public extern int LayerID { get; }
+	public extern PlanetLayerDef Def { get; }
+	public extern List<Tile> Tiles { get; }
+	public extern int TilesCount { get; }
+	public extern bool IsRootSurface { get; }
+	public extern NativeArray<Vector3> UnsafeVerts { get; }
+	public extern NativeArray<int> UnsafeTileIDToVerts_offsets { get; }
+	public extern NativeArray<int> UnsafeTileIDToNeighbors_offsets { get; }
+	public extern NativeArray<PlanetTile> UnsafeTileIDToNeighbors_values { get; }
+	public virtual extern Vector3 Origin { get; }
+	public extern Vector3 NorthPolePos { get; }
+	public extern float AverageTileSize { get; }
+	public extern float Radius { get; }
+	public extern float ExtraCameraAltitude { get; }
+	public extern float BackgroundWorldCameraOffset { get; }
+	public extern float BackgroundWorldCameraParallaxDistancePer100Cells { get; }
+	public extern Vector3 ViewCenter { get; }
+	public extern float ViewAngle { get; }
+	public extern Tile this[int tileID] { get; }
+	public extern Tile this[PlanetTile tile] { get; }
+	public virtual extern bool Raycastable { get; }
+	public virtual extern bool CanReachLayer { get; }
+	public extern string ScenarioTag { get; set; }
+	public static extern PlanetLayer Selected { get; set; }
+	public extern string GetUniqueLoadID();
+	public extern PlanetTile PlanetTileForID(int tileID);
+	public extern PlanetLayer();
+	public extern PlanetLayer(int layerId, PlanetLayerDef def, float radius, Vector3 origin, Vector3 viewCenter, float viewAngle, int subdivisions, float extraCameraAltitude, float backgroundWorldCameraOffset, float backgroundWorldCameraParallaxDistancePer100Cells);
+	public extern void MarkRootSurface();
+	public extern void AddConnection(PlanetLayer target, float cost);
+	public extern void RemoveConnection(PlanetLayer target);
+	public extern bool HasConnectionFromTo(PlanetLayer layer);
+	public extern PlanetLayerConnection GetConnectionFromTo(PlanetLayer layer);
+	public extern bool TryGetConnectionFromTo(PlanetLayer layer, out PlanetLayerConnection connection);
+	public virtual extern AcceptanceReport CanSelectLayer();
+	public extern void RunWorldGeneration();
+	public extern void RunWorldGeneration(int seed);
+	public extern void RunWorldGeneration(string seedString, int seed);
+	public extern void InitializeLayer();
+	private extern void Subdivide(bool lastPass);
+	private extern void FinalizeGeneratedTile(List<int> generatedTileVertsList);
+	private extern bool ShouldDiscardGeneratedTile(List<int> generatedTileVertsList);
+	private extern void CalculateTileNeighbors();
+	private extern int GetNextAdjacentTriangle(int currentAdjTriangleIndex, int currentTriangleVertex);
+	[BurstCompile(CompileSynchronously = true)]
+	private static extern float CalculateAverageTileSize(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts);
+	public extern float GetTileSize(PlanetTile tile);
+	[BurstCompile]
+	private static extern float IntGetTileSize(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, in PlanetTile tile);
+	public extern Vector3 GetTileCenter(PlanetTile tile);
+	public extern Vector3 GetTileCenter(int tileID);
+	[BurstCompile]
+	private static extern void IntGetTileCenter(in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, int tileID, out Vector3 center);
+	public extern float GetHeadingFromTo(PlanetTile fromTile, PlanetTile toTile);
+	public extern float GetHeadingFromTo(int fromTileID, int toTileID);
+	public extern float GetHeadingFromTo(Vector3 from, Vector3 to);
+	public extern bool InBounds(PlanetTile tile);
+	public extern bool InBounds(int tileID);
+	public extern Vector2 LongLatOf(PlanetTile tile);
+	public extern Vector2 LongLatOf(int tileID);
+	public extern Direction8Way GetDirection8WayFromTo(PlanetTile fromTile, PlanetTile toTile);
+	public extern Direction8Way GetDirection8WayFromTo(int fromTileID, int toTileID);
+	public extern Rot4 GetRotFromTo(PlanetTile fromTile, PlanetTile toTile);
+	public extern Rot4 GetRotFromTo(int fromTileID, int toTileID);
+	public extern void GetTileVertices(PlanetTile tile, List<Vector3> outVerts);
+	public extern void GetTileVertices(int tileID, List<Vector3> outVerts);
+	public extern void GetTileVerticesIndices(PlanetTile tile, List<int> outVertsIndices);
+	public extern void GetTileVerticesIndices(int tileID, List<int> outVertsIndices);
+	public extern void GetTileNeighbors(PlanetTile tile, List<PlanetTile> outNeighbors);
+	public extern void GetTileNeighbors(int tileID, List<PlanetTile> outNeighbors);
+	public extern int GetTileNeighborCount(PlanetTile tile);
+	public extern int GetTileNeighborCount(int tileID);
+	public extern int GetMaxTileNeighborCountEver(PlanetTile tile);
+	public extern int GetMaxTileNeighborCountEver(int tileID);
+	public extern bool IsNeighbor(PlanetTile tileA, PlanetTile tileB);
+	public extern bool IsNeighbor(int tileA, int tileB);
+	public extern int GetNeighborId(PlanetTile tileA, PlanetTile tileB);
+	public extern int GetNeighborId(int tileA, int tileB);
+	public extern PlanetTile GetTileNeighbor(PlanetTile tile, int adjacentId);
+	public extern PlanetTile GetTileNeighbor(int tileID, int adjacentId);
+	public extern bool IsNeighborOrSame(PlanetTile tileA, PlanetTile tileB);
+	public extern bool IsNeighborOrSame(int tileA, int tileB);
+	public extern float TileRadiusToAngle(float radii);
+	public extern float DistOnSurfaceToAngle(float dist);
+	public extern float ApproxDistanceInTiles(float sphericalDistance);
+	public extern float DistanceFromEquatorNormalized(PlanetTile tile);
+	public extern float DistanceFromEquatorNormalized(int tile);
+	public extern float ApproxDistanceInTiles(PlanetTile tileA, PlanetTile tileB);
+	public extern float ApproxDistanceInTiles(int tileA, int tileB);
+	private static extern void ClearAndDeallocateWorkingLists();
+	private static extern void ClearAndDeallocate<T>(ref List<T> list);
+	public extern void ExposeData();
+	public virtual extern void Standardize();
+	internal virtual extern void ExposeBody();
+	protected virtual extern void TilesToRawData();
+	protected virtual extern void RawDataToTiles();
+	public extern void SetAllLayersDirty();
+	public extern void SetDirty<T>() where T : WorldDrawLayer;
+	public extern T GetLayer<T>() where T : WorldDrawLayer;
+	public extern void RegenerateAllLayersNow();
+	public extern bool LineIntersects(Vector3 A, Vector3 B, float radiusFactor = 1f);
+	[Obsolete("Use GetClosestTile_NewTemp")]
+	public extern PlanetTile GetClosestTile(PlanetTile other);
+	public extern PlanetTile GetClosestTile_NewTemp(PlanetTile other, bool validSettlement = false);
+	public extern bool DirectConnectionTo(PlanetLayer other);
+	public extern bool HasConnectionPathTo(PlanetLayer other);
+	private extern bool IsConnectedToRecursive(PlanetLayer other);
+	private static extern void ResetPathVars();
+	private extern Func<PlanetTile, Tile> GetOrCreateTileFactoryMethod();
+	public extern bool TryGetPath(PlanetLayer goal, List<PlanetLayerConnection> path, out float cost, int max = int.MaxValue);
+	public static extern bool TryGetPath(PlanetLayer start, PlanetLayer goal, List<PlanetLayerConnection> path, out float cost, int max = int.MaxValue);
+	private static extern void ReconstructPath(List<PlanetLayerConnection> path, Dictionary<PlanetLayer, PlanetLayer> from, PlanetLayer current);
+	public extern void Dispose();
+	static extern PlanetLayer();
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[BurstCompile(CompileSynchronously = true)]
+	public static extern float CalculateAverageTileSize$BurstManaged(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts);
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[BurstCompile]
+	public static extern float IntGetTileSize$BurstManaged(in NativeArray<int> tileIDToNeighbors_offsets, in NativeArray<PlanetTile> tileIDToNeighbors_values, in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, in PlanetTile tile);
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[BurstCompile]
+	public static extern void IntGetTileCenter$BurstManaged(in NativeArray<int> tileIDToVerts_offsets, in NativeArray<Vector3> verts, int tileID, out Vector3 center);
+}
+=================== RimWorld.Planet.SurfaceLayer
+Could not find a type named 'RimWorld.Planet.SurfaceLayer'.
+Did you mean one of the following?
+    RimWorld.SurfaceLayer
+=================== RimWorld.Planet.PlanetTile
+using System;
+namespace RimWorld.Planet;
+public readonly struct PlanetTile : IEquatable<PlanetTile>
+{
+	public readonly int tileId;
+	private readonly int layerId;
+	public static readonly PlanetTile Invalid;
+	public extern Tile Tile { get; }
+	public extern PlanetLayer Layer { get; }
+	public extern PlanetLayerDef LayerDef { get; }
+	public extern bool Valid { get; }
+	public extern PlanetTile(int tileId, PlanetLayer layer);
+	public extern PlanetTile(int tileId);
+	public extern PlanetTile(int tileId, int layerId);
+	public extern bool Equals(PlanetTile other);
+	public override extern bool Equals(object obj);
+	public override extern int GetHashCode();
+	public static extern bool operator ==(PlanetTile lhs, PlanetTile rhs);
+	public static extern bool operator !=(PlanetTile lhs, PlanetTile rhs);
+	public static extern implicit operator int(PlanetTile tile);
+	public static extern implicit operator PlanetTile(int tileId);
+	public static extern bool TryParse(string str, out PlanetTile tile);
+	public static extern PlanetTile FromString(string str);
+	public override extern string ToString();
+	static extern PlanetTile();
+}
+=================== RimWorld.Planet.WorldGenStep_Terrain
+using Verse;
+using Verse.Noise;
+namespace RimWorld.Planet;
+public class WorldGenStep_Terrain : WorldGenStep_Tiles
+{
+	private ModuleBase noiseElevation;
+	private ModuleBase noiseTemperatureOffset;
+	private ModuleBase noiseRainfall;
+	private ModuleBase noiseSwampiness;
+	private ModuleBase noiseMountainLines;
+	private ModuleBase noiseHillsPatchesMicro;
+	private ModuleBase noiseHillsPatchesMacro;
+	private const float ElevationFrequencyMicro = 0.035f;
+	private const float ElevationFrequencyMacro = 0.012f;
+	private const float ElevationMacroFactorFrequency = 0.12f;
+	private const float ElevationContinentsFrequency = 0.01f;
+	private const float MountainLinesFrequency = 0.025f;
+	private const float MountainLinesHolesFrequency = 0.06f;
+	private const float HillsPatchesFrequencyMicro = 0.19f;
+	private const float HillsPatchesFrequencyMacro = 0.032f;
+	private const float SwampinessFrequencyMacro = 0.025f;
+	private const float SwampinessFrequencyMicro = 0.09f;
+	private static readonly FloatRange SwampinessMaxElevation;
+	private static readonly FloatRange SwampinessMinRainfall;
+	private static readonly FloatRange ElevationRange;
+	private const float TemperatureOffsetFrequency = 0.018f;
+	private const float TemperatureOffsetFactor = 4f;
+	private static readonly SimpleCurve AvgTempByLatitudeCurve;
+	private const float ElevationTempReductionStartAlt = 250f;
+	private const float ElevationTempReductionEndAlt = 5000f;
+	private const float MaxElevationTempReduction = 40f;
+	private const float RainfallPower = 1.5f;
+	private const float RainfallFactor = 4000f;
+	private const float RainfallStartFallAltitude = 500f;
+	private const float RainfallFinishFallAltitude = 5000f;
+	public override extern int SeedPart { get; }
+	private static extern float FreqMultiplier { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	private extern void SetupElevationNoise(PlanetLayer layer);
+	private extern void SetupTemperatureOffsetNoise();
+	private extern void SetupRainfallNoise();
+	private extern void SetupHillinessNoise();
+	private extern void SetupSwampinessNoise();
+	protected override extern Tile GenerateTileFor(PlanetTile tile, PlanetLayer layer);
+	private extern BiomeDef BiomeFrom(Tile ws, PlanetTile tile, PlanetLayer layer);
+	private static extern float BaseTemperatureAtLatitude(float lat);
+	private static extern float TemperatureReductionAtElevation(float elev);
+	public extern WorldGenStep_Terrain();
+	static extern WorldGenStep_Terrain();
+}
+=================== RimWorld.Planet.WorldGenStep_Rivers
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_Rivers : WorldGenStep
+{
+	private const float HillinessSmallHillsElevation = 15f;
+	private const float HillinessLargeHillsElevation = 250f;
+	private const float HillinessMountainousElevation = 500f;
+	private const float HillinessImpassableElevation = 1000f;
+	private const float NonRiverEvaporation = 0f;
+	private const float EvaporationMultiple = 250f;
+	private static readonly SimpleCurve ElevationChangeCost;
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	private extern void GenerateRivers(PlanetLayer layer);
+	private static extern float GetImpliedElevation(Tile tile);
+	private extern List<PlanetTile> GetCoastalWaterTiles(PlanetLayer layer);
+	private extern void AccumulateFlow(float[] flow, List<PlanetTile>[] riverPaths, PlanetTile planetTile);
+	private extern void CreateRivers(float[] flow, List<PlanetTile>[] riverPaths, PlanetTile index);
+	private extern void ExtendRiver(float[] flow, List<PlanetTile>[] riverPaths, PlanetTile planetTile, RiverDef incomingRiver);
+	public static extern float CalculateEvaporationConstant(float temperature);
+	public static extern float CalculateRiverSurfaceArea(float flow);
+	public static extern float CalculateEvaporativeArea(float flow);
+	public static extern float CalculateTotalEvaporation(float flow, float temperature);
+	public extern WorldGenStep_Rivers();
+	static extern WorldGenStep_Rivers();
+}
+=================== RimWorld.Planet.WorldGenStep_Factions
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_Factions : WorldGenStep
+{
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	public override extern void GenerateWithoutWorldData(string seed, PlanetLayer layer);
+	public extern WorldGenStep_Factions();
+}
+=================== RimWorld.Planet.WorldGenStep_Roads
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_Roads : WorldGenStep
+{
+	private struct Link
+	{
+		public float distance;
+		public int indexA;
+		public int indexB;
+	}
+	private class Connectedness
+	{
+		public Connectedness parent;
+		public extern Connectedness Group();
+		public extern Connectedness();
+	}
+	private static readonly FloatRange ExtraRoadNodesPer100kTiles;
+	private static readonly IntRange RoadDistanceFromSettlement;
+	private const float ChanceExtraNonSpanningTreeLink = 0.015f;
+	private const float ChanceHideSpanningTreeLink = 0.1f;
+	private const float ChanceWorldObjectReclusive = 0.05f;
+	private const int PotentialSpanningTreeLinksPerSettlement = 8;
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	public override extern void GenerateWithoutWorldData(string seed, PlanetLayer layer);
+	private extern void GenerateRoadEndpoints(PlanetLayer layer);
+	private extern void GenerateRoadNetwork(PlanetLayer layer);
+	private extern List<Link> GenerateProspectiveLinks(List<PlanetTile> indexToTile, PlanetLayer layer);
+	private extern List<Link> GenerateFinalLinks(List<Link> linkProspective, int endpointCount);
+	private extern void DrawLinksOnWorld(PlanetLayer layer, List<Link> linkFinal, List<PlanetTile> indexToTile);
+	public extern WorldGenStep_Roads();
+	static extern WorldGenStep_Roads();
+}
+=================== RimWorld.Planet.WorldGenStep_Features
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_Features : WorldGenStep
+{
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	public extern WorldGenStep_Features();
+}
+=================== RimWorld.Planet.WorldGenStep_Lakes
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_Lakes : WorldGenStep
+{
+	private const int LakeMaxSize = 15;
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	private extern void GenerateLakes(PlanetLayer layer);
+	public extern WorldGenStep_Lakes();
+}
+=================== RimWorld.Planet.WorldGenStep
+Could not find a type named 'RimWorld.Planet.WorldGenStep'.
+Did you mean one of the following?
+    RimWorld.Planet.WorldGenStep_AncientRoads
+    RimWorld.Planet.WorldGenStep_AncientSites
+    RimWorld.Planet.WorldGenStep_Factions
+    RimWorld.Planet.WorldGenStep_Features
+    RimWorld.Planet.WorldGenStep_Lakes
+    RimWorld.Planet.WorldGenStep_Landmarks
+    RimWorld.Planet.WorldGenStep_Mutators
+    RimWorld.Planet.WorldGenStep_Pollution
+    RimWorld.Planet.WorldGenStep_Rivers
+    RimWorld.Planet.WorldGenStep_Roads
+=================== RimWorld.WorldGenStepDef
+Could not find a type named 'RimWorld.WorldGenStepDef'.
+Did you mean one of the following?
+    Verse.WorldGenStepDef
+=================== RimWorld.Planet.WorldGenerator
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld.Planet;
+public static class WorldGenerator
+{
+	public const float DefaultPlanetCoverage = 0.3f;
+	public const float DefaultPlanetCoverageOdyssey = 0.5f;
+	public const OverallRainfall DefaultOverallRainfall = OverallRainfall.Normal;
+	public const OverallPopulation DefaultOverallPopulation = OverallPopulation.Normal;
+	public const OverallTemperature DefaultOverallTemperature = OverallTemperature.Normal;
+	public const LandmarkDensity DefaultLandmarkDensity = LandmarkDensity.Normal;
+	public const float DefaultPollutionCoverage = 0.05f;
+	private static List<GameSetupStepDef> cachedGenSteps;
+	private static extern List<GameSetupStepDef> GameSetupStepsInOrder { get; }
+	public static extern World GenerateWorld(float planetCoverage, string seedString, OverallRainfall overallRainfall, OverallTemperature overallTemperature, OverallPopulation population, LandmarkDensity landmarkDensity, List<FactionDef> factions = null, float pollution = 0f);
+	public static extern void GeneratePlanetLayer(PlanetLayer layer, string seedString, int seed);
+	public static extern void GenerateWithoutWorldData(string seedString);
+	public static extern void GenerateFromScribe(string seedString);
+	private static extern int GetSeedPart(List<WorldGenStepDef> genSteps, int index);
+	private static extern int GetSeedFromSeedString(string seedString);
+}
+=================== RimWorld.Planet.Settlement
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using Verse;
+namespace RimWorld.Planet;
+[StaticConstructorOnStartup]
+public class Settlement : MapParent, ITrader, ITraderRestockingInfoProvider, INameableWorldObject
+{
+	[CompilerGenerated]
+	private sealed class <>c__DisplayClass66_0
+	{
+		public Caravan caravan;
+		public Settlement <>4__this;
+		public extern <>c__DisplayClass66_0();
+		internal extern void <GetCaravanGizmos>b__0();
+	}
+	[CompilerGenerated]
+	private sealed class <>c__DisplayClass69_0
+	{
+		public Action<PlanetTile, TransportersArrivalAction> launchAction;
+		public Settlement <>4__this;
+		public IEnumerable<IThingHolder> pods;
+		public CompTransporter firstPod;
+		public Func<FloatMenuAcceptanceReport> <>9__2;
+		public Func<TransportersArrivalAction_TransportShip> <>9__3;
+		public extern <>c__DisplayClass69_0();
+		internal extern void <GetShuttleFloatMenuOptions>b__0();
+		internal extern void <GetShuttleFloatMenuOptions>b__1();
+		internal extern FloatMenuAcceptanceReport <GetShuttleFloatMenuOptions>b__2();
+		internal extern TransportersArrivalAction_TransportShip <GetShuttleFloatMenuOptions>b__3();
+	}
+	[CompilerGenerated]
+	private sealed class <GetCaravanGizmos>d__66 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Gizmo <>2__current;
+		private int <>l__initialThreadId;
+		private Caravan caravan;
+		public Caravan <>3__caravan;
+		public Settlement <>4__this;
+		private <>c__DisplayClass66_0 <>8__1;
+		private IEnumerator<Gizmo> <>7__wrap1;
+		extern Gizmo IEnumerator<Gizmo>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetCaravanGizmos>d__66(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <GetFloatMenuOptions>d__67 : IEnumerable<FloatMenuOption>, IEnumerable, IEnumerator<FloatMenuOption>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private FloatMenuOption <>2__current;
+		private int <>l__initialThreadId;
+		public Settlement <>4__this;
+		private Caravan caravan;
+		public Caravan <>3__caravan;
+		private IEnumerator<FloatMenuOption> <>7__wrap1;
+		extern FloatMenuOption IEnumerator<FloatMenuOption>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetFloatMenuOptions>d__67(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		private extern void <>m__Finally2();
+		private extern void <>m__Finally3();
+		private extern void <>m__Finally4();
+		private extern void <>m__Finally5();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<FloatMenuOption> IEnumerable<FloatMenuOption>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <GetGizmos>d__65 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Gizmo <>2__current;
+		private int <>l__initialThreadId;
+		public Settlement <>4__this;
+		private IEnumerator<Gizmo> <>7__wrap1;
+		extern Gizmo IEnumerator<Gizmo>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetGizmos>d__65(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <GetShuttleFloatMenuOptions>d__69 : IEnumerable<FloatMenuOption>, IEnumerable, IEnumerator<FloatMenuOption>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private FloatMenuOption <>2__current;
+		private int <>l__initialThreadId;
+		private Action<PlanetTile, TransportersArrivalAction> launchAction;
+		public Action<PlanetTile, TransportersArrivalAction> <>3__launchAction;
+		public Settlement <>4__this;
+		private IEnumerable<IThingHolder> pods;
+		public IEnumerable<IThingHolder> <>3__pods;
+		private <>c__DisplayClass69_0 <>8__1;
+		private IEnumerator<FloatMenuOption> <>7__wrap1;
+		extern FloatMenuOption IEnumerator<FloatMenuOption>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetShuttleFloatMenuOptions>d__69(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		private extern void <>m__Finally2();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<FloatMenuOption> IEnumerable<FloatMenuOption>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <GetTransportersFloatMenuOptions>d__68 : IEnumerable<FloatMenuOption>, IEnumerable, IEnumerator<FloatMenuOption>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private FloatMenuOption <>2__current;
+		private int <>l__initialThreadId;
+		public Settlement <>4__this;
+		private IEnumerable<IThingHolder> pods;
+		public IEnumerable<IThingHolder> <>3__pods;
+		private Action<PlanetTile, TransportersArrivalAction> launchAction;
+		public Action<PlanetTile, TransportersArrivalAction> <>3__launchAction;
+		private IEnumerator<FloatMenuOption> <>7__wrap1;
+		extern FloatMenuOption IEnumerator<FloatMenuOption>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetTransportersFloatMenuOptions>d__68(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		private extern void <>m__Finally2();
+		private extern void <>m__Finally3();
+		private extern void <>m__Finally4();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<FloatMenuOption> IEnumerable<FloatMenuOption>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <IncidentTargetTags>d__57 : IEnumerable<IncidentTargetTagDef>, IEnumerable, IEnumerator<IncidentTargetTagDef>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private IncidentTargetTagDef <>2__current;
+		private int <>l__initialThreadId;
+		public Settlement <>4__this;
+		private IEnumerator<IncidentTargetTagDef> <>7__wrap1;
+		extern IncidentTargetTagDef IEnumerator<IncidentTargetTagDef>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <IncidentTargetTags>d__57(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<IncidentTargetTagDef> IEnumerable<IncidentTargetTagDef>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public Settlement_TraderTracker trader;
+	public List<Pawn> previouslyGeneratedInhabitants;
+	private string nameInt;
+	public bool namedByPlayer;
+	private Material cachedMat;
+	public static readonly Texture2D ShowSellableItemsCommand;
+	public static readonly Texture2D FormCaravanCommand;
+	public static readonly Texture2D AttackCommand;
+	public extern string Name { get; set; }
+	public override extern Texture2D ExpandingIcon { get; }
+	public override extern string Label { get; }
+	public override extern bool HasName { get; }
+	protected override extern bool UseGenericEnterMapFloatMenuOption { get; }
+	public virtual extern bool Visitable { get; }
+	public virtual extern bool Attackable { get; }
+	public override extern bool ShowRelatedQuests { get; }
+	public override extern bool GravShipCanLandOn { get; }
+	public override extern AcceptanceReport CanBeSettled { get; }
+	public override extern Material Material { get; }
+	public override extern MapGeneratorDef MapGeneratorDef { get; }
+	public extern TraderKindDef TraderKind { get; }
+	public extern IEnumerable<Thing> Goods { get; }
+	public extern int RandomPriceFactorSeed { get; }
+	public extern string TraderName { get; }
+	public extern bool CanTradeNow { get; }
+	public extern float TradePriceImprovementOffsetForPlayer { get; }
+	public extern TradeCurrency TradeCurrency { get; }
+	public extern bool EverVisited { get; }
+	public extern bool RestockedSinceLastVisit { get; }
+	public extern int NextRestockTick { get; }
+	public extern IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator);
+	public extern void GiveSoldThingToTrader(Thing toGive, int countToGive, Pawn playerNegotiator);
+	public extern void GiveSoldThingToPlayer(Thing toGive, int countToGive, Pawn playerNegotiator);
+	public extern Settlement();
+	[IteratorStateMachine(typeof(<IncidentTargetTags>d__57))]
+	public override extern IEnumerable<IncidentTargetTagDef> IncidentTargetTags();
+	public override extern void ExposeData();
+	public override extern void PostMapGenerate();
+	protected override extern void TickInterval(int delta);
+	public override extern void Notify_MyMapRemoved(Map map);
+	public override extern bool ShouldRemoveMapNow(out bool alsoRemoveWorldObject);
+	public override extern void PostRemove();
+	public override extern string GetInspectString();
+	[IteratorStateMachine(typeof(<GetGizmos>d__65))]
+	public override extern IEnumerable<Gizmo> GetGizmos();
+	[IteratorStateMachine(typeof(<GetCaravanGizmos>d__66))]
+	public override extern IEnumerable<Gizmo> GetCaravanGizmos(Caravan caravan);
+	[IteratorStateMachine(typeof(<GetFloatMenuOptions>d__67))]
+	public override extern IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan);
+	[IteratorStateMachine(typeof(<GetTransportersFloatMenuOptions>d__68))]
+	public override extern IEnumerable<FloatMenuOption> GetTransportersFloatMenuOptions(IEnumerable<IThingHolder> pods, Action<PlanetTile, TransportersArrivalAction> launchAction);
+	[IteratorStateMachine(typeof(<GetShuttleFloatMenuOptions>d__69))]
+	public override extern IEnumerable<FloatMenuOption> GetShuttleFloatMenuOptions(IEnumerable<IThingHolder> pods, Action<PlanetTile, TransportersArrivalAction> launchAction);
+	public override extern void GetChildHolders(List<IThingHolder> outChildren);
+	public override extern void Abandon(bool wasGravshipLaunch);
+	static extern Settlement();
+}
+=================== RimWorld.Planet.SettlementUtility
+using Verse;
+namespace RimWorld.Planet;
+public class SettlementUtility
+{
+	public static extern bool IsPlayerAttackingAnySettlementOf(Faction faction);
+	public static extern void Attack(Caravan caravan, Settlement settlement);
+	private static extern void AttackNow(Caravan caravan, Settlement settlement);
+	public static extern void AffectRelationsOnAttacked(MapParent mapParent, ref TaggedString letterText);
+	public extern SettlementUtility();
+}
+=================== RimWorld.Planet.WorldObjectsHolder
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldObjectsHolder : IExposable
+{
+	[CompilerGenerated]
+	private sealed class <ObjectsAt>d__58 : IEnumerable<WorldObject>, IEnumerable, IEnumerator<WorldObject>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private WorldObject <>2__current;
+		private int <>l__initialThreadId;
+		private PlanetTile tileID;
+		public PlanetTile <>3__tileID;
+		public WorldObjectsHolder <>4__this;
+		private int <i>5__2;
+		extern WorldObject IEnumerator<WorldObject>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <ObjectsAt>d__58(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<WorldObject> IEnumerable<WorldObject>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	private List<WorldObject> worldObjects;
+	private readonly Dictionary<PlanetLayer, List<WorldObject>> layerWorldObjects;
+	private readonly HashSet<WorldObject> worldObjectsHashSet;
+	private readonly List<Caravan> caravans;
+	private readonly List<Settlement> settlements;
+	private readonly List<TravellingTransporters> travellingTransporters;
+	private readonly List<Settlement> settlementBases;
+	private readonly List<DestroyedSettlement> destroyedSettlements;
+	private readonly List<RoutePlannerWaypoint> routePlannerWaypoints;
+	private readonly List<MapParent> mapParents;
+	private readonly List<Site> sites;
+	private readonly List<PeaceTalks> peaceTalks;
+	private static readonly List<WorldObject> EmptyWorldObjectList;
+	private static readonly List<WorldObject> tmpSettlements;
+	private List<PlanetTile> tmpReservedTiles;
+	private List<ILoadReferenceable> tmpTileReservers;
+	private static readonly List<WorldObject> tmpUnsavedWorldObjects;
+	private static readonly List<WorldObject> tmpWorldObjects;
+	public extern List<WorldObject> AllWorldObjects { get; }
+	public extern List<Caravan> Caravans { get; }
+	public extern List<Settlement> Settlements { get; }
+	public extern List<TravellingTransporters> TravellingTransporters { get; }
+	public extern List<Settlement> SettlementBases { get; }
+	public extern List<DestroyedSettlement> DestroyedSettlements { get; }
+	public extern List<RoutePlannerWaypoint> RoutePlannerWaypoints { get; }
+	public extern List<MapParent> MapParents { get; }
+	public extern List<Site> Sites { get; }
+	public extern List<PeaceTalks> PeaceTalks { get; }
+	public extern int WorldObjectsCount { get; }
+	public extern int CaravansCount { get; }
+	public extern int RoutePlannerWaypointsCount { get; }
+	public extern int PlayerControlledCaravansCount { get; }
+	public extern List<WorldObject> AllWorldObjectsOnLayer(PlanetLayer layer);
+	public extern List<WorldObject> AllSettlementsOnLayer(PlanetLayer layer);
+	public extern bool AnyFactionSettlementOnLayer(Faction faction, PlanetLayer layer);
+	public extern bool AnyFactionSettlementOnRootSurface(Faction faction);
+	public extern void ExposeData();
+	public extern void Add(WorldObject o);
+	public extern void Remove(WorldObject o);
+	public extern void WorldObjectsHolderTick();
+	private extern void AddToCache(WorldObject o);
+	private extern void RemoveFromCache(WorldObject o);
+	private extern void Recache();
+	public extern bool Contains(WorldObject o);
+	[IteratorStateMachine(typeof(<ObjectsAt>d__58))]
+	public extern IEnumerable<WorldObject> ObjectsAt(PlanetTile tileID);
+	public extern bool AnyWorldObjectOnLayer(PlanetLayer layer);
+	public extern bool AnyWorldObjectAt(PlanetTile tile);
+	public extern bool AnyWorldObjectAt<T>(PlanetTile tile) where T : WorldObject;
+	public extern T WorldObjectAt<T>(PlanetTile tile) where T : WorldObject;
+	public extern bool TryGetWorldObjectAt<T>(PlanetTile tile, out T wo) where T : WorldObject;
+	public extern bool AnyWorldObjectAt(PlanetTile tile, WorldObjectDef def);
+	public extern WorldObject WorldObjectAt(PlanetTile tile, WorldObjectDef def);
+	public extern bool AnySettlementAt(PlanetTile tile);
+	public extern Settlement SettlementAt(PlanetTile tile);
+	public extern bool AnySettlementBaseAt(PlanetTile tile);
+	public extern Settlement SettlementBaseAt(PlanetTile tile);
+	public extern bool AnySiteAt(PlanetTile tile);
+	public extern Site SiteAt(PlanetTile tile);
+	public extern bool AnyDestroyedSettlementAt(PlanetTile tile);
+	public extern DestroyedSettlement DestroyedSettlementAt(PlanetTile tile);
+	public extern bool AnyMapParentAt(PlanetTile tile);
+	public extern MapParent MapParentAt(PlanetTile tile);
+	public extern bool AnyWorldObjectOfDefAt(WorldObjectDef def, PlanetTile tile);
+	public extern WorldObject WorldObjectOfDefAt(WorldObjectDef def, PlanetTile tile);
+	public extern bool AnyGeneratedWorldLocationAt(PlanetTile tile);
+	public extern Caravan PlayerControlledCaravanAt(PlanetTile tile);
+	public extern bool AnySettlementBaseAtOrAdjacent(PlanetTile tile);
+	public extern bool AnySettlementBaseAtOrAdjacent(PlanetTile tile, out WorldObject wo);
+	public extern RoutePlannerWaypoint RoutePlannerWaypointAt(PlanetTile tile);
+	public extern void GetPlayerControlledCaravansAt(PlanetTile tile, List<Caravan> outCaravans);
+	public extern WorldObjectsHolder();
+	static extern WorldObjectsHolder();
+}
+=================== RimWorld.Planet.WorldFeature
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using LudeonTK;
+using UnityEngine;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldFeature : IExposable, ILoadReferenceable
+{
+	[CompilerGenerated]
+	private sealed class <get_Tiles>d__27 : IEnumerable<int>, IEnumerable, IEnumerator<int>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private int <>2__current;
+		private int <>l__initialThreadId;
+		public WorldFeature <>4__this;
+		private WorldGrid <worldGrid>5__2;
+		private int <tilesCount>5__3;
+		private int <i>5__4;
+		extern int IEnumerator<int>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <get_Tiles>d__27(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<int> IEnumerable<int>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public int uniqueID;
+	public FeatureDef def;
+	public PlanetLayer layer;
+	public string name;
+	public Vector3 drawCenter;
+	public float drawAngle;
+	public float maxDrawSizeInTiles;
+	public float alpha;
+	protected static SimpleCurve EffectiveDrawSizeCurve;
+	[TweakValue("Interface.World", 0f, 40f)]
+	protected static float FeatureSizePoint10;
+	[TweakValue("Interface.World", 0f, 100f)]
+	protected static float FeatureSizePoint25;
+	[TweakValue("Interface.World", 0f, 200f)]
+	protected static float FeatureSizePoint50;
+	[TweakValue("Interface.World", 0f, 400f)]
+	protected static float FeatureSizePoint100;
+	[TweakValue("Interface.World", 0f, 800f)]
+	protected static float FeatureSizePoint200;
+	public extern float EffectiveDrawSize { get; }
+	public extern IEnumerable<int> Tiles
+	{
+		[IteratorStateMachine(typeof(<get_Tiles>d__27))]
+		get;
+	}
+	protected static extern void FeatureSizePoint10_Changed();
+	protected static extern void FeatureSizePoint25_Changed();
+	protected static extern void FeatureSizePoint50_Changed();
+	protected static extern void FeatureSizePoint100_Changed();
+	protected static extern void FeatureSizePoint200_Changed();
+	private static extern void TweakChanged();
+	public extern WorldFeature();
+	public extern WorldFeature(FeatureDef def, PlanetLayer layer);
+	public extern void ExposeData();
+	public extern string GetUniqueLoadID();
+	static extern WorldFeature();
+}
+=================== RimWorld.Planet.WorldFeatures
+using System.Collections.Generic;
+using LudeonTK;
+using TMPro;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldFeatures : IExposable
+{
+	public List<WorldFeature> features;
+	public bool textsCreated;
+	private static List<WorldFeatureTextMesh> texts;
+	private const float BaseAlpha = 0.3f;
+	private const float AlphaChangeSpeed = 5f;
+	[TweakValue("Interface", 0f, 300f)]
+	private static float TextWrapThreshold;
+	[TweakValue("Interface.World", 0f, 100f)]
+	protected static bool ForceLegacyText;
+	[TweakValue("Interface.World", 1f, 150f)]
+	protected static float AlphaScale;
+	[TweakValue("Interface.World", 0f, 1f)]
+	protected static float VisibleMinimumSize;
+	[TweakValue("Interface.World", 0f, 5f)]
+	protected static float VisibleMaximumSize;
+	private static extern void TextWrapThreshold_Changed();
+	protected static extern void ForceLegacyText_Changed();
+	public extern void ExposeData();
+	public extern void UpdateFeatures();
+	public extern WorldFeature GetFeatureWithID(int uniqueID);
+	private extern void UpdateAlpha(WorldFeatureTextMesh text, WorldFeature feature);
+	private extern bool GoodCameraAltitudeFor(WorldFeature feature);
+	private extern void CreateTextsAndSetPosition();
+	private extern void CreateOrDestroyTexts();
+	private extern bool HasCharactersUnsupportedByTextMeshPro(string str);
+	private extern bool HasCharacter(TMP_FontAsset font, char character);
+	public extern WorldFeatures();
+	static extern WorldFeatures();
+}
+=================== RimWorld.RiverDef
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld;
+public class RiverDef : Def
+{
+	public class Branch
+	{
+		public int minFlow;
+		public RiverDef child;
+		public float chance;
+		public extern Branch();
+	}
+	public int spawnFlowThreshold;
+	public float spawnChance;
+	public int degradeThreshold;
+	public RiverDef degradeChild;
+	public List<Branch> branches;
+	public float widthOnWorld;
+	public float widthOnMap;
+	public float debugOpacity;
+	public extern RiverDef();
+}
+=================== RimWorld.Planet.Hilliness
+namespace RimWorld.Planet;
+public enum Hilliness : byte
+{
+	Undefined,
+	Flat,
+	SmallHills,
+	LargeHills,
+	Mountainous,
+	Impassable
+}
+=================== RimWorld.GenTemperature
+Could not find a type named 'RimWorld.GenTemperature'.
+Did you mean one of the following?
+    Verse.GenTemperature
+=================== RimWorld.Planet.TileFinder
+using System;
+using System.Collections.Generic;
+using System.Text;
+namespace RimWorld.Planet;
+public static class TileFinder
+{
+	private static readonly List<(PlanetTile tile, int traversalDistance)> tmpTiles;
+	private static readonly List<PlanetTile> tmpPlayerTiles;
+	public static extern PlanetTile RandomStartingTile();
+	public static extern PlanetTile RandomSettlementTileFor(Faction faction, bool mustBeAutoChoosable = false, Predicate<PlanetTile> extraValidator = null);
+	public static extern PlanetTile RandomSettlementTileFor(PlanetLayer layer, Faction faction, bool mustBeAutoChoosable = false, Predicate<PlanetTile> extraValidator = null);
+	public static extern bool IsValidTileForNewSettlement(PlanetTile tile, StringBuilder reason = null, bool forGravship = false);
+	public static extern bool TryFindPassableTileWithTraversalDistance(PlanetTile rootTile, int minDist, int maxDist, out PlanetTile result, Predicate<PlanetTile> validator = null, bool ignoreFirstTilePassability = false, TileFinderMode tileFinderMode = TileFinderMode.Random, bool canTraverseImpassable = false, bool exitOnFirstTileFound = false);
+	public static extern bool TryFindTileWithDistance(PlanetTile rootTile, int minDist, int maxDist, out PlanetTile result, Predicate<PlanetTile> validator = null, TileFinderMode tileFinderMode = TileFinderMode.Random, bool exitOnFirstTileFound = false);
+	public static extern bool TryFindRandomPlayerTile(out PlanetTile tile, bool allowCaravans, Predicate<PlanetTile> validator = null, bool canBeSpace = false, PlanetLayer layer = null);
+	public static extern bool TryFindNewSiteTile(out PlanetTile tile, int minDist = 7, int maxDist = 27, bool allowCaravans = false, List<LandmarkDef> allowedLandmarks = null, float selectLandmarkChance = 0.5f, bool canSelectComboLandmarks = true, TileFinderMode tileFinderMode = TileFinderMode.Near, bool exitOnFirstTileFound = false, bool canBeSpace = false, PlanetLayer layer = null, Predicate<PlanetTile> validator = null);
+	public static extern bool TryFindNewSiteTile(out PlanetTile tile, PlanetTile nearTile, int minDist = 7, int maxDist = 27, bool allowCaravans = false, List<LandmarkDef> allowedLandmarks = null, float selectLandmarkChance = 0.5f, bool canSelectComboLandmarks = true, TileFinderMode tileFinderMode = TileFinderMode.Near, bool exitOnFirstTileFound = false, bool canBeSpace = false, PlanetLayer layer = null, Predicate<PlanetTile> validator = null);
+	private static extern bool TryFillFindTile(PlanetTile root, out PlanetTile tile, int minDist = 7, int maxDist = 27, List<LandmarkDef> allowedLandmarks = null, bool canSelectComboLandmarks = true, TileFinderMode tileFinderMode = TileFinderMode.Near, bool exitOnFirstTileFound = false, Predicate<PlanetTile> validator = null, bool pickLandmark = false);
+	static extern TileFinder();
+}
+=================== RimWorld.FactionGenerator
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using RimWorld.Planet;
+namespace RimWorld;
+public static class FactionGenerator
+{
+	[CompilerGenerated]
+	private sealed class <get_ConfigurableFactions>d__2 : IEnumerable<FactionDef>, IEnumerable, IEnumerator<FactionDef>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private FactionDef <>2__current;
+		private int <>l__initialThreadId;
+		private IEnumerator<FactionDef> <>7__wrap1;
+		extern FactionDef IEnumerator<FactionDef>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <get_ConfigurableFactions>d__2(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<FactionDef> IEnumerable<FactionDef>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	private const int MaxPreferredFactionNameLength = 20;
+	public static extern IEnumerable<FactionDef> ConfigurableFactions
+	{
+		[IteratorStateMachine(typeof(<get_ConfigurableFactions>d__2))]
+		get;
+	}
+	public static extern void GenerateFactionsIntoWorldLayer(PlanetLayer layer, List<FactionDef> factions = null);
+	private static extern void InitializeFactions(PlanetLayer layer, List<FactionDef> factions);
+	private static extern bool CanExistOnLayer(PlanetLayer layer, FactionDef f);
+	private static extern void AddFactionToManager(PlanetLayer layer, FactionDef facDef);
+	public static extern void CreateFactionAndAddToManager(FactionDef facDef);
+	public static extern void CreateFactionAndAddToManager(PlanetLayer layer, FactionDef facDef);
+	public static extern Faction NewGeneratedFaction(FactionGeneratorParms parms);
+	public static extern Faction NewGeneratedFaction(PlanetLayer layer, FactionGeneratorParms parms);
+	public static extern Faction NewGeneratedFactionWithRelations(FactionDef facDef, List<FactionRelation> relations, bool hidden = false);
+	public static extern Faction NewGeneratedFactionWithRelations(PlanetLayer layer, FactionDef facDef, List<FactionRelation> relations, bool hidden = false);
+	public static extern Faction NewGeneratedFactionWithRelations(FactionGeneratorParms parms, List<FactionRelation> relations);
+	public static extern Faction NewGeneratedFactionWithRelations(PlanetLayer layer, FactionGeneratorParms parms, List<FactionRelation> relations);
+	public static extern float NewRandomColorFromSpectrum(Faction faction);
+}
+=================== RimWorld.Planet.WorldComponent
+using Verse;
+namespace RimWorld.Planet;
+public abstract class WorldComponent : IExposable
+{
+	public World world;
+	public extern WorldComponent(World world);
+	public virtual extern void WorldComponentUpdate();
+	public virtual extern void WorldComponentTick();
+	public virtual extern void WorldComponentOnGUI();
+	public virtual extern void ExposeData();
+	public virtual extern void FinalizeInit(bool fromLoad);
+}
+=================== RimWorld.Planet.World
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Verse;
+namespace RimWorld.Planet;
+public sealed class World : IThingHolder, IExposable, IIncidentTarget, ILoadReferenceable, IDisposable
+{
+	[CompilerGenerated]
+	private sealed class <IncidentTargetTags>d__41 : IEnumerable<IncidentTargetTagDef>, IEnumerable, IEnumerator<IncidentTargetTagDef>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private IncidentTargetTagDef <>2__current;
+		private int <>l__initialThreadId;
+		extern IncidentTargetTagDef IEnumerator<IncidentTargetTagDef>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <IncidentTargetTags>d__41(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<IncidentTargetTagDef> IEnumerable<IncidentTargetTagDef>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public WorldInfo info;
+	public List<WorldComponent> components;
+	public FactionManager factionManager;
+	public IdeoManager ideoManager;
+	public WorldPawns worldPawns;
+	public WorldObjectsHolder worldObjects;
+	public GameConditionManager gameConditionManager;
+	public StoryState storyState;
+	public WorldFeatures features;
+	public WorldLandmarks landmarks;
+	public List<PocketMapParent> pocketMaps;
+	public WorldGrid grid;
+	public WorldPathGrid pathGrid;
+	public WorldRenderer renderer;
+	public WorldInterface UI;
+	public WorldDebugDrawer debugDrawer;
+	public WorldDynamicDrawManager dynamicDrawManager;
+	public WorldPathPool pathPool;
+	public WorldReachability reachability;
+	public WorldTilesInRandomOrder tilesInRandomOrder;
+	public ConfiguredTicksAbsAtGameStartCache ticksAbsCache;
+	public TileTemperaturesComp tileTemperatures;
+	public WorldGenData genData;
+	private List<ThingDef> allNaturalRockDefs;
+	private static readonly List<ThingDef> tmpNaturalRockDefs;
+	private static readonly List<PlanetTile> tmpNeighbors;
+	private static readonly List<Rot4> tTpOceanDirs;
+	public extern float PlanetCoverage { get; }
+	public extern IThingHolder ParentHolder { get; }
+	public extern PlanetTile Tile { get; }
+	public extern StoryState StoryState { get; }
+	public extern GameConditionManager GameConditionManager { get; }
+	public extern float PlayerWealthForStoryteller { get; }
+	public extern IEnumerable<Pawn> PlayerPawnsForStoryteller { get; }
+	public extern FloatRange IncidentPointsRandomFactorRange { get; }
+	public extern int ConstantRandSeed { get; }
+	[IteratorStateMachine(typeof(<IncidentTargetTags>d__41))]
+	public extern IEnumerable<IncidentTargetTagDef> IncidentTargetTags();
+	public extern void ExposeData();
+	public extern void ExposeComponents();
+	public extern void ConstructComponents();
+	private extern void FillComponents();
+	public extern void FinalizeInit(bool fromLoad);
+	public extern void WorldTick();
+	public extern void WorldPostTick();
+	public extern void WorldUpdate();
+	public extern void WorldOnGUI();
+	public extern T GetComponent<T>() where T : WorldComponent;
+	public extern WorldComponent GetComponent(Type type);
+	public extern float? CoastAngleAt(PlanetTile tile, BiomeDef waterBiome);
+	public extern Rot4 CoastDirectionAt(PlanetTile tile);
+	public extern Rot4 LakeDirectionAt(PlanetTile tile);
+	public extern bool HasCaves(PlanetTile tile);
+	public extern IEnumerable<ThingDef> NaturalRockTypesIn(PlanetTile tile);
+	private static extern bool RockAllowedInBiome(ThingDef def, PlanetTile tile);
+	public extern bool Impassable(PlanetTile tileID);
+	public extern ThingOwner GetDirectlyHeldThings();
+	public extern void GetChildHolders(List<IThingHolder> outChildren);
+	public extern string GetUniqueLoadID();
+	public override extern string ToString();
+	public extern void Dispose();
+	public extern World();
+	static extern World();
+}
+=================== RimWorld.Planet.WorldInfo
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldInfo : IExposable
+{
+	public string name;
+	public float planetCoverage;
+	public string seedString;
+	public int persistentRandomValue;
+	public OverallRainfall overallRainfall;
+	public OverallTemperature overallTemperature;
+	public OverallPopulation overallPopulation;
+	public LandmarkDensity landmarkDensity;
+	public IntVec3 initialMapSize;
+	public List<FactionDef> factions;
+	public float pollution;
+	public extern string FileNameNoExtension { get; }
+	public extern int Seed { get; }
+	public extern void ExposeData();
+	public extern WorldInfo();
+}
+=================== RimWorld.Planet.WorldGenStep_Components
+Could not find a type named 'RimWorld.Planet.WorldGenStep_Components'.
+=================== RimWorld.Planet.PlanetShapeGenerator
+Could not find a type named 'RimWorld.Planet.PlanetShapeGenerator'.
+=================== RimWorld.Planet.WorldPathGrid
+using System.Collections.Generic;
+using System.Text;
+namespace RimWorld.Planet;
+public class WorldPathGrid
+{
+	public readonly Dictionary<PlanetLayer, float[]> layerMovementDifficulty;
+	private readonly Dictionary<PlanetLayer, int> layerAllPathCostsRecalculatedDayOfYear;
+	private const float ImpassableMovementDifficulty = 1000f;
+	public const float WinterMovementDifficultyOffset = 2f;
+	public const float MaxTempForWinterOffset = 5f;
+	private static extern int DayOfYearAt0Long { get; }
+	public extern WorldPathGrid();
+	public extern void WorldPathGridTick();
+	private extern void OnPlanetLayerAdded(PlanetLayer layer);
+	private extern void OnPlanetLayerRemoved(PlanetLayer layer);
+	public extern bool Passable(PlanetTile tile);
+	public extern bool PassableFast(PlanetTile tile);
+	public extern float PerceivedMovementDifficultyAt(PlanetTile tile);
+	public extern void RecalculatePerceivedMovementDifficultyAt(PlanetTile tile, out bool needsRecache, int? ticksAbs = null);
+	public extern void RecalculateAllLayersPathCosts();
+	public extern void RecalculateLayerPerceivedPathCosts(PlanetLayer layer);
+	public extern void RecalculateLayerPerceivedPathCosts(PlanetLayer layer, int? ticksAbs);
+	public static extern float CalculatedMovementDifficultyAt(PlanetTile tile, bool perceivedStatic, int? ticksAbs = null, StringBuilder explanation = null);
+	public static extern float GetCurrentWinterMovementDifficultyOffset(PlanetTile tile, int? ticksAbs = null, StringBuilder explanation = null);
+	public static extern bool WillWinterEverAffectMovementDifficulty(PlanetTile tile);
+	private static extern float HillinessMovementDifficultyOffset(Hilliness hilliness);
+}
+=================== RimWorld.Planet.WorldGenStep_AncientRoads
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_AncientRoads : WorldGenStep
+{
+	public float maximumSiteCurve;
+	public float maximumSegmentCurviness;
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	private extern void GenerateAncientRoads(PlanetLayer layer);
+	private extern List<List<PlanetTile>> GenerateProspectiveRoads(PlanetLayer layer);
+	public extern WorldGenStep_AncientRoads();
+}
+=================== RimWorld.Planet.WorldGenStep_AncientSites
+using Verse;
+namespace RimWorld.Planet;
+public class WorldGenStep_AncientSites : WorldGenStep
+{
+	public FloatRange ancientSitesPer100kTiles;
+	public override extern int SeedPart { get; }
+	public override extern void GenerateFresh(string seed, PlanetLayer layer);
+	private extern void GenerateAncientSites(PlanetLayer layer);
+	public extern WorldGenStep_AncientSites();
+}
+=================== RimWorld.FeatureWorker
+using System.Collections.Generic;
+using RimWorld.Planet;
+namespace RimWorld;
+public abstract class FeatureWorker
+{
+	public FeatureDef def;
+	protected static bool[] visited;
+	protected static int[] groupSize;
+	protected static int[] groupID;
+	private static readonly List<PlanetTile> tmpNeighbors;
+	private static readonly HashSet<PlanetTile> tmpTilesForTextDrawPosCalculationSet;
+	private static readonly List<PlanetTile> tmpEdgeTiles;
+	private static readonly List<(PlanetTile tile, int traversalDistance)> tmpTraversedTiles;
+	public abstract void GenerateWhereAppropriate(PlanetLayer layer);
+	protected extern void AddFeature(PlanetLayer layer, List<PlanetTile> members, List<PlanetTile> tilesForTextDrawPosCalculation);
+	private extern void AssignBestDrawPos(PlanetLayer layer, WorldFeature newFeature, List<PlanetTile> tilesForTextDrawPosCalculation);
+	protected static extern void ClearVisited(PlanetLayer layer);
+	protected static extern void ClearGroupSizes(PlanetLayer layer);
+	protected static extern void ClearGroupIDs(PlanetLayer layer);
+	private static extern void ClearOrCreate<T>(PlanetLayer layer, ref T[] array);
+	protected extern FeatureWorker();
+	static extern FeatureWorker();
+}
+=================== RimWorld.FeatureDef
+using System;
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld;
+public class FeatureDef : Def
+{
+	public Type workerClass;
+	public float order;
+	public int minSize;
+	public int maxSize;
+	public bool canTouchWorldEdge;
+	public RulePackDef nameMaker;
+	public int maxPossiblyAllowedSizeToTake;
+	public float maxPossiblyAllowedSizePctOfMeToTake;
+	public List<BiomeDef> rootBiomes;
+	public List<BiomeDef> acceptableBiomes;
+	public int maxSpaceBetweenRootGroups;
+	public int minRootGroupsInCluster;
+	public int minRootGroupSize;
+	public int maxRootGroupSize;
+	public int maxPassageWidth;
+	public float maxPctOfWholeArea;
+	[Unsaved(false)]
+	private FeatureWorker workerInt;
+	public extern FeatureWorker Worker { get; }
+	public extern FeatureDef();
+}
+=================== RimWorld.Planet.WorldLayer_Rivers
+Could not find a type named 'RimWorld.Planet.WorldLayer_Rivers'.
+Did you mean one of the following?
+    RimWorld.Planet.WorldDrawLayer_Rivers
+=================== RimWorld.Planet.Tile/RiverLink
+Could not find a type named 'RimWorld.Planet.Tile/RiverLink'.
+=================== RimWorld.Planet.Tile/RoadLink
+Could not find a type named 'RimWorld.Planet.Tile/RoadLink'.
+=================== RimWorld.BiomeDef
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using Verse;
+namespace RimWorld;
+public class BiomeDef : Def
+{
+	[CompilerGenerated]
+	private sealed class <ConfigErrors>d__109 : IEnumerable<string>, IEnumerable, IEnumerator<string>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private string <>2__current;
+		private int <>l__initialThreadId;
+		public BiomeDef <>4__this;
+		private IEnumerator<string> <>7__wrap1;
+		private List<BiomeAnimalRecord>.Enumerator <>7__wrap2;
+		extern string IEnumerator<string>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <ConfigErrors>d__109(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		private extern void <>m__Finally2();
+		private extern void <>m__Finally3();
+		private extern void <>m__Finally4();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<string> IEnumerable<string>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[CompilerGenerated]
+	private sealed class <get_AllWildAnimals>d__94 : IEnumerable<PawnKindDef>, IEnumerable, IEnumerator<PawnKindDef>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private PawnKindDef <>2__current;
+		private int <>l__initialThreadId;
+		public BiomeDef <>4__this;
+		private IEnumerator<PawnKindDef> <>7__wrap1;
+		extern PawnKindDef IEnumerator<PawnKindDef>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <get_AllWildAnimals>d__94(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<PawnKindDef> IEnumerable<PawnKindDef>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public Type workerClass;
+	public bool implemented;
+	public bool generatesNaturally;
+	public bool canBuildBase;
+	public bool canAutoChoose;
+	public bool allowRoads;
+	public bool allowRivers;
+	public bool allowFarmingCamps;
+	public float animalDensity;
+	public float plantDensity;
+	public float diseaseMtbDays;
+	public float settlementSelectionWeight;
+	public float campSelectionWeight;
+	public float pollutionOffset;
+	public bool impassable;
+	public bool hasVirtualPlants;
+	public float forageability;
+	public ThingDef foragedFood;
+	public bool wildPlantsCareAboutLocalFertility;
+	public bool wildPlantsAreCavePlants;
+	public float wildPlantRegrowDays;
+	public float movementDifficulty;
+	public List<WeatherCommonalityRecord> baseWeatherCommonalities;
+	public List<TerrainThreshold> terrainsByFertility;
+	public List<SoundDef> soundsAmbient;
+	public List<TerrainPatchMaker> terrainPatchMakers;
+	public List<BiomePlantRecord> wildPlants;
+	private List<BiomeAnimalRecord> wildAnimals;
+	private List<BiomeAnimalRecord> pollutionWildAnimals;
+	private List<BiomeAnimalRecord> coastalWildAnimals;
+	private List<BiomeDiseaseRecord> diseases;
+	private List<ThingDef> allowedPackAnimals;
+	public bool hasBedrock;
+	public bool isExtremeBiome;
+	public bool isWaterBiome;
+	public bool allowPollution;
+	public bool wildAnimalsCanWanderInto;
+	public bool noAmbientWind;
+	public bool inVacuum;
+	public bool disableSkyLighting;
+	public bool disableShadows;
+	public bool noGravel;
+	public bool canExitMap;
+	public bool onlyAllowWhitelistedArrivalModes;
+	public bool isBackgroundBiome;
+	public float wildAnimalScariaChance;
+	public float geyserCountFactor;
+	public float? constantOutdoorTemperature;
+	public TerrainDef coastalBeachTerrain;
+	public TerrainDef lakeBeachTerrain;
+	public TerrainDef riverbankTerrain;
+	public TerrainDef mudTerrain;
+	public TerrainDef gravelTerrain;
+	public TerrainDef waterShallowTerrain;
+	public TerrainDef waterDeepTerrain;
+	public TerrainDef oceanShallowTerrain;
+	public TerrainDef oceanDeepTerrain;
+	public TerrainDef waterMovingShallowTerrain;
+	public TerrainDef waterMovingChestDeepTerrain;
+	public IntRange riverbankSizeRange;
+	public List<GameConditionDef> biomeMapConditions;
+	public List<GenStepDef> extraGenSteps;
+	public List<GenStepDef> preventGenSteps;
+	public List<ThingDef> extraRockTypes;
+	public List<ThingDef> forceRockTypes;
+	public float maxFishPopulation;
+	public BiomeFishTypes fishTypes;
+	public List<PlanetLayerDef> layerWhitelist;
+	public List<PlanetLayerDef> layerBlacklist;
+	[MustTranslate]
+	public string settleWarning;
+	public Color? fogOfWarColor;
+	public OrbitalDebrisDef orbitalDebris;
+	[NoTranslate]
+	public string texture;
+	[Unsaved(false)]
+	private Dictionary<PawnKindDef, float> cachedAnimalCommonalities;
+	[Unsaved(false)]
+	private Dictionary<PawnKindDef, float> cachedPollutionAnimalCommonalities;
+	[Unsaved(false)]
+	private Dictionary<PawnKindDef, float> cachedCoastalAnimalCommonalities;
+	[Unsaved(false)]
+	private Dictionary<ThingDef, float> cachedPlantCommonalities;
+	[Unsaved(false)]
+	private Dictionary<IncidentDef, float> cachedDiseaseCommonalities;
+	[Unsaved(false)]
+	private Material cachedMat;
+	[Unsaved(false)]
+	private List<ThingDef> cachedWildPlants;
+	[Unsaved(false)]
+	private float? cachedLowestWildPlantOrder;
+	[Unsaved(false)]
+	private int? cachedMaxWildPlantsClusterRadius;
+	private BiomeWorker worker;
+	public extern BiomeWorker Worker { get; }
+	public extern Material DrawMaterial { get; }
+	public extern List<ThingDef> AllWildPlants { get; }
+	public extern int MaxWildAndCavePlantsClusterRadius { get; }
+	public extern float LowestWildAndCavePlantOrder { get; }
+	public extern IEnumerable<PawnKindDef> AllWildAnimals
+	{
+		[IteratorStateMachine(typeof(<get_AllWildAnimals>d__94))]
+		get;
+	}
+	public extern float TreeDensity { get; }
+	public extern int TreeSightingsPerHourFromCaravan { get; }
+	public extern TerrainDef TerrainForAffordance(TerrainAffordanceDef affordance);
+	public extern float CommonalityOfAnimal(PawnKindDef animalDef);
+	public extern float CommonalityOfPollutionAnimal(PawnKindDef animalDef);
+	public extern float CommonalityOfCoastalAnimal(PawnKindDef animalDef);
+	public extern bool ShouldSpawnAnimalOnCoast(PawnKindDef animalDef);
+	public extern float CommonalityOfPlant(ThingDef plantDef);
+	public extern float CommonalityOfDisease(IncidentDef diseaseInc);
+	private extern void CachePlantCommonalitiesIfShould();
+	public extern bool IsPackAnimalAllowed(ThingDef pawn);
+	public static extern BiomeDef Named(string defName);
+	[IteratorStateMachine(typeof(<ConfigErrors>d__109))]
+	public override extern IEnumerable<string> ConfigErrors();
+	public extern BiomeDef();
+}
+=================== RimWorld.Planet.Page_CreateWorldParams
+Could not find a type named 'RimWorld.Planet.Page_CreateWorldParams'.
+Did you mean one of the following?
+    RimWorld.Page_CreateWorldParams
+=================== RimWorld.Page_CreateWorldParams
+using System.Collections.Generic;
+using RimWorld.Planet;
+using UnityEngine;
+namespace RimWorld;
+public class Page_CreateWorldParams : Page
+{
+	private bool initialized;
+	private string seedString;
+	private float planetCoverage;
+	private OverallRainfall rainfall;
+	private OverallTemperature temperature;
+	private OverallPopulation population;
+	private LandmarkDensity landmarkDensity;
+	public float pollution;
+	private List<FactionDef> factions;
+	private List<FactionDef> initialFactions;
+	private static readonly float[] PlanetCoverages;
+	private static readonly float[] PlanetCoveragesDev;
+	private const float LabelWidth = 200f;
+	public override extern string PageTitle { get; }
+	public override extern void PreOpen();
+	public override extern void PostOpen();
+	public extern void Reset();
+	private extern void ResetFactionCounts();
+	public override extern void DoWindowContents(Rect rect);
+	protected override extern bool CanDoNext();
+	public extern Page_CreateWorldParams();
+	static extern Page_CreateWorldParams();
+}
