@@ -1,0 +1,779 @@
+=================== RimWorld.Planet.WorldGrid
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.Tile
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.SurfaceTile
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.PlanetLayer
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.SurfaceLayer
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.PlanetTile
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Terrain
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Rivers
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Factions
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Roads
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Features
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Lakes
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.WorldGenStepDef
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenerator
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.Settlement
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.SettlementUtility
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldObjectsHolder
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldFeature
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldFeatures
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.RiverDef
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.Hilliness
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.GenTemperature
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.TileFinder
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.FactionGenerator
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldComponent
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.World
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldInfo
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_Components
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.PlanetShapeGenerator
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldPathGrid
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_AncientRoads
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldGenStep_AncientSites
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.FeatureWorker
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.FeatureDef
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.WorldLayer_Rivers
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.Tile/RiverLink
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.Tile/RoadLink
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.BiomeDef
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Planet.Page_CreateWorldParams
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
+=================== RimWorld.Page_CreateWorldParams
+You must install or update .NET to run this application.
+App: /home/runner/.dotnet/tools/ilspycmd
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+.NET location: /usr/share/dotnet
+The following frameworks were found:
+  8.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  8.0.33 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.6 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  9.0.22 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.8 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.11 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  10.0.14 at [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=linux-x64&os=ubuntu.26.04
