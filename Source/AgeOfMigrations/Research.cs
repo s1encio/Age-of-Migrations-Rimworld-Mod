@@ -25,6 +25,7 @@ namespace AgeOfMigrations
         public bool hideModernResearch = true;
         public bool hideVanillaScenarios = true;
         public bool removeSciFiEvents = true;
+        public bool accurateEarth = true;
         public bool showAllCultureTrees;
 
         public override void ExposeData()
@@ -35,6 +36,7 @@ namespace AgeOfMigrations
             Scribe_Values.Look(ref hideModernResearch, "hideModernResearch_v2", true);
             Scribe_Values.Look(ref hideVanillaScenarios, "hideVanillaScenarios_v2", true);
             Scribe_Values.Look(ref removeSciFiEvents, "removeSciFiEvents_v2", true);
+            Scribe_Values.Look(ref accurateEarth, "accurateEarth", true);
             Scribe_Values.Look(ref showAllCultureTrees, "showAllCultureTrees", false);
         }
     }
@@ -42,9 +44,11 @@ namespace AgeOfMigrations
     public class AoMMod : Mod
     {
         public static AoMSettings Settings;
+        public static AoMMod Instance;
 
         public AoMMod(ModContentPack content) : base(content)
         {
+            Instance = this;
             Settings = GetSettings<AoMSettings>();
         }
 
@@ -72,6 +76,11 @@ namespace AgeOfMigrations
             l.CheckboxLabeled("Turn off sci-fi events", ref Settings.removeSciFiEvents,
                 "No orbital traders, drop pods, crashed ship parts, mechanoid clusters or mechanoid raids.");
             l.GapLine();
+            l.CheckboxLabeled("Accurate map of the late Roman world", ref Settings.accurateEarth,
+                "New worlds become Europe, North Africa and the Near East as they really are: coasts, seas, mountains, climate and rivers, " +
+                "with real latitudes and seasons. Every people starts where it was in 395 AD, and the cities stand where they really stood " +
+                "(Roma, Ravenna, Constantinopolis, Ctesiphon, Londinium, Alexandria...). The seas, mountains and lands carry their Latin names. " +
+                "Works with any planet coverage; 30% gives a good level of detail. Turn it off for a random RimWorld planet.");
             l.CheckboxLabeled("Show every people's research tree", ref Settings.showAllCultureTrees,
                 "Normally a Roman colony only sees the Roman tree, a barbarian band the barbarian tree and a Persian colony the Persian tree. " +
                 "Turn this on to see all three.");

@@ -56,7 +56,7 @@ namespace AgeOfMigrations
                 List<Settlement> own = Find.WorldObjects.Settlements.Where(s => s.Faction == faction).ToList();
                 if (own.Count == 0)
                     continue;
-                Settlement capital = own.RandomElement();
+                Settlement capital = own.FirstOrDefault(s => s.Name == name) ?? own.RandomElement();   // the accurate map places the real capital
                 capital.Name = name;
                 capitals[faction.loadID] = capital.ID;
                 Log.Message($"[Age of Migrations] {faction.Name}: imperial capital is {name}.");
