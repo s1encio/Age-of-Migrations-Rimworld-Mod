@@ -26,6 +26,7 @@ namespace AgeOfMigrations
         public bool hideVanillaScenarios = true;
         public bool removeSciFiEvents = true;
         public bool accurateEarth = true;
+        public bool hideVanillaFaiths = true;
         public bool showAllCultureTrees;
 
         public override void ExposeData()
@@ -37,6 +38,7 @@ namespace AgeOfMigrations
             Scribe_Values.Look(ref hideVanillaScenarios, "hideVanillaScenarios_v2", true);
             Scribe_Values.Look(ref removeSciFiEvents, "removeSciFiEvents_v2", true);
             Scribe_Values.Look(ref accurateEarth, "accurateEarth", true);
+            Scribe_Values.Look(ref hideVanillaFaiths, "hideVanillaFaiths", true);
             Scribe_Values.Look(ref showAllCultureTrees, "showAllCultureTrees", false);
         }
     }
@@ -73,6 +75,9 @@ namespace AgeOfMigrations
                 "and with them every modern building they unlock.");
             l.CheckboxLabeled("Hide the vanilla scenarios", ref Settings.hideVanillaScenarios,
                 "Crashlanded, The Rich Explorer and the other vanilla scenarios are hidden: start as Roman settlers, a barbarian war band or Persian settlers.");
+            l.CheckboxLabeled("Hide the vanilla ideoligion presets", ref Settings.hideVanillaFaiths,
+                "When you create a world, choose one of the real faiths of 395 (Catholic, Orthodox, Arian, Gothic and Ostrogothic Churches, " +
+                "the Old Gods, the Frankish Gods, Tengri, the Zoroastrian Faith) or make your own. Untick to see the vanilla presets as well.");
             l.CheckboxLabeled("Turn off sci-fi events", ref Settings.removeSciFiEvents,
                 "No orbital traders, drop pods, crashed ship parts, mechanoid clusters or mechanoid raids.");
             l.GapLine();
@@ -194,6 +199,7 @@ namespace AgeOfMigrations
             Run("research", s.hideModernResearch, HideModernResearch);
             Run("scenarios", s.hideVanillaScenarios, HideScenarios);
             Run("events", s.removeSciFiEvents, RemoveSciFiEvents);
+            Run("ideoligion presets", s.hideVanillaFaiths && ModsConfig.IdeologyActive, HideVanillaFaiths);
         }
 
         private static void Run(string what, bool on, Action act)
@@ -263,6 +269,18 @@ namespace AgeOfMigrations
             if (!DefDatabase<ScenarioDef>.AllDefsListForReading.Any(d => !Official(d))) return;   // never leave the list empty
             foreach (var d in gone) DefDb<ScenarioDef>.Remove(d);
             Log.Message($"[Age of Migrations] hid {gone.Count} vanilla scenarios.");
+        }
+
+        private static void HideVanillaFaiths()
+        {
+            var ours = DefDatabase<IdeoPresetDef>.AllDefsListForReading.Where(d => !Official(d)).ToList();
+            if (ours.Count == 0) return;   // never leave the page empty
+            var gone = DefDatabase<IdeoPresetDef>.AllDefsListForReading.Where(Official).ToList();
+            foreach (var d in gone) DefDb<IdeoPresetDef>.Remove(d);
+            var used = new HashSet<IdeoPresetCategoryDef>(DefDatabase<IdeoPresetDef>.AllDefsListForReading.Select(d => d.categoryDef));
+            foreach (var c in DefDatabase<IdeoPresetCategoryDef>.AllDefsListForReading.Where(c => Official(c) && !used.Contains(c)).ToList())
+                DefDb<IdeoPresetCategoryDef>.Remove(c);
+            Log.Message($"[Age of Migrations] hid {gone.Count} vanilla ideoligion presets.");
         }
 
         private static void RemoveSciFiEvents()

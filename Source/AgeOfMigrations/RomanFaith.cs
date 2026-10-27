@@ -233,7 +233,7 @@ namespace AgeOfMigrations
             rel.kind = FactionRelationKind.Hostile;
         }
 
-        private static void Set(Ideo ideo, string name, string adjective, string member, string description)
+        internal static void Set(Ideo ideo, string name, string adjective, string member, string description)
         {
             ideo.name = name;
             ideo.memberName = member;

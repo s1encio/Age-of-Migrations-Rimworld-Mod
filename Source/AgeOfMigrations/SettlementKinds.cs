@@ -28,8 +28,13 @@ namespace AgeOfMigrations
             bool persia = f == "LR_Sassanids";
             if (!roman && !huns && !persia && f != "LR_Vandals" && f != "LR_Visigoths" && f != "LR_Saxons" && f != "LR_Ostrogoths" && f != "LR_Franks")
                 return false;
-            uint h = unchecked((uint)s.ID * 2654435761u);
-            camp = ((h >> 13) & 1u) == 0u;
+            if (EarthMap.CityIds.Contains(s.ID)) camp = false;          // the accurate map: real cities are towns ...
+            else if (EarthMap.CampIds.Contains(s.ID)) camp = true;      // ... and forts and field camps are camps
+            else
+            {
+                uint h = unchecked((uint)s.ID * 2654435761u);
+                camp = ((h >> 13) & 1u) == 0u;
+            }
             kind = roman ? (camp ? "marching camp" : "town") : persia ? (camp ? "army camp" : "city") : huns ? (camp ? "nomad camp" : "royal camp") : (camp ? "migrant camp" : "village");
             return true;
         }

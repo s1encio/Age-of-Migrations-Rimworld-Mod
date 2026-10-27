@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IdeoPresetCategoryDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithsOf395</defName>
+    <label>faiths of the late Roman world</label>
+    <description>The religions of the Roman world and its neighbours in 395 AD.</description>
+    <groupLabel>Late antiquity</groupLabel>
+  </IdeoPresetCategoryDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithCatholic</defName>
+    <label>Catholic Church</label>
+    <description>The Nicene Christian faith as taught by the bishop of Rome and the Latin fathers: Ambrose, Jerome and Augustine of Hippo. Made the religion of the state by the Edict of Thessalonica in 380, it worships one God in the Holy Trinity and holds its services in Latin.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/LR_FactionIcon</iconPath>
+    <memes><li>Proselytizer</li><li>Loyalist</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Catholic Church</name>
+        <adjective>Catholic</adjective>
+        <member>Catholic</member>
+        <structure>Structure_OriginChristian</structure>
+        <description>The Nicene Christian faith as taught by the bishop of Rome and the Latin fathers: Ambrose, Jerome and Augustine of Hippo. Made the religion of the state by the Edict of Thessalonica in 380, it worships one God in the Holy Trinity and holds its services in Latin.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithOrthodox</defName>
+    <label>Orthodox Church</label>
+    <description>The Nicene Christian faith of Constantinople, Alexandria and Antioch, as defined by the councils of Nicaea and Constantinople. It worships one God in the Holy Trinity and holds its services in Greek; the emperor calls its great councils.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/LR_Capital</iconPath>
+    <memes><li>Proselytizer</li><li>Loyalist</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Orthodox Church</name>
+        <adjective>Orthodox</adjective>
+        <member>Orthodox</member>
+        <structure>Structure_OriginChristian</structure>
+        <description>The Nicene Christian faith of Constantinople, Alexandria and Antioch, as defined by the councils of Nicaea and Constantinople. It worships one God in the Holy Trinity and holds its services in Greek; the emperor calls its great councils.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithArian</defName>
+    <label>Arian Church</label>
+    <description>Christianity as taught to the Goths by the bishop Ulfilas and passed on to the Vandals: the Son was made by the Father and is less than him. Its priests preach in the Germanic tongue and look on the Nicene Romans as heretics.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/WorldObjects/Expanding/TribalSettlement</iconPath>
+    <memes><li>Supremacist</li><li>Loyalist</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Arian Church</name>
+        <adjective>Arian</adjective>
+        <member>Arian</member>
+        <structure>Structure_OriginChristian</structure>
+        <description>Christianity as taught to the Goths by the bishop Ulfilas and passed on to the Vandals: the Son was made by the Father and is less than him. Its priests preach in the Germanic tongue and look on the Nicene Romans as heretics.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithGothic</defName>
+    <label>Gothic Church</label>
+    <description>The Arian Christianity of the Goths, taught by their bishop Ulfilas, who invented an alphabet to write the Bible in Gothic. Its churches are the pride of the Gothic kings, who hang crowns of gold above their altars.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/WorldObjects/Expanding/TribalSettlement</iconPath>
+    <memes><li>Loyalist</li><li>Proselytizer</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Gothic Church</name>
+        <adjective>Gothic</adjective>
+        <member>Gothic Arian</member>
+        <structure>Structure_OriginChristian</structure>
+        <description>The Arian Christianity of the Goths, taught by their bishop Ulfilas, who invented an alphabet to write the Bible in Gothic. Its churches are the pride of the Gothic kings, who hang crowns of gold above their altars.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithOstrogothic</defName>
+    <label>Ostrogothic Church</label>
+    <description>The Arian Christianity of the eastern Goths, who hear the Gospels read in Gothic from a Bible written in silver letters, and keep their own churches apart from the Nicene Romans.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/WorldObjects/Expanding/TribalSettlement</iconPath>
+    <memes><li>Loyalist</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Ostrogothic Church</name>
+        <adjective>Ostrogothic</adjective>
+        <member>Ostrogothic Arian</member>
+        <structure>Structure_OriginChristian</structure>
+        <description>The Arian Christianity of the eastern Goths, who hear the Gospels read in Gothic from a Bible written in silver letters, and keep their own churches apart from the Nicene Romans.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithOldGods</defName>
+    <label>Old Gods</label>
+    <description>The faith of the Saxons' fathers: Woden the wise, from whom their kings claim descent, Thunor of the thunder, Tiw of the battle-oath and Frige of the hearth, worshipped at holy groves and hilltop shrines.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/WorldObjects/Expanding/TribalSettlement</iconPath>
+    <memes><li>Raider</li><li>NaturePrimacy</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Old Gods</name>
+        <adjective>Heathen</adjective>
+        <member>Heathen</member>
+        <structure>Structure_TheistAbstract</structure>
+        <description>The faith of the Saxons' fathers: Woden the wise, from whom their kings claim descent, Thunor of the thunder, Tiw of the battle-oath and Frige of the hearth, worshipped at holy groves and hilltop shrines.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithFrankish</defName>
+    <label>Frankish Gods</label>
+    <description>The old faith of the Franks: Wodan and Donar, the gods of field and hearth, and the sacred groves and springs where the folk bring their offerings. Bees of gold are buried with their kings.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/WorldObjects/Expanding/TribalSettlement</iconPath>
+    <memes><li>Loyalist</li><li>NaturePrimacy</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Frankish Gods</name>
+        <adjective>Frankish heathen</adjective>
+        <member>Heathen</member>
+        <structure>Structure_TheistAbstract</structure>
+        <description>The old faith of the Franks: Wodan and Donar, the gods of field and hearth, and the sacred groves and springs where the folk bring their offerings. Bees of gold are buried with their kings.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithTengri</defName>
+    <label>Tengri</label>
+    <description>The old faith of the steppe: worship of Tengri, the eternal blue sky that sees everything, and reverence for the earth, the ancestors and the spirits of places. Shamans read the will of heaven in burned shoulder-blades.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/WorldObjects/Expanding/TribalSettlement</iconPath>
+    <memes><li>Raider</li><li>NaturePrimacy</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Tengri</name>
+        <adjective>Tengrist</adjective>
+        <member>Tengrist</member>
+        <structure>Structure_Animist</structure>
+        <description>The old faith of the steppe: worship of Tengri, the eternal blue sky that sees everything, and reverence for the earth, the ancestors and the spirits of places. Shamans read the will of heaven in burned shoulder-blades.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+  <IdeoPresetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>LR_FaithZoroastrian</defName>
+    <label>Zoroastrian Faith</label>
+    <description>The Good Religion of Zarathustra: the worship of Ahura Mazda, the Wise Lord, against Ahriman, the Lie. Every man must choose between them by good thoughts, good words and good deeds; the magi tend sacred fires that burn for centuries.</description>
+    <categoryDef>LR_FaithsOf395</categoryDef>
+    <iconPath>World/LR_CapitalPersian</iconPath>
+    <memes><li>Loyalist</li><li>Supremacist</li></memes>
+    <modExtensions>
+      <li Class="AgeOfMigrations.FaithPreset">
+        <name>Zoroastrian Faith</name>
+        <adjective>Zoroastrian</adjective>
+        <member>Zoroastrian</member>
+        <structure>Structure_TheistAbstract</structure>
+        <description>The Good Religion of Zarathustra: the worship of Ahura Mazda, the Wise Lord, against Ahriman, the Lie. Every man must choose between them by good thoughts, good words and good deeds; the magi tend sacred fires that burn for centuries.</description>
+      </li>
+    </modExtensions>
+  </IdeoPresetDef>
+</Defs>

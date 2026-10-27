@@ -320,8 +320,8 @@ namespace AgeOfMigrations
             ("LR_Sassanids", "Ardashir-Khwarrah", 28.85f, 52.53f), ("LR_Sassanids", "Spahan", 32.65f, 51.67f), ("LR_Sassanids", "Dvin", 40.00f, 44.58f),
             ("LR_Sassanids", "Hara", 34.35f, 62.20f), ("LR_Sassanids", "Gurgan", 37.30f, 54.90f), ("LR_Sassanids", "Kirman", 30.28f, 57.08f),
             // Visigoths: federates settled between the Danube and the Haemus, in arms under Alaric
-            ("LR_Visigoths", null, 43.62f, 25.35f), ("LR_Visigoths", null, 43.70f, 24.47f), ("LR_Visigoths", null, 43.20f, 25.60f), ("LR_Visigoths", null, 43.82f, 22.90f),
-            ("LR_Visigoths", null, 44.10f, 27.20f),
+            ("LR_Visigoths", null, 43.35f, 24.90f), ("LR_Visigoths", null, 43.00f, 26.30f), ("LR_Visigoths", null, 43.50f, 23.60f), ("LR_Visigoths", null, 42.90f, 24.20f),
+            ("LR_Visigoths", null, 43.90f, 26.20f),
             // Ostrogoths: Greuthungi under Hunnic rule, north of the Black Sea and on the middle Danube
             ("LR_Ostrogoths", null, 47.00f, 33.00f), ("LR_Ostrogoths", null, 46.80f, 30.40f), ("LR_Ostrogoths", null, 48.00f, 35.00f), ("LR_Ostrogoths", null, 47.50f, 28.50f),
             // Huns: the Pontic and Caspian steppe
@@ -336,6 +336,50 @@ namespace AgeOfMigrations
             ("LR_Franks", null, 51.45f, 5.30f), ("LR_Franks", null, 51.90f, 6.30f), ("LR_Franks", null, 51.30f, 7.40f), ("LR_Franks", null, 50.80f, 7.70f),
         };
 
+        // the forts of the frontiers in 395: legionary fortresses on the limes and the Persian frontier fortresses
+        private static readonly (string f, string name, float lat, float lon)[] Forts =
+        {
+            ("LR_WesternEmpire", "Luguvalium", 54.89f, -2.93f), ("LR_WesternEmpire", "Vindolanda", 54.99f, -2.36f), ("LR_WesternEmpire", "Segedunum", 54.99f, -1.53f),
+            ("LR_WesternEmpire", "Deva", 53.19f, -2.89f), ("LR_WesternEmpire", "Isca Silurum", 51.61f, -2.95f),
+            ("LR_WesternEmpire", "Vetera", 51.66f, 6.45f), ("LR_WesternEmpire", "Novaesium", 51.20f, 6.69f), ("LR_WesternEmpire", "Bonna", 50.73f, 7.10f),
+            ("LR_WesternEmpire", "Mogontiacum", 50.00f, 8.27f), ("LR_WesternEmpire", "Argentoratum", 48.58f, 7.75f), ("LR_WesternEmpire", "Vindonissa", 47.48f, 8.21f),
+            ("LR_WesternEmpire", "Castra Regina", 49.02f, 12.10f), ("LR_WesternEmpire", "Lauriacum", 48.21f, 14.48f), ("LR_WesternEmpire", "Vindobona", 48.21f, 16.37f),
+            ("LR_WesternEmpire", "Brigetio", 47.75f, 18.17f), ("LR_WesternEmpire", "Aquincum", 47.56f, 19.05f), ("LR_WesternEmpire", "Lambaesis", 35.49f, 6.26f),
+            ("LR_WesternEmpire", "Tingis", 35.77f, -5.80f), ("LR_WesternEmpire", "Legio", 42.60f, -5.57f),
+            ("LR_EasternEmpire", "Singidunum", 44.82f, 20.46f), ("LR_EasternEmpire", "Viminacium", 44.74f, 21.21f), ("LR_EasternEmpire", "Ratiaria", 43.82f, 22.90f),
+            ("LR_EasternEmpire", "Oescus", 43.70f, 24.47f), ("LR_EasternEmpire", "Novae", 43.62f, 25.35f), ("LR_EasternEmpire", "Durostorum", 44.12f, 27.26f),
+            ("LR_EasternEmpire", "Troesmis", 45.15f, 28.20f), ("LR_EasternEmpire", "Satala", 40.02f, 39.60f), ("LR_EasternEmpire", "Melitene", 38.35f, 38.31f),
+            ("LR_EasternEmpire", "Samosata", 37.52f, 38.50f), ("LR_EasternEmpire", "Constantia", 36.85f, 40.07f), ("LR_EasternEmpire", "Circesium", 35.16f, 40.43f),
+            ("LR_EasternEmpire", "Callinicum", 35.95f, 39.01f), ("LR_EasternEmpire", "Palmyra", 34.55f, 38.27f), ("LR_EasternEmpire", "Betthorus", 31.24f, 35.85f),
+            ("LR_EasternEmpire", "Aila", 29.53f, 35.00f), ("LR_EasternEmpire", "Babylon in Aegypto", 30.00f, 31.23f), ("LR_EasternEmpire", "Syene", 24.09f, 32.90f),
+            ("LR_Sassanids", "Singara", 36.33f, 41.86f), ("LR_Sassanids", "Bezabde", 37.33f, 42.18f), ("LR_Sassanids", "Darband", 42.06f, 48.29f),
+            ("LR_Sassanids", "Partaw", 40.36f, 47.13f), ("LR_Sassanids", "Tammisha", 36.80f, 53.90f), ("LR_Sassanids", "Hira", 31.99f, 44.37f),
+        };
+
+        // camps between the cities, placed at random each world
+        private static readonly Dictionary<string, (int count, string[] names)> FieldCamps = new Dictionary<string, (int, string[])>
+        {
+            { "LR_WesternEmpire", (8, new[] { "Castra Martis", "Castra Herculis", "Castra Constantia", "Castra Iovia", "Castra Valentiniana", "Castra Theodosiana",
+                                               "Castra Gratiana", "Castra Victoriae", "Castra Flavia", "Castra Honoriana", "Castra Nova", "Castra Fortunae" }) },
+            { "LR_EasternEmpire", (8, new[] { "Castra Arcadiana", "Castra Augusta", "Castra Aurelia", "Castra Iustitiae", "Castra Rufini", "Castra Stilichonis",
+                                               "Castra Constantiniana", "Castra Theodosii", "Castra Valentis", "Castra Nova", "Castra Sancti Georgii", "Castra Victrix" }) },
+            { "LR_Sassanids", (5, new[] { "Camp of Shapur", "Camp of Bahram", "Camp of Yazdegerd", "Camp of Narseh", "Camp of the Marzban", "Camp of the Spahbed",
+                                           "Camp of Ardashir", "Camp of Hormizd" }) },
+        };
+
+        public static readonly HashSet<int> CityIds = new HashSet<int>();
+        public static readonly HashSet<int> CampIds = new HashSet<int>();
+
+        private static Settlement Found(Faction faction, PlanetLayer layer, int tile, string name)
+        {
+            var s = (Settlement)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);
+            s.SetFaction(faction);
+            s.Tile = new PlanetTile(tile, layer);
+            s.Name = name ?? NameGenerator.GenerateName(faction.def.settlementNameMaker, Find.WorldObjects.Settlements.Select(x => x.Name).Where(x => x != null));
+            Find.WorldObjects.Add(s);
+            return s;
+        }
+
         public static void PlacePeoples(PlanetLayer layer)
         {
             var index = new RealIndex(layer);
@@ -344,24 +388,65 @@ namespace AgeOfMigrations
             foreach (Settlement s in Find.WorldObjects.Settlements.ToList())
                 if (s.Faction != null && ours.Contains(s.Faction.def.defName) && s.Tile.Layer == layer)
                     Find.WorldObjects.Remove(s);
-            int placed = 0;
+            int placed = 0, forts = 0, camps = 0;
+            CityIds.Clear(); CampIds.Clear();
             var used = new HashSet<int>();
+            Predicate<int> free = i => !used.Contains(i) && !Find.WorldObjects.AnyWorldObjectAt(new PlanetTile(i, layer)) &&
+                                       TileFinder.IsValidTileForNewSettlement(new PlanetTile(i, layer));
+            var cities = new List<(Faction f, Vector2 at)>();
             foreach (var p in Places)
             {
                 if (!byDef.TryGetValue(p.f, out Faction faction)) continue;
-                int tile = index.Nearest(p.lat, p.lon, 2.5f, i =>
-                    !used.Contains(i) && !Find.WorldObjects.AnyWorldObjectAt(new PlanetTile(i, layer)) &&
-                    TileFinder.IsValidTileForNewSettlement(new PlanetTile(i, layer)));
+                int tile = index.Nearest(p.lat, p.lon, 2.5f, free);
                 if (tile < 0) continue;
                 used.Add(tile);
-                var s = (Settlement)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);
-                s.SetFaction(faction);
-                s.Tile = new PlanetTile(tile, layer);
-                s.Name = p.name ?? NameGenerator.GenerateName(faction.def.settlementNameMaker, Find.WorldObjects.Settlements.Select(x => x.Name).Where(x => x != null));
-                Find.WorldObjects.Add(s);
+                Settlement s = Found(faction, layer, tile, p.name);
+                if (p.name != null) { CityIds.Add(s.ID); cities.Add((faction, new Vector2(p.lon, p.lat))); }
                 placed++;
             }
-            Log.Message($"[Age of Migrations] accurate map: placed {placed} settlements where they stood in 395.");
+            foreach (var p in Forts)
+            {
+                if (!byDef.TryGetValue(p.f, out Faction faction)) continue;
+                int tile = index.Nearest(p.lat, p.lon, 1.5f, free);
+                if (tile < 0) continue;
+                used.Add(tile);
+                CampIds.Add(Found(faction, layer, tile, p.name).ID);
+                forts++;
+            }
+            // field camps: somewhere between two neighbouring cities of the same empire, on its own land
+            var rnd = new System.Random(GenText.StableStringHash(Find.World.info.seedString ?? "395") ^ 0x395);
+            var all = Find.WorldObjects.Settlements.Where(x => x.Tile.Layer == layer).Select(x => (x.Faction, ll: index.Real(x.Tile.tileId))).ToList();
+            foreach (var kv in FieldCamps)
+            {
+                if (!byDef.TryGetValue(kv.Key, out Faction faction)) continue;
+                var mine = cities.Where(c => c.f == faction).Select(c => c.at).ToList();
+                var names = kv.Value.names.OrderBy(_ => rnd.Next()).ToList();
+                int made = 0;
+                for (int attempt = 0; attempt < 400 && made < kv.Value.count && mine.Count > 1; attempt++)
+                {
+                    Vector2 a = mine[rnd.Next(mine.Count)], b = mine[rnd.Next(mine.Count)];
+                    float dist = (a - b).magnitude;
+                    if (dist < 2.5f || dist > 9f) continue;
+                    float t = 0.3f + (float)rnd.NextDouble() * 0.4f;
+                    Vector2 m = Vector2.Lerp(a, b, t) + new Vector2((float)rnd.NextDouble() - 0.5f, (float)rnd.NextDouble() - 0.5f) * 1.6f;
+                    // must lie in this empire's own land: the nearest settlement is one of ours, and not too close to any
+                    Faction nearestF = null; float nd = float.MaxValue;
+                    foreach (var o in all)
+                    {
+                        float d = (o.ll - m).sqrMagnitude;
+                        if (d < nd) { nd = d; nearestF = o.Faction; }
+                    }
+                    if (nearestF != faction || nd < 1.2f * 1.2f) continue;
+                    int tile = index.Nearest(m.y, m.x, 0.6f, free);
+                    if (tile < 0) continue;
+                    used.Add(tile);
+                    Settlement s = Found(faction, layer, tile, made < names.Count ? names[made] : null);
+                    CampIds.Add(s.ID);
+                    all.Add((faction, index.Real(tile)));
+                    made++; camps++;
+                }
+            }
+            Log.Message($"[Age of Migrations] accurate map: placed {placed} settlements where they stood in 395, {forts} frontier forts and {camps} field camps.");
         }
 
         // ---------------------------------------------------------------- Latin names for the map labels
@@ -431,7 +516,16 @@ namespace AgeOfMigrations
         {
             if (Scribe.mode == LoadSaveMode.Saving) active = EarthMap.Active;
             Scribe_Values.Look(ref active, "accurateEarth", false);
-            if (Scribe.mode == LoadSaveMode.LoadingVars) { EarthMap.Active = active; EarthMap.ClearCache(); }
+            List<int> cities = EarthMap.CityIds.ToList(), camps = EarthMap.CampIds.ToList();
+            Scribe_Collections.Look(ref cities, "cities", LookMode.Value);
+            Scribe_Collections.Look(ref camps, "camps", LookMode.Value);
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                EarthMap.Active = active; EarthMap.ClearCache();
+                EarthMap.CityIds.Clear(); EarthMap.CampIds.Clear();
+                if (cities != null) EarthMap.CityIds.UnionWith(cities);
+                if (camps != null) EarthMap.CampIds.UnionWith(camps);
+            }
         }
     }
 
@@ -453,7 +547,7 @@ namespace AgeOfMigrations
         // a save without the component is not an accurate map
         private static MethodBase TargetMethod() => AccessTools.Method(typeof(Game), "LoadGame");
         private static bool Prepare() => TargetMethod() != null;
-        public static void Prefix() { EarthMap.Active = false; EarthMap.ClearCache(); }
+        public static void Prefix() { EarthMap.Active = false; EarthMap.ClearCache(); EarthMap.CityIds.Clear(); EarthMap.CampIds.Clear(); }
     }
 
     [HarmonyPatch(typeof(PlanetLayer), nameof(PlanetLayer.LongLatOf), new[] { typeof(int) })]
