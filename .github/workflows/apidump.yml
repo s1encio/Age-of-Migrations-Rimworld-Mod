@@ -29,9 +29,9 @@ jobs:
           DLL=$(find ~/.nuget/packages/krafs.rimworld.ref -name Assembly-CSharp.dll | head -1)
           echo "DLL=$DLL"
           mkdir -p out
-          for T in RimWorld.ScenPart_StartingAnimal RimWorld.ScenPart_StartingThing_Defined RimWorld.ScenPart_ThingCount RimWorld.ScenPart_ScatterThings RimWorld.ScenPart_ScatterThingsNearPlayerStart RimWorld.Scenario RimWorld.ScenarioDef RimWorld.ScenPart RimWorld.ScenPart_PlayerPawnsArriveMethod RimWorld.ScenPart_GameStartDialog RimWorld.ScenPart_ConfigPage_ConfigureStartingPawns RimWorld.ScenPart_PlayerFaction RimWorld.ScenPart_PlanetLayer RimWorld.ScenPart_PlanetLayerFixed RimWorld.ScenPart_SurfaceLayer; do
+          for T in RimWorld.IdeoPresetDef RimWorld.IdeoPresetCategoryDef RimWorld.Page_ChooseIdeoPreset RimWorld.IdeoGenerationParms RimWorld.IdeoGenerator RimWorld.IdeoFoundation RimWorld.IdeoFoundation_Deity RimWorld.Ideo RimWorld.MemeDef RimWorld.IdeoUIUtility RimWorld.CultureDef RimWorld.IdeoStyleCategoryDef RimWorld.IdeoPresetCategoryDefOf; do
             echo "=================== $T"
-            ilspycmd -t "$T" "$DLL" 2>&1 | grep -v "^\s*$" | sed 's/{ throw null; }//' | head -400 || true
+            ilspycmd -t "$T" "$DLL" 2>&1 | grep -v "^\s*$" | sed 's/{ throw null; }//' | head -700 || true
           done > out/api.txt
           wc -l out/api.txt
       - name: save
