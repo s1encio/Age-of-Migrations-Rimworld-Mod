@@ -114,8 +114,8 @@
       </li>
       <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath>
-        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath><value><drawSize>(3.4375, 2.53125)</drawSize></value></match>
-        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><drawSize>(3.4375, 2.53125)</drawSize></value></nomatch>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath><value><drawSize>(3.0, 2.53125)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><drawSize>(3.0, 2.53125)</drawSize></value></nomatch>
       </li>
       </operations>
     </match>
