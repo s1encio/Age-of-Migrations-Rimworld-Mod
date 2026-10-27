@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        ver: ['1.6', '1.7']
+        ver: ['1.6']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
@@ -29,14 +29,7 @@ jobs:
           DLL=$(find ~/.nuget/packages/krafs.rimworld.ref -name Assembly-CSharp.dll | head -1)
           echo "DLL=$DLL"
           mkdir -p out
-          for T in RimWorld.Planet.WorldGrid RimWorld.Planet.Tile RimWorld.Planet.SurfaceTile RimWorld.Planet.PlanetLayer RimWorld.Planet.SurfaceLayer RimWorld.Planet.PlanetTile \
-                   RimWorld.Planet.WorldGenStep_Terrain RimWorld.Planet.WorldGenStep_Rivers RimWorld.Planet.WorldGenStep_Factions RimWorld.Planet.WorldGenStep_Roads \
-                   RimWorld.Planet.WorldGenStep_Features RimWorld.Planet.WorldGenStep_Lakes RimWorld.Planet.WorldGenStep RimWorld.WorldGenStepDef RimWorld.Planet.WorldGenerator \
-                   RimWorld.Planet.Settlement RimWorld.Planet.SettlementUtility RimWorld.Planet.WorldObjectsHolder RimWorld.Planet.WorldFeature RimWorld.Planet.WorldFeatures \
-                   RimWorld.RiverDef RimWorld.Planet.Hilliness RimWorld.GenTemperature RimWorld.Planet.TileFinder RimWorld.FactionGenerator RimWorld.Planet.WorldComponent \
-                   RimWorld.Planet.World RimWorld.Planet.WorldInfo RimWorld.Planet.WorldGenStep_Components RimWorld.Planet.PlanetShapeGenerator RimWorld.Planet.WorldPathGrid \
-                   RimWorld.Planet.WorldGenStep_AncientRoads RimWorld.Planet.WorldGenStep_AncientSites RimWorld.FeatureWorker RimWorld.FeatureDef RimWorld.Planet.WorldLayer_Rivers \
-                   RimWorld.Planet.Tile/RiverLink RimWorld.Planet.Tile/RoadLink RimWorld.BiomeDef RimWorld.Planet.Page_CreateWorldParams RimWorld.Page_CreateWorldParams; do
+          for T in RimWorld.ScenPart_StartingAnimal RimWorld.ScenPart_StartingThing_Defined RimWorld.ScenPart_ThingCount RimWorld.ScenPart_ScatterThings RimWorld.ScenPart_ScatterThingsNearPlayerStart RimWorld.Scenario RimWorld.ScenarioDef RimWorld.ScenPart RimWorld.ScenPart_PlayerPawnsArriveMethod RimWorld.ScenPart_GameStartDialog RimWorld.ScenPart_ConfigPage_ConfigureStartingPawns RimWorld.ScenPart_PlayerFaction RimWorld.ScenPart_PlanetLayer RimWorld.ScenPart_PlanetLayerFixed RimWorld.ScenPart_SurfaceLayer; do
             echo "=================== $T"
             ilspycmd -t "$T" "$DLL" 2>&1 | grep -v "^\s*$" | sed 's/{ throw null; }//' | head -400 || true
           done > out/api.txt
