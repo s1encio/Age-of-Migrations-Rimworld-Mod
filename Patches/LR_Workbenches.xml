@@ -83,8 +83,8 @@
       </li>
       <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/drawSize</xpath>
-        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/drawSize</xpath><value><drawSize>(3.59375, 1.53125)</drawSize></value></match>
-        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath><value><drawSize>(3.59375, 1.53125)</drawSize></value></nomatch>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData/drawSize</xpath><value><drawSize>(4.375, 2.40625)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="TableStonecutter"]/graphicData</xpath><value><drawSize>(4.375, 2.40625)</drawSize></value></nomatch>
       </li>
       </operations>
     </match>
@@ -114,8 +114,8 @@
       </li>
       <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath>
-        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath><value><drawSize>(4.3125, 2.84375)</drawSize></value></match>
-        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><drawSize>(4.3125, 2.84375)</drawSize></value></nomatch>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData/drawSize</xpath><value><drawSize>(3.4375, 2.53125)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledSmithy"]/graphicData</xpath><value><drawSize>(3.4375, 2.53125)</drawSize></value></nomatch>
       </li>
       </operations>
     </match>
@@ -176,8 +176,8 @@
       </li>
       <li Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath>
-        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath><value><drawSize>(3.5625, 1.59375)</drawSize></value></match>
-        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><drawSize>(3.5625, 1.59375)</drawSize></value></nomatch>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData/drawSize</xpath><value><drawSize>(3.5625, 1.75)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="FueledStove"]/graphicData</xpath><value><drawSize>(3.5625, 1.75)</drawSize></value></nomatch>
       </li>
       </operations>
     </match>
