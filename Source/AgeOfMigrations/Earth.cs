@@ -16,12 +16,12 @@ namespace AgeOfMigrations
     /// (land and sea, mountains, climate, rivers), the world's coordinates become real latitudes and longitudes (so the
     /// seasons are right), every people starts where it was in 395 AD, every city stands where it really stood, and the
     /// seas, mountains and lands carry their Latin names.
-    /// The real region (centred on the Balkans, 40 degrees in every direction) is stretched over whatever part of the
+    /// The real region (centred on the Black Sea coast of Thrace, 32 degrees in every direction) is stretched over whatever part of the
     /// planet is generated, so it works with any planet coverage; 30% gives a good level of detail.
     /// </summary>
     public static class EarthMap
     {
-        public const float CenterLat = 42f, CenterLon = 22f, RealRadius = 40f;
+        public const float CenterLat = 43f, CenterLon = 26f, RealRadius = 32f;
 
         public static bool Active;                 // this world is an accurate map
         private static bool guard;
@@ -171,7 +171,8 @@ namespace AgeOfMigrations
             t.swampiness = 0f;
 
             BiomeDef biome;
-            bool steppeBelt = lon > 27f && lon < 80f && lat > 42f && lat < Mathf.Min(50f + (lon - 28f) * 0.12f, 54f);
+            // the Pontic and Caspian steppe: dry steppe, hot-summer continental, and the southern forest-steppe
+            bool steppeBelt = lon > 27f && lon < 80f && lat > 42f && (k == 6 || k == 18 || (k == 19 && lat < 48.5f));
             switch (k)
             {
                 case 1: case 2: biome = B("TropicalRainforest"); break;
@@ -187,7 +188,7 @@ namespace AgeOfMigrations
                 case 31: biome = B("Tundra"); break;
                 default: biome = B("TemperateForest"); break;
             }
-            if (steppeBelt && (k == 6 || k == 18 || k == 19 || k == 22 || k == 23) && B("Grasslands") != null)
+            if (steppeBelt && B("Grasslands") != null)
                 biome = B("Grasslands");
             // the great marshes: Polesia, the Danube delta, Colchis, the Po delta and the marshes of lower Mesopotamia
             bool marsh = InBox(lat, lon, 51.2f, 52.6f, 24f, 30.5f) || InBox(lat, lon, 44.8f, 45.4f, 28.7f, 29.7f) ||
