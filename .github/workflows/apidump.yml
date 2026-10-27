@@ -24,8 +24,8 @@ jobs:
         run: dotnet restore tools/apidump/apidump.csproj -p:RimWorldVersion=${{ matrix.ver }} 2>&1 | tail -20; ls ~/.nuget/packages/ || true
       - name: decompile
         run: |
-          dotnet tool install -g ilspycmd --version 8.2.0.7535 || dotnet tool install -g ilspycmd
-          export PATH="$PATH:$HOME/.dotnet/tools"
+          dotnet tool install -g ilspycmd; export DOTNET_ROLL_FORWARD=Major
+          export PATH="$PATH:$HOME/.dotnet/tools"; export DOTNET_ROLL_FORWARD=Major
           DLL=$(find ~/.nuget/packages/krafs.rimworld.ref -name Assembly-CSharp.dll | head -1)
           echo "DLL=$DLL"
           mkdir -p out
