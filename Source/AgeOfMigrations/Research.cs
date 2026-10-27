@@ -314,3 +314,57 @@ namespace AgeOfMigrations
         }
     }
 }
+
+namespace AgeOfMigrations
+{
+    /// <summary>
+    /// Adds names to a vanilla name rule pack, under whichever rule key(s) it actually uses for the final name
+    /// (the keys no other rule refers to). Five Christian religions in one world use up the vanilla Christian deity names.
+    /// </summary>
+    public class PatchOperationAddNames : PatchOperation
+    {
+        public string rulePack;
+        public List<string> names = new List<string>();
+
+        protected override bool ApplyWorker(System.Xml.XmlDocument xml)
+        {
+            var def = xml.SelectSingleNode($"Defs/RulePackDef[defName=\"{rulePack}\"]") as System.Xml.XmlElement;
+            if (def == null) return false;
+            var keys = new HashSet<string>();
+            var referenced = new HashSet<string>();
+            System.Xml.XmlNode stringsNode = null;
+            foreach (System.Xml.XmlNode li in def.SelectNodes(".//rulesStrings/li"))
+            {
+                stringsNode = stringsNode ?? li.ParentNode;
+                string t = li.InnerText ?? "";
+                int arrow = t.IndexOf("->", StringComparison.Ordinal);
+                if (arrow <= 0) continue;
+                string key = t.Substring(0, arrow).Trim();
+                int paren = key.IndexOf('(');
+                if (paren > 0) key = key.Substring(0, paren);
+                keys.Add(key);
+                string rhs = t.Substring(arrow + 2);
+                for (int i = rhs.IndexOf('['); i >= 0; i = rhs.IndexOf('[', i + 1))
+                {
+                    int close = rhs.IndexOf(']', i);
+                    if (close > i) referenced.Add(rhs.Substring(i + 1, close - i - 1));
+                }
+            }
+            var roots = keys.Where(k => !referenced.Contains(k)).ToList();
+            if (roots.Count == 0) roots.Add("r_name");
+            if (stringsNode == null)
+            {
+                var pack = def.SelectSingleNode("rulePack") ?? def.AppendChild(xml.CreateElement("rulePack"));
+                stringsNode = pack.AppendChild(xml.CreateElement("rulesStrings"));
+            }
+            foreach (string root in roots)
+                foreach (string n in names)
+                {
+                    var li = xml.CreateElement("li");
+                    li.InnerText = root + "->" + n;
+                    stringsNode.AppendChild(li);
+                }
+            return true;
+        }
+    }
+}

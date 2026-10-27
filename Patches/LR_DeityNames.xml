@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/RulePackDef[defName="NamerDeityChristian"]/rulePack/rulesStrings</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/RulePackDef[defName="NamerDeityChristian"]/rulePack/rulesStrings</xpath>
-      <value>
-        <li>r_name->Christ Pantocrator</li>
-        <li>r_name->the Holy Spirit</li>
-        <li>r_name->God the Father</li>
-        <li>r_name->the Logos</li>
-        <li>r_name->Christ the King</li>
-        <li>r_name->the Good Shepherd</li>
-        <li>r_name->the Lamb of God</li>
-        <li>r_name->the Most High</li>
-        <li>r_name->the Holy Trinity</li>
-        <li>r_name->Christ Victor</li>
-        <li>r_name->the Ancient of Days</li>
-        <li>r_name->the Paraclete</li>
-        <li>r_name->Christ Philanthropos</li>
-        <li>r_name->the Lord of Hosts</li>
-        <li>r_name->Emmanuel</li>
-        <li>r_name->the Word</li>
-        <li>r_name->the Saviour</li>
-        <li>r_name->the Almighty</li>
-        <li>r_name->the Creator</li>
-        <li>r_name->the Holy Wisdom</li>
-        <li>r_name->Christ the Judge</li>
-        <li>r_name->the Light of the World</li>
-        <li>r_name->Kyrios</li>
-        <li>r_name->Dominus</li>
-        <li>r_name->Deus Pater</li>
-        <li>r_name->Spiritus Sanctus</li>
-      </value>
-    </match>
+  <Operation Class="AgeOfMigrations.PatchOperationAddNames">
+    <rulePack>NamerDeityChristian</rulePack>
+    <names><li>Christ Pantocrator</li><li>the Holy Spirit</li><li>God the Father</li><li>the Logos</li><li>Christ the King</li><li>the Good Shepherd</li><li>the Lamb of God</li><li>the Most High</li><li>the Holy Trinity</li><li>Christ Victor</li><li>the Ancient of Days</li><li>the Paraclete</li><li>Christ Philanthropos</li><li>the Lord of Hosts</li><li>Emmanuel</li><li>the Word</li><li>the Saviour</li><li>the Almighty</li><li>the Creator</li><li>the Holy Wisdom</li><li>Christ the Judge</li><li>the Light of the World</li><li>Kyrios</li><li>Dominus</li><li>Deus Pater</li><li>Spiritus Sanctus</li><li>the Lord</li><li>Christ Pantokrator</li><li>the Redeemer</li><li>the Holy One</li><li>Theos</li><li>Christos</li><li>Sol Iustitiae</li><li>the Alpha and Omega</li><li>the Lamb</li><li>the True Vine</li><li>the Bread of Life</li><li>the Morning Star</li><li>the Prince of Peace</li><li>the Son of Man</li><li>the Father of Lights</li><li>the Lord of Glory</li><li>Christ Pantocrator of Ravenna</li><li>Christ Hagia Sophia</li><li>the Holy Cross</li><li>the Theotokos</li></names>
   </Operation>
 </Patch>
