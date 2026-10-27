@@ -2,19 +2,26 @@ name: API dump
 on:
   push:
     branches: [api-dump]
+permissions:
+  contents: write
+
 jobs:
   dump:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
+      max-parallel: 1
       matrix:
         ver: ['1.6', '1.7']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: |
+            8.0.x
+            10.0.x
       - name: restore
-        run: dotnet restore tools/apidump/apidump.csproj -p:RimWorldVersion=${{ matrix.ver }}
+        run: dotnet restore tools/apidump/apidump.csproj -p:RimWorldVersion=${{ matrix.ver }} 2>&1 | tail -20; ls ~/.nuget/packages/ || true
       - name: decompile
         run: |
           dotnet tool install -g ilspycmd --version 8.2.0.7535 || dotnet tool install -g ilspycmd
@@ -34,7 +41,10 @@ jobs:
             ilspycmd -t "$T" "$DLL" 2>&1 | grep -v "^\s*$" | sed 's/{ throw null; }//' | head -400 || true
           done > out/api.txt
           wc -l out/api.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: api-${{ matrix.ver }}
-          path: out/api.txt
+      - name: save
+        if: always()
+        run: |
+          mkdir -p dump; cp out/api.txt dump/api-${{ matrix.ver }}.txt 2>/dev/null || echo "no output" > dump/api-${{ matrix.ver }}.txt
+          git config user.name "s1encio"; git config user.email "urlocalkgbagent@gmail.com"
+          git pull -q --rebase origin api-dump || true
+          git add -f dump && git commit -m "api dump ${{ matrix.ver }} [skip ci]" && git push origin HEAD:api-dump
