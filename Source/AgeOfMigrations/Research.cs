@@ -19,18 +19,22 @@ namespace AgeOfMigrations
 
     public class AoMSettings : ModSettings
     {
-        public bool removeVanillaFactions;
-        public bool removeModernWeapons;
-        public bool removeModernApparel;
-        public bool hideModernResearch;
+        // everything that does not fit the period is off by default; each can be switched back on
+        public bool removeVanillaFactions = true;
+        public bool removeModernThings = true;
+        public bool hideModernResearch = true;
+        public bool hideVanillaScenarios = true;
+        public bool removeSciFiEvents = true;
         public bool showAllCultureTrees;
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref removeVanillaFactions, "removeVanillaFactions", false);
-            Scribe_Values.Look(ref removeModernWeapons, "removeModernWeapons", false);
-            Scribe_Values.Look(ref removeModernApparel, "removeModernApparel", false);
-            Scribe_Values.Look(ref hideModernResearch, "hideModernResearch", false);
+            // keys carry a version so the new defaults (everything removed) apply to anyone who saved the old settings
+            Scribe_Values.Look(ref removeVanillaFactions, "removeVanillaFactions_v2", true);
+            Scribe_Values.Look(ref removeModernThings, "removeModernThings_v2", true);
+            Scribe_Values.Look(ref hideModernResearch, "hideModernResearch_v2", true);
+            Scribe_Values.Look(ref hideVanillaScenarios, "hideVanillaScenarios_v2", true);
+            Scribe_Values.Look(ref removeSciFiEvents, "removeSciFiEvents_v2", true);
             Scribe_Values.Look(ref showAllCultureTrees, "showAllCultureTrees", false);
         }
     }
@@ -50,24 +54,27 @@ namespace AgeOfMigrations
         {
             var l = new Listing_Standard();
             l.Begin(inRect);
-            l.Label("These settings take effect after you restart the game. Changes to factions only affect new worlds.");
+            l.Label("Everything that does not belong in the late antique world is removed. Untick a box to bring it back. " +
+                    "Changes take effect after you restart the game; changes to factions only affect new worlds.");
             l.GapLine();
             l.CheckboxLabeled("Remove the vanilla factions", ref Settings.removeVanillaFactions,
                 "Outlanders, tribes, pirates, the Empire and the other vanilla factions no longer appear in new worlds. " +
-                "Mechanoids and insects stay, the game needs them.");
-            l.CheckboxLabeled("Remove guns and other modern weapons", ref Settings.removeModernWeapons,
-                "Weapons from the industrial age onwards (rifles, pistols, grenades, launchers, charge and plasma weapons) are no longer " +
-                "sold by traders, carried by raiders, given as rewards or made at a bench.");
-            l.CheckboxLabeled("Remove modern clothing and armour", ref Settings.removeModernApparel,
-                "Clothing and armour from the industrial age onwards (flak, power armour, dusters, helmets with visors and so on) is no longer " +
-                "sold, worn by raiders, given as rewards or made.");
+                "Only the peoples of this mod are left.");
+            l.CheckboxLabeled("Remove modern and sci-fi items", ref Settings.removeModernThings,
+                "Every vanilla item from the industrial age onwards: guns, grenades, charge and plasma weapons, flak and power armour, " +
+                "components, industrial and glitterworld medicine, modern drugs and the like. They are no longer sold, carried by raiders, " +
+                "given as rewards or made at a bench.");
             l.CheckboxLabeled("Hide industrial and space-age research", ref Settings.hideModernResearch,
-                "Removes vanilla research projects from the industrial age onwards (electricity, guns, machining, spacer tech) from the research tree. " +
-                "Anything they would have unlocked stays locked.");
+                "Removes the vanilla research projects from the industrial age onwards (electricity, guns, machining, spacer tech) " +
+                "and with them every modern building they unlock.");
+            l.CheckboxLabeled("Hide the vanilla scenarios", ref Settings.hideVanillaScenarios,
+                "Crashlanded, The Rich Explorer and the other vanilla scenarios are hidden: start as Roman settlers, a barbarian war band or Persian settlers.");
+            l.CheckboxLabeled("Turn off sci-fi events", ref Settings.removeSciFiEvents,
+                "No orbital traders, drop pods, crashed ship parts, mechanoid clusters or mechanoid raids.");
             l.GapLine();
             l.CheckboxLabeled("Show every people's research tree", ref Settings.showAllCultureTrees,
                 "Normally a Roman colony only sees the Roman tree, a barbarian band the barbarian tree and a Persian colony the Persian tree. " +
-                "Turn this on to see all three. Colonies started with a vanilla scenario always see all three.");
+                "Turn this on to see all three.");
             l.End();
         }
     }
@@ -155,9 +162,16 @@ namespace AgeOfMigrations
 
     internal static class VanillaRemoval
     {
+        // the game needs these to exist; mechanoids are kept out of raids by the sci-fi events setting instead
         private static readonly HashSet<string> KeepFactions = new HashSet<string>
         {
             "Mechanoid", "Insect", "Ancients", "AncientsHostile", "Entities", "HoraxCult",
+        };
+
+        private static readonly string[] SciFiIncidents =
+        {
+            "OrbitalTraderArrival", "ResourcePodCrash", "RefugeePodCrash", "ShipChunkDrop", "PsychicEmanatorShipPartCrash",
+            "DefoliatorShipPartCrash", "MechCluster", "MechanoidRaid", "WastepackInfestation",
         };
 
         private static bool Official(Def d) => d.modContentPack != null && d.modContentPack.IsOfficialMod;
@@ -166,9 +180,18 @@ namespace AgeOfMigrations
         {
             var s = AoMMod.Settings;
             if (s == null) return;
-            if (s.removeVanillaFactions) RemoveFactions();
-            if (s.removeModernWeapons || s.removeModernApparel) RemoveModernThings(s.removeModernWeapons, s.removeModernApparel);
-            if (s.hideModernResearch) HideModernResearch();
+            Run("factions", s.removeVanillaFactions, RemoveFactions);
+            Run("items", s.removeModernThings, RemoveModernThings);
+            Run("research", s.hideModernResearch, HideModernResearch);
+            Run("scenarios", s.hideVanillaScenarios, HideScenarios);
+            Run("events", s.removeSciFiEvents, RemoveSciFiEvents);
+        }
+
+        private static void Run(string what, bool on, Action act)
+        {
+            if (!on) return;
+            try { act(); }
+            catch (Exception e) { Log.Error($"[Age of Migrations] removing vanilla {what} failed: {e}"); }
         }
 
         private static void RemoveFactions()
@@ -187,14 +210,12 @@ namespace AgeOfMigrations
             Log.Message($"[Age of Migrations] removed {n} vanilla factions from world generation.");
         }
 
-        private static void RemoveModernThings(bool weapons, bool apparel)
+        private static void RemoveModernThings()
         {
             var hidden = new HashSet<ThingDef>();
             foreach (var d in DefDatabase<ThingDef>.AllDefsListForReading)
             {
-                if (!Official(d) || d.techLevel < TechLevel.Industrial) continue;
-                bool isWeapon = d.IsWeapon && d.category == ThingCategory.Item;
-                if (!((weapons && isWeapon) || (apparel && d.IsApparel))) continue;
+                if (!Official(d) || d.techLevel < TechLevel.Industrial || d.category != ThingCategory.Item) continue;
                 d.tradeability = Tradeability.None;
                 d.weaponTags?.Clear();
                 d.apparel?.tags?.Clear();
@@ -212,7 +233,7 @@ namespace AgeOfMigrations
                 if (b.recipes != null) b.recipes.RemoveAll(recipes.Contains);
                 cache?.SetValue(b, null);
             }
-            Log.Message($"[Age of Migrations] removed {hidden.Count} modern weapons and apparel and {recipes.Count} recipes.");
+            Log.Message($"[Age of Migrations] removed {hidden.Count} modern and sci-fi items and {recipes.Count} recipes.");
         }
 
         private static void HideModernResearch()
@@ -225,6 +246,32 @@ namespace AgeOfMigrations
                 if (t.defName != "Main" && !used.Contains(t) && t.GetModExtension<ResearchCulture>() == null)
                     DefDb<ResearchTabDef>.Remove(t);
             Log.Message($"[Age of Migrations] hid {gone.Count} industrial and space-age research projects.");
+        }
+
+        private static void HideScenarios()
+        {
+            var gone = DefDatabase<ScenarioDef>.AllDefsListForReading.Where(Official).ToList();
+            if (!DefDatabase<ScenarioDef>.AllDefsListForReading.Any(d => !Official(d))) return;   // never leave the list empty
+            foreach (var d in gone) DefDb<ScenarioDef>.Remove(d);
+            Log.Message($"[Age of Migrations] hid {gone.Count} vanilla scenarios.");
+        }
+
+        private static void RemoveSciFiEvents()
+        {
+            var royalty = AccessTools.Field(typeof(IncidentDef), "baseChanceWithRoyalty");
+            int n = 0;
+            foreach (var name in SciFiIncidents)
+            {
+                var inc = DefDatabase<IncidentDef>.GetNamedSilentFail(name);
+                if (inc == null) continue;
+                inc.baseChance = 0f;
+                if (royalty != null && royalty.FieldType == typeof(float)) royalty.SetValue(inc, 0f);
+                n++;
+            }
+            // mechanoids stay in the game (it needs them) but never raid
+            var mech = DefDatabase<FactionDef>.GetNamedSilentFail("Mechanoid");
+            if (mech != null) mech.earliestRaidDays = 99999999f;
+            Log.Message($"[Age of Migrations] turned off {n} sci-fi events and mechanoid raids.");
         }
     }
 }
