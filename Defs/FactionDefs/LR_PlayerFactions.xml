@@ -32,7 +32,7 @@
     <basicMemberKind>LR_BarbariansSettler</basicMemberKind>
     <techLevel>Medieval</techLevel>
     <backstoryCategories><li>Tribal</li></backstoryCategories>
-    <factionIconPath>World/WorldObjects/Expanding/TribalSettlement</factionIconPath>
+    <factionIconPath>World/LR_VandalIcon</factionIconPath>
     <colorSpectrum><li>(0.25, 0.45, 0.2)</li></colorSpectrum>
     <playerInitialSettlementNameMaker>LR_NamerSettlementVandal</playerInitialSettlementNameMaker>
     <factionNameMaker>LR_NamerFactionVandal</factionNameMaker>
@@ -54,7 +54,7 @@
     <basicMemberKind>LR_PersiansSettler</basicMemberKind>
     <techLevel>Medieval</techLevel>
     <backstoryCategories><li>Outlander</li></backstoryCategories>
-    <factionIconPath>World/LR_CapitalPersian</factionIconPath>
+    <factionIconPath>World/LR_PersianIcon</factionIconPath>
     <colorSpectrum><li>(0.75, 0.6, 0.15)</li></colorSpectrum>
     <playerInitialSettlementNameMaker>LR_NamerSettlementPersian</playerInitialSettlementNameMaker>
     <factionNameMaker>LR_NamerFactionPersian</factionNameMaker>
