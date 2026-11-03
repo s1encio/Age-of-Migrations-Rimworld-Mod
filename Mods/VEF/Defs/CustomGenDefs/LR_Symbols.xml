@@ -361,31 +361,31 @@
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Bed_WoodLog</defName>
-    <thing>LR_Bed</thing><stuff>WoodLog</stuff>
+    <thing>Bed</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_DoubleBed_WoodLog</defName>
-    <thing>LR_DoubleBed</thing><stuff>WoodLog</stuff>
+    <thing>DoubleBed</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table1x2_WoodLog</defName>
-    <thing>LR_TrestleTable</thing><stuff>WoodLog</stuff>
+    <thing>Table1x2c</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table2x2_WoodLog</defName>
-    <thing>LR_SquareTable</thing><stuff>WoodLog</stuff>
+    <thing>Table2x2c</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table2x4_WoodLog</defName>
-    <thing>LR_FeastingTable</thing><stuff>WoodLog</stuff>
+    <thing>Table2x4c</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Stool_WoodLog</defName>
-    <thing>LR_Stool</thing><stuff>WoodLog</stuff>
+    <thing>Stool</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Chair_WoodLog</defName>
-    <thing>LR_Chair</thing><stuff>WoodLog</stuff>
+    <thing>DiningChair</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Chest_WoodLog</defName>
@@ -393,11 +393,11 @@
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_SideTable_WoodLog</defName>
-    <thing>LR_SideTable</thing><stuff>WoodLog</stuff>
+    <thing>EndTable</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Door_WoodLog</defName>
-    <thing>LR_Door</thing><stuff>WoodLog</stuff>
+    <thing>Door</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_HighSeat_WoodLog</defName>
@@ -405,11 +405,11 @@
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_StrawBed_Cloth</defName>
-    <thing>LR_StrawBed</thing><stuff>Cloth</stuff>
+    <thing>Bedroll</thing><stuff>Cloth</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_Table2x4_BlocksMarble</defName>
-    <thing>LR_FeastingTable</thing><stuff>BlocksMarble</stuff>
+    <thing>Table2x4c</thing><stuff>BlocksMarble</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
     <defName>LR_RomanThrone_BlocksMarble</defName>

@@ -1,59 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Bed</vanilla>
-    <fallbackName>LR_VanillaBed</fallbackName>
-    <children><li>LR_Bed</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>DoubleBed</vanilla>
-    <fallbackName>LR_VanillaDoubleBed</fallbackName>
-    <children><li>LR_DoubleBed</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Bedroll</vanilla>
-    <fallbackName>LR_VanillaBedroll</fallbackName>
-    <children><li>LR_StrawBed</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Table1x2c</vanilla>
-    <fallbackName>LR_VanillaTable1x2c</fallbackName>
-    <children><li>LR_TrestleTable</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Table2x2c</vanilla>
-    <fallbackName>LR_VanillaTable2x2c</fallbackName>
-    <children><li>LR_SquareTable</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Table2x4c</vanilla>
-    <fallbackName>LR_VanillaTable2x4c</fallbackName>
-    <children><li>LR_FeastingTable</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Stool</vanilla>
-    <fallbackName>LR_VanillaStool</fallbackName>
-    <children><li>LR_Stool</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>DiningChair</vanilla>
-    <fallbackName>LR_VanillaDiningChair</fallbackName>
-    <children><li>LR_Chair</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
     <vanilla>ShelfSmall</vanilla>
     <fallbackName>LR_VanillaShelfSmall</fallbackName>
     <children><li>LR_Chest</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>EndTable</vanilla>
-    <fallbackName>LR_VanillaEndTable</fallbackName>
-    <children><li>LR_SideTable</li></children>
-  </Operation>
-  <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
-    <vanilla>Door</vanilla>
-    <fallbackName>LR_VanillaDoor</fallbackName>
-    <children><li>LR_Door</li></children>
   </Operation>
   <Operation Class="AgeOfMigrations.PatchOperationLinkParent">
     <vanilla>Armchair</vanilla>

@@ -29,6 +29,17 @@ namespace AgeOfMigrations
         public bool hideVanillaFaiths = true;
         public bool showAllCultureTrees;
 
+        // Realism mode: every removal on. Casual mode: every removal off.
+        public bool AllRemovals(bool on) =>
+            removeVanillaFactions == on && removeModernThings == on && hideModernResearch == on &&
+            hideVanillaScenarios == on && removeSciFiEvents == on && hideVanillaFaiths == on;
+
+        public void SetAll(bool on)
+        {
+            removeVanillaFactions = removeModernThings = hideModernResearch = on;
+            hideVanillaScenarios = removeSciFiEvents = hideVanillaFaiths = on;
+        }
+
         public override void ExposeData()
         {
             // keys carry a version so the new defaults (everything removed) apply to anyone who saved the old settings
@@ -60,16 +71,26 @@ namespace AgeOfMigrations
         {
             var l = new Listing_Standard();
             l.Begin(inRect);
-            l.Label("Everything that does not belong in the late antique world is removed. Untick a box to bring it back. " +
-                    "Changes take effect after you restart the game; changes to factions only affect new worlds.");
+            var s = Settings;
+            bool realism = s.AllRemovals(true), casual = s.AllRemovals(false);
+            Text.Font = GameFont.Medium;
+            l.Label("Mode: " + (realism ? "Realism" : casual ? "Casual" : "Custom"));
+            Text.Font = GameFont.Small;
+            if (l.RadioButton("Realism", realism)) s.SetAll(true);
+            l.Label("    Only what fits the year 395: no guns, electricity, computers, components, spacecraft, vanilla factions or sci-fi events.");
+            if (l.RadioButton("Casual", casual)) s.SetAll(false);
+            l.Label("    Nothing is taken out of vanilla. The mod only adds its peoples, buildings, gear and research.");
+            l.Gap(6f);
+            l.Label("Changes take effect after you restart the game; changes to factions only affect new worlds. Fine-tune below:");
             l.GapLine();
             l.CheckboxLabeled("Remove the vanilla factions", ref Settings.removeVanillaFactions,
                 "Outlanders, tribes, pirates, the Empire and the other vanilla factions no longer appear in new worlds. " +
                 "Only the peoples of this mod are left.");
-            l.CheckboxLabeled("Remove modern and sci-fi items", ref Settings.removeModernThings,
+            l.CheckboxLabeled("Remove modern and sci-fi items and buildings", ref Settings.removeModernThings,
                 "Every vanilla item from the industrial age onwards: guns, grenades, charge and plasma weapons, flak and power armour, " +
                 "components, industrial and glitterworld medicine, modern drugs and the like. They are no longer sold, carried by raiders, " +
-                "given as rewards or made at a bench.");
+                "given as rewards or made at a bench. Every building that runs on electricity or needs modern parts goes too: " +
+                "generators, conduits, batteries, electric lamps and benches, computers and consoles, turrets and spaceship parts.");
             l.CheckboxLabeled("Hide industrial and space-age research", ref Settings.hideModernResearch,
                 "Removes the vanilla research projects from the industrial age onwards (electricity, guns, machining, spacer tech) " +
                 "and with them every modern building they unlock.");
@@ -249,6 +270,52 @@ namespace AgeOfMigrations
                 cache?.SetValue(b, null);
             }
             Log.Message($"[Age of Migrations] removed {hidden.Count} modern and sci-fi items and {recipes.Count} recipes.");
+            RemoveModernBuildings();
+        }
+
+        private static readonly HashSet<string> ModernParts = new HashSet<string>
+        {
+            "ComponentIndustrial", "ComponentSpacer", "Plasteel", "Uranium", "Hyperweave", "Chemfuel",
+        };
+
+        private static bool ModernResearch(BuildableDef d) =>
+            d.researchPrerequisites != null && d.researchPrerequisites.Any(r => r != null && r.techLevel >= TechLevel.Industrial);
+
+        /// <summary>Electric, computer and spacer buildings leave the architect menu.</summary>
+        private static void RemoveModernBuildings()
+        {
+            var gone = new HashSet<BuildableDef>();
+            foreach (var d in DefDatabase<ThingDef>.AllDefsListForReading)
+            {
+                if (!Official(d) || d.category != ThingCategory.Building || d.designationCategory == null) continue;
+                bool modern = d.techLevel >= TechLevel.Industrial || ModernResearch(d)
+                              || (d.comps != null && d.comps.Any(c => c is CompProperties_Power))
+                              || (d.costList != null && d.costList.Any(c => c?.thingDef != null && ModernParts.Contains(c.thingDef.defName)));
+                if (!modern) continue;
+                d.designationCategory = null;
+                gone.Add(d);
+            }
+            foreach (var t in DefDatabase<TerrainDef>.AllDefsListForReading)
+            {
+                if (!Official(t) || t.designationCategory == null) continue;
+                if (!ModernResearch(t) && !(t.costList != null && t.costList.Any(c => c?.thingDef != null && ModernParts.Contains(c.thingDef.defName)))) continue;
+                t.designationCategory = null;
+                gone.Add(t);
+            }
+            if (gone.Count == 0) return;
+            foreach (var cat in DefDatabase<DesignationCategoryDef>.AllDefsListForReading)
+                foreach (var f in AccessTools.GetDeclaredFields(typeof(DesignationCategoryDef)))
+                    if (f.GetValue(cat) is List<Designator> list) Strip(list, gone);
+            Log.Message($"[Age of Migrations] removed {gone.Count} electric, computer and spacer buildings and floors.");
+        }
+
+        private static void Strip(List<Designator> list, HashSet<BuildableDef> gone)
+        {
+            list.RemoveAll(d => d is Designator_Build b && gone.Contains(b.PlacingDef));
+            foreach (var dd in list.OfType<Designator_Dropdown>())
+                if (AccessTools.Field(typeof(Designator_Dropdown), "elements")?.GetValue(dd) is List<Designator> inner) Strip(inner, gone);
+            list.RemoveAll(d => d is Designator_Dropdown dd &&
+                                AccessTools.Field(typeof(Designator_Dropdown), "elements")?.GetValue(dd) is List<Designator> inner && inner.Count == 0);
         }
 
         private static void HideModernResearch()

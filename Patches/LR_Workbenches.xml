@@ -1,6 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bed"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bed"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bed"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Bed</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bed"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Bed</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bed"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bed"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bed"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bed"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bed"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bed"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bed"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bed"]/graphicData/drawSize</xpath><value><drawSize>(1.40625, 2.40625)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bed"]/graphicData</xpath><value><drawSize>(1.40625, 2.40625)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bed"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bed"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Bed_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bed"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Bed_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_DoubleBed</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_DoubleBed</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/drawSize</xpath><value><drawSize>(2.40625, 2.40625)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData</xpath><value><drawSize>(2.40625, 2.40625)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DoubleBed"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DoubleBed"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_DoubleBed_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DoubleBed"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_DoubleBed_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bedroll"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_StrawBed</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_StrawBed</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData/drawSize</xpath><value><drawSize>(1.21875, 2.03125)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bedroll"]/graphicData</xpath><value><drawSize>(1.21875, 2.03125)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bedroll"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Bedroll"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_StrawBed_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Bedroll"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_StrawBed_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Table1x2</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Table1x2</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData/drawSize</xpath><value><drawSize>(1.5, 2.5)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table1x2c"]/graphicData</xpath><value><drawSize>(1.5, 2.5)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Table1x2c"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table1x2c"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Table1x2_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table1x2c"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Table1x2_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Table2x2</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Table2x2</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData/drawSize</xpath><value><drawSize>(2.5, 2.5)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x2c"]/graphicData</xpath><value><drawSize>(2.5, 2.5)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Table2x2c"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x2c"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Table2x2_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x2c"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Table2x2_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Table2x4</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Table2x4</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData/drawSize</xpath><value><drawSize>(2.5, 4.5)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x4c"]/graphicData</xpath><value><drawSize>(2.5, 4.5)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Table2x4c"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Table2x4c"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Table2x4_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Table2x4c"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Table2x4_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Stool"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Stool"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Stool"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Stool</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Stool"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Stool</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Stool"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Stool"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Stool"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Stool"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Stool"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Stool"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Stool"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Stool"]/graphicData/drawSize</xpath><value><drawSize>(1.21875, 1.21875)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Stool"]/graphicData</xpath><value><drawSize>(1.21875, 1.21875)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Stool"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Stool"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Stool_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Stool"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Stool_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DiningChair"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Chair</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Chair</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData/drawSize</xpath><value><drawSize>(2.03125, 2.0)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DiningChair"]/graphicData</xpath><value><drawSize>(2.03125, 2.0)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DiningChair"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="DiningChair"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Chair_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DiningChair"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Chair_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="EndTable"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="EndTable"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_SideTable</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_SideTable</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="EndTable"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData</xpath><value><graphicClass>Graphic_Multi</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="EndTable"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="EndTable"]/graphicData/drawSize</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData/drawSize</xpath><value><drawSize>(1.625, 1.625)</drawSize></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="EndTable"]/graphicData</xpath><value><drawSize>(1.625, 1.625)</drawSize></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="EndTable"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="EndTable"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_SideTable_south</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="EndTable"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_SideTable_south</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Door"]/graphicData</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Door"]/graphicData/texPath</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Door"]/graphicData/texPath</xpath><value><texPath>Things/Building/LR/Furniture/LR_Door_Mover</texPath></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Door"]/graphicData</xpath><value><texPath>Things/Building/LR/Furniture/LR_Door_Mover</texPath></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Door"]/graphicData/graphicClass</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Door"]/graphicData/graphicClass</xpath><value><graphicClass>Graphic_Single</graphicClass></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Door"]/graphicData</xpath><value><graphicClass>Graphic_Single</graphicClass></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Door"]/graphicData/shaderType</xpath>
+        <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Door"]/graphicData/shaderType</xpath><value><shaderType>CutoutComplex</shaderType></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Door"]/graphicData</xpath><value><shaderType>CutoutComplex</shaderType></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Door"]/uiIconPath</xpath>
+    <match Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="Door"]/uiIconPath</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Door_MenuIcon</uiIconPath></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Door"]</xpath><value><uiIconPath>Things/Building/LR/Furniture/LR_Door_MenuIcon</uiIconPath></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="TableButcher"]/graphicData</xpath>
     <match Class="PatchOperationSequence">
       <operations>
