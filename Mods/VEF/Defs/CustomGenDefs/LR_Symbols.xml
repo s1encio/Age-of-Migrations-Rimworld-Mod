@@ -304,10 +304,6 @@
     <thing>LR_PersianCityWall</thing><stuff>BlocksGranite</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
-    <defName>LR_EarthWall</defName>
-    <thing>LR_EarthWall</thing>
-  </KCSG.SymbolDef>
-  <KCSG.SymbolDef>
     <defName>LR_PersianWall_BlocksSandstone</defName>
     <thing>LR_PersianWall</thing><stuff>BlocksSandstone</stuff>
   </KCSG.SymbolDef>

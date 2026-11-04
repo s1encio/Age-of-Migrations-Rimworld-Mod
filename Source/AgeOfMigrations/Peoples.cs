@@ -348,6 +348,8 @@ namespace AgeOfMigrations
                     var t = AccessTools.TypeByName(name);
                     var m = t == null ? null : AccessTools.Method(t, "Generate", new[] { typeof(Map), typeof(GenStepParams) });
                     if (m == null) continue;
+                    if (m.DeclaringType != null && m.DeclaringType != t)   // inherited: Harmony patches the declaring method
+                        m = AccessTools.DeclaredMethod(m.DeclaringType, "Generate", new[] { typeof(Map), typeof(GenStepParams) }) ?? m;
                     Skip.Add(t);
                     if (patched.Add(m)) harmony.Patch(m, prefix: new HarmonyMethod(typeof(RealismMapGen), nameof(Prefix)));
                 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="LR_Palisade"]</xpath>
+    <value><li Class="AgeOfMigrations.WallWalkExtension" /></value>
+  </Operation>
+</Patch>
