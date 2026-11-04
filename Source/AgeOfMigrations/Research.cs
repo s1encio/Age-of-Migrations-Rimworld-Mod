@@ -28,16 +28,18 @@ namespace AgeOfMigrations
         public bool accurateEarth = true;
         public bool hideVanillaFaiths = true;
         public bool showAllCultureTrees;
+        public bool removeAnomaly = true;
+        public bool showBorders = true;
 
         // Realism mode: every removal on. Casual mode: every removal off.
         public bool AllRemovals(bool on) =>
             removeVanillaFactions == on && removeModernThings == on && hideModernResearch == on &&
-            hideVanillaScenarios == on && removeSciFiEvents == on && hideVanillaFaiths == on;
+            hideVanillaScenarios == on && removeSciFiEvents == on && hideVanillaFaiths == on && removeAnomaly == on;
 
         public void SetAll(bool on)
         {
             removeVanillaFactions = removeModernThings = hideModernResearch = on;
-            hideVanillaScenarios = removeSciFiEvents = hideVanillaFaiths = on;
+            hideVanillaScenarios = removeSciFiEvents = hideVanillaFaiths = removeAnomaly = on;
         }
 
         public override void ExposeData()
@@ -51,6 +53,8 @@ namespace AgeOfMigrations
             Scribe_Values.Look(ref accurateEarth, "accurateEarth", true);
             Scribe_Values.Look(ref hideVanillaFaiths, "hideVanillaFaiths", true);
             Scribe_Values.Look(ref showAllCultureTrees, "showAllCultureTrees", false);
+            Scribe_Values.Look(ref removeAnomaly, "removeAnomaly", true);
+            Scribe_Values.Look(ref showBorders, "showBorders", true);
         }
     }
 
@@ -77,7 +81,8 @@ namespace AgeOfMigrations
             l.Label("Mode: " + (realism ? "Realism" : casual ? "Casual" : "Custom"));
             Text.Font = GameFont.Small;
             if (l.RadioButton("Realism", realism)) s.SetAll(true);
-            l.Label("    Only what fits the year 395: no guns, electricity, computers, components, spacecraft, vanilla factions or sci-fi events.");
+            l.Label("    Only what fits the year 395: no guns, electricity, computers, components, spacecraft, vanilla factions, " +
+                    "Anomaly horrors, insect hives, mechanoids or other sci-fi events.");
             if (l.RadioButton("Casual", casual)) s.SetAll(false);
             l.Label("    Nothing is taken out of vanilla. The mod only adds its peoples, buildings, gear and research.");
             l.Gap(6f);
@@ -100,13 +105,18 @@ namespace AgeOfMigrations
                 "When you create a world, choose one of the real faiths of 395 (Catholic, Orthodox, Arian, Gothic and Ostrogothic Churches, " +
                 "the Old Gods, the Frankish Gods, Tengri, the Zoroastrian Faith) or make your own. Untick to see the vanilla presets as well.");
             l.CheckboxLabeled("Turn off sci-fi events", ref Settings.removeSciFiEvents,
-                "No orbital traders, drop pods, crashed ship parts, mechanoid clusters or mechanoid raids.");
+                "No orbital traders, drop pods, crashed ship parts, mechanoid clusters or raids, insect infestations, " +
+                "insect hives in caves or ancient shrines with cryptosleep caskets.");
+            l.CheckboxLabeled("Remove the Anomaly expansion", ref Settings.removeAnomaly,
+                "No monolith, no entities, no dark rituals: Anomaly's events, research, buildings and items are switched off.");
             l.GapLine();
             l.CheckboxLabeled("Accurate map of the late Roman world", ref Settings.accurateEarth,
                 "New worlds become Europe, North Africa and the Near East as they really are: coasts, seas, mountains, climate and rivers, " +
                 "with real latitudes and seasons. Every people starts where it was in 395 AD, and the cities stand where they really stood " +
                 "(Roma, Ravenna, Constantinopolis, Ctesiphon, Londinium, Alexandria...). The seas, mountains and lands carry their Latin names. " +
                 "Works with any planet coverage; 30% gives a good level of detail. Turn it off for a random RimWorld planet.");
+            l.CheckboxLabeled("Show the borders of the peoples on the world map", ref Settings.showBorders,
+                "Each people's lands are tinted in its colour, with a border along their edge.");
             l.CheckboxLabeled("Show every people's research tree", ref Settings.showAllCultureTrees,
                 "Normally a Roman colony only sees the Roman tree, a barbarian band the barbarian tree and a Persian colony the Persian tree. " +
                 "Turn this on to see all three.");
@@ -206,10 +216,64 @@ namespace AgeOfMigrations
         private static readonly string[] SciFiIncidents =
         {
             "OrbitalTraderArrival", "ResourcePodCrash", "RefugeePodCrash", "ShipChunkDrop", "PsychicEmanatorShipPartCrash",
-            "DefoliatorShipPartCrash", "MechCluster", "MechanoidRaid", "WastepackInfestation",
+            "DefoliatorShipPartCrash", "MechCluster", "MechanoidRaid", "WastepackInfestation", "Infestation", "DeepDrillInfestation",
         };
 
         private static bool Official(Def d) => d.modContentPack != null && d.modContentPack.IsOfficialMod;
+        private static bool Ours(Def d) => d.modContentPack != null && AoMMod.Instance != null && d.modContentPack == AoMMod.Instance.Content;
+        private static bool FromAnomaly(Def d) =>
+            d.modContentPack != null && string.Equals(d.modContentPack.PackageId, "ludeon.rimworld.anomaly", StringComparison.OrdinalIgnoreCase);
+
+        private static void RemoveAnomaly()
+        {
+            var royalty = AccessTools.Field(typeof(IncidentDef), "baseChanceWithRoyalty");
+            int inc = 0;
+            foreach (var d in DefDatabase<IncidentDef>.AllDefsListForReading.Where(FromAnomaly))
+            {
+                d.baseChance = 0f;
+                if (royalty != null && royalty.FieldType == typeof(float)) royalty.SetValue(d, 0f);
+                inc++;
+            }
+            var research = DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(FromAnomaly).ToList();
+            foreach (var p in research) DefDb<ResearchProjectDef>.Remove(p);
+            var used = new HashSet<ResearchTabDef>(DefDatabase<ResearchProjectDef>.AllDefsListForReading.Select(p => p.tab));
+            foreach (var t in DefDatabase<ResearchTabDef>.AllDefsListForReading.Where(FromAnomaly).ToList())
+                if (!used.Contains(t)) DefDb<ResearchTabDef>.Remove(t);
+            var gone = new HashSet<BuildableDef>();
+            var items = new HashSet<ThingDef>();
+            foreach (var d in DefDatabase<ThingDef>.AllDefsListForReading.Where(FromAnomaly))
+            {
+                if (d.designationCategory != null) { d.designationCategory = null; gone.Add(d); }
+                if (d.category == ThingCategory.Item)
+                {
+                    d.tradeability = Tradeability.None; d.thingSetMakerTags?.Clear(); d.generateCommonality = 0f;
+                    d.weaponTags?.Clear(); d.apparel?.tags?.Clear(); items.Add(d);
+                }
+            }
+            foreach (var t in DefDatabase<TerrainDef>.AllDefsListForReading.Where(FromAnomaly))
+                if (t.designationCategory != null) { t.designationCategory = null; gone.Add(t); }
+            var recipes = DefDatabase<RecipeDef>.AllDefsListForReading
+                .Where(r => FromAnomaly(r) || (r.products != null && r.products.Any(p => items.Contains(p.thingDef)))).ToList();
+            var cache = AccessTools.Field(typeof(ThingDef), "allRecipesCached");
+            foreach (var r in recipes) r.recipeUsers?.Clear();
+            foreach (var b in DefDatabase<ThingDef>.AllDefsListForReading)
+            {
+                if (b.recipes != null) b.recipes.RemoveAll(recipes.Contains);
+                cache?.SetValue(b, null);
+            }
+            StripDesignators(gone);
+            foreach (var c in DefDatabase<DesignationCategoryDef>.AllDefsListForReading.Where(FromAnomaly).ToList())
+                DefDb<DesignationCategoryDef>.Remove(c);
+            Log.Message($"[Age of Migrations] removed Anomaly: {inc} events, {research.Count} research projects, {gone.Count} buildings, {items.Count} items.");
+        }
+
+        private static void StripDesignators(HashSet<BuildableDef> gone)
+        {
+            if (gone.Count == 0) return;
+            foreach (var cat in DefDatabase<DesignationCategoryDef>.AllDefsListForReading)
+                foreach (var f in AccessTools.GetDeclaredFields(typeof(DesignationCategoryDef)))
+                    if (f.GetValue(cat) is List<Designator> list) Strip(list, gone);
+        }
 
         public static void Apply()
         {
@@ -221,6 +285,7 @@ namespace AgeOfMigrations
             Run("scenarios", s.hideVanillaScenarios, HideScenarios);
             Run("events", s.removeSciFiEvents, RemoveSciFiEvents);
             Run("ideoligion presets", s.hideVanillaFaiths && ModsConfig.IdeologyActive, HideVanillaFaiths);
+            Run("Anomaly content", s.removeAnomaly && ModsConfig.AnomalyActive, RemoveAnomaly);
         }
 
         private static void Run(string what, bool on, Action act)
@@ -236,7 +301,8 @@ namespace AgeOfMigrations
             int n = 0;
             foreach (var f in DefDatabase<FactionDef>.AllDefsListForReading)
             {
-                if (!Official(f) || f.isPlayer || f.hidden || KeepFactions.Contains(f.defName)) continue;
+                // every faction that is not one of our peoples: vanilla, DLC and other mods
+                if (Ours(f) || f.isPlayer || f.hidden || KeepFactions.Contains(f.defName)) continue;
                 f.startingCountAtWorldCreation = 0;
                 f.maxConfigurableAtWorldCreation = 0;
                 f.requiredCountAtGameStart = 0;
@@ -303,9 +369,7 @@ namespace AgeOfMigrations
                 gone.Add(t);
             }
             if (gone.Count == 0) return;
-            foreach (var cat in DefDatabase<DesignationCategoryDef>.AllDefsListForReading)
-                foreach (var f in AccessTools.GetDeclaredFields(typeof(DesignationCategoryDef)))
-                    if (f.GetValue(cat) is List<Designator> list) Strip(list, gone);
+            StripDesignators(gone);
             Log.Message($"[Age of Migrations] removed {gone.Count} electric, computer and spacer buildings and floors.");
         }
 

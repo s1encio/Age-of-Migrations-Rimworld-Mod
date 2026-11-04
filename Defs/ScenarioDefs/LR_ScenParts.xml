@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ScenPartDef>
+    <defName>LR_People</defName>
+    <label>belong to a people</label>
+    <category>Misc</category>
+    <scenPartClass>AgeOfMigrations.ScenPart_People</scenPartClass>
+    <maxUses>1</maxUses>
+    <summaryPriority>500</summaryPriority>
+  </ScenPartDef>
+</Defs>

@@ -23,9 +23,31 @@
     </modExtensions>
   </FactionDef>
   <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerEastRomans</defName>
+    <label>Roman settlers of the East</label>
+    <description>A small band of romans setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>Roman</pawnSingular>
+    <pawnsPlural>Romans</pawnsPlural>
+    <basicMemberKind>LR_EastRomansSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <factionIconPath>World/LR_FactionIcon</factionIconPath>
+    <colorSpectrum><li>(0.45, 0.12, 0.42)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementEast</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionEast</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementEast</settlementNameMaker>
+    <allowedCultures><li>LR_RomanCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_CivilStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
     <defName>LR_PlayerBarbarians</defName>
-    <label>barbarian war band</label>
-    <description>A small band of barbarians setting out to make a home of their own.</description>
+    <label>Vandal war band</label>
+    <description>A small band of warriors setting out to make a home of their own.</description>
     <isPlayer>true</isPlayer>
     <pawnSingular>warrior</pawnSingular>
     <pawnsPlural>warriors</pawnsPlural>
@@ -33,11 +55,121 @@
     <techLevel>Medieval</techLevel>
     <backstoryCategories><li>Tribal</li></backstoryCategories>
     <factionIconPath>World/LR_VandalIcon</factionIconPath>
-    <colorSpectrum><li>(0.25, 0.45, 0.2)</li></colorSpectrum>
+    <colorSpectrum><li>(0.16, 0.55, 0.55)</li></colorSpectrum>
     <playerInitialSettlementNameMaker>LR_NamerSettlementVandal</playerInitialSettlementNameMaker>
     <factionNameMaker>LR_NamerFactionVandal</factionNameMaker>
     <settlementNameMaker>LR_NamerSettlementVandal</settlementNameMaker>
     <allowedCultures><li>LR_GermanicCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerVisigoths</defName>
+    <label>Visigothic war band</label>
+    <description>A small band of warriors setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>warrior</pawnSingular>
+    <pawnsPlural>warriors</pawnsPlural>
+    <basicMemberKind>LR_VisigothsSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <factionIconPath>World/LR_GothIcon</factionIconPath>
+    <colorSpectrum><li>(0.16, 0.35, 0.78)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementGoth</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionGoth</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementGoth</settlementNameMaker>
+    <allowedCultures><li>LR_GothicCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerOstrogoths</defName>
+    <label>Ostrogothic war band</label>
+    <description>A small band of warriors setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>warrior</pawnSingular>
+    <pawnsPlural>warriors</pawnsPlural>
+    <basicMemberKind>LR_OstrogothsSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <factionIconPath>World/LR_OstroIcon</factionIconPath>
+    <colorSpectrum><li>(0.12, 0.2, 0.5)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementOstro</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionOstro</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementOstro</settlementNameMaker>
+    <allowedCultures><li>LR_OstroCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerFranks</defName>
+    <label>Frankish war band</label>
+    <description>A small band of warriors setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>warrior</pawnSingular>
+    <pawnsPlural>warriors</pawnsPlural>
+    <basicMemberKind>LR_FranksSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <factionIconPath>World/LR_FrankIcon</factionIconPath>
+    <colorSpectrum><li>(0.47, 0.78, 0.24)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementFrank</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionFrank</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementFrank</settlementNameMaker>
+    <allowedCultures><li>LR_FrankCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerSaxons</defName>
+    <label>Saxon war band</label>
+    <description>A small band of warriors setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>warrior</pawnSingular>
+    <pawnsPlural>warriors</pawnsPlural>
+    <basicMemberKind>LR_SaxonsSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <factionIconPath>World/LR_SaxonIcon</factionIconPath>
+    <colorSpectrum><li>(0.16, 0.55, 0.16)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementSaxon</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionSaxon</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementSaxon</settlementNameMaker>
+    <allowedCultures><li>LR_SaxonCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Barbarian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerHuns</defName>
+    <label>Hun nomads</label>
+    <description>A small band of huns setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>Hun</pawnSingular>
+    <pawnsPlural>Huns</pawnsPlural>
+    <basicMemberKind>LR_HunsSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
+    <factionIconPath>World/LR_HunIcon</factionIconPath>
+    <colorSpectrum><li>(0.62, 0.45, 0.12)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementHun</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionHun</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementHun</settlementNameMaker>
+    <allowedCultures><li>LR_HunnicCulture</li></allowedCultures>
     <startingResearchTags><li>TribalStart</li><li>LR_BarbarianStart</li></startingResearchTags>
     <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
     <modExtensions>
@@ -64,6 +196,28 @@
     <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
     <modExtensions>
       <li Class="AgeOfMigrations.ResearchCulture"><culture>Persian</culture></li>
+    </modExtensions>
+  </FactionDef>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LR_PlayerFreemen</defName>
+    <label>freemen</label>
+    <description>A small band of freemen setting out to make a home of their own.</description>
+    <isPlayer>true</isPlayer>
+    <pawnSingular>freeman</pawnSingular>
+    <pawnsPlural>freemen</pawnsPlural>
+    <basicMemberKind>LR_FreemenSettler</basicMemberKind>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories><li>Outlander</li></backstoryCategories>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <colorSpectrum><li>(0.55, 0.5, 0.42)</li></colorSpectrum>
+    <playerInitialSettlementNameMaker>LR_NamerSettlementWest</playerInitialSettlementNameMaker>
+    <factionNameMaker>LR_NamerFactionWest</factionNameMaker>
+    <settlementNameMaker>LR_NamerSettlementWest</settlementNameMaker>
+    <allowedCultures><li>LR_RomanCulture</li></allowedCultures>
+    <startingResearchTags><li>TribalStart</li><li>LR_CivilStart</li></startingResearchTags>
+    <apparelStuffFilter><thingDefs><li>Cloth</li><li>WoolSheep</li></thingDefs></apparelStuffFilter>
+    <modExtensions>
+      <li Class="AgeOfMigrations.ResearchCulture"><culture>Roman</culture></li>
     </modExtensions>
   </FactionDef>
 </Defs>

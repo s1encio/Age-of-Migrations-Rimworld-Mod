@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>LR_BarbarianRaid</defName>
+    <label>barbarian raid</label>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>AgeOfMigrations.IncidentWorker_PeopleRaid</workerClass>
+    <baseChance>3.0</baseChance>
+    <minRefireDays>8</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Raid</tale>
+    <letterLabel>Barbarian raid</letterLabel>
+    <letterText>Smoke on the horizon and the blare of horns: a war band of {FACTION} has come for plunder, cattle and slaves.</letterText>
+    <modExtensions>
+      <li Class="AgeOfMigrations.RaidPeoples"><peoples><li>LR_Vandals</li><li>LR_Visigoths</li><li>LR_Ostrogoths</li><li>LR_Franks</li><li>LR_Saxons</li></peoples></li>
+    </modExtensions>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>LR_HunRaid</defName>
+    <label>Hun raid</label>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>AgeOfMigrations.IncidentWorker_PeopleRaid</workerClass>
+    <baseChance>2.0</baseChance>
+    <minRefireDays>8</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Raid</tale>
+    <letterLabel>Hun raid</letterLabel>
+    <letterText>Riders! A band of {FACTION} horsemen sweeps in from the plain, bows strung, to take whatever they can carry.</letterText>
+    <modExtensions>
+      <li Class="AgeOfMigrations.RaidPeoples"><peoples><li>LR_Huns</li></peoples></li>
+    </modExtensions>
+  </IncidentDef>
+</Defs>

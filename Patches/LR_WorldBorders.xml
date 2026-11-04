@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PlanetLayerDef[defName="Surface"]/worldDrawLayers</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/PlanetLayerDef[defName="Surface"]/worldDrawLayers</xpath>
+      <value><li>AgeOfMigrations.WorldDrawLayer_Borders</li></value>
+    </match>
+  </Operation>
+</Patch>
