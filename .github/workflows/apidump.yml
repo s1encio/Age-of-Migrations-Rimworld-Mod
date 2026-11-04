@@ -29,9 +29,9 @@ jobs:
           DLL=$(find ~/.nuget/packages/krafs.rimworld.ref -name Assembly-CSharp.dll | head -1)
           echo "DLL=$DLL"
           mkdir -p out
-          for T in RimWorld.IdeoPresetDef RimWorld.IdeoPresetCategoryDef RimWorld.Page_ChooseIdeoPreset RimWorld.IdeoGenerationParms RimWorld.IdeoGenerator RimWorld.IdeoFoundation RimWorld.IdeoFoundation_Deity RimWorld.Ideo RimWorld.MemeDef RimWorld.IdeoUIUtility RimWorld.CultureDef RimWorld.IdeoStyleCategoryDef RimWorld.IdeoPresetCategoryDefOf; do
+          for T in RimWorld.Planet.WorldDrawLayer RimWorld.Planet.WorldDrawLayer_Roads RimWorld.Planet.WorldDrawLayer_SingleTile RimWorld.Planet.WorldDrawLayer_Hills RimWorld.Planet.LayerSubMesh RimWorld.Planet.WorldRendererUtility RimWorld.Planet.PlanetLayer RimWorld.Planet.SurfaceLayer RimWorld.Planet.WorldGrid RimWorld.Planet.PlanetTile RimWorld.Planet.WorldRenderer RimWorld.Planet.TileFinder RimWorld.Page_SelectStartingSite RimWorld.Scenario RimWorld.ScenPart RimWorld.ScenPart_PlayerFaction RimWorld.ScenPart_StartingAnimal RimWorld.ScenPartDef RimWorld.IncidentWorker_RaidEnemy RimWorld.IncidentWorker_Raid RimWorld.IncidentWorker_PawnsArrive RimWorld.IncidentParms RimWorld.IncidentDef RimWorld.Difficulty RimWorld.AnomalyPlaystyleDef RimWorld.Faction RimWorld.FactionManager RimWorld.GameInitData RimWorld.Planet.WorldObjectsHolder RimWorld.Planet.Settlement RimWorld.FactionDef RimWorld.Planet.WorldGenStep_Factions RimWorld.Planet.FactionGenerator RimWorld.Page_ConfigureStartingPawns RimWorld.StorytellerComp_OnOffCycle RimWorld.StorytellerComp_FactionInteraction Verse.ModsConfig RimWorld.Planet.WorldLayerSettingsDef RimWorld.Planet.WorldMaterials RimWorld.Planet.WorldDrawLayer_CurrentMapTile RimWorld.Planet.WorldDrawLayer_Rivers RimWorld.Planet.WorldDrawLayer_Paths RimWorld.Planet.WorldFeatures; do
             echo "=================== $T"
-            ilspycmd -t "$T" "$DLL" 2>&1 | grep -v "^\s*$" | sed 's/{ throw null; }//' | head -700 || true
+            ilspycmd -t "$T" "$DLL" 2>&1 | grep -v "^\s*$" | sed 's/{ throw null; }//' | head -400 || true
           done > out/api.txt
           wc -l out/api.txt
       - name: save
