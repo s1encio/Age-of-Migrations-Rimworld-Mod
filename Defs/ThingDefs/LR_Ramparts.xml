@@ -39,13 +39,13 @@
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
     <holdsRoof>false</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2010</uiOrder>
     <staticSunShadowHeight>1.2</staticSunShadowHeight>
     <blockLight>false</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites Inherit="False"><li>LR_R_Limes</li></researchPrerequisites>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <building>
@@ -107,13 +107,13 @@
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
     <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2011</uiOrder>
     <staticSunShadowHeight>1.8</staticSunShadowHeight>
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites Inherit="False"><li>LR_R_Limes</li></researchPrerequisites>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <building>
       <isInert>true</isInert>
@@ -174,7 +174,7 @@
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
     <holdsRoof>false</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2010</uiOrder>
     <staticSunShadowHeight>1.2</staticSunShadowHeight>
     <blockLight>false</blockLight>
@@ -202,7 +202,6 @@
         <single>false</single>
       </li>
     </modExtensions>
-    <researchPrerequisites Inherit="False"><li>LR_P_Masonry</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_PersianCurtain</defName>
@@ -243,7 +242,7 @@
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
     <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2011</uiOrder>
     <staticSunShadowHeight>1.8</staticSunShadowHeight>
     <blockLight>true</blockLight>
@@ -270,7 +269,6 @@
         <single>false</single>
       </li>
     </modExtensions>
-    <researchPrerequisites Inherit="False"><li>LR_P_Masonry</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_EarthRampart</defName>
@@ -310,7 +308,7 @@
     <selectable>true</selectable>
     <neverMultiSelect>true</neverMultiSelect>
     <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2012</uiOrder>
     <staticSunShadowHeight>1.5</staticSunShadowHeight>
     <blockLight>true</blockLight>
@@ -329,6 +327,209 @@
       <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
     </damageMultipliers>
     <modExtensions>
+      <li Class="AgeOfMigrations.TallFaceExtension">
+        <facePath>Things/Building/LR/LR_EarthFace</facePath>
+        <tinted>false</tinted>
+        <northOnly>false</northOnly>
+        <single>false</single>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_CityWall</defName>
+    <label>city wall</label>
+    <description>A Roman city wall: a thick curtain of ashlar crowned by a battlemented parapet. Build it as one line and post your archers right behind it: whoever stands against the inside of their own wall fights from it, aiming better and harder to hit from below.</description>
+    <thingClass>AgeOfMigrations.Building_Rampart</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_CityWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_CityWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>1100</MaxHitPoints>
+      <WorkToBuild>900</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>16</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.75</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <staticSunShadowHeight>1.8</staticSunShadowHeight>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><researchPrerequisites Inherit="False"><li>LR_R_Limes</li></researchPrerequisites>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <building>
+      <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+    <modExtensions><li Class="AgeOfMigrations.WallWalkExtension" />
+      <li Class="AgeOfMigrations.TallFaceExtension">
+        <facePath>Things/Building/LR/LR_WallFace</facePath>
+        <tinted>true</tinted>
+        <northOnly>false</northOnly>
+        <single>false</single>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_PersianCityWall</defName>
+    <label>Persian city wall</label>
+    <description>A Persian city wall of mudbrick faced with baked brick, crowned by stepped battlements. Build it as one line and post your archers right behind it: whoever stands against the inside of their own wall fights from it, aiming better and harder to hit from below.</description>
+    <thingClass>AgeOfMigrations.Building_Rampart</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_PersianCityWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_PersianCityWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>1050</MaxHitPoints>
+      <WorkToBuild>850</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <stuffCategories><li>Stony</li></stuffCategories>
+    <costStuffCount>16</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.75</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2001</uiOrder>
+    <staticSunShadowHeight>1.8</staticSunShadowHeight>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <building>
+      <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+    <modExtensions><li Class="AgeOfMigrations.WallWalkExtension" />
+      <li Class="AgeOfMigrations.TallFaceExtension">
+        <facePath>Things/Building/LR/LR_PersianCurtainFace</facePath>
+        <tinted>true</tinted>
+        <northOnly>false</northOnly>
+        <single>false</single>
+      </li>
+    </modExtensions>
+    <researchPrerequisites Inherit="False"><li>LR_P_Masonry</li></researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LR_EarthWall</defName>
+    <label>earth rampart</label>
+    <description>A bank of earth and cut turf with a palisade of stakes along its crest: the agger of a Roman camp, or the bank of a barbarian stronghold. Soaks up blows that would crack stone. Build it as one line and post your archers right behind it: whoever stands against the inside of their own wall fights from it, aiming better and harder to hit from below.</description>
+    <thingClass>AgeOfMigrations.Building_Rampart</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/LR/LR_EarthWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop><edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft><edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LR/LR_EarthWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>900</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList><WoodLog>8</WoodLog></costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.75</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2002</uiOrder>
+    <staticSunShadowHeight>1.5</staticSunShadowHeight>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <building>
+      <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <damageMultipliers>
+      <li><damageDef>Bomb</damageDef><multiplier>2</multiplier></li>
+      <li><damageDef>Thump</damageDef><multiplier>2</multiplier></li>
+    </damageMultipliers>
+    <modExtensions><li Class="AgeOfMigrations.WallWalkExtension" />
       <li Class="AgeOfMigrations.TallFaceExtension">
         <facePath>Things/Building/LR/LR_EarthFace</facePath>
         <tinted>false</tinted>
@@ -367,7 +568,7 @@
     <rotatable>false</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <holdsRoof>false</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2013</uiOrder>
     <staticSunShadowHeight>1.1</staticSunShadowHeight>
     <blockLight>false</blockLight>
@@ -387,7 +588,6 @@
         <single>false</single>
       </li>
     </modExtensions>
-    <researchPrerequisites Inherit="False"><li>LR_B_Palisades</li></researchPrerequisites>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>LR_RampartStairs</defName>
@@ -413,7 +613,7 @@
     <fillPercent>0</fillPercent>
     <rotatable>true</rotatable>
     <tickerType>Never</tickerType>
-    <designationCategory>Structure</designationCategory>
+    
     <uiOrder>2014</uiOrder>
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>

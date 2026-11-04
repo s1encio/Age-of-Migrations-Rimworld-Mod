@@ -272,6 +272,42 @@
     <thing>LR_RampartStairs</thing><stuff>WoodLog</stuff>
   </KCSG.SymbolDef>
   <KCSG.SymbolDef>
+    <defName>LR_CityWall_BlocksSandstone</defName>
+    <thing>LR_CityWall</thing><stuff>BlocksSandstone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_PersianCityWall_BlocksSandstone</defName>
+    <thing>LR_PersianCityWall</thing><stuff>BlocksSandstone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_CityWall_BlocksLimestone</defName>
+    <thing>LR_CityWall</thing><stuff>BlocksLimestone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_PersianCityWall_BlocksLimestone</defName>
+    <thing>LR_PersianCityWall</thing><stuff>BlocksLimestone</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_CityWall_BlocksMarble</defName>
+    <thing>LR_CityWall</thing><stuff>BlocksMarble</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_PersianCityWall_BlocksMarble</defName>
+    <thing>LR_PersianCityWall</thing><stuff>BlocksMarble</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_CityWall_BlocksGranite</defName>
+    <thing>LR_CityWall</thing><stuff>BlocksGranite</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_PersianCityWall_BlocksGranite</defName>
+    <thing>LR_PersianCityWall</thing><stuff>BlocksGranite</stuff>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
+    <defName>LR_EarthWall</defName>
+    <thing>LR_EarthWall</thing>
+  </KCSG.SymbolDef>
+  <KCSG.SymbolDef>
     <defName>LR_PersianWall_BlocksSandstone</defName>
     <thing>LR_PersianWall</thing><stuff>BlocksSandstone</stuff>
   </KCSG.SymbolDef>

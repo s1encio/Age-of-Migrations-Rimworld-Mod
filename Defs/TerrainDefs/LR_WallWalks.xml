@@ -10,6 +10,7 @@
     <statBases><WorkToBuild>700</WorkToBuild><Beauty>0</Beauty></statBases>
     <costList><BlocksGranite>3</BlocksGranite></costList>
     <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+    <designationCategory IsNull="True" />
     <modExtensions><li Class="AgeOfMigrations.WallWalkExtension" /></modExtensions>
   </TerrainDef>
   <TerrainDef ParentName="FloorBase">
@@ -21,6 +22,7 @@
     <renderPrecedence>253</renderPrecedence>
     <statBases><WorkToBuild>400</WorkToBuild><Beauty>0</Beauty><Flammability>0.4</Flammability></statBases>
     <costList><WoodLog>3</WoodLog></costList>
+    <designationCategory IsNull="True" />
     <modExtensions><li Class="AgeOfMigrations.WallWalkExtension" /></modExtensions>
   </TerrainDef>
 </Defs>

@@ -40,7 +40,31 @@ namespace AgeOfMigrations
             return c.GetTerrain(map)?.GetModExtension<WallWalkExtension>();
         }
 
-        public static WallWalkExtension Of(Thing t) => t is Pawn p && p.Spawned ? At(p.Position, p.Map) : null;
+        /// <summary>On a wall walk, or standing right behind a wall of their own side (one-piece walls carry the extension).</summary>
+        public static WallWalkExtension Of(Thing t)
+        {
+            if (!(t is Pawn p) || !p.Spawned)
+                return null;
+            return At(p.Position, p.Map) ?? Manning(p);
+        }
+
+        public static WallWalkExtension Manning(Pawn p)
+        {
+            Map map = p.Map;
+            if (map == null || p.Faction == null)
+                return null;
+            for (int i = 0; i < 4; i++)
+            {
+                IntVec3 c = p.Position + GenAdj.CardinalDirections[i];
+                if (!c.InBounds(map))
+                    continue;
+                Building e = c.GetEdifice(map);
+                WallWalkExtension ext = e?.def.GetModExtension<WallWalkExtension>();
+                if (ext != null && (e.Faction ?? map.ParentFaction) == p.Faction)
+                    return ext;
+            }
+            return null;
+        }
     }
 
     public class Building_Rampart : Building
@@ -217,7 +241,7 @@ namespace AgeOfMigrations
             int n = 0;
             foreach (Pawn p in map.mapPawns.SpawnedPawnsInFaction(faction).ToList())
             {
-                if (!p.RaceProps.Humanlike || p.Downed || WallWalk.At(p.Position, map) == null)
+                if (!p.RaceProps.Humanlike || p.Downed || WallWalk.Of(p) == null)
                     continue;
                 LordJob job = MakeDefendPoint(p.Position);
                 if (job == null)
