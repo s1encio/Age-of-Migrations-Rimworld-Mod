@@ -31,6 +31,7 @@ namespace AgeOfMigrations
         public bool removeAnomaly = true;
         public bool showBorders = true;
         public bool showTopBar = true;
+        public bool factionScreen = true;
         public bool showBottomBar = true;
         public bool showMinimap = true;
         public bool yearAD = true;
@@ -60,6 +61,7 @@ namespace AgeOfMigrations
             Scribe_Values.Look(ref removeAnomaly, "removeAnomaly", true);
             Scribe_Values.Look(ref showBorders, "showBorders", true);
             Scribe_Values.Look(ref showTopBar, "showTopBar", true);
+            Scribe_Values.Look(ref factionScreen, "factionScreen", true);
             Scribe_Values.Look(ref showBottomBar, "showBottomBar", true);
             Scribe_Values.Look(ref showMinimap, "showMinimap", true);
             Scribe_Values.Look(ref yearAD, "yearAD", true);
@@ -123,6 +125,8 @@ namespace AgeOfMigrations
                 "with real latitudes and seasons. Every people starts where it was in 395 AD, and the cities stand where they really stood " +
                 "(Roma, Ravenna, Constantinopolis, Ctesiphon, Londinium, Alexandria...). The seas, mountains and lands carry their Latin names. " +
                 "Works with any planet coverage; 30% gives a good level of detail. Turn it off for a random RimWorld planet.");
+            l.CheckboxLabeled("New games start from the faction screen", ref Settings.factionScreen,
+                "\"New colony\" opens a Total War style faction choice and starts the campaign at once. Untick for RimWorld's own setup pages.");
             l.CheckboxLabeled("Show the treasury bar at the top of the screen", ref Settings.showTopBar,
                 "Gold, daily income, food in store and the year, in a bar at the top of the screen.");
             l.CheckboxLabeled("Show the faction bar at the bottom", ref Settings.showBottomBar,
