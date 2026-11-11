@@ -1,4 +1,88 @@
-=================== RimWorld.Planet.WorldDrawLayerBase
+=================== RimWorld.Planet.WorldGenerator
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld.Planet;
+public static class WorldGenerator
+{
+	public const float DefaultPlanetCoverage = 0.3f;
+	public const float DefaultPlanetCoverageOdyssey = 0.5f;
+	public const OverallRainfall DefaultOverallRainfall = OverallRainfall.Normal;
+	public const OverallPopulation DefaultOverallPopulation = OverallPopulation.Normal;
+	public const OverallTemperature DefaultOverallTemperature = OverallTemperature.Normal;
+	public const LandmarkDensity DefaultLandmarkDensity = LandmarkDensity.Normal;
+	public const float DefaultPollutionCoverage = 0.05f;
+	private static List<GameSetupStepDef> cachedGenSteps;
+	private static extern List<GameSetupStepDef> GameSetupStepsInOrder { get; }
+	public static extern World GenerateWorld(float planetCoverage, string seedString, OverallRainfall overallRainfall, OverallTemperature overallTemperature, OverallPopulation population, LandmarkDensity landmarkDensity, List<FactionDef> factions = null, float pollution = 0f);
+	public static extern void GeneratePlanetLayer(PlanetLayer layer, string seedString, int seed);
+	public static extern void GenerateWithoutWorldData(string seedString);
+	public static extern void GenerateFromScribe(string seedString);
+	private static extern int GetSeedPart(List<WorldGenStepDef> genSteps, int index);
+	private static extern int GetSeedFromSeedString(string seedString);
+}
+=================== RimWorld.Page_CreateWorldParams
+using System.Collections.Generic;
+using RimWorld.Planet;
+using UnityEngine;
+namespace RimWorld;
+public class Page_CreateWorldParams : Page
+{
+	private bool initialized;
+	private string seedString;
+	private float planetCoverage;
+	private OverallRainfall rainfall;
+	private OverallTemperature temperature;
+	private OverallPopulation population;
+	private LandmarkDensity landmarkDensity;
+	public float pollution;
+	private List<FactionDef> factions;
+	private List<FactionDef> initialFactions;
+	private static readonly float[] PlanetCoverages;
+	private static readonly float[] PlanetCoveragesDev;
+	private const float LabelWidth = 200f;
+	public override extern string PageTitle { get; }
+	public override extern void PreOpen();
+	public override extern void PostOpen();
+	public extern void Reset();
+	private extern void ResetFactionCounts();
+	public override extern void DoWindowContents(Rect rect);
+	protected override extern bool CanDoNext();
+	public extern Page_CreateWorldParams();
+	static extern Page_CreateWorldParams();
+}
+=================== RimWorld.Page_SelectScenario
+using System.Collections.Generic;
+using Steamworks;
+using UnityEngine;
+using Verse;
+namespace RimWorld;
+[StaticConstructorOnStartup]
+public class Page_SelectScenario : Page
+{
+	private Scenario curScen;
+	private Vector2 infoScrollPosition;
+	private const float ScenarioEntryHeight = 68f;
+	private static readonly Texture2D CanUploadIcon;
+	private static readonly Texture2D WarningIcon;
+	private Vector2 scenariosScrollPosition;
+	private float totalScenarioListHeight;
+	public override extern string PageTitle { get; }
+	public override extern void PreOpen();
+	public override extern void DoWindowContents(Rect rect);
+	private extern bool CanEditScenario(Scenario scen);
+	private extern void GoToScenarioEditor();
+	private extern void DoScenarioSelectionList(Rect rect);
+	private extern void ListScenariosOnListing(Listing_Standard listing, IEnumerable<Scenario> scenarios);
+	private extern void DoScenarioListEntry(Rect rect, Scenario scen);
+	protected override extern bool CanDoNext();
+	public static extern void BeginScenarioConfiguration(Scenario scen, Page originPage);
+	private extern void EnsureValidSelection();
+	internal extern void Notify_ScenarioListChanged();
+	internal extern void Notify_SteamItemUnsubscribed(PublishedFileId_t pfid);
+	public extern Page_SelectScenario();
+	static extern Page_SelectScenario();
+}
+=================== RimWorld.Storyteller
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,17 +90,23 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using Verse;
-namespace RimWorld.Planet;
-public abstract class WorldDrawLayerBase
+namespace RimWorld;
+public class Storyteller : IExposable
 {
 	[CompilerGenerated]
-	private sealed class <Regenerate>d__31 : IEnumerable<object>, IEnumerable, IEnumerator<object>, IEnumerator, IDisposable
+	private sealed class <MakeIncidentsForInterval>d__48 : IEnumerable<FiringIncident>, IEnumerable, IEnumerator<FiringIncident>, IEnumerator, IDisposable
 	{
 		private int <>1__state;
-		private object <>2__current;
+		private FiringIncident <>2__current;
 		private int <>l__initialThreadId;
-		public WorldDrawLayerBase <>4__this;
-		extern object IEnumerator<object>.Current
+		public Storyteller <>4__this;
+		private List<IIncidentTarget> <targets>5__2;
+		private List<Quest> <quests>5__3;
+		private int <i>5__4;
+		private IEnumerator<FiringIncident> <>7__wrap4;
+		private List<QuestPart> <parts>5__6;
+		private int <j>5__7;
+		extern FiringIncident IEnumerator<FiringIncident>.Current
 		{
 			[DebuggerHidden]
 			get;
@@ -27,410 +117,751 @@ public abstract class WorldDrawLayerBase
 			get;
 		}
 		[DebuggerHidden]
-		public extern <Regenerate>d__31(int <>1__state);
+		public extern <MakeIncidentsForInterval>d__48(int <>1__state);
 		[DebuggerHidden]
 		extern void IDisposable.Dispose();
 		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		private extern void <>m__Finally2();
 		[DebuggerHidden]
 		extern void IEnumerator.Reset();
 		[DebuggerHidden]
-		extern IEnumerator<object> IEnumerable<object>.GetEnumerator();
+		extern IEnumerator<FiringIncident> IEnumerable<FiringIncident>.GetEnumerator();
 		[DebuggerHidden]
 		extern IEnumerator IEnumerable.GetEnumerator();
 	}
-	protected bool dirty;
-	private MaterialPropertyBlock propertyBlock;
-	protected readonly List<LayerSubMesh> subMeshes;
-	private const int MaxVerticesPerMesh = 40000;
-	public virtual extern bool ShouldRegenerate { get; }
-	protected virtual extern int RenderLayer { get; }
-	protected virtual extern Quaternion Rotation { get; }
-	protected virtual extern float Alpha { get; }
-	public extern bool Dirty { get; }
-	public virtual extern bool Visible { get; }
-	public virtual extern bool VisibleWhenLayerNotSelected { get; }
-	public virtual extern bool VisibleInBackground { get; }
-	public virtual extern Vector3 Position { get; }
-	public virtual extern bool CameraIsOrigin { get; }
-	public extern MaterialPropertyBlock MatPropBlock { get; }
-	protected extern LayerSubMesh GetSubMesh(Material material);
-	protected extern LayerSubMesh GetSubMesh(Material material, out int subMeshIndex);
-	protected extern void FinalizeMesh(MeshParts tags);
-	public extern void RegenerateNow();
-	public virtual extern void Render();
-	[IteratorStateMachine(typeof(<Regenerate>d__31))]
-	public virtual extern IEnumerable Regenerate();
-	public extern void SetDirty();
-	private extern void ClearSubMeshes(MeshParts parts);
-	public extern void Dispose();
-	protected extern WorldDrawLayerBase();
+	[CompilerGenerated]
+	private sealed class <MakeIncidentsForInterval>d__49 : IEnumerable<FiringIncident>, IEnumerable, IEnumerator<FiringIncident>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private FiringIncident <>2__current;
+		private int <>l__initialThreadId;
+		private StorytellerComp comp;
+		public StorytellerComp <>3__comp;
+		private List<IIncidentTarget> targets;
+		public List<IIncidentTarget> <>3__targets;
+		private int <i>5__2;
+		private IEnumerator<FiringIncident> <>7__wrap2;
+		extern FiringIncident IEnumerator<FiringIncident>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <MakeIncidentsForInterval>d__49(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<FiringIncident> IEnumerable<FiringIncident>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public StorytellerDef def;
+	public DifficultyDef difficultyDef;
+	public Difficulty difficulty;
+	public List<StorytellerComp> storytellerComps;
+	private static List<IncidentDef> anomalyIncidents;
+	private static List<IncidentDef> nonAnomalyIncidents;
+	public IncidentQueue incidentQueue;
+	private Queue<bool> recentIncidentsAnomaly;
+	private float recentAnomalyIncidentFactor;
+	private int lastQuestGiverTraderTick;
+	private int lastIncidentTick;
+	private float anomalyThreatsInactiveFraction;
+	private float anomalyThreatsActiveFraction;
+	private float? overrideAnomalyThreatsFraction;
+	private float studyEfficiencyFactor;
+	private AnomalyPlaystyleDef anomalyPlaystyleDef;
+	public static readonly Vector2 PortraitSizeTiny;
+	public static readonly Vector2 PortraitSizeLarge;
+	public const int IntervalsPerDay = 60;
+	public const int CheckInterval = 1000;
+	private const int RecentAnomalyIncidentsToRecord = 4;
+	private const float QuestGiverTraderChance = 0.15f;
+	private const int QuestGiverTraderMinIntervalTicks = 600000;
+	private const int QuestGiverTraderMaxIntervalTicks = 3600000;
+	private static readonly List<IIncidentTarget> tmpAllIncidentTargets;
+	private string debugStringCached;
+	[Obsolete("Use \"difficulty\" instead.")]
+	public extern Difficulty difficultyValues { get; }
+	public extern int LastIncidentTick { get; }
+	public extern List<IIncidentTarget> AllIncidentTargets { get; }
+	public static extern List<IncidentDef> AnomalyIncidents { get; }
+	public static extern List<IncidentDef> NonAnomalyIncidents { get; }
+	public extern float AnomalyIncidentChanceNow { get; }
+	public extern float QuestGiverTraderChanceNow { get; }
+	public static extern void StorytellerStaticUpdate();
+	public extern Storyteller();
+	public extern Storyteller(StorytellerDef def, DifficultyDef difficultyDef);
+	public extern Storyteller(StorytellerDef def, DifficultyDef difficultyDef, Difficulty difficulty);
+	private extern void InitializeStorytellerComps();
+	public extern void ExposeData();
+	private extern void SetupNonCustomDifficultyAnomalySettings();
+	public extern void StorytellerTick();
+	public extern bool TryFire(FiringIncident fi, bool queued = false);
+	[IteratorStateMachine(typeof(<MakeIncidentsForInterval>d__48))]
+	public extern IEnumerable<FiringIncident> MakeIncidentsForInterval();
+	[IteratorStateMachine(typeof(<MakeIncidentsForInterval>d__49))]
+	public extern IEnumerable<FiringIncident> MakeIncidentsForInterval(StorytellerComp comp, List<IIncidentTarget> targets);
+	public extern void Notify_PawnEvent(Pawn pawn, AdaptationEvent ev, DamageInfo? dinfo = null);
+	public extern void Notify_DissolutionEvent(Thing thing);
+	public extern void Notify_QuestGiverTraderSpawned();
+	public extern void Notify_DefChanged();
+	public extern void RecordIncidentFired(IncidentDef incident);
+	public static extern void ResetStaticData();
+	public extern string DebugString();
+	static extern Storyteller();
 }
-=================== Verse.LayerSubMesh
+=================== RimWorld.Page_SelectStoryteller
+using UnityEngine;
+using Verse;
+namespace RimWorld;
+public class Page_SelectStoryteller : Page
+{
+	private StorytellerDef storyteller;
+	private DifficultyDef difficulty;
+	private Difficulty difficultyValues;
+	private Listing_Standard selectedStorytellerInfoListing;
+	public override extern string PageTitle { get; }
+	public override extern void PreOpen();
+	public override extern void DoWindowContents(Rect rect);
+	protected override extern bool CanDoNext();
+	public extern Page_SelectStoryteller();
+}
+=================== RimWorld.PageUtility
+using System.Collections.Generic;
+namespace RimWorld;
+public static class PageUtility
+{
+	public static extern Page StitchedPages(IEnumerable<Page> pages);
+	public static extern void InitGameStart();
+}
+=================== RimWorld.StartingPawnUtility
+Could not find a type named 'RimWorld.StartingPawnUtility'.
+Did you mean one of the following?
+    Verse.StartingPawnUtility
+=================== RimWorld.ScenPart_ConfigPage_ConfigureStartingPawns
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld;
+public class ScenPart_ConfigPage_ConfigureStartingPawns : ScenPart_ConfigPage_ConfigureStartingPawnsBase
+{
+	public int pawnCount;
+	public DevelopmentalStage allowedDevelopmentalStages;
+	public List<SkillDef> requiredSkills;
+	private string pawnCountBuffer;
+	private string pawnCountChoiceBuffer;
+	private const int MaxPawnChoiceCount = 10;
+	protected override extern int TotalPawnCount { get; }
+	public override extern void DoEditInterface(Listing_ScenEdit listing);
+	public override extern void ExposeData();
+	public override extern string Summary(Scenario scen);
+	public override extern int GetHashCode();
+	public override extern void Randomize();
+	protected override extern void GenerateStartingPawns();
+	public override extern void PostIdeoChosen();
+	public extern ScenPart_ConfigPage_ConfigureStartingPawns();
+}
+=================== RimWorld.Page_ChooseIdeoPreset
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Verse;
-public class LayerSubMesh
+using Verse;
+namespace RimWorld;
+[StaticConstructorOnStartup]
+public class Page_ChooseIdeoPreset : Page
 {
-	public bool finalized;
-	public bool disabled;
-	public Material material;
-	public int renderLayer;
-	public Mesh mesh;
-	public List<Vector3> verts;
-	public List<int> tris;
-	public List<Color32> colors;
-	public List<Vector3> pollution;
-	public List<Vector3> uvs;
-	public List<Vector3> uvsChannelTwo;
-	public List<Vector3> normals;
-	public extern LayerSubMesh(Mesh mesh, Material material, Bounds? bounds = null);
-	public extern void Clear(MeshParts parts);
-	public extern void FinalizeMesh(MeshParts parts);
-	public override extern string ToString();
+	private enum PresetSelection
+	{
+		Classic,
+		CustomFluid,
+		CustomFixed,
+		Load,
+		Preset
+	}
+	private IdeoPresetDef selectedIdeo;
+	private Ideo classicIdeo;
+	private MemeDef selectedStructure;
+	private List<StyleCategoryDef> selectedStyles;
+	private List<ThingStyleCategoryWithPriority> selectedStylesWithPriority;
+	private PresetSelection presetSelection;
+	private Vector2 leftScrollPosition;
+	private float totalCategoryListHeight;
+	private string lastCategoryGroupLabel;
+	private Texture2D randomStructureIcon;
+	private const float IdeosRowWidth = 620f;
+	private const float CategoryDescRowWidth = 300f;
+	private const float CategoryDescRowWidthSmall = 500f;
+	private const float CategoryRowWidth = 937f;
+	private const float MemeIconSize = 50f;
+	private const float IdeoBoxMargin = 5f;
+	private const float IdeoBoxWidthMin = 110f;
+	private static readonly Vector2 ButtonSize;
+	private static readonly Vector2 ButtonSizeSmall;
+	private static readonly Texture2D PlusTex;
+	private List<int> ideosPerRow;
+	public override extern string PageTitle { get; }
+	public extern Texture2D RandomIcon { get; }
+	public override extern void PostOpen();
+	public override extern void DoWindowContents(Rect inRect);
+	private extern void DrawCategory(IdeoPresetCategoryDef category, ref float curY);
+	private extern void DrawSelectable(Rect rect, string label, string tooltip, TextAnchor textAnchor, bool active, bool tutorAllows, Action iconDrawer, Action onSelect);
+	private extern void DrawIdeo(Vector2 offset, IdeoPresetDef ideo);
+	private extern Rect RectForIdeo(IdeoPresetDef ideo);
+	private extern void DrawMeme(Rect rect, MemeDef meme);
+	private extern void DrawStructureAndStyleSelection(Rect rect);
+	private extern void DoClassic();
+	private extern void DoCustomize(bool fluid = false);
+	private extern void DoLoad();
+	private extern void DoPreset();
+	protected override extern void DoNext();
+	private extern void ApplySelectedStylesToIdeo(Ideo ideo);
+	private extern void AssignIdeoToPlayer(Ideo ideo);
+	private extern void RecacheStyleCategoriesWithPriority();
+	private extern void ResetSelection();
+	public extern Page_ChooseIdeoPreset();
+	static extern Page_ChooseIdeoPreset();
 }
-=================== Verse.MeshParts
+=================== RimWorld.MainMenuDrawer
+using UnityEngine;
+using Verse;
+namespace RimWorld;
+[StaticConstructorOnStartup]
+public static class MainMenuDrawer
+{
+	private static bool anyMapFiles;
+	private static Vector2 translationInfoScrollbarPos;
+	private static float webBackgroundYMax;
+	private static Rect webRect;
+	private static string anomalyReleasedTranslated;
+	private const float PlayRectWidth = 170f;
+	private const float WebRectWidth = 145f;
+	private const float RightEdgeMargin = 50f;
+	private const float WebBGExpansion = 4f;
+	private const float ExpansionDetailsWidth = 350f;
+	private static readonly Vector2 PaneSize;
+	private static readonly Vector2 TitleSize;
+	private static readonly Texture2D TexTitle;
+	private const float TitleShift = 50f;
+	private static readonly Vector2 LudeonLogoSize;
+	private static readonly Texture2D TexLudeonLogo;
+	private static readonly string TranslationsContributeURL;
+	private static readonly Texture2D WebBGAtlas;
+	private static readonly Color WebBGColor;
+	private static readonly Color ExpansionReleaseTextColor;
+	private const int NumColumns = 2;
+	private const int NumRows = 3;
+	private static extern UI_BackgroundMain BackgroundMain { get; }
+	public static extern void Init();
+	public static extern void MainMenuOnGUI();
+	public static extern void DoMainMenuControls(Rect rect, bool anyMapFiles);
+	public static extern void DoExpansionIcons();
+	private static extern void DoExpansionInfo(int index, Vector2 offset);
+	public static extern void DoTranslationInfoRect(Rect outRect);
+	private static extern void DoDevBuildWarningRect(Rect outRect);
+	private static extern void InitLearnToPlay();
+	private static extern void CloseMainTab();
+	static extern MainMenuDrawer();
+}
+=================== Verse.LongEventHandler
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
 namespace Verse;
-[Flags]
-public enum MeshParts : byte
+public static class LongEventHandler
 {
-	None = 0,
-	Verts = 1,
-	Tris = 2,
-	Colors = 4,
-	UVs1 = 8,
-	UVs2 = 0x10,
-	Normals = 0x20,
-	All = Verts | Tris | Colors | UVs1 | UVs2 | Normals
+	private class QueuedLongEvent
+	{
+		public Action eventAction;
+		public Action callback;
+		public IEnumerator eventActionEnumerator;
+		public string levelToLoad;
+		public string eventTextKey;
+		public string eventText;
+		public bool doAsynchronously;
+		public Action<Exception> exceptionHandler;
+		public bool alreadyDisplayed;
+		public bool canEverUseStandardWindow;
+		public bool showExtraUIInfo;
+		public bool forceHideUI;
+		public extern bool UseAnimatedDots { get; }
+		public extern bool ShouldWaitUntilDisplayed { get; }
+		public extern bool UseStandardWindow { get; }
+		public extern QueuedLongEvent();
+	}
+	private static Queue<QueuedLongEvent> eventQueue;
+	private static QueuedLongEvent currentEvent;
+	private static Thread eventThread;
+	private static AsyncOperation levelLoadOp;
+	private static List<Action> toExecuteWhenFinished;
+	private static bool executingToExecuteWhenFinished;
+	private static readonly object CurrentEventTextLock;
+	private static readonly Vector2 StatusRectSize;
+	public static extern bool ShouldWaitForEvent { get; }
+	public static extern bool AnyEventNowOrWaiting { get; }
+	public static extern bool AnyEventWhichDoesntUseStandardWindowNowOrWaiting { get; }
+	public static extern bool ForcePause { get; }
+	public static extern void QueueLongEvent(Action action, string textKey, bool doAsynchronously, Action<Exception> exceptionHandler, bool showExtraUIInfo = true, bool forceHideUI = false, Action callback = null);
+	public static extern void QueueLongEvent(IEnumerable action, string textKey, Action<Exception> exceptionHandler = null, bool showExtraUIInfo = true, bool forceHideUI = false);
+	public static extern void QueueLongEvent(Action preLoadLevelAction, string levelToLoad, string textKey, bool doAsynchronously, Action<Exception> exceptionHandler, bool showExtraUIInfo = true, bool forceHideUI = false);
+	public static extern void ClearQueuedEvents();
+	public static extern void LongEventsOnGUI();
+	private static extern void DrawLongEventWindow(Rect statusRect);
+	public static extern void LongEventsUpdate(out bool sceneChanged);
+	public static extern void ExecuteWhenFinished(Action action);
+	public static extern void ForceExecuteToExecuteWhenFinished();
+	public static extern void SetCurrentEventText(string newText);
+	private static extern void UpdateCurrentEnumeratorEvent();
+	private static extern void UpdateCurrentAsynchronousEvent();
+	private static extern void UpdateCurrentSynchronousEvent(out bool sceneChanged);
+	private static extern void RunEventFromAnotherThread(Action action);
+	private static extern void ExecuteToExecuteWhenFinished();
+	private static extern void DrawLongEventWindowContents(Rect rect);
+	static extern LongEventHandler();
 }
-=================== Verse.GameInitData
+=================== RimWorld.Page
+using System;
+using UnityEngine;
+using Verse;
+namespace RimWorld;
+public abstract class Page : Window
+{
+	public Page prev;
+	public Page next;
+	public Action nextAct;
+	public static readonly Vector2 StandardSize;
+	public const float TitleAreaHeight = 45f;
+	public const float BottomButHeight = 38f;
+	protected static readonly Vector2 BottomButSize;
+	public override extern Vector2 InitialSize { get; }
+	public virtual extern string PageTitle { get; }
+	public extern Page();
+	protected extern void DrawPageTitle(Rect rect);
+	protected extern Rect GetMainRect(Rect rect, float extraTopSpace = 0f, bool ignoreTitle = false);
+	protected extern void DoBottomButtons(Rect rect, string nextLabel = null, string midLabel = null, Action midAct = null, bool showNext = true, bool doNextOnKeypress = true);
+	protected virtual extern bool CanDoBack();
+	protected virtual extern bool CanDoNext();
+	protected virtual extern void DoNext();
+	protected virtual extern void DoBack();
+	public override extern void OnCancelKeyPressed();
+	public override extern void OnAcceptKeyPressed();
+	static extern Page();
+}
+=================== Verse.Game
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 namespace Verse;
-public class GameInitData
+public class Game : IExposable, IDisposable
 {
-	public PlanetTile startingTile;
-	public MapGeneratorDef mapGeneratorDef;
-	public int mapSize;
-	public List<Pawn> startingAndOptionalPawns;
-	public Dictionary<Pawn, List<ThingDefCount>> startingPossessions;
-	public int startingPawnCount;
-	public Faction playerFaction;
-	public Season startingSeason;
-	public bool permadeathChosen;
-	public bool permadeath;
-	public PawnKindDef startingPawnKind;
-	public List<PawnKindCount> startingPawnsRequired;
-	public List<XenotypeCount> startingXenotypesRequired;
-	public List<MutantCount> startingMutantsRequired;
-	public DevelopmentalStage allowedDevelopmentalStages;
-	public List<SkillDef> startingSkillsRequired;
-	public bool startedFromEntry;
-	public string gameToLoad;
-	public const int DefaultMapSize = 250;
-	public extern bool QuickStarted { get; }
-	public extern void ChooseRandomStartingTile();
-	public extern void ResetWorldRelatedMapInitData();
-	public override extern string ToString();
-	public extern void PrepForMapGen();
-	public extern GameInitData();
-}
-=================== RimWorld.Planet.WorldInterface
-Could not find a type named 'RimWorld.Planet.WorldInterface'.
-Did you mean one of the following?
-    RimWorld.WorldInterface
-=================== RimWorld.IncidentWorker
-using Verse;
-namespace RimWorld;
-public class IncidentWorker
-{
-	public IncidentDef def;
-	[Unsaved(false)]
-	private int lastCheckCanRunTick;
-	[Unsaved(false)]
-	private bool lastCanRunResult;
-	public virtual extern float BaseChanceThisGame { get; }
-	public virtual extern float ChanceFactorNow(IIncidentTarget target);
-	public extern bool CanFireNow(IncidentParms parms);
-	public extern bool FiredTooRecently(IIncidentTarget target);
-	protected virtual extern bool CanFireNowSub(IncidentParms parms);
-	public extern bool TryExecute(IncidentParms parms);
-	public static extern void SendIncidentLetter(TaggedString baseLetterLabel, TaggedString baseLetterText, LetterDef baseLetterDef, IncidentParms parms, LookTargets lookTargets, IncidentDef def, params NamedArgument[] textArgs);
-	protected virtual extern bool TryExecuteWorker(IncidentParms parms);
-	protected extern void SendStandardLetter(IncidentParms parms, LookTargets lookTargets, params NamedArgument[] textArgs);
-	protected extern void SendStandardLetter(TaggedString baseLetterLabel, TaggedString baseLetterText, LetterDef baseLetterDef, IncidentParms parms, LookTargets lookTargets, params NamedArgument[] textArgs);
-	public extern IncidentWorker();
-}
-=================== RimWorld.FactionRelation
-using RimWorld.Planet;
-using Verse;
-namespace RimWorld;
-public class FactionRelation : IExposable
-{
-	public Faction other;
-	public int baseGoodwill;
-	public FactionRelationKind kind;
-	public extern FactionRelation();
-	public extern FactionRelation(Faction other, FactionRelationKind kind);
-	public extern void CheckKindThresholds(Faction faction, bool canSendLetter, string reason, GlobalTargetInfo lookTarget, out bool sentLetter);
+	private GameInitData initData;
+	private Gravship gravshipInt;
+	public sbyte currentMapIndex;
+	private GameInfo info;
+	public List<GameComponent> components;
+	private GameRules rules;
+	private Scenario scenarioInt;
+	private World worldInt;
+	private List<Map> maps;
+	public PlaySettings playSettings;
+	public StoryWatcher storyWatcher;
+	public LetterStack letterStack;
+	public ResearchManager researchManager;
+	public AnalysisManager analysisManager;
+	public GameEnder gameEnder;
+	public Storyteller storyteller;
+	public History history;
+	public TaleManager taleManager;
+	public PlayLog playLog;
+	public BattleLog battleLog;
+	public OutfitDatabase outfitDatabase;
+	public DrugPolicyDatabase drugPolicyDatabase;
+	public ReadingPolicyDatabase readingPolicyDatabase;
+	public FoodRestrictionDatabase foodRestrictionDatabase;
+	public TickManager tickManager;
+	public Tutor tutor;
+	public Autosaver autosaver;
+	public DateNotifier dateNotifier;
+	public SignalManager signalManager;
+	public UniqueIDsManager uniqueIDsManager;
+	public QuestManager questManager;
+	public TransportShipManager transportShipManager;
+	public StudyManager studyManager;
+	public CustomXenogermDatabase customXenogermDatabase;
+	public CustomXenotypeDatabase customXenotypeDatabase;
+	public RelationshipRecords relationshipRecords;
+	public HiddenItemsManager hiddenItemsManager;
+	public EntityCodex entityCodex;
+	private static readonly List<Map> tmpPlayerHomeMaps;
+	public extern Scenario Scenario { get; set; }
+	public extern World World { get; set; }
+	public extern Map CurrentMap { get; set; }
+	public extern Map AnyPlayerHomeMap { get; }
+	public extern bool PlayerHasControl { get; }
+	public extern IReadOnlyList<Map> PlayerHomeMaps { get; }
+	public extern Map RandomPlayerHomeMap { get; }
+	public extern Map RandomRootSurfacePlayerHomeMap { get; }
+	public extern Map RandomSurfacePlayerHomeMap { get; }
+	public extern List<Map> Maps { get; }
+	public extern GameInitData InitData { get; set; }
+	public extern GameInfo Info { get; }
+	public extern GameRules Rules { get; }
+	public extern Gravship Gravship { get; set; }
+	public extern bool IsPlayerTile(PlanetTile tile);
+	public extern Game();
+	public extern void AddMap(Map map);
+	public extern Map FindMap(MapParent mapParent);
+	public extern Map FindMap(PlanetTile tile);
 	public extern void ExposeData();
-	public override extern string ToString();
+	private extern void ExposeSmallComponents();
+	private extern void FillComponents();
+	public extern void InitNewGame();
+	public extern void LoadGame();
+	public extern void UpdateEntry();
+	public extern void UpdatePlay();
+	public extern T GetComponent<T>() where T : GameComponent;
+	public extern GameComponent GetComponent(Type type);
+	public extern void FinalizeInit();
+	public extern void DeinitAndRemoveMap(Map map, bool notifyPlayer);
+	public extern string DebugString();
+	public extern void Dispose();
+	public static extern void ClearCaches();
+	static extern Game();
 }
-=================== Verse.SolidColorMaterials
-using System.Collections.Generic;
+=================== RimWorld.DifficultyDef
+using System;
 using UnityEngine;
-namespace Verse;
-public static class SolidColorMaterials
+using Verse;
+namespace RimWorld;
+public sealed class DifficultyDef : Def
 {
-	private static Dictionary<Color, Material> simpleColorMats;
-	private static Dictionary<Color, Material> simpleColorAndVertexColorMats;
-	public static extern int SimpleColorMatCount { get; }
-	public static extern Material SimpleSolidColorMaterial(Color col, bool careAboutVertexColors = false);
-	public static extern Material NewSolidColorMaterial(Color col, Shader shader);
-	public static extern Texture2D NewSolidColorTexture(float r, float g, float b, float a);
-	public static extern Texture2D NewSolidColorTexture(Color color);
-	static extern SolidColorMaterials();
+	[Obsolete]
+	public Color drawColor;
+	[Obsolete]
+	public bool isExtreme;
+	public bool isCustom;
+	[Obsolete]
+	public int difficulty;
+	public float threatScale;
+	public bool allowBigThreats;
+	public bool allowIntroThreats;
+	public bool allowCaveHives;
+	public bool peacefulTemples;
+	public bool allowViolentQuests;
+	public bool predatorsHuntHumanlikes;
+	public bool babiesAreHealthy;
+	public bool noBabiesOrChildren;
+	public float scariaRotChance;
+	public float colonistMoodOffset;
+	public float tradePriceFactorLoss;
+	public float cropYieldFactor;
+	public float mineYieldFactor;
+	public float butcherYieldFactor;
+	public float fishingYieldFactor;
+	public float researchSpeedFactor;
+	public float diseaseIntervalFactor;
+	public float enemyReproductionRateFactor;
+	public float playerPawnInfectionChanceFactor;
+	public float manhunterChanceOnDamageFactor;
+	public float deepDrillInfestationChanceFactor;
+	public float wastepackInfestationChanceFactor;
+	public float nomadicMineableResourcesFactor;
+	public float foodPoisonChanceFactor;
+	[Obsolete]
+	public float threatsGeneratorThreatCountFactor;
+	public float maintenanceCostFactor;
+	public float enemyDeathOnDownedChanceFactor;
+	public float adaptationGrowthRateFactorOverZero;
+	public float adaptationEffectFactor;
+	public float questRewardValueFactor;
+	public float raidLootPointsFactor;
+	public bool allowTraps;
+	public bool allowTurrets;
+	public bool allowMortars;
+	public bool classicMortars;
+	public bool allowExtremeWeatherIncidents;
+	public bool fixedWealthMode;
+	public float lowPopConversionBoost;
+	public float minThreatPointsRangeCeiling;
+	public float childAgingRate;
+	public float adultAgingRate;
+	public bool unwaveringPrisoners;
+	public bool childRaidersAllowed;
+	public float anomalyThreatsInactiveFraction;
+	public float anomalyThreatsActiveFraction;
+	public float studyEfficiencyFactor;
+	public extern DifficultyDef();
 }
-=================== Verse.ShaderDatabase
+=================== RimWorld.StorytellerDef
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using UnityEngine;
-namespace Verse;
-[StaticConstructorOnStartup]
-public static class ShaderDatabase
+using Verse;
+namespace RimWorld;
+public class StorytellerDef : Def
 {
-	public static readonly Shader Cutout;
-	public static readonly Shader CutoutHair;
-	public static readonly Shader CutoutPlant;
-	public static readonly Shader CutoutComplex;
-	public static readonly Shader CutoutComplexUI;
-	public static readonly Shader ExpandingIconUI;
-	public static readonly Shader CutoutComplexBlend;
-	public static readonly Shader CutoutSkinOverlay;
-	public static readonly Shader CutoutSkin;
-	public static readonly Shader Wound;
-	public static readonly Shader WoundSkin;
-	public static readonly Shader CutoutSkinColorOverride;
-	public static readonly Shader CutoutFlying;
-	public static readonly Shader CutoutFlying01;
-	public static readonly Shader FirefoamOverlay;
-	public static readonly Shader CutoutWithOverlay;
-	public static readonly Shader CutoutOverlay;
-	public static readonly Shader TerrainEdge;
-	public static readonly Shader Transparent;
-	public static readonly Shader TransparentPostLight;
-	public static readonly Shader TransparentPlant;
-	public static readonly Shader Mote;
-	public static readonly Shader MotePulse;
-	public static readonly Shader MoteGlow;
-	public static readonly Shader MoteGlowPulse;
-	public static readonly Shader MoteWater;
-	public static readonly Shader MoteGlowDistorted;
-	public static readonly Shader MoteGlowDistortBG;
-	public static readonly Shader MoteProximityScannerRadius;
-	public static readonly Shader GasRotating;
-	public static readonly Shader TerrainHard;
-	public static readonly Shader TerrainFade;
-	public static readonly Shader TerrainFadeRough;
-	public static readonly Shader TerrainWater;
-	public static readonly Shader TerrainHardPolluted;
-	public static readonly Shader TerrainFadePolluted;
-	public static readonly Shader TerrainFadeRoughPolluted;
-	public static readonly Shader PollutionCloud;
-	public static readonly Shader MapEdgeTerrain;
-	public static readonly Shader WorldTerrain;
-	public static readonly Shader WorldOcean;
-	public static readonly Shader WorldOverlayCutout;
-	public static readonly Shader WorldOverlayTransparent;
-	public static readonly Shader WorldOverlayTransparentLit;
-	public static readonly Shader WorldOverlayTransparentLitPollution;
-	public static readonly Shader WorldOverlayAdditive;
-	public static readonly Shader WorldOverlayAdditiveTwoSided;
-	public static readonly Shader PlanetGlow;
-	public static readonly Shader Clouds;
-	public static readonly Shader MetaOverlay;
-	public static readonly Shader MetaOverlayDesaturated;
-	public static readonly Shader SolidColor;
-	public static readonly Shader SolidColorBehind;
-	public static readonly Shader VertexColor;
-	public static readonly Shader RitualStencil;
-	public static readonly Shader Invisible;
-	public static readonly Shader Silhouette;
-	public static readonly Shader Metalblood;
-	public static readonly Shader CaveExitRope;
-	public static readonly Shader BioferriteHarvester;
-	public static readonly Shader GrayscaleGUI;
-	public static readonly Shader GravshipMaskMasked;
-	public static readonly Shader IndoorMaskMasked;
-	private static Dictionary<string, Shader> lookup;
-	private static Dictionary<Shader, Shader> uiLookup;
-	public static extern Shader DefaultShader { get; }
-	public static extern Shader LoadShader(string shaderPath);
-	public static extern Shader LoadShader(ShaderTypeDef shaderDef);
-	public static extern void LoadShader(ShaderTypeDef shaderDef, out Shader result, out Shader uiShader);
-	public static extern void LoadShader(string shaderPath, string uiShaderPath, out Shader result, out Shader uiShader);
-	public static extern bool TryGetUIShader(Shader shader, out Shader uiShader);
-	private static extern bool TryLoadShader(string shaderPath, out Shader result);
-	static extern ShaderDatabase();
+	[CompilerGenerated]
+	private sealed class <ConfigErrors>d__23 : IEnumerable<string>, IEnumerable, IEnumerator<string>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private string <>2__current;
+		private int <>l__initialThreadId;
+		public StorytellerDef <>4__this;
+		private IEnumerator<string> <>7__wrap1;
+		private int <i>5__3;
+		extern string IEnumerator<string>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <ConfigErrors>d__23(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		private extern void <>m__Finally2();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<string> IEnumerable<string>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public int listOrder;
+	public bool listVisible;
+	public bool tutorialMode;
+	public bool disableAdaptiveTraining;
+	public bool disableAlerts;
+	public bool disablePermadeath;
+	public DifficultyDef forcedDifficulty;
+	[NoTranslate]
+	private string portraitLarge;
+	[NoTranslate]
+	private string portraitTiny;
+	public List<StorytellerCompProperties> comps;
+	public SimpleCurve populationIntentFactorFromPopCurve;
+	public SimpleCurve populationIntentFactorFromPopAdaptDaysCurve;
+	public SimpleCurve pointsFactorFromDaysPassed;
+	public float adaptDaysMin;
+	public float adaptDaysMax;
+	public float adaptDaysGameStartGraceDays;
+	public SimpleCurve pointsFactorFromAdaptDays;
+	public SimpleCurve adaptDaysLossFromColonistLostByPostPopulation;
+	public SimpleCurve adaptDaysLossFromColonistViolentlyDownedByPopulation;
+	public SimpleCurve adaptDaysGrowthRateCurve;
+	[Unsaved(false)]
+	public Texture2D portraitLargeTex;
+	[Unsaved(false)]
+	public Texture2D portraitTinyTex;
+	public override extern void ResolveReferences();
+	[IteratorStateMachine(typeof(<ConfigErrors>d__23))]
+	public override extern IEnumerable<string> ConfigErrors();
+	public extern StorytellerDef();
 }
-=================== RimWorld.Planet.Tile
+=================== RimWorld.IdeoGenerator
+namespace RimWorld;
+public static class IdeoGenerator
+{
+	public static extern Ideo GenerateIdeo(IdeoGenerationParms parms);
+	public static extern Ideo MakeIdeo(IdeoFoundationDef foundationDef);
+	public static extern Ideo MakeFixedIdeo(IdeoGenerationParms parms);
+	public static extern IdeoFoundation MakeFoundation(IdeoFoundationDef foundationDef);
+	public static extern Ideo InitLoadedIdeo(Ideo ideo);
+	public static extern Ideo GenerateClassicIdeo(CultureDef culture, IdeoGenerationParms genParms, bool noExpansionIdeo);
+	public static extern Ideo GenerateNoExpansionIdeo(CultureDef culture, IdeoGenerationParms genParms);
+	public static extern Ideo GenerateTutorialIdeo();
+}
+=================== RimWorld.IdeoGenerationParms
+using System.Collections.Generic;
+using Verse;
+namespace RimWorld;
+public struct IdeoGenerationParms
+{
+	public FactionDef forFaction;
+	public bool forceNoExpansionIdeo;
+	public bool classicExtra;
+	public List<PreceptDef> disallowedPrecepts;
+	public List<MemeDef> disallowedMemes;
+	public List<MemeDef> forcedMemes;
+	public bool forceNoWeaponPreference;
+	public bool forNewFluidIdeo;
+	public bool fixedIdeo;
+	public string name;
+	public List<StyleCategoryDef> styles;
+	public List<DeityPreset> deities;
+	public bool hidden;
+	public string description;
+	public bool requiredPreceptsOnly;
+	public extern IdeoGenerationParms(FactionDef forFaction, bool forceNoExpansionIdeo = false, List<PreceptDef> disallowedPrecepts = null, List<MemeDef> disallowedMemes = null, List<MemeDef> forcedMemes = null, bool classicExtra = false, bool forceNoWeaponPreference = false, bool forNewFluidIdeo = false, bool fixedIdeo = false, string name = "", List<StyleCategoryDef> styles = null, List<DeityPreset> deities = null, bool hidden = false, string description = "", bool requiredPreceptsOnly = false);
+}
+=================== RimWorld.IdeoUtility
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using RimWorld.Planet;
+using UnityEngine;
+using Verse;
+namespace RimWorld;
+public static class IdeoUtility
+{
+	[CompilerGenerated]
+	private sealed class <AllColonistsWithCharityPrecept>d__17 : IEnumerable<Pawn>, IEnumerable, IEnumerator<Pawn>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Pawn <>2__current;
+		private int <>l__initialThreadId;
+		private List<Pawn> <colonists>5__2;
+		private IEnumerator<Ideo> <>7__wrap2;
+		private Ideo <ideo>5__4;
+		private List<Precept> <precepts>5__5;
+		private int <j>5__6;
+		private int <i>5__7;
+		extern Pawn IEnumerator<Pawn>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <AllColonistsWithCharityPrecept>d__17(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Pawn> IEnumerable<Pawn>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public const int MinFluidIdeoNormalMemes = 1;
+	private static HashSet<Room> tmpCheckRooms;
+	private static List<TreeSighting> tmpTreeSightings;
+	public static extern void Notify_HistoryEvent(HistoryEvent ev, bool canApplySelfTookThoughts = true);
+	public static extern bool DoerWillingToDo(this HistoryEvent ev);
+	public static extern bool DoerWillingToDo(HistoryEventDef def, Pawn pawn);
+	public static extern bool Notify_PawnAboutToDo(this HistoryEvent ev, string messageKey = "MessagePawnUnwillingToDoDueToIdeo");
+	public static extern bool Notify_PawnAboutToDo(this HistoryEvent ev, out FloatMenuOption opt, string baseText);
+	public static extern bool Notify_PawnAboutToDo_Job(this HistoryEvent ev);
+	public static extern List<MemeDef> GenerateRandomMemes(IdeoGenerationParms parms);
+	private static extern bool CanAdd(MemeDef meme, List<MemeDef> memes, FactionDef forFaction = null, bool forNewFluidIdeo = false);
+	public static extern List<MemeDef> GenerateRandomMemes(int count, IdeoGenerationParms parms);
+	public static extern List<MemeDef> RandomizeNormalMemes(int count, List<MemeDef> previousMemes, FactionDef forFaction = null, bool forNewFluidIdeo = false);
+	public static extern List<MemeDef> RandomizeNormalMemesForReforming(int maxMemes, List<MemeDef> existingMemes, FactionDef forFaction = null);
+	public static extern List<MemeDef> RandomizeStructureMeme(List<MemeDef> previousMemes, FactionDef forFaction = null);
+	private static extern bool AnyIdeoHas(MemeDef meme);
+	public static extern bool CanUseIdeo(FactionDef factionDef, Ideo ideo, IdeoGenerationParms parms);
+	public static extern bool IsMemeAllowedFor(MemeDef meme, FactionDef faction);
+	public static extern bool PlayerHasPreceptForBuilding(ThingDef buildingDef);
+	[IteratorStateMachine(typeof(<AllColonistsWithCharityPrecept>d__17))]
+	public static extern IEnumerable<Pawn> AllColonistsWithCharityPrecept();
+	public static extern bool AnyColonistWithRanchingIssue();
+	public static extern void Notify_PlayerRaidedSomeone(IEnumerable<Pawn> allRaiders);
+	public static extern void Notify_QuestCleanedUp(Quest quest, QuestState state);
+	public static extern float GetStyleDominanceFromCellsCenteredOn(IntVec3 center, IntVec3 rootCell, Map map, Ideo ideo);
+	private static extern void GetJoinedRooms(IntVec3 rootCell, Map map, HashSet<Room> rooms);
+	public static extern bool ThingSatisfiesIdeo(Thing thing, Ideo ideo);
+	private static extern float GetStyleDominance(Thing t, Ideo ideo);
+	public static extern List<TreeSighting> TreeSightingsNearPawn(IntVec3 rootCell, Map map, Ideo ideo);
+	public static extern bool IdeoCausesHumanMeatCravings(this Ideo ideo);
+	public static extern bool IdeoPrefersNudity(this Ideo ideo);
+	public static extern bool IdeoPrefersNudityForGender(this Ideo ideo, Gender gender);
+	public static extern bool IdeoApprovesOfSlavery(this Ideo ideo);
+	public static extern bool IdeoPrefersDarkness(this Ideo ideo);
+	public static extern bool IdeoApprovesOfBlindness(this Ideo ideo);
+	public static extern void Notify_NewColonyStarted();
+	public static extern Pawn FindFirstPawnWithLeaderRole(Caravan caravan);
+	public static extern Ideo MakeEmptyIdeo();
+	public static extern Color? GetIdeoColorForBuilding(ThingDef def, Faction faction);
+	public static extern bool IsMemeAllowedForInitialFluidIdeo(MemeDef memeDef);
+	public static extern bool CountsAsNonNPCForPrecepts(this Pawn pawn);
+	public static extern float IdeoChangeToWeight(Pawn pawn, Ideo ideo);
+	static extern IdeoUtility();
+}
+=================== RimWorld.Planet.WorldGenStep
+Could not find a type named 'RimWorld.Planet.WorldGenStep'.
+Did you mean one of the following?
+    RimWorld.Planet.WorldGenStep_AncientRoads
+    RimWorld.Planet.WorldGenStep_AncientSites
+    RimWorld.Planet.WorldGenStep_Factions
+    RimWorld.Planet.WorldGenStep_Features
+    RimWorld.Planet.WorldGenStep_Lakes
+    RimWorld.Planet.WorldGenStep_Landmarks
+    RimWorld.Planet.WorldGenStep_Mutators
+    RimWorld.Planet.WorldGenStep_Pollution
+    RimWorld.Planet.WorldGenStep_Rivers
+    RimWorld.Planet.WorldGenStep_Roads
+=================== RimWorld.ScenPart_ConfigPage
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Verse;
-namespace RimWorld.Planet;
-public class Tile : IExposable
-{
-	[CompilerGenerated]
-	private sealed class <GetGizmos>d__57 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private Gizmo <>2__current;
-		private int <>l__initialThreadId;
-		public Tile <>4__this;
-		extern Gizmo IEnumerator<Gizmo>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <GetGizmos>d__57(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	[CompilerGenerated]
-	private sealed class <get_Biomes>d__18 : IEnumerable<BiomeDef>, IEnumerable, IEnumerator<BiomeDef>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private BiomeDef <>2__current;
-		private int <>l__initialThreadId;
-		public Tile <>4__this;
-		extern BiomeDef IEnumerator<BiomeDef>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <get_Biomes>d__18(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<BiomeDef> IEnumerable<BiomeDef>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	private BiomeDef biome;
-	public float elevation;
-	public Hilliness hilliness;
-	public float temperature;
-	public float rainfall;
-	public float swampiness;
-	public WorldFeature feature;
-	public float pollution;
-	public PlanetTile tile;
-	public List<TileMutatorDef> mutatorsNullable;
-	[Unsaved(false)]
-	private bool? tmpHasSecondaryBiome;
-	[Unsaved(false)]
-	private BiomeDef tmpSecondaryBiome;
-	private Hilliness? hillinessLabelCached;
-	private float? cachedMaxTemp;
-	private float? cachedMinTemp;
-	public extern PlanetLayer Layer { get; }
-	public extern BiomeDef PrimaryBiome { get; set; }
-	public extern IEnumerable<BiomeDef> Biomes
-	{
-		[IteratorStateMachine(typeof(<get_Biomes>d__18))]
-		get;
-	}
-	public extern Landmark Landmark { get; }
-	public extern bool OnSurface { get; }
-	public virtual extern bool WaterCovered { get; }
-	public extern bool IsCoastal { get; }
-	public extern IList<TileMutatorDef> Mutators { get; }
-	public extern Hilliness HillinessLabel { get; }
-	public extern Hilliness HillinessForElevationGen { get; }
-	public extern Hilliness HillinessForOreGeneration { get; }
-	public extern float AnimalDensity { get; }
-	public extern float PlantDensityFactor { get; }
-	public extern float FishPopulationFactor { get; }
-	public extern bool AllowRoofedEdgeWalkIn { get; }
-	public extern float MaxTemperature { get; }
-	public extern float MinTemperature { get; }
-	public extern float MaxFishPopulation { get; }
-	public extern Tile();
-	public extern Tile(PlanetTile tile);
-	public extern void AddMutator(TileMutatorDef mutator);
-	public extern void RemoveMutator(TileMutatorDef mutator);
-	public override extern string ToString();
-	[IteratorStateMachine(typeof(<GetGizmos>d__57))]
-	public virtual extern IEnumerable<Gizmo> GetGizmos();
-	public virtual extern void ExposeData();
-}
-=================== RimWorld.Planet.SurfaceTile
-using System.Collections.Generic;
-namespace RimWorld.Planet;
-public class SurfaceTile : Tile
-{
-	public struct RoadLink
-	{
-		public PlanetTile neighbor;
-		public RoadDef road;
-	}
-	public struct RiverLink
-	{
-		public PlanetTile neighbor;
-		public RiverDef river;
-	}
-	public List<RoadLink> potentialRoads;
-	public List<RiverLink> potentialRivers;
-	public int riverDist;
-	public override extern bool WaterCovered { get; }
-	public extern List<RoadLink> Roads { get; }
-	public extern List<RiverLink> Rivers { get; }
-	public extern SurfaceTile();
-	public extern SurfaceTile(PlanetTile tile);
-	public override extern string ToString();
-	public override extern void ExposeData();
-}
-=================== RimWorld.GenStep_ScatterShrines
-using Verse;
 namespace RimWorld;
-public class GenStep_ScatterShrines : GenStep_ScatterRuinsSimple
+public class ScenPart_ConfigPage : ScenPart
 {
-	private IntVec2 randomSize;
-	private static readonly IntRange SizeRange;
-	private const float SkipNonStartingMapChance = 0.75f;
-	public override extern int SeedPart { get; }
-	protected override extern bool TryFindScatterCell(Map map, out IntVec3 result);
-	protected override extern bool ShouldSkipMap(Map map);
-	protected override extern bool CanScatterAt(IntVec3 c, Map map);
-	protected override extern CellRect EffectiveRectAt(IntVec3 c);
-	protected override extern void ScatterAt(IntVec3 loc, Map map, GenStepParams parms, int stackCount = 1);
-	public extern GenStep_ScatterShrines();
-	static extern GenStep_ScatterShrines();
+	[CompilerGenerated]
+	private sealed class <GetConfigPages>d__0 : IEnumerable<Page>, IEnumerable, IEnumerator<Page>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Page <>2__current;
+		private int <>l__initialThreadId;
+		public ScenPart_ConfigPage <>4__this;
+		extern Page IEnumerator<Page>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetConfigPages>d__0(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Page> IEnumerable<Page>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	[IteratorStateMachine(typeof(<GetConfigPages>d__0))]
+	public override extern IEnumerable<Page> GetConfigPages();
+	public override extern void DoEditInterface(Listing_ScenEdit listing);
+	public extern ScenPart_ConfigPage();
 }
 =================== RimWorld.Scenario
 using System;
@@ -612,583 +1043,344 @@ public class Scenario : IExposable, WorkshopUploadable
 	public override extern string ToString();
 	public override extern int GetHashCode();
 }
-=================== RimWorld.Planet.WorldComponent
-using Verse;
-namespace RimWorld.Planet;
-public abstract class WorldComponent : IExposable
-{
-	public World world;
-	public extern WorldComponent(World world);
-	public virtual extern void WorldComponentUpdate();
-	public virtual extern void WorldComponentTick();
-	public virtual extern void WorldComponentOnGUI();
-	public virtual extern void ExposeData();
-	public virtual extern void FinalizeInit(bool fromLoad);
-}
-=================== RimWorld.Planet.WorldObject
+=================== RimWorld.Page_ConfigureStartingPawns
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using UnityEngine;
-using Verse;
-namespace RimWorld.Planet;
-[StaticConstructorOnStartup]
-public class WorldObject : IExposable, ILoadReferenceable, ISelectable
-{
-	[CompilerGenerated]
-	private sealed class <GetCaravanGizmos>d__112 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private Gizmo <>2__current;
-		private int <>l__initialThreadId;
-		public WorldObject <>4__this;
-		private Caravan caravan;
-		public Caravan <>3__caravan;
-		private int <i>5__2;
-		private IEnumerator<Gizmo> <>7__wrap2;
-		extern Gizmo IEnumerator<Gizmo>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <GetCaravanGizmos>d__112(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	[CompilerGenerated]
-	private sealed class <GetFloatMenuOptions>d__113 : IEnumerable<FloatMenuOption>, IEnumerable, IEnumerator<FloatMenuOption>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private FloatMenuOption <>2__current;
-		private int <>l__initialThreadId;
-		public WorldObject <>4__this;
-		private Caravan caravan;
-		public Caravan <>3__caravan;
-		private int <i>5__2;
-		private IEnumerator<FloatMenuOption> <>7__wrap2;
-		extern FloatMenuOption IEnumerator<FloatMenuOption>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <GetFloatMenuOptions>d__113(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<FloatMenuOption> IEnumerable<FloatMenuOption>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	[CompilerGenerated]
-	private sealed class <GetGizmos>d__111 : IEnumerable<Gizmo>, IEnumerable, IEnumerator<Gizmo>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private Gizmo <>2__current;
-		private int <>l__initialThreadId;
-		public WorldObject <>4__this;
-		private List<Quest> <quests>5__2;
-		private int <i>5__3;
-		private IEnumerator<Gizmo> <>7__wrap3;
-		extern Gizmo IEnumerator<Gizmo>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <GetGizmos>d__111(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<Gizmo> IEnumerable<Gizmo>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	[CompilerGenerated]
-	private sealed class <IncidentTargetTags>d__85 : IEnumerable<IncidentTargetTagDef>, IEnumerable, IEnumerator<IncidentTargetTagDef>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private IncidentTargetTagDef <>2__current;
-		private int <>l__initialThreadId;
-		public WorldObject <>4__this;
-		private List<IncidentTargetTagDef>.Enumerator <>7__wrap1;
-		private int <i>5__3;
-		private IEnumerator<IncidentTargetTagDef> <>7__wrap3;
-		extern IncidentTargetTagDef IEnumerator<IncidentTargetTagDef>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <IncidentTargetTags>d__85(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		private extern void <>m__Finally2();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<IncidentTargetTagDef> IEnumerable<IncidentTargetTagDef>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	public WorldObjectDef def;
-	public int ID;
-	private PlanetTile tile;
-	private Faction factionInt;
-	public int creationGameTicks;
-	public List<string> questTags;
-	private bool destroyed;
-	public ThingOwner<Thing> rewards;
-	private int tickDelta;
-	public bool isGeneratedLocation;
-	private List<WorldObjectComp> comps;
-	private Material expandingMaterial;
-	private int drawPosCacheTick;
-	private Vector3 drawPosCached;
-	private static MaterialPropertyBlock propertyBlock;
-	private const float BaseDrawSize = 0.7f;
-	private const float DrawOffsetRange = 0.01f;
-	private static readonly Texture2D ViewQuestCommandTex;
-	private List<IThingHolder> tmpHolders;
-	private bool cached;
-	private bool cachedIsHolder;
-	private IThingHolder cachedHolder;
-	private IThingHolderTickable cachedTickable;
-	public extern List<WorldObjectComp> AllComps { get; }
-	public virtual extern bool ShowRelatedQuests { get; }
-	public virtual extern bool CanReformFoggedEnemies { get; }
-	public extern bool Destroyed { get; }
-	public virtual extern bool VisibleInBackground { get; }
-	public virtual extern bool RequiresSignalJammerToReach { get; }
-	public virtual extern float DrawAltitude { get; }
-	public extern PlanetTile Tile { get; set; }
-	public extern bool Spawned { get; }
-	public virtual extern Vector3 DrawPos { get; }
-	public extern Faction Faction { get; }
-	public virtual extern string Label { get; }
-	public extern string LabelCap { get; }
-	public virtual extern string LabelShort { get; }
-	public virtual extern string LabelShortCap { get; }
-	public virtual extern bool HasName { get; }
-	public virtual extern Material Material { get; }
-	public virtual extern Material ExpandingMaterial { get; }
-	public virtual extern bool SelectableNow { get; }
-	public virtual extern bool NeverMultiSelect { get; }
-	public virtual extern Texture2D ExpandingIcon { get; }
-	public virtual extern Color ExpandingIconColor { get; }
-	public virtual extern float ExpandingIconPriority { get; }
-	public virtual extern bool ExpandMore { get; }
-	public virtual extern bool AppendFactionToInspectString { get; }
-	public extern IThingHolder ParentHolder { get; }
-	public virtual extern IEnumerable<StatDrawEntry> SpecialDisplayStats { get; }
-	public virtual extern BiomeDef Biome { get; }
-	public virtual extern float ExpandingIconRotation { get; }
-	public virtual extern bool ExpandingIconFlipHorizontal { get; }
-	public virtual extern bool GravShipCanLandOn { get; }
-	protected virtual extern int UpdateRateTicks { get; }
-	protected virtual extern int UpdateRateTickOffset { get; }
-	[IteratorStateMachine(typeof(<IncidentTargetTags>d__85))]
-	public virtual extern IEnumerable<IncidentTargetTagDef> IncidentTargetTags();
-	public virtual extern void ExposeData();
-	private extern void InitializeComps();
-	public virtual extern void SetFaction(Faction newFaction);
-	public virtual extern string GetInspectString();
-	public extern void DoTick();
-	protected virtual extern void Tick();
-	protected virtual extern void TickInterval(int delta);
-	public virtual extern void ExtraSelectionOverlaysOnGUI();
-	public virtual extern void DrawExtraSelectionOverlays();
-	public virtual extern void PostMake();
-	public virtual extern void PostAdd();
-	protected virtual extern void PositionChanged(PlanetTile previous, PlanetTile current);
-	public virtual extern void SpawnSetup();
-	public virtual extern void PostRemove();
-	public virtual extern void Destroy();
-	public virtual extern void Print(LayerSubMesh subMesh);
-	public virtual extern void Draw();
-	public extern T GetComponent<T>() where T : WorldObjectComp;
-	public extern bool TryGetComponent<T>(out T comp) where T : WorldObjectComp;
-	public extern WorldObjectComp GetComponent(Type type);
-	[IteratorStateMachine(typeof(<GetGizmos>d__111))]
-	public virtual extern IEnumerable<Gizmo> GetGizmos();
-	[IteratorStateMachine(typeof(<GetCaravanGizmos>d__112))]
-	public virtual extern IEnumerable<Gizmo> GetCaravanGizmos(Caravan caravan);
-	[IteratorStateMachine(typeof(<GetFloatMenuOptions>d__113))]
-	public virtual extern IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan);
-	public virtual extern IEnumerable<FloatMenuOption> GetTransportersFloatMenuOptions(IEnumerable<IThingHolder> pods, Action<PlanetTile, TransportersArrivalAction> launchAction);
-	public virtual extern IEnumerable<FloatMenuOption> GetShuttleFloatMenuOptions(IEnumerable<IThingHolder> pods, Action<PlanetTile, TransportersArrivalAction> launchAction);
-	public virtual extern IEnumerable<InspectTabBase> GetInspectTabs();
-	public virtual extern bool AllMatchingObjectsOnScreenMatchesWith(WorldObject other);
-	public override extern string ToString();
-	public override extern int GetHashCode();
-	public extern string GetUniqueLoadID();
-	public virtual extern string GetDescription();
-	public extern WorldObject();
-	static extern WorldObject();
-}
-=================== RimWorld.Planet.WorldDrawLayer_SettleTile
-using UnityEngine;
-namespace RimWorld.Planet;
-public class WorldDrawLayer_SettleTile : WorldDrawLayer_SingleTile
-{
-	protected override extern PlanetTile Tile { get; }
-	protected override extern Material Material { get; }
-	protected override extern float Alpha { get; }
-	public extern WorldDrawLayer_SettleTile();
-}
-=================== RimWorld.Planet.WorldDrawLayer_SelectedTile
-using UnityEngine;
-namespace RimWorld.Planet;
-public class WorldDrawLayer_SelectedTile : WorldDrawLayer_SingleTile
-{
-	protected override extern PlanetTile Tile { get; }
-	protected override extern Material Material { get; }
-	public override extern bool VisibleWhenLayerNotSelected { get; }
-	public override extern bool VisibleInBackground { get; }
-	public extern WorldDrawLayer_SelectedTile();
-}
-=================== RimWorld.Planet.WorldRenderer
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using UnityEngine;
-namespace RimWorld.Planet;
-public class WorldRenderer
-{
-	[CompilerGenerated]
-	private sealed class <RegenerateDirtyLayersNow_Async>d__17 : IEnumerable<object>, IEnumerable, IEnumerator<object>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private object <>2__current;
-		private int <>l__initialThreadId;
-		public WorldRenderer <>4__this;
-		private IEnumerator<WorldDrawLayerBase> <>7__wrap1;
-		private IEnumerator <enumerator>5__3;
-		extern object IEnumerator<object>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <RegenerateDirtyLayersNow_Async>d__17(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		private extern void <>m__Finally2();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<object> IEnumerable<object>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	[CompilerGenerated]
-	private sealed class <get_AllDrawLayers>d__5 : IEnumerable<WorldDrawLayerBase>, IEnumerable, IEnumerator<WorldDrawLayerBase>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private WorldDrawLayerBase <>2__current;
-		private int <>l__initialThreadId;
-		private IEnumerator<WorldDrawLayerBase> <>7__wrap1;
-		private IEnumerator<KeyValuePair<int, PlanetLayer>> <>7__wrap2;
-		private List<WorldDrawLayer>.Enumerator <>7__wrap3;
-		extern WorldDrawLayerBase IEnumerator<WorldDrawLayerBase>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <get_AllDrawLayers>d__5(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		private extern void <>m__Finally2();
-		private extern void <>m__Finally3();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<WorldDrawLayerBase> IEnumerable<WorldDrawLayerBase>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	[CompilerGenerated]
-	private sealed class <get_AllVisibleDrawLayers>d__7 : IEnumerable<WorldDrawLayerBase>, IEnumerable, IEnumerator<WorldDrawLayerBase>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private WorldDrawLayerBase <>2__current;
-		private int <>l__initialThreadId;
-		private IEnumerator<WorldDrawLayerBase> <>7__wrap1;
-		private IEnumerator<KeyValuePair<int, PlanetLayer>> <>7__wrap2;
-		private List<WorldDrawLayer>.Enumerator <>7__wrap3;
-		extern WorldDrawLayerBase IEnumerator<WorldDrawLayerBase>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <get_AllVisibleDrawLayers>d__7(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		private extern void <>m__Finally2();
-		private extern void <>m__Finally3();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<WorldDrawLayerBase> IEnumerable<WorldDrawLayerBase>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	public WorldRenderMode wantedMode;
-	private bool asynchronousRegenerationActive;
-	private extern bool ShouldRegenerateDirtyLayersInLongEvent { get; }
-	public extern IEnumerable<WorldDrawLayerBase> AllDrawLayers
-	{
-		[IteratorStateMachine(typeof(<get_AllDrawLayers>d__5))]
-		get;
-	}
-	public extern IEnumerable<WorldDrawLayerBase> AllVisibleDrawLayers
-	{
-		[IteratorStateMachine(typeof(<get_AllVisibleDrawLayers>d__7))]
-		get;
-	}
-	public extern void SetAllLayersDirty();
-	public extern void SetDirty<T>(PlanetLayer planetLayer) where T : WorldDrawLayer;
-	public extern bool HasGlobalLayer<T>() where T : WorldDrawLayer;
-	public extern bool HasLayer<T>(PlanetLayer planetLayer) where T : WorldDrawLayer;
-	public extern bool TryGetGlobalLayer<T>(out T layer) where T : WorldDrawLayer;
-	public extern bool TryGetLayer<T>(PlanetLayer planetLayer, out T layer) where T : WorldDrawLayer;
-	public extern T GetGlobalLayer<T>() where T : WorldDrawLayer;
-	public extern T GetLayer<T>(PlanetLayer planetLayer) where T : WorldDrawLayer;
-	public extern void RegenerateAllLayersNow();
-	[IteratorStateMachine(typeof(<RegenerateDirtyLayersNow_Async>d__17))]
-	private extern IEnumerable RegenerateDirtyLayersNow_Async();
-	public extern void Notify_StaticWorldObjectPosChanged();
-	public extern void Notify_TilePollutionChanged(PlanetTile tileId);
-	public extern void CheckActivateWorldCamera();
-	public extern bool RegenerateLayersIfDirtyInLongEvent();
-	public extern void DrawWorldLayers();
-	public extern PlanetTile GetTileFromRayHit(RaycastHit hit);
-	public extern WorldRenderer();
-}
-=================== RimWorld.Planet.PlanetLayerDef
-Could not find a type named 'RimWorld.Planet.PlanetLayerDef'.
-Did you mean one of the following?
-    RimWorld.PlanetLayerDef
-    RimWorld.PlanetLayerDefOf
-=================== RimWorld.Planet.WorldSelector
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-namespace RimWorld.Planet;
-public class WorldSelector
-{
-	[CompilerGenerated]
-	private sealed class <SelectableObjectsAt>d__37 : IEnumerable<WorldObject>, IEnumerable, IEnumerator<WorldObject>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private WorldObject <>2__current;
-		private int <>l__initialThreadId;
-		private PlanetTile tile;
-		public PlanetTile <>3__tile;
-		private IEnumerator<WorldObject> <>7__wrap1;
-		extern WorldObject IEnumerator<WorldObject>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <SelectableObjectsAt>d__37(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<WorldObject> IEnumerable<WorldObject>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	public readonly WorldDragBox dragBox;
-	private readonly List<WorldObject> selected;
-	private PlanetLayer selectedLayer;
-	private PlanetTile selectedTile;
-	private const int MaxNumSelected = 80;
-	private const float MaxDragBoxDiagonalToSelectTile = 30f;
-	private extern bool ShiftIsHeld { get; }
-	public extern PlanetTile SelectedTile { get; set; }
-	public extern PlanetLayer SelectedLayer { get; set; }
-	public extern List<WorldObject> SelectedObjects { get; }
-	public extern WorldObject SingleSelectedObject { get; }
-	public extern WorldObject FirstSelectedObject { get; }
-	public extern int NumSelectedObjects { get; }
-	public extern bool AnyObjectOrTileSelected { get; }
-	public extern bool AnyCaravanSelected { get; }
-	public extern void WorldSelectorOnGUI();
-	private extern void HandleWorldClicks();
-	public extern bool IsSelected(WorldObject obj);
-	public extern void ClearSelection();
-	public extern void Deselect(WorldObject obj);
-	public extern void Select(WorldObject obj, bool playSound = true);
-	public extern void Notify_DialogOpened();
-	private extern void PlaySelectionSoundFor(WorldObject obj);
-	private extern void SelectInsideDragBox();
-	public extern IEnumerable<WorldObject> SelectableObjectsUnderMouse();
-	public extern IEnumerable<WorldObject> SelectableObjectsUnderMouse(out bool clickedDirectlyOnCaravan, out bool usedColonistBar);
-	[IteratorStateMachine(typeof(<SelectableObjectsAt>d__37))]
-	public static extern IEnumerable<WorldObject> SelectableObjectsAt(PlanetTile tile);
-	private extern void SelectUnderMouse(bool canSelectTile = true);
-	public extern void SelectFirstOrNextAt(PlanetTile tile);
-	private extern void SelectAllMatchingObjectUnderMouseOnScreen();
-	private extern void AutoOrderToTile(Caravan c, PlanetTile tile);
-	private extern void AutoOrderToTileNow(Caravan c, PlanetTile tile);
-	private extern void SelectFirstOrNextFrom(List<WorldObject> objects, PlanetTile tile);
-	public extern WorldSelector();
-}
-=================== RimWorld.ScenarioDef
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using Verse;
-namespace RimWorld;
-public class ScenarioDef : Def
-{
-	[CompilerGenerated]
-	private sealed class <ConfigErrors>d__2 : IEnumerable<string>, IEnumerable, IEnumerator<string>, IEnumerator, IDisposable
-	{
-		private int <>1__state;
-		private string <>2__current;
-		private int <>l__initialThreadId;
-		public ScenarioDef <>4__this;
-		private IEnumerator<string> <>7__wrap1;
-		extern string IEnumerator<string>.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		extern object IEnumerator.Current
-		{
-			[DebuggerHidden]
-			get;
-		}
-		[DebuggerHidden]
-		public extern <ConfigErrors>d__2(int <>1__state);
-		[DebuggerHidden]
-		extern void IDisposable.Dispose();
-		private extern bool MoveNext();
-		private extern void <>m__Finally1();
-		[DebuggerHidden]
-		extern void IEnumerator.Reset();
-		[DebuggerHidden]
-		extern IEnumerator<string> IEnumerable<string>.GetEnumerator();
-		[DebuggerHidden]
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-	public Scenario scenario;
-	public override extern void PostLoad();
-	[IteratorStateMachine(typeof(<ConfigErrors>d__2))]
-	public override extern IEnumerable<string> ConfigErrors();
-	public extern ScenarioDef();
-}
-=================== RimWorld.Page_SelectScenario
-using System.Collections.Generic;
-using Steamworks;
 using UnityEngine;
 using Verse;
 namespace RimWorld;
-[StaticConstructorOnStartup]
-public class Page_SelectScenario : Page
+public class Page_ConfigureStartingPawns : Page
 {
-	private Scenario curScen;
-	private Vector2 infoScrollPosition;
-	private const float ScenarioEntryHeight = 68f;
-	private static readonly Texture2D CanUploadIcon;
-	private static readonly Texture2D WarningIcon;
-	private Vector2 scenariosScrollPosition;
-	private float totalScenarioListHeight;
+	private int curPawnIndex;
+	private bool renderClothes;
+	private bool renderHeadgear;
+	private int reorderableGroupID;
+	private Vector2 scroll;
+	private const float TabAreaWidth = 140f;
+	private const float RightRectLeftPadding = 5f;
+	private const float PawnEntryHeight = 60f;
+	private const float SkillSummaryHeight = 127f;
+	public static readonly Vector2 PawnPortraitSize;
+	private static readonly Vector2 PawnSelectorPortraitSize;
 	public override extern string PageTitle { get; }
+	private extern bool StartingPawnsAllBabies { get; }
+	private extern AcceptanceReport ExtraCanDoNextReport { get; }
 	public override extern void PreOpen();
+	public override extern void PostOpen();
 	public override extern void DoWindowContents(Rect rect);
-	private extern bool CanEditScenario(Scenario scen);
-	private extern void GoToScenarioEditor();
-	private extern void DoScenarioSelectionList(Rect rect);
-	private extern void ListScenariosOnListing(Listing_Standard listing, IEnumerable<Scenario> scenarios);
-	private extern void DoScenarioListEntry(Rect rect, Scenario scen);
+	private extern void DrawPawnList(Rect rect);
+	private extern void DrawPawnListLabel(ref Rect rect, string label, bool isGray = false);
+	private extern void DrawApparelOptions(Rect rect);
+	private extern void DrawXenotypeEditorButton(Rect rect);
 	protected override extern bool CanDoNext();
-	public static extern void BeginScenarioConfiguration(Scenario scen, Page originPage);
-	private extern void EnsureValidSelection();
-	internal extern void Notify_ScenarioListChanged();
-	internal extern void Notify_SteamItemUnsubscribed(PublishedFileId_t pfid);
-	public extern Page_SelectScenario();
-	static extern Page_SelectScenario();
+	protected override extern void DoNext();
+	private extern void CheckWarnRequiredWorkTypesDisabledForEveryone(Action nextAction);
+	public extern void SelectPawn(Pawn c);
+	public extern Page_ConfigureStartingPawns();
+	static extern Page_ConfigureStartingPawns();
+}
+=================== RimWorld.FactionIdeosTracker
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Verse;
+namespace RimWorld;
+public class FactionIdeosTracker : IExposable
+{
+	[CompilerGenerated]
+	private sealed class <get_AllIdeos>d__12 : IEnumerable<Ideo>, IEnumerable, IEnumerator<Ideo>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Ideo <>2__current;
+		private int <>l__initialThreadId;
+		public FactionIdeosTracker <>4__this;
+		private int <i>5__2;
+		extern Ideo IEnumerator<Ideo>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <get_AllIdeos>d__12(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Ideo> IEnumerable<Ideo>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	private Faction faction;
+	private Ideo primaryIdeo;
+	private List<Ideo> ideosMinor;
+	private const float MajorIdeoSelectionWeight = 4f;
+	private const float MinorIdeoSelectionWeight = 1f;
+	private const float ChanceToReuseExistingIdeo = 0.2f;
+	private const int MaxIdeos = 10;
+	private static Dictionary<Ideo, int> tmpPlayerIdeos;
+	public extern List<Ideo> IdeosMinorListForReading { get; }
+	public extern Ideo PrimaryIdeo { get; }
+	public extern IEnumerable<Ideo> AllIdeos
+	{
+		[IteratorStateMachine(typeof(<get_AllIdeos>d__12))]
+		get;
+	}
+	public extern CultureDef PrimaryCulture { get; }
+	public extern Ideo FluidIdeo { get; }
+	public extern FactionIdeosTracker(Faction faction);
+	public extern FactionIdeosTracker();
+	public extern bool Has(Ideo ideo);
+	public extern bool HasAnyIdeoWithMeme(MemeDef meme);
+	public extern bool IsPrimary(Ideo ideo);
+	public extern bool IsMinor(Ideo ideo);
+	public extern void Notify_MemberGainedOrLost();
+	public extern void Notify_ColonistChangedIdeo();
+	public extern void RecalculateIdeosBasedOnPlayerPawns();
+	public extern void SetPrimary(Ideo ideo);
+	public extern void ChooseOrGenerateIdeo(IdeoGenerationParms parms);
+	public extern Ideo GetRandomIdeoForNewPawn();
+	public extern Precept GetPrecept(PreceptDef precept);
+	public extern bool AnyPreceptWithRequiredScars();
+	public static extern IdeoGenerationParms IdeoGenerationParmsForFaction_BackCompatibility(FactionDef factionDef, bool forceNoExpansion = false);
+	public extern void RemoveAll();
+	public extern void ExposeData();
+	static extern FactionIdeosTracker();
+}
+=================== RimWorld.Planet.LandmarkDensity
+namespace RimWorld.Planet;
+public enum LandmarkDensity
+{
+	Sparse,
+	SlightlyMoreSparse,
+	SlightlySparse,
+	Normal,
+	SlightlyCrowded,
+	SlightlyMoreCrowded,
+	Crowded
+}
+=================== RimWorld.Planet.OverallRainfall
+namespace RimWorld.Planet;
+public enum OverallRainfall
+{
+	AlmostNone,
+	Little,
+	LittleBitLess,
+	Normal,
+	LittleBitMore,
+	High,
+	VeryHigh
+}
+=================== RimWorld.Planet.OverallPopulation
+namespace RimWorld.Planet;
+public enum OverallPopulation
+{
+	AlmostNone,
+	Little,
+	LittleBitLess,
+	Normal,
+	LittleBitMore,
+	High,
+	VeryHigh
+}
+=================== RimWorld.Planet.OverallTemperature
+namespace RimWorld.Planet;
+public enum OverallTemperature
+{
+	VeryCold,
+	Cold,
+	LittleBitColder,
+	Normal,
+	LittleBitWarmer,
+	Hot,
+	VeryHot
+}
+=================== RimWorld.Planet.WorldFactionsUIUtility
+using System.Collections.Generic;
+using UnityEngine;
+namespace RimWorld.Planet;
+public static class WorldFactionsUIUtility
+{
+	private static Vector2 scrollPosition;
+	private static float listingHeight;
+	private static float warningHeight;
+	private const float RowHeight = 24f;
+	private const float AddButtonHeight = 28f;
+	private const int MaxVisibleFactions = 12;
+	private const int MaxVisibleFactionsRecommended = 11;
+	private const float RowMarginX = 6f;
+	public static extern void DoWindowContents(Rect rect, List<FactionDef> factions, bool isDefaultFactionCounts);
+	public static extern bool DoRow(Rect rect, FactionDef factionDef, List<FactionDef> factions, int index);
+}
+=================== RimWorld.IdeoFoundation
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Verse;
+using Verse.Grammar;
+namespace RimWorld;
+public abstract class IdeoFoundation : IExposable
+{
+	[CompilerGenerated]
+	private sealed class <GetPreceptsToRemoveFromMemeChanges>d__35 : IEnumerable<Precept>, IEnumerable, IEnumerator<Precept>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private Precept <>2__current;
+		private int <>l__initialThreadId;
+		private List<MemeDef> prevMemes;
+		public List<MemeDef> <>3__prevMemes;
+		public IdeoFoundation <>4__this;
+		private List<MemeDef> futureMemes;
+		public List<MemeDef> <>3__futureMemes;
+		private List<Precept> <existingPrecepts>5__2;
+		private List<MemeDef> <newMemes>5__3;
+		private int <i>5__4;
+		extern Precept IEnumerator<Precept>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <GetPreceptsToRemoveFromMemeChanges>d__35(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<Precept> IEnumerable<Precept>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	public Ideo ideo;
+	public IdeoFoundationDef def;
+	public PlaceDef place;
+	public static readonly IntRange MemeCountRangeAbsolute;
+	public static readonly IntRange MemeCountRangeNPCInitial;
+	public static readonly IntRange MemeCountRangeFluidAbsolute;
+	private static IntRange PreceptCountRange_HighImpact;
+	private static IntRange PreceptCountRange_MediumImpact;
+	private static IntRange PreceptCountRange_LowImpact;
+	private static IntRange InitialVeneratedAnimalsCountRange;
+	public const int MaxStyleCategories = 3;
+	public const int MaxRituals = 6;
+	public const int MaxMultiRoles = 2;
+	private static List<MemeDef> tmpMemes;
+	private static Dictionary<MemeDef, int> tmpMemesNumRitualsToMake;
+	private static List<IdeoWeaponClassPair> tmpWeaponClassPairs;
+	private static List<Precept> tmpInitializedPrecepts;
+	private List<Precept> tmpPreceptsToRemove;
+	private List<MemeDef> tmpAddedMemes;
+	public abstract void Init(IdeoGenerationParms parms);
+	public abstract void DoInfo(ref float curY, float width, IdeoEditMode editMode);
+	public abstract void GenerateTextSymbols();
+	public virtual extern void ExposeData();
+	public static extern IdeoIconDef GetRandomIconDef(Ideo ideo);
+	public static extern ColorDef GetRandomColorDef(Ideo ideo);
+	public virtual extern void RandomizeCulture(IdeoGenerationParms parms);
+	public virtual extern void RandomizePlace();
+	protected virtual extern void RandomizeMemes(IdeoGenerationParms parms);
+	public virtual extern void RandomizeStyles();
+	public extern bool CanAddForFaction(PreceptDef precept, FactionDef forFaction, List<PreceptDef> disallowedPrecepts, bool checkDuplicates, bool ignoreMemeRequirements = false, bool ignoreConflictingMemes = false, bool classic = false);
+	public virtual extern void RandomizePrecepts(bool init, IdeoGenerationParms parms);
+	private extern void AddSpecialPrecepts(IdeoGenerationParms parms, List<PreceptDef> allPreceptDefs);
+	private extern void FinalizeIdeo(Ideo ideo);
+	private extern void AddRequiredPreceptsForMemes(List<MemeDef> memes, IdeoGenerationParms parms, bool generateWeaponPrecept, List<IdeoWeaponClassPair> weaponClassPairsOut = null, Action<PreceptDef> preceptGenerated = null);
+	public extern void EnsurePreceptsCompatibleWithMemes(List<MemeDef> oldMemes, List<MemeDef> newMemes, IdeoGenerationParms parms);
+	[IteratorStateMachine(typeof(<GetPreceptsToRemoveFromMemeChanges>d__35))]
+	public extern IEnumerable<Precept> GetPreceptsToRemoveFromMemeChanges(List<MemeDef> prevMemes, List<MemeDef> futureMemes);
+	private extern bool ConflictsWithNewMemes(Precept precept, List<MemeDef> newMemes);
+	private extern bool HasRequiredMemes(PreceptDef preceptDef, List<MemeDef> memes);
+	public extern void InitPrecepts(IdeoGenerationParms parms, List<Precept> initializedPrecepts = null);
+	private extern void AddRitualsForMemes(List<MemeDef> memes, List<Precept> outPrecepts = null);
+	public virtual extern void RandomizeIcon();
+	public virtual extern void GenerateLeaderTitle();
+	public extern AcceptanceReport CanAdd(PreceptDef precept, bool checkDuplicates = true);
+	public extern void AddPlaceRules(ref GrammarRequest request);
+	public virtual extern void CopyTo(IdeoFoundation other);
+	protected extern IdeoFoundation();
+	static extern IdeoFoundation();
+}
+=================== RimWorld.FactionGenerator
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using RimWorld.Planet;
+namespace RimWorld;
+public static class FactionGenerator
+{
+	[CompilerGenerated]
+	private sealed class <get_ConfigurableFactions>d__2 : IEnumerable<FactionDef>, IEnumerable, IEnumerator<FactionDef>, IEnumerator, IDisposable
+	{
+		private int <>1__state;
+		private FactionDef <>2__current;
+		private int <>l__initialThreadId;
+		private IEnumerator<FactionDef> <>7__wrap1;
+		extern FactionDef IEnumerator<FactionDef>.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		extern object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get;
+		}
+		[DebuggerHidden]
+		public extern <get_ConfigurableFactions>d__2(int <>1__state);
+		[DebuggerHidden]
+		extern void IDisposable.Dispose();
+		private extern bool MoveNext();
+		private extern void <>m__Finally1();
+		[DebuggerHidden]
+		extern void IEnumerator.Reset();
+		[DebuggerHidden]
+		extern IEnumerator<FactionDef> IEnumerable<FactionDef>.GetEnumerator();
+		[DebuggerHidden]
+		extern IEnumerator IEnumerable.GetEnumerator();
+	}
+	private const int MaxPreferredFactionNameLength = 20;
+	public static extern IEnumerable<FactionDef> ConfigurableFactions
+	{
+		[IteratorStateMachine(typeof(<get_ConfigurableFactions>d__2))]
+		get;
+	}
+	public static extern void GenerateFactionsIntoWorldLayer(PlanetLayer layer, List<FactionDef> factions = null);
+	private static extern void InitializeFactions(PlanetLayer layer, List<FactionDef> factions);
+	private static extern bool CanExistOnLayer(PlanetLayer layer, FactionDef f);
+	private static extern void AddFactionToManager(PlanetLayer layer, FactionDef facDef);
+	public static extern void CreateFactionAndAddToManager(FactionDef facDef);
+	public static extern void CreateFactionAndAddToManager(PlanetLayer layer, FactionDef facDef);
+	public static extern Faction NewGeneratedFaction(FactionGeneratorParms parms);
+	public static extern Faction NewGeneratedFaction(PlanetLayer layer, FactionGeneratorParms parms);
+	public static extern Faction NewGeneratedFactionWithRelations(FactionDef facDef, List<FactionRelation> relations, bool hidden = false);
+	public static extern Faction NewGeneratedFactionWithRelations(PlanetLayer layer, FactionDef facDef, List<FactionRelation> relations, bool hidden = false);
+	public static extern Faction NewGeneratedFactionWithRelations(FactionGeneratorParms parms, List<FactionRelation> relations);
+	public static extern Faction NewGeneratedFactionWithRelations(PlanetLayer layer, FactionGeneratorParms parms, List<FactionRelation> relations);
+	public static extern float NewRandomColorFromSpectrum(Faction faction);
+}
+=================== RimWorld.Planet.WorldGenData
+using System.Collections.Generic;
+namespace RimWorld.Planet;
+public class WorldGenData : WorldComponent
+{
+	public Dictionary<PlanetLayer, List<PlanetTile>> roadNodes;
+	public Dictionary<PlanetLayer, List<PlanetTile>> ancientSites;
+	public extern WorldGenData(World world);
 }
