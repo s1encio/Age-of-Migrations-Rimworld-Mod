@@ -42,7 +42,7 @@ namespace AgeOfMigrations
             if (capitals == null) capitals = new Dictionary<int, int>();
         }
 
-        private void AssignCapitals()
+        public void AssignCapitals()
         {
             if (Find.World == null || Find.FactionManager == null)
                 return;

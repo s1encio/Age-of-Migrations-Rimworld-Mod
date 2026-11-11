@@ -187,6 +187,11 @@ namespace AgeOfMigrations
     public class ScenPart_People : ScenPart
     {
         public FactionDef people;
+        public bool ruleCity;
+
+        // chosen on the start-site page: the city the player takes over
+        public static string pendingCityName;
+        public static string pendingLayout;
 
         public static ScenPart_People Current => Find.Scenario?.AllParts.OfType<ScenPart_People>().FirstOrDefault(p => p.people != null);
 
@@ -194,10 +199,20 @@ namespace AgeOfMigrations
         {
             base.ExposeData();
             Scribe_Defs.Look(ref people, "people");
+            Scribe_Values.Look(ref ruleCity, "ruleCity", false);
         }
 
         public override string Summary(Scenario scen) =>
-            people == null ? null : $"You belong to the {people.label} and begin within their lands.";
+            people == null ? null
+            : ruleCity ? $"You rule one of the cities of the {people.label}: choose it on the world map. Your people are your allies."
+            : $"You belong to the {people.label} and begin within their lands.";
+
+        public override void PostMapGenerate(Map map)
+        {
+            base.PostMapGenerate(map);
+            if (ruleCity && Find.TickManager.TicksGame < 5)
+                CityStart.Build(map, people, pendingLayout);
+        }
 
         public IEnumerable<Faction> Factions =>
             Find.FactionManager.AllFactions.Where(f => f.def == people && !f.IsPlayer && !f.defeated);
@@ -219,6 +234,8 @@ namespace AgeOfMigrations
                     if (delta != 0) me.TryAffectGoodwillWith(other, delta, false, false);
                 }
                 foreach (var f in own) me.TryAffectGoodwillWith(f, 200, false, false);
+                if (ruleCity && !pendingCityName.NullOrEmpty() && Find.AnyPlayerHomeMap?.Parent is Settlement home)
+                    home.Name = pendingCityName;
             }
             catch (Exception e) { Log.Error("[Age of Migrations] aligning the player with their people failed: " + e); }
         }
@@ -240,8 +257,25 @@ namespace AgeOfMigrations
             try
             {
                 var part = ScenPart_People.Current;
-                if (part == null || !Territory.HasLands(part.people)) return true;
+                if (part == null) return true;
                 var tile = Find.WorldSelector.SelectedTile;
+                if (part.ruleCity)
+                {
+                    var city = tile.Valid ? Find.WorldObjects.Settlements.FirstOrDefault(x => x.Tile.tileId == tile.tileId && x.Tile.Layer == tile.Layer) : null;
+                    if (city == null || !CityStart.IsCityOf(city, part.people))
+                    {
+                        if (!CityStart.CitiesOf(part.people).Any()) return true;   // the people has no city left: settle anywhere
+                        Messages.Message($"Choose one of the cities of the {part.people.label} on the map: you will rule it.", MessageTypeDefOf.RejectInput, false);
+                        __result = false;
+                        return false;
+                    }
+                    ScenPart_People.pendingCityName = city.Name;
+                    ScenPart_People.pendingLayout = CityStart.LayoutFor(city);
+                    city.Destroy();                      // the player takes it over: their own colony is founded on its site
+                    Territory.Invalidate();
+                    return true;
+                }
+                if (!Territory.HasLands(part.people)) return true;
                 if (!tile.Valid) return true;
                 if (Territory.OwnerOf(tile)?.def == part.people) return true;
                 Messages.Message($"You belong to the {part.people.label}: choose a site inside their borders on the map.", MessageTypeDefOf.RejectInput, false);
@@ -261,6 +295,13 @@ namespace AgeOfMigrations
             {
                 var part = ScenPart_People.Current;
                 if (part == null) return;
+                if (part.ruleCity)
+                {
+                    var cities = CityStart.CitiesOf(part.people).ToList();
+                    var capital = cities.FirstOrDefault(c => GameComponent_RomanCapitals.IsCapital(c, out _));
+                    if (capital != null) { __result = capital.Tile; return; }
+                    if (cities.Count > 0) { __result = cities.RandomElement().Tile; return; }
+                }
                 var owners = Territory.Owners();
                 var layer = Find.WorldGrid.Surface;
                 var lands = Enumerable.Range(0, owners.Length).Where(i => owners[i] != null && owners[i].def == part.people).ToList();
@@ -273,6 +314,94 @@ namespace AgeOfMigrations
                 }
             }
             catch (Exception e) { Log.ErrorOnce("[Age of Migrations] random start site: " + e, 81236); }
+        }
+    }
+
+    // ------------------------------------------------------------------ starting as the ruler of a city
+
+    public static class CityStart
+    {
+        private static readonly Dictionary<string, string> Prefix = new Dictionary<string, string>
+        {
+            { "LR_WesternEmpire", "West" }, { "LR_EasternEmpire", "East" }, { "LR_Sassanids", "Persian" },
+            { "LR_Vandals", "Vandal" }, { "LR_Visigoths", "Goth" }, { "LR_Ostrogoths", "Ostro" },
+            { "LR_Franks", "Frank" }, { "LR_Saxons", "Saxon" }, { "LR_Huns", "Hun" },
+        };
+
+        public static bool IsCityOf(Settlement s, FactionDef people)
+        {
+            if (s?.Faction == null || s.Faction.def != people) return false;
+            GameComponent_RomanCapitals.Instance?.AssignCapitals();
+            if (GameComponent_RomanCapitals.IsCapital(s, out _)) return true;
+            return !SettlementKinds.TryGet(s, out bool camp, out _) || !camp;
+        }
+
+        public static IEnumerable<Settlement> CitiesOf(FactionDef people)
+        {
+            GameComponent_RomanCapitals.Instance?.AssignCapitals();   // capitals are normally picked when the game starts
+            return Find.WorldObjects.Settlements.Where(s => IsCityOf(s, people)).ToList();
+        }
+
+        public static string LayoutFor(Settlement s)
+        {
+            if (GameComponent_RomanCapitals.IsCapital(s, out string side)) return $"LR_{side}_Capital";
+            return GenericLayout(s.Faction.def);
+        }
+
+        public static string GenericLayout(FactionDef people)
+        {
+            if (people == null || !Prefix.TryGetValue(people.defName, out string p)) return null;
+            bool town = p == "West" || p == "East" || p == "Persian";
+            return $"LR_{p}_{(town ? "Oppidum" : "Village")}_{Rand.RangeInclusive(1, 3)}";
+        }
+
+        /// <summary>Builds the city on the player's starting map, owned by the player. Its NPC inhabitants are removed;
+        /// the scenario's colonists are its new rulers. Uses VEF's structure generator through reflection.</summary>
+        public static void Build(Map map, FactionDef people, string layoutName)
+        {
+            try
+            {
+                layoutName = layoutName ?? GenericLayout(people);
+                var layoutType = AccessTools.TypeByName("KCSG.StructureLayoutDef");
+                if (layoutType == null || layoutName == null) return;
+                var layout = GenDefDatabase.GetDefSilentFail(layoutType, layoutName, false);
+                if (layout == null) { Log.Warning("[Age of Migrations] city layout not found: " + layoutName); return; }
+                var sizes = Traverse.Create(layout).Field("sizes").GetValue<IntVec2>();
+                var rect = CellRect.CenteredOn(map.Center, sizes.x, sizes.z).ClipInsideMap(map);
+
+                // keep the colonists and their animals out of the way while the city is built
+                var ours = map.mapPawns.AllPawnsSpawned.Where(p => p.Faction == Faction.OfPlayer).ToList();
+                foreach (var p in ours) p.DeSpawn();
+                var before = new HashSet<Pawn>(map.mapPawns.AllPawnsSpawned);
+
+                AccessTools.Method("KCSG.GenOption:GetAllMineableIn")?.Invoke(null, new object[] { rect, map });
+                AccessTools.Method(AccessTools.TypeByName("KCSG.LayoutUtils"), "CleanRect", new[] { layoutType, typeof(Map), typeof(CellRect), typeof(bool) })
+                    ?.Invoke(null, new object[] { layout, map, rect, false });
+                AccessTools.Method(AccessTools.TypeByName("KCSG.LayoutUtils"), "Generate", new[] { layoutType, typeof(CellRect), typeof(Map), typeof(Faction), typeof(bool) })
+                    ?.Invoke(null, new object[] { layout, rect, map, Faction.OfPlayer, false });
+
+                // the layout's townsfolk and guards were placeholders for an NPC town
+                foreach (var p in map.mapPawns.AllPawnsSpawned.ToList())
+                    if (!before.Contains(p) && p.RaceProps.Humanlike) p.Destroy();
+                foreach (var p in map.mapPawns.AllPawnsSpawned.Where(p => !before.Contains(p) && p.RaceProps.Animal).ToList())
+                    if (p.Faction != Faction.OfPlayer) p.SetFaction(Faction.OfPlayer);
+                // everything in the city is yours
+                foreach (var c in rect)
+                    foreach (var t in c.GetThingList(map).ToList())
+                        if (t.def.category == ThingCategory.Item) t.SetForbidden(false, false);
+
+                // the rulers arrive in the heart of their city
+                foreach (var p in ours)
+                {
+                    if (!CellFinder.TryFindRandomCellNear(map.Center, map, 14, c => c.Standable(map) && c.GetRoom(map)?.PsychologicallyOutdoors != false, out IntVec3 cell)
+                        && !CellFinder.TryFindRandomCellNear(map.Center, map, 40, c => c.Standable(map), out cell))
+                        cell = CellFinder.RandomClosewalkCellNear(map.Center, map, 50);
+                    GenSpawn.Spawn(p, cell, map);
+                }
+                FloodFillerFog.DebugRefogMap(map);
+                Log.Message($"[Age of Migrations] built the player's city from {layoutName}.");
+            }
+            catch (Exception e) { Log.Error("[Age of Migrations] building the starting city failed: " + e); }
         }
     }
 

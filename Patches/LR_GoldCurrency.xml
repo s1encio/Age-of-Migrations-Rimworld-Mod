@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- the money of the game: silver keeps all its mechanics, but is now gold coin -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Silver"]/label</xpath>
+    <value><label>gold coins</label></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Silver"]/description</xpath>
+    <value><description>Gold coins: the solidus of the emperors, the dinar of the King of Kings, and whatever the barbarians have taken from both. The money of the age; everything is bought, sold, paid and ransomed in gold.</description></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Silver"]/graphicData/texPath</xpath>
+    <value><texPath>Things/Item/Resource/LR_GoldCoins</texPath></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/color</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/color</xpath>
+      <value><color>(236,186,54)</color></value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/stuffAdjective</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/stuffAdjective</xpath>
+      <value><stuffAdjective>gilded</stuffAdjective></value>
+    </match>
+  </Operation>
+  <!-- vanilla gold becomes bullion, so the two are never confused -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gold"]/label</xpath>
+    <value><label>gold bullion</label></value>
+  </Operation>
+</Patch>
