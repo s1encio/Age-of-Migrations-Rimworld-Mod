@@ -3,9 +3,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioRomans</defName>
     <label>Western Roman Empire</label>
-    <description>Rule a city of the Western Empire: its walls, houses, workshops and stores are yours from the first day.</description>
+    <description>Veterans of a disbanded frontier unit of the Western Empire, given land to farm instead of their back pay, set out to build a villa of their own.</description>
     <scenario>
-      <summary>Rule a Roman city of the West. Choose which one on the world map: Ravenna is the imperial capital.</summary>
+      <summary>Five veterans of the West. Start within the Western Empire, with Roman arms and some supplies.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerRomans</factionDef>
@@ -13,8 +13,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>5</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -22,16 +22,71 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_WesternEmpire</people><ruleCity>true</ruleCity>
+          <people>LR_WesternEmpire</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Spatha</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Hasta</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Plumbata</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_ScutumWest</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_RidgeHelmet</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_LoricaHamata</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>500</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>150</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>250</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
           <animalKind>Horse</animalKind>
           <count>2</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>Your unit has been disbanded and its men settled on the land, as the law allows. Build a villa, raise walls, and keep what you have: the barbarians are never far away.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -40,9 +95,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioRomansEast</defName>
     <label>Eastern Roman Empire</label>
-    <description>Rule a city of the Eastern Empire, from the Danube to Egypt: its walls, houses and stores are yours from the first day.</description>
+    <description>Veterans of the Eastern field army, granted land on the frontier of the Empire of Constantinople, set out to farm and to guard it.</description>
     <scenario>
-      <summary>Rule a Roman city of the East. Choose which one on the world map: Constantinopolis is the imperial capital.</summary>
+      <summary>Five veterans of the East. Start within the Eastern Empire, with Roman arms and some supplies.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerEastRomans</factionDef>
@@ -50,8 +105,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>5</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -59,16 +114,71 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_EasternEmpire</people><ruleCity>true</ruleCity>
+          <people>LR_EasternEmpire</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Spatha</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Hasta</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Plumbata</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_ScutumEast</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_RidgeHelmet</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_LoricaSquamata</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>500</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>150</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>250</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
           <animalKind>Horse</animalKind>
           <count>2</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>The emperor in Constantinople has given you land in return for your service. Build, farm and keep watch: Goths, Huns and Persians are all within reach.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -77,9 +187,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioBarbarians</defName>
     <label>Vandals</label>
-    <description>Rule a village of the Vandals: the king's hall, longhouses, pens and stores are yours.</description>
+    <description>A Vandal war band has broken away from its people to seek land and loot of its own, far from the king's hall.</description>
     <scenario>
-      <summary>Rule a Vandal village. Choose which one on the world map.</summary>
+      <summary>Six Vandal warriors. Start within the lands of the Vandals, with little but steel and courage.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerBarbarians</factionDef>
@@ -87,8 +197,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>6</pawnCount>
+          <pawnChoiceCount>9</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -96,7 +206,57 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Vandals</people><ruleCity>true</ruleCity>
+          <people>LR_Vandals</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Seax</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_BeardedAxe</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Framea</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Angon</thingDef>
+          <count>4</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_VandalShield</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_GermanicHelm</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>250</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>180</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
@@ -108,9 +268,14 @@
           <animalKind>Husky</animalKind>
           <count>2</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>You have left your people's halls to win land of your own. Raise a palisade, build a hall, and let the Romans tremble.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -119,9 +284,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioVisigoths</defName>
     <label>Visigoths</label>
-    <description>Rule a village of Alaric's Goths: the hall, longhouses, pens and stores are yours.</description>
+    <description>Goths of Alaric's people, settled as federates inside the Empire, strike out to take land of their own.</description>
     <scenario>
-      <summary>Rule a Visigothic village. Choose which one on the world map.</summary>
+      <summary>Six Visigothic warriors. Start within the lands of the Visigoths.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerVisigoths</factionDef>
@@ -129,8 +294,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>6</pawnCount>
+          <pawnChoiceCount>9</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -138,16 +303,66 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Visigoths</people><ruleCity>true</ruleCity>
+          <people>LR_Visigoths</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Spatha</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Rhomphaia</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Hasta</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_GothicOvalShield</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_GothicHelm</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>250</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>180</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
           <animalKind>Horse</animalKind>
           <count>3</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>The Romans promised you land and grain, and gave you neither. Take what is owed with your own hands.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -156,9 +371,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioOstrogoths</defName>
     <label>Ostrogoths</label>
-    <description>Rule a village of the Ostrogoths, under the shadow of the Huns.</description>
+    <description>Greuthungi Goths who serve the Huns grow tired of their masters and set out to found a hall of their own.</description>
     <scenario>
-      <summary>Rule an Ostrogothic village. Choose which one on the world map.</summary>
+      <summary>Six Ostrogothic warriors. Start within the lands of the Ostrogoths.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerOstrogoths</factionDef>
@@ -166,8 +381,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>6</pawnCount>
+          <pawnChoiceCount>9</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -175,16 +390,66 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Ostrogoths</people><ruleCity>true</ruleCity>
+          <people>LR_Ostrogoths</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Spatha</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Hasta</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Framea</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_OstroShield</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_OstroHelm</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>250</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>180</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
           <animalKind>Horse</animalKind>
           <count>3</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>Your king bends the knee to the Huns. You will not. Build a hall, and let your name be sung by the fire.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -193,9 +458,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioFranks</defName>
     <label>Franks</label>
-    <description>Rule a village of the Franks on the lower Rhine: the king's hall, longhouses and holy grove are yours.</description>
+    <description>Franks from the lower Rhine, half federates and half raiders, cross into new land to farm and to fight.</description>
     <scenario>
-      <summary>Rule a Frankish village. Choose which one on the world map.</summary>
+      <summary>Six Frankish warriors with throwing axes and angons. Start within the lands of the Franks.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerFranks</factionDef>
@@ -203,8 +468,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>6</pawnCount>
+          <pawnChoiceCount>9</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -212,7 +477,57 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Franks</people><ruleCity>true</ruleCity>
+          <people>LR_Franks</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_ThrowingAxe</thingDef>
+          <count>6</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Angon</thingDef>
+          <count>4</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Seax</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Framea</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_FrankShield</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_FrankHelm</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>250</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>180</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
@@ -224,9 +539,14 @@
           <animalKind>Husky</animalKind>
           <count>2</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>The Rhine is behind you and good land lies ahead. Clear it, fence it, and hold it.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -235,9 +555,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioSaxons</defName>
     <label>Saxons</label>
-    <description>Rule a village of the Saxons by the North Sea: the mead hall, longhouses and holy grove are yours.</description>
+    <description>Saxon sea-raiders from the North Sea coast beach their boat and decide to stay.</description>
     <scenario>
-      <summary>Rule a Saxon village. Choose which one on the world map.</summary>
+      <summary>Six Saxon warriors with seaxes and spears. Start within the lands of the Saxons.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerSaxons</factionDef>
@@ -245,8 +565,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>6</pawnCount>
+          <pawnChoiceCount>9</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -254,16 +574,66 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Saxons</people><ruleCity>true</ruleCity>
+          <people>LR_Saxons</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Langseax</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Seax</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_Framea</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_SaxonShield</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_SaxonHelm</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>250</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>180</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
           <animalKind>Husky</animalKind>
           <count>2</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>The keel is drawn up on the shore. Build a hall of timber and thatch, and let the gods of your fathers watch over it.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -272,9 +642,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioHuns</defName>
     <label>Huns</label>
-    <description>Rule a royal camp of the Huns on the great plain: the lord's hall, the felt tents and the herds are yours.</description>
+    <description>A clan of Hun horsemen leaves the great camps on the Danube plain to graze its herds in new pastures.</description>
     <scenario>
-      <summary>Rule a Hun royal camp. Choose which one on the world map.</summary>
+      <summary>Five Hun riders with bows and many horses. Start within the lands of the Huns.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerHuns</factionDef>
@@ -282,8 +652,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>5</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -291,16 +661,66 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Huns</people><ruleCity>true</ruleCity>
+          <people>LR_Huns</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_HunSword</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Bow_Recurve</thingDef>
+          <count>4</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_HunShield</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_HunHelm</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Leather_Plain</thingDef>
+          <count>120</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>80</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
           <animalKind>Horse</animalKind>
           <count>7</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>The steppe is behind you and the herds need grass. Pitch your tents, keep your bows strung and your horses close.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>
@@ -309,9 +729,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>LR_ScenarioPersians</defName>
     <label>Sasanian Persia</label>
-    <description>Rule a city of Eranshahr in the name of the King of Kings: palace, fire temple, bazaar and stores are yours.</description>
+    <description>A minor noble house of Eranshahr, granted a distant frontier estate by the King of Kings, sets out to settle it.</description>
     <scenario>
-      <summary>Rule a Persian city. Choose which one on the world map: Ctesiphon is the royal capital.</summary>
+      <summary>Five Persians of a minor noble house. Start within the Sasanian Empire, with Persian arms, horses and silver.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>LR_PlayerPersians</factionDef>
@@ -319,8 +739,8 @@
       <parts>
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
           <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>7</pawnCount>
-          <pawnChoiceCount>10</pawnChoiceCount>
+          <pawnCount>5</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
         </li>
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
@@ -328,7 +748,47 @@
         </li>
         <li Class="AgeOfMigrations.ScenPart_People">
           <def>LR_People</def>
-          <people>LR_Sassanids</people><ruleCity>true</ruleCity>
+          <people>LR_Sassanids</people>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_PersianSword</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_PersianMace</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_PersianStarShield</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LR_PersianHelm</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>700</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>150</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>200</count>
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
@@ -340,9 +800,14 @@
           <animalKind>Dromedary</animalKind>
           <count>1</count>
         </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>This city is yours to rule. Its walls, houses, workshops and stores came with it; its people look to you. Keep it fed, keep it defended, and make it great.</text>
+          <text>The King of Kings has granted your house land on the frontier. Build a fortress of brick, light the sacred fire, and hold the land in his name.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
       </parts>

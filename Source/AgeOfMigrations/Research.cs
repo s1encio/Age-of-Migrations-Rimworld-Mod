@@ -30,6 +30,8 @@ namespace AgeOfMigrations
         public bool showAllCultureTrees;
         public bool removeAnomaly = true;
         public bool showBorders = true;
+        public bool showTopBar = true;
+        public bool yearAD = true;
 
         // Realism mode: every removal on. Casual mode: every removal off.
         public bool AllRemovals(bool on) =>
@@ -55,6 +57,8 @@ namespace AgeOfMigrations
             Scribe_Values.Look(ref showAllCultureTrees, "showAllCultureTrees", false);
             Scribe_Values.Look(ref removeAnomaly, "removeAnomaly", true);
             Scribe_Values.Look(ref showBorders, "showBorders", true);
+            Scribe_Values.Look(ref showTopBar, "showTopBar", true);
+            Scribe_Values.Look(ref yearAD, "yearAD", true);
         }
     }
 
@@ -115,6 +119,10 @@ namespace AgeOfMigrations
                 "with real latitudes and seasons. Every people starts where it was in 395 AD, and the cities stand where they really stood " +
                 "(Roma, Ravenna, Constantinopolis, Ctesiphon, Londinium, Alexandria...). The seas, mountains and lands carry their Latin names. " +
                 "Works with any planet coverage; 30% gives a good level of detail. Turn it off for a random RimWorld planet.");
+            l.CheckboxLabeled("Show the treasury bar at the top of the screen", ref Settings.showTopBar,
+                "Gold, daily income, food in store and the year, in a bar at the top of the screen.");
+            l.CheckboxLabeled("Count the years from 395 AD", ref Settings.yearAD,
+                "The calendar starts in the year 395 instead of 5500. Birth years, dates and the top bar follow it.");
             l.CheckboxLabeled("Show the borders of the peoples on the world map", ref Settings.showBorders,
                 "Each people's lands are tinted in its colour, with a border along their edge.");
             l.CheckboxLabeled("Show every people's research tree", ref Settings.showAllCultureTrees,
