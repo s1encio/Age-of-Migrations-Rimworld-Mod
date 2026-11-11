@@ -31,6 +31,8 @@ namespace AgeOfMigrations
         public bool removeAnomaly = true;
         public bool showBorders = true;
         public bool showTopBar = true;
+        public bool showBottomBar = true;
+        public bool showMinimap = true;
         public bool yearAD = true;
 
         // Realism mode: every removal on. Casual mode: every removal off.
@@ -58,6 +60,8 @@ namespace AgeOfMigrations
             Scribe_Values.Look(ref removeAnomaly, "removeAnomaly", true);
             Scribe_Values.Look(ref showBorders, "showBorders", true);
             Scribe_Values.Look(ref showTopBar, "showTopBar", true);
+            Scribe_Values.Look(ref showBottomBar, "showBottomBar", true);
+            Scribe_Values.Look(ref showMinimap, "showMinimap", true);
             Scribe_Values.Look(ref yearAD, "yearAD", true);
         }
     }
@@ -121,6 +125,10 @@ namespace AgeOfMigrations
                 "Works with any planet coverage; 30% gives a good level of detail. Turn it off for a random RimWorld planet.");
             l.CheckboxLabeled("Show the treasury bar at the top of the screen", ref Settings.showTopBar,
                 "Gold, daily income, food in store and the year, in a bar at the top of the screen.");
+            l.CheckboxLabeled("Show the faction bar at the bottom", ref Settings.showBottomBar,
+                "Your emblem in a medallion with buttons for diplomacy, research, the world map and history.");
+            l.CheckboxLabeled("Show the minimap", ref Settings.showMinimap,
+                "The world on parchment at the bottom right, with the lands of every people. Click it to go there.");
             l.CheckboxLabeled("Count the years from 395 AD", ref Settings.yearAD,
                 "The calendar starts in the year 395 instead of 5500. Birth years, dates and the top bar follow it.");
             l.CheckboxLabeled("Show the borders of the peoples on the world map", ref Settings.showBorders,
